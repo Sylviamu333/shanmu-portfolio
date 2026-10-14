@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
+import { Flower } from "./home/Decorations";
 export function Header() {
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -21,8 +22,17 @@ export function Header() {
         aria-label="SHAN MU home"
         onClick={() => setOpen(false)}
       >
-        SHAN MU
-        {!home && <span className="brand-dot" />}
+        {home ? (
+          <>
+            <Flower className="home-brand-flower" />
+            <span className="home-brand-name">SHAN MU</span>
+          </>
+        ) : (
+          <>
+            SHAN MU
+            <span className="brand-dot" />
+          </>
+        )}
       </Link>
       {!home && (
         <span className="header-caption">Independent design practice</span>
@@ -53,22 +63,24 @@ export function Header() {
           }
         }}
       >
-        {links.map((link) => (
-          <Link
-            key={link.label}
-            href={link.href}
-            onClick={() => setOpen(false)}
-            aria-current={
-              (link.label === "Work" && pathname.startsWith("/work")) ||
-              (link.label === "Home" && home)
-                ? "page"
-                : undefined
-            }
-          >
-            {link.label}
-            <span className="nav-dot" />
-          </Link>
-        ))}
+        {links
+          .filter((link) => !home || link.label !== "Home")
+          .map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              aria-current={
+                (link.label === "Work" && pathname.startsWith("/work")) ||
+                (link.label === "Home" && home)
+                  ? "page"
+                  : undefined
+              }
+            >
+              {link.label}
+              <span className="nav-dot" />
+            </Link>
+          ))}
       </nav>
     </header>
   );

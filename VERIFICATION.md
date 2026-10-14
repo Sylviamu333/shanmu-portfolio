@@ -1,10 +1,12 @@
 # Verification and delivery
 
-## Current homepage redesign
+## Current reference-based homepage redesign
 
-The homepage update passed TypeScript, lint, content, and production-build checks. Production browser QA passed for all six pages at 320, 390, 768, and 1440 pixels: all artwork loaded, the local variable font loaded, exact introduction text was verified, five projects remained present, and there was no horizontal overflow or JavaScript error. Filters, project navigation, comparisons, image viewer keyboard behavior, and mobile navigation passed. Checksums confirmed 56 protected project/source files unchanged, including project data, the case-study route, all original PDFs/screenshots, and published artwork.
+The reference HTML was read from the repository and locally rendered at desktop and mobile sizes. Its embedded CSS, palette, fonts, image proportions, grid rules, responsive behavior, hover styles, and keyframes were inspected. All reference resources remain analysis-only; original illustrations and components are used in the application. Live application JavaScript was not included in the saved file, so runtime motion is recreated from the available CSS.
 
-Reference access was blocked; exact visual and animation fidelity could not be verified. See HOMEPAGE_UPDATE.md. Existing production target: https://shanmu-portfolio-mu.vercel.app. Production deployment success is verified separately after the main-branch update.
+TypeScript, lint, content checks, and production build passed. Browser QA passed all six pages at 320, 390, 768, 1440, and 1920 pixels (30 combinations): artwork and local fonts loaded, exact introduction and first-project order were verified, grid columns adapted correctly, and there were no JavaScript errors or horizontal overflow. Navigation anchors, soft case-study navigation, comparisons, image-dialog keyboard access, mobile menu/Escape focus return, Pause/Resume controls, reduced motion, and 404 handling passed.
+
+Checksums confirm all 57 protected project/source files unchanged, including project data, the case-study route, all original PDFs/screenshots, published artwork, and the newly supplied reference HTML. All five project pages remain present. See HOMEPAGE_UPDATE.md for the complete implementation scope. Existing production target: https://shanmu-portfolio-mu.vercel.app/. Production status is verified separately after the main-branch push.
 
 ## Original portfolio verification
 

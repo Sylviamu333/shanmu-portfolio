@@ -1,38 +1,28 @@
 import { personal } from "@/data/personal";
-import { Reveal } from "@/components/Motion";
+import { homepage } from "@/data/homepage";
+import { Flower } from "./Decorations";
 export function HomeAbout() {
   return (
-    <section id="about" className="home-about" aria-labelledby="about-heading">
-      <Reveal>
-        <div className="home-about-layout">
-          <div>
-            <p className="home-small-label">About my practice</p>
-            <h2 id="about-heading">
-              Digital thinking.
-              <br />
-              Visual character.
-            </h2>
-          </div>
-          <div className="home-about-specialties">
-            {personal.specialties.map((specialty) => (
-              <div key={specialty}>
-                <span>{specialty}</span>
-                <span aria-hidden="true">↗</span>
-              </div>
-            ))}
-            {personal.resume && (
-              <a
-                className="home-resume-link"
-                href={personal.resume}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View resume ↗
-              </a>
-            )}
-          </div>
-        </div>
-      </Reveal>
-    </section>
+    <aside id="about" className="home-about" aria-labelledby="about-heading">
+      <Flower className="about-flower" />
+      <p className="home-small-label">{homepage.aboutLabel}</p>
+      <h2 id="about-heading">
+        {homepage.aboutTitle[0]}
+        <br />
+        {homepage.aboutTitle[1]}
+      </h2>
+      <ul>
+        {personal.specialties.map((specialty) => (
+          <li key={specialty}>{specialty}</li>
+        ))}
+      </ul>
+      {personal.resume ? (
+        <a href={personal.resume} target="_blank" rel="noreferrer">
+          View resume ↗
+        </a>
+      ) : (
+        <a href="#contact">{homepage.contactAction}</a>
+      )}
+    </aside>
   );
 }

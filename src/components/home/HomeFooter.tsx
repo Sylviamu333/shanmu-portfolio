@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { personal } from "@/data/personal";
-import { Arrow } from "@/components/Arrow";
+import { homepage } from "@/data/homepage";
+import { PortfolioCard } from "./Decorations";
 export function HomeFooter() {
   const socialLinks = [
     { label: "LinkedIn", url: personal.linkedin },
@@ -10,40 +10,50 @@ export function HomeFooter() {
   ].filter((link) => link.url);
   return (
     <footer id="contact" className="home-footer">
-      <div className="home-footer-top">
-        <div>
-          <p className="home-small-label">Contact</p>
-          <h2>
-            Let’s connect<span>.</span>
-          </h2>
-        </div>
-        <div className="home-footer-contact">
-          {personal.email ? (
-            <a className="home-email-link" href={`mailto:${personal.email}`}>
-              {personal.email}
-              <Arrow diagonal />
-            </a>
-          ) : (
-            <p>Contact details will be added soon.</p>
-          )}
-          <div className="home-social-links">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.url!}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label} ↗
-              </a>
-            ))}
+      <div className="home-container">
+        <div className="home-footer-inner">
+          <a
+            className="home-footer-art"
+            href="#top"
+            aria-label="SHAN MU — return to top"
+          >
+            <PortfolioCard name={personal.name} role={personal.positioning} />
+          </a>
+          <div className="home-footer-links">
+            <nav aria-label="Footer navigation">
+              <a href="#work">Work</a>
+              <a href="#about">About</a>
+              {personal.email ? (
+                <a href={`mailto:${personal.email}`}>Say hello ↗</a>
+              ) : (
+                <a href="#top">Back to top ↑</a>
+              )}
+            </nav>
+            {socialLinks.length > 0 && (
+              <div className="home-social-links">
+                {socialLinks.map((link) => (
+                  <a
+                    href={link.url!}
+                    key={link.label}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label} ↗
+                  </a>
+                ))}
+              </div>
+            )}
+            {!personal.email && (
+              <p className="home-contact-note">{homepage.contactPending}</p>
+            )}
           </div>
         </div>
-      </div>
-      <div className="home-footer-bottom">
-        <Link href="/">{personal.name}</Link>
-        <span>© {new Date().getFullYear()}</span>
-        <a href="#top">Back to top ↑</a>
+        <div className="home-footer-bottom">
+          <span>
+            © {new Date().getFullYear()} {personal.name}
+          </span>
+          <span>{homepage.footerCaption}</span>
+        </div>
       </div>
     </footer>
   );

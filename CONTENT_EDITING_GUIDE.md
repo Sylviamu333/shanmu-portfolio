@@ -75,11 +75,11 @@ Visitors can click gallery artwork to enlarge it. In the image viewer, use Escap
 3. Choose a unique `slug`, for example `your-project`.
 4. Set `order` to a number no other project uses.
 5. Change every field, including the cover, gallery, facts, and sections.
-6. Set `discipline` to `'Digital'`, `'Brand'`, or `'Graphic'`. This controls the homepage filter.
+6. Set `discipline` to `'Digital'`, `'Brand'`, or `'Graphic'`. This identifies its discipline; the compact homepage uses the project's category for its caption.
 7. Remove fields you do not need. Set unknown `year` to `null`.
 8. Run the checks below and rebuild.
 
-The homepage, filters, section navigation, next/previous project navigation, metadata, and `/work/your-project/` page are generated from the same data. Static deployment needs a new build to create the new route. Layouts adapt to added projects; homepage styling is in `src/app/homepage.css`, while existing case-study styling stays in `globals.css`.
+The homepage, section navigation, next/previous project navigation, metadata, and `/work/your-project/` page are generated from the same data. Static deployment needs a new build to create the new route. Layouts adapt to added projects; homepage styling is in `src/app/homepage.css`, while existing case-study styling stays in `globals.css`.
 
 ## Reorder projects
 
@@ -93,7 +93,7 @@ Also replace the images and text in the `homepage` and `product-detail` sections
 
 ## Edit About and Contact
 
-Open `src/data/personal.ts`. Edit your name, role (`positioning`), introduction, specialties, and contact links. The homepage uses the exact introduction, existing specialties, and verified links; it does not display biography, skills, experience, or location placeholders. Those fields remain available in the data for future use. Replace `null` with real values inside quotes:
+Open `src/data/personal.ts`. Edit your name, role (`positioning`), introduction, specialties, and contact links. Decorative homepage text and section labels are in `src/data/homepage.ts`. The homepage uses the exact introduction, existing specialties, and verified links; it does not display biography, skills, experience, or location placeholders. Those fields remain available in the data for future use. Replace `null` with real values inside quotes:
 
 ```ts
 email: 'your-real-email-address',
