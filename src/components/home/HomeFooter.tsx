@@ -16,10 +16,11 @@ export function HomeFooter() {
             className="home-footer-art"
             href="#top"
             aria-label="SHAN MU — return to top"
+            data-home-reveal="0"
           >
             <PortfolioCard name={personal.name} role={personal.positioning} />
           </a>
-          <div className="home-footer-links">
+          <div className="home-footer-links" data-home-reveal="0.09">
             <nav aria-label="Footer navigation">
               <a href="#work">Work</a>
               <a href="#about">About</a>
@@ -48,7 +49,7 @@ export function HomeFooter() {
             )}
           </div>
         </div>
-        <div className="home-footer-bottom">
+        <div className="home-footer-bottom" data-home-reveal="0.16">
           <span>
             © {new Date().getFullYear()} {personal.name}
           </span>

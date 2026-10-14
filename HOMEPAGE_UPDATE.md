@@ -6,7 +6,7 @@ The reference was read directly from `source-assets/Eemon Roy - Product Designer
 
 Verified design characteristics include a centered light serif hero, lime `#E7FF7D` and sky-blue `#AFE3FF` highlight blocks, a sweeping pink backdrop, a compact ruled navigation, and a bordered two-column Work grid. The source's Work image ratio is 781:472 with small uppercase captions. Its footer uses pale pink `#FFF5FB`, rose `#DA5168` text, an illustrated portfolio object, and stacked serif links. Mobile rules stack the project grid and rearrange the hero. Source CSS includes staggered card entrance, easing, hover feedback, reveal transitions, footer sway, and reduced-motion rules.
 
-The saved file contains no live application JavaScript beyond structured metadata. Runtime pointer behavior and scroll orchestration cannot be recovered completely; those interactions are recreated in original React/Motion code from the available CSS and supplied design requirements.
+The saved file contains no live application JavaScript beyond structured metadata. The subsequent supplied 25-second recording provides primary evidence for runtime motion. Cursor/trail, labels, scroll drawing, glows, and footer sway are implemented in original GSAP/CSS/React code; verified observations and remaining uncertainties are documented in MOTION_RECREATION.md.
 
 ## Implemented design
 
@@ -25,7 +25,7 @@ Original SVG illustrations and new Next.js components were authored for the impl
 
 Homepage copy is centralized in `src/data/personal.ts` and `src/data/homepage.ts`. Existing project data stays in `src/data/projects.ts`. New presentation components are under `src/components/home/`; styling is isolated in `src/app/homepage.css`. Existing case-study routes, content, layout components, PDFs, screenshots, published artwork, and source HTML are preserved.
 
-The homepage offers coordinated entrance animations, subtle scroll movement, image and navigation hover feedback, and a Pause/Resume motion control. Reduced-motion preferences are respected. Mobile menu Escape returns focus to the menu button.
+The homepage offers recorded cursor/trail behavior, pointer-following project labels, a scroll-drawn pink ribbon, drifting glows, timed entrances, footer paper sway, and a coordinated Pause/Resume control. Unobserved thumbnail zoom, hero scroll tilt, sticker bobbing, background wander, and link highlight animations were removed. Reduced-motion preferences are respected. Mobile menu Escape returns focus to the menu button.
 
 ## Validation and production
 

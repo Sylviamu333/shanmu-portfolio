@@ -263,42 +263,44 @@ export function PortfolioCard({ name, role }: { name: string; role: string }) {
           strokeWidth="2"
         />
         <path d="M62 54v224" stroke="#A9396E" strokeWidth="5" />
-        <rect
-          x="79"
-          y="69"
-          width="351"
-          height="185"
-          rx="3"
-          fill="#FFF8EF"
-          stroke="#EFBBD0"
-          strokeWidth="2"
-        />
-        <path
-          d="m352 90 15-14 16 15-15 14Z"
-          fill="#AFE3FF"
-          stroke="#3153BE"
-          strokeWidth="2"
-        />
-        <circle
-          cx="390"
-          cy="102"
-          r="10"
-          fill="#E7FF7D"
-          stroke="#577522"
-          strokeWidth="2"
-        />
-        <path
-          d="M108 223h183m-183 10h87"
-          stroke="#F0BCD0"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        <text x="109" y="166" className="footer-card-name">
-          {name}
-        </text>
-        <text x="111" y="196" className="footer-card-role">
-          {role}
-        </text>
+        <g className="footer-paper">
+          <rect
+            x="79"
+            y="69"
+            width="351"
+            height="185"
+            rx="3"
+            fill="#FFF8EF"
+            stroke="#EFBBD0"
+            strokeWidth="2"
+          />
+          <path
+            d="m352 90 15-14 16 15-15 14Z"
+            fill="#AFE3FF"
+            stroke="#3153BE"
+            strokeWidth="2"
+          />
+          <circle
+            cx="390"
+            cy="102"
+            r="10"
+            fill="#E7FF7D"
+            stroke="#577522"
+            strokeWidth="2"
+          />
+          <path
+            d="M108 223h183m-183 10h87"
+            stroke="#F0BCD0"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+          <text x="109" y="166" className="footer-card-name">
+            {name}
+          </text>
+          <text x="111" y="196" className="footer-card-role">
+            {role}
+          </text>
+        </g>
       </g>
       <path
         d="M174 67V39c0-18 24-19 24 0v56c0 15-15 15-15 0V49"

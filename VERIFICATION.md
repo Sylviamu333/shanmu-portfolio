@@ -1,6 +1,10 @@
 # Verification and delivery
 
-## Current reference-based homepage redesign
+## Current recording-based motion update
+
+The primary 25-second screen recording was inspected before implementation, with timed frames, full-resolution hover/footer views, and particle measurements. See MOTION_RECREATION.md for confirmed behavior, secondary CSS timings, and remaining differences. Production-browser motion checks use the recording’s 1280 × 544 page viewport, plus touch and reduced-motion contexts. TypeScript, lint, production build, content checks, the 30 route/viewport suite, and targeted motion/lifecycle checks pass. All 57 protected project/source files remain unchanged.
+
+## Previous reference-based homepage redesign
 
 The reference HTML was read from the repository and locally rendered at desktop and mobile sizes. Its embedded CSS, palette, fonts, image proportions, grid rules, responsive behavior, hover styles, and keyframes were inspected. All reference resources remain analysis-only; original illustrations and components are used in the application. Live application JavaScript was not included in the saved file, so runtime motion is recreated from the available CSS.
 

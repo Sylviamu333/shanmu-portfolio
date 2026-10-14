@@ -2,12 +2,13 @@ import { orderedProjects } from "@/data/projects";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { HomeWork } from "@/components/home/HomeWork";
 import { HomeFooter } from "@/components/home/HomeFooter";
+import { HomeMotion } from "@/components/home/HomeMotion";
 export default function Home() {
   return (
-    <main id="main" className="homepage">
+    <HomeMotion>
       <HomeIntro />
       <HomeWork projects={orderedProjects} />
       <HomeFooter />
-    </main>
+    </HomeMotion>
   );
 }
