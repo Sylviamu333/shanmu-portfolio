@@ -1,9 +1,9 @@
 // Replace null values when you are ready. Missing links never become dead buttons.
 export const personal = {
   name: "SHAN MU",
-  positioning: "UI/UX Designer · Website Designer · Branding & Visual Designer",
+  positioning: "UI/UX Designer · Visual Designer",
   introduction:
-    "Independent designer working across digital experiences and visual identities.",
+    "I design websites, mobile interfaces and brand visuals, mostly for consumer brands and DTC businesses. My work sits between UI/UX, e-commerce and visual design.",
   biography:
     "I’m a multidisciplinary designer working across digital product experiences, e-commerce websites, visual identity, branding, and graphic design. My practice connects clear, considered experiences with expressive visual systems.",
   specialties: [
@@ -28,5 +28,5 @@ export const personal = {
   instagram: null as string | null,
   resume: null as string | null,
   // Set your public Vercel URL after deployment to enable canonical metadata.
-  siteUrl: null as string | null,
+  siteUrl: "https://shanmu-portfolio-mu.vercel.app" as string | null,
 };

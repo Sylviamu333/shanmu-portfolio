@@ -31,7 +31,7 @@ cover: {
 },
 ```
 
-The path starts with `/projects/`, **not** `/public/projects/`. `width` and `height` are the actual pixel dimensions. Cover images may be cropped by the layout; full gallery images preserve their proportions. Eleven Oasis has a special homepage presentation, which uses its cover as a website screenshot. Keep that cover a screenshot or adjust `ProjectCard.tsx` if changing its visual direction.
+The path starts with `/projects/`, **not** `/public/projects/`. `width` and `height` are the actual pixel dimensions. Cover images may be cropped by the layout; full gallery images preserve their proportions. Eleven Oasis has a special homepage website presentation in `src/components/home/HomeProject.tsx`. Keep its cover a website screenshot. The PIX and Visual Experiments thumbnails also use their existing gallery images.
 
 ## Change project text
 
@@ -79,7 +79,7 @@ Visitors can click gallery artwork to enlarge it. In the image viewer, use Escap
 7. Remove fields you do not need. Set unknown `year` to `null`.
 8. Run the checks below and rebuild.
 
-The homepage, filters, section navigation, next/previous project navigation, metadata, and `/work/your-project/` page are generated from the same data. Static deployment needs a new build to create the new route. Layouts adapt to added projects; special visual treatments for the original five are in `globals.css`.
+The homepage, filters, section navigation, next/previous project navigation, metadata, and `/work/your-project/` page are generated from the same data. Static deployment needs a new build to create the new route. Layouts adapt to added projects; homepage styling is in `src/app/homepage.css`, while existing case-study styling stays in `globals.css`.
 
 ## Reorder projects
 
@@ -93,7 +93,7 @@ Also replace the images and text in the `homepage` and `product-detail` sections
 
 ## Edit About and Contact
 
-Open `src/data/personal.ts`. Edit your introduction, biography, specialties, skills, experience, and location. Replace `null` with real values inside quotes:
+Open `src/data/personal.ts`. Edit your name, role (`positioning`), introduction, specialties, and contact links. The homepage uses the exact introduction, existing specialties, and verified links; it does not display biography, skills, experience, or location placeholders. Those fields remain available in the data for future use. Replace `null` with real values inside quotes:
 
 ```ts
 email: 'your-real-email-address',
@@ -103,7 +103,7 @@ resume: '/resume.pdf',
 
 For a resume, add the PDF as `public/resume.pdf`. Use your real contact information. Leave unknown fields as `null`; the website shows a clear placeholder and does not create a broken link. Replace the experience string with your own confirmed background. The portfolio does not assume employers or education.
 
-After deployment, set `siteUrl` to your actual public URL (without a trailing slash) to enable the sitemap and absolute metadata. Rebuild afterward.
+The existing production URL is already set in `siteUrl`. Keep it unchanged to preserve the same URL, sitemap, and absolute metadata.
 
 ## Check your changes
 

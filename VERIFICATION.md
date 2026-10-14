@@ -1,5 +1,13 @@
 # Verification and delivery
 
+## Current homepage redesign
+
+The homepage update passed TypeScript, lint, content, and production-build checks. Production browser QA passed for all six pages at 320, 390, 768, and 1440 pixels: all artwork loaded, the local variable font loaded, exact introduction text was verified, five projects remained present, and there was no horizontal overflow or JavaScript error. Filters, project navigation, comparisons, image viewer keyboard behavior, and mobile navigation passed. Checksums confirmed 56 protected project/source files unchanged, including project data, the case-study route, all original PDFs/screenshots, and published artwork.
+
+Reference access was blocked; exact visual and animation fidelity could not be verified. See HOMEPAGE_UPDATE.md. Existing production target: https://shanmu-portfolio-mu.vercel.app. Production deployment success is verified separately after the main-branch update.
+
+## Original portfolio verification
+
 Validated on 14 October 2026 with Node.js 24.19.0.
 
 - Dependency installation completed; the lockfile is included.

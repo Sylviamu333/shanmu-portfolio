@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { personal } from "@/data/personal";
 import "./globals.css";
+import "./homepage.css";
 export const metadata: Metadata = {
   ...(personal.siteUrl ? { metadataBase: new URL(personal.siteUrl) } : {}),
   title: {
-    default: "SHAN MU — Digital Experiences & Visual Identities",
+    default: "SHAN MU — UI/UX & Visual Design",
     template: "%s — SHAN MU",
   },
   description: personal.introduction,
