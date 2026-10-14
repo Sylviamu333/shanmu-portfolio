@@ -1,0 +1,87 @@
+import assert from "node:assert/strict";
+import { existsSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { resolve } from "node:path";
+import { projects, orderedProjects } from "../src/data/projects.ts";
+const root = resolve(import.meta.dirname, "..");
+const hash = (file) =>
+  createHash("sha256").update(readFileSync(file)).digest("hex");
+assert.equal(
+  new Set(projects.map((p) => p.slug)).size,
+  projects.length,
+  "Project slugs must be unique",
+);
+assert.equal(
+  new Set(projects.map((p) => p.order)).size,
+  projects.length,
+  "Project order must be unique",
+);
+assert.equal(
+  orderedProjects[0].slug,
+  "eleven-oasis",
+  "Eleven Oasis must be featured first",
+);
+let count = 0;
+for (const project of projects) {
+  assert.match(project.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+  assert.equal(
+    new Set(project.sections.map((s) => s.id)).size,
+    project.sections.length,
+    "Section anchors must be unique",
+  );
+  const images = [
+    project.cover,
+    ...project.gallery,
+    ...project.sections.flatMap((s) => s.images || []),
+    ...(project.comparisons || []).flatMap((c) => [
+      c.before,
+      ...(c.after ? [c.after] : []),
+    ]),
+  ];
+  for (const image of images) {
+    assert(image.alt.trim(), `Missing alt text: ${image.src}`);
+    assert(
+      image.width > 0 && image.height > 0,
+      `Missing dimensions: ${image.src}`,
+    );
+    assert(
+      existsSync(resolve(root, "public", image.src.slice(1))),
+      `Missing image: ${image.src}`,
+    );
+    if (image.original)
+      assert(existsSync(resolve(root, "public", image.original.slice(1))));
+    count++;
+  }
+  if (project.website)
+    assert.equal(new URL(project.website).protocol, "https:");
+}
+for (const [original, copy] of [
+  ["HOMEPAGE - PC.png", "homepage-before-original.png"],
+  ["PDP - pc.png", "pdp-before-original.png"],
+]) {
+  assert.equal(
+    hash(resolve(root, "source-assets", original)),
+    hash(resolve(root, "public/projects/eleven-oasis", copy)),
+    "Original screenshot content changed",
+  );
+}
+assert(Math.abs((2.1 / 1.2 - 1) * 100 - 75) < 1e-9);
+assert(Math.abs((25 / 5 - 1) * 100 - 400) < 1e-9);
+if (process.argv.includes("--build")) {
+  for (const project of projects)
+    assert(
+      existsSync(resolve(root, "out/work", project.slug, "index.html")),
+      `Missing exported route: ${project.slug}`,
+    );
+  const homepage = readFileSync(resolve(root, "out/index.html"), "utf8");
+  for (const project of projects)
+    assert(
+      homepage.includes(`/work/${project.slug}/`),
+      `Missing homepage project link: ${project.slug}`,
+    );
+  for (const id of ["work", "about", "contact"])
+    assert(homepage.includes(`id="${id}"`), `Missing navigation target: ${id}`);
+}
+console.log(
+  `Content checks passed: ${projects.length} projects, ${count} image references, original screenshots byte-for-byte intact${process.argv.includes("--build") ? ", all project routes exported" : ""}.`,
+);
