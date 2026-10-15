@@ -12,6 +12,11 @@
   height: 85%;
   overflow: visible;
 }
+/* Let the same background stroke flow into Work. Particles retain their own
+   existing clipping; the SVG cannot intercept project links. */
+.homepage .home-intro {
+  overflow: visible;
+}
 @media (prefers-reduced-motion: no-preference) {
   /* Match the first scripted frame without flashing the complete wash while
      fonts load. With reduced motion the approved full wash stays static. */

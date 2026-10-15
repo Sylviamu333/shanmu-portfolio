@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Project, ProjectImage } from "@/data/projects";
 import { Arrow } from "@/components/Arrow";
 import { ElevenOasisPreview } from "./ElevenOasisPreview";
+import { EarlyBirdsPreview } from "./EarlyBirdsPreview";
 function Artwork({ image }: { image: ProjectImage }) {
   return (
     <Image
@@ -16,7 +17,8 @@ function Artwork({ image }: { image: ProjectImage }) {
 }
 export function HomeProject({ project }: { project: Project }) {
   const elevenOasis = project.slug === "eleven-oasis";
-  const year = elevenOasis ? "2026" : project.year;
+  const earlyBirds = project.slug === "early-birds-club";
+  const year = elevenOasis ? "2026" : earlyBirds ? "2024" : project.year;
   return (
     <article
       className={`home-project project-discipline-${project.discipline.toLowerCase()}`}
@@ -29,6 +31,8 @@ export function HomeProject({ project }: { project: Project }) {
         <div className={`home-project-art art-${project.slug}`}>
           {elevenOasis ? (
             <ElevenOasisPreview />
+          ) : earlyBirds ? (
+            <EarlyBirdsPreview />
           ) : project.slug === "pix-metaborg" ? (
             <div className="home-poster-pair">
               <Artwork image={project.cover} />
@@ -49,15 +53,15 @@ export function HomeProject({ project }: { project: Project }) {
             <Arrow diagonal />
           </span>
         </div>
-        <div className="home-project-caption">
+        <div className={`home-project-caption${earlyBirds ? " ebc-caption" : ""}`}>
           <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : project.title}</h3>
           <p>
             <span className="home-project-category">
-              {project.category.split(" / ")[0].trim()}
+              {earlyBirds ? "BRANDING" : project.category.split(" / ")[0].trim()}
             </span>
             {year && (
               <span className="home-project-year">
-                {elevenOasis ? " - " : " · "}{year}
+                {elevenOasis || earlyBirds ? " - " : " · "}{year}
               </span>
             )}
           </p>
