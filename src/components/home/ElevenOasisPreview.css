@@ -61,30 +61,6 @@
     transform: translateY(var(--eleven-scroll-end));
   }
 }
-.home-project-caption.eleven-oasis-caption {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12.5px;
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-}
-.eleven-oasis-caption :is(h3, p) {
-  font: inherit;
-  max-width: none;
-  white-space: nowrap;
-}
-.eleven-oasis-caption h3 {
-  font-weight: 500;
-  color: #2c2c2c;
-}
-.eleven-oasis-caption p {
-  font-weight: 600;
-  color: #007500;
-}
-@media (max-width: 700px) {
-  .home-project-caption.eleven-oasis-caption {
-    font-size: clamp(10px, 3vw, 12px);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .eleven-laptop .eleven-screen-page {
     animation: none;

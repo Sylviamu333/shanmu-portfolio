@@ -12,6 +12,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 body:has(.homepage) {
   background: #fff;
 }
@@ -409,35 +416,38 @@ body:has(.homepage) {
   min-height: 64px;
   border-top: 1px solid var(--folio-rule);
   padding: 12px 19px;
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-size: 10px;
   line-height: 1.45;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.06em;
+  color: #333333;
   text-transform: uppercase;
+  text-decoration: none;
   transition: background 0.22s;
 }
 .home-project-caption h3 {
-  font-size: inherit;
-  font-weight: 600;
+  font: inherit;
+  color: #333333;
   min-width: 0;
 }
 .home-project-caption p {
-  font-size: inherit;
+  font: inherit;
   text-align: right;
-  color: #2656b6;
-  font-weight: 650;
+  color: #333333;
+  white-space: nowrap;
   min-width: 0;
   max-width: 52%;
 }
-.project-discipline-brand .home-project-caption p {
-  color: #54791f;
-}
-.project-discipline-graphic .home-project-caption p {
-  color: #ad3d71;
-}
 .home-project-caption p > span {
-  white-space: nowrap;
-  color: #6d6d6d;
-  font-weight: 450;
+  font: inherit;
+}
+.home-project-caption .home-project-category {
+  color: #9a6627;
+}
+.home-project-caption .home-project-year {
+  color: #333333;
 }
 .home-project-description {
   position: absolute;
@@ -699,7 +709,6 @@ body:has(.homepage) {
     padding: 20px;
   }
   .home-project-caption {
-    font-size: 9px;
     padding: 11px 12px;
     min-height: 58px;
   }
@@ -736,7 +745,6 @@ body:has(.homepage) {
     padding: 16px;
   }
   .home-project-caption {
-    font-size: 11px;
     min-height: 54px;
     padding: 11px 18px;
   }

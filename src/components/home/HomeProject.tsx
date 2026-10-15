@@ -16,6 +16,7 @@ function Artwork({ image }: { image: ProjectImage }) {
 }
 export function HomeProject({ project }: { project: Project }) {
   const elevenOasis = project.slug === "eleven-oasis";
+  const year = elevenOasis ? "2026" : project.year;
   return (
     <article
       className={`home-project project-discipline-${project.discipline.toLowerCase()}`}
@@ -48,18 +49,16 @@ export function HomeProject({ project }: { project: Project }) {
             <Arrow diagonal />
           </span>
         </div>
-        <div
-          className={`home-project-caption${elevenOasis ? " eleven-oasis-caption" : ""}`}
-        >
+        <div className="home-project-caption">
           <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : project.title}</h3>
           <p>
-            {elevenOasis ? (
-              "UI/UX DESIGN - 2026"
-            ) : (
-              <>
-                {project.category.split(" / ")[0].trim()}
-                {project.year && <span> · {project.year}</span>}
-              </>
+            <span className="home-project-category">
+              {project.category.split(" / ")[0].trim()}
+            </span>
+            {year && (
+              <span className="home-project-year">
+                {elevenOasis ? " - " : " · "}{year}
+              </span>
             )}
           </p>
         </div>
