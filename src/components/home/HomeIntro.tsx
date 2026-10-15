@@ -3,6 +3,8 @@ import { HeroParticles, useHomepageMotion } from "./HomeMotion";
 import { personal } from "@/data/personal";
 import { homepage } from "@/data/homepage";
 import { HeroFolder } from "./HeroFolder";
+import { HeroAtmosphere } from "./HeroAtmosphere";
+import "./HeroRefinements.css";
 export function HomeIntro() {
   const { paused, toggle } = useHomepageMotion();
   const roles = personal.positioning.split(" · ");
@@ -12,6 +14,7 @@ export function HomeIntro() {
       data-motion-paused={paused}
       aria-labelledby="home-title"
     >
+      <HeroAtmosphere />
       <HeroParticles />
       <div className="home-container hero-content">
         <h1 id="home-title">
@@ -38,8 +41,10 @@ export function HomeIntro() {
             strokeLinecap="round"
           />
         </svg>
-        <div className="hero-art-stage">
-          <HeroFolder />
+        <div className="hero-art-composition">
+          <div className="hero-art-stage">
+            <HeroFolder />
+          </div>
           <span className="hero-note" aria-hidden="true">
             {homepage.heroNote[0]}
             <br />
@@ -51,8 +56,10 @@ export function HomeIntro() {
           aria-pressed={paused}
           onClick={toggle}
         >
-          <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
-          {paused ? "Resume motion" : "Pause motion"}
+          <span className="home-motion-visible">
+            <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
+            {paused ? "Resume motion" : "Pause motion"}
+          </span>
         </button>
       </div>
     </section>

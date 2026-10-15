@@ -1,0 +1,87 @@
+.hero-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-atmosphere-art {
+  position: absolute;
+  top: 28%;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  overflow: visible;
+}
+.hero-art-composition {
+  position: relative;
+}
+.home-intro .hero-note {
+  display: block;
+  left: auto;
+  right: calc(50% + 282px);
+  top: 50%;
+  width: max-content;
+  max-width: 260px;
+  text-align: left;
+  white-space: nowrap;
+  font-size: clamp(16px, 1.45vw, 21px);
+}
+/* The label is half-size; the native button retains a full accessible target. */
+.home-intro .home-motion-control {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  gap: 0;
+  justify-content: center;
+  background: transparent;
+}
+.home-intro .home-motion-control > .home-motion-visible {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: #655e66;
+  background: #ffffff70;
+  transform: scale(0.5);
+  transform-origin: center;
+  pointer-events: none;
+}
+.home-motion-visible > span {
+  font-size: 13px;
+}
+.home-intro .home-motion-control:hover {
+  background: transparent;
+}
+.home-motion-control:hover .home-motion-visible {
+  background: #ffffffb0;
+  color: #272323;
+}
+@media (max-width: 1100px) {
+  .home-intro .hero-note {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 8px auto 12px;
+    text-align: center;
+    font-size: 17px;
+    transform: rotate(-4deg);
+  }
+}
+@media (max-width: 700px) {
+  .home-intro .hero-note {
+    font-size: 16px;
+  }
+  .home-intro .home-motion-control > .home-motion-visible {
+    font-size: 9px;
+    padding: 7px 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-atmosphere-art {
+    transform: none !important;
+  }
+}

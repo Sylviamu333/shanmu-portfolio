@@ -6,19 +6,15 @@ import gsap from "gsap";
 import { useHomepageMotion } from "./HomeMotion";
 import "./HeroFolder.css";
 
-const original = "/hero/hero-pink-folder.png";
-const layers = [
-  "background-repair",
-  "memoji-rest",
-  "memoji-blink",
-  "memoji-notice",
-].map((name) => `/hero/${name}.webp`);
+const original = "/hero/hero-foreground.webp";
+const resting = "/hero/hero-resting-foreground.webp";
+const layers = ["memoji-rest", "memoji-blink", "memoji-notice"].map(
+  (name) => `/hero/${name}.webp`,
+);
 // Coordinates are measured against the exact uploaded 1785 × 881 image.
 // The glass folder and tool cards are never used as facial-animation layers.
 const headOutline =
   "M938 169C963 162 1026 178 1061 196L1064 220C1082 242 1084 282 1074 320L1066 430L1008 432L971 433L952 418L905 405L886 399L891 345L890 307C889 269 902 240 920 215Z";
-const repairOutline =
-  "M934 163C970 154 1031 174 1069 190L1073 220C1092 248 1093 291 1084 330L1076 440L1005 440L962 443L944 426L898 414L875 409L879 343L878 298C880 258 897 230 912 209Z";
 const handOutline =
   "M862 250Q867 242 876 247Q883 250 882 263L881 283Q894 295 888 319L880 343L876 402L831 403L832 349Q823 328 826 304Q824 286 840 282Q847 270 859 281Z";
 const bulbOutline =
@@ -36,9 +32,9 @@ export function HeroFolder() {
 
   useEffect(() => {
     let cancelled = false;
-    // Decode state images before concealing any pixels of the original PNG.
+    // Decode transparent foregrounds and facial states before changing poses.
     void Promise.all(
-      layers.map(async (src) => {
+      [original, resting, ...layers].map(async (src) => {
         const image = new window.Image();
         image.src = src;
         await image.decode();
@@ -48,7 +44,7 @@ export function HeroFolder() {
         if (!cancelled) setReady(true);
       })
       .catch(() => {
-        // A failed state asset leaves the intact uploaded illustration visible.
+        // A failed state asset keeps the transparent original-pose fallback.
       });
     return () => {
       cancelled = true;
@@ -314,7 +310,7 @@ export function HeroFolder() {
       <div className="folder-depth">
         <div className="folder-float">
           <Image
-            src={original}
+            src={ready ? resting : original}
             alt="Pink glass folder filled with creative tools and SHAN MU’s blonde Memoji."
             width={1785}
             height={881}
@@ -329,11 +325,17 @@ export function HeroFolder() {
             aria-hidden="true"
           >
             <defs>
-              <clipPath id={`${id}-repair`}>
-                <path d={repairOutline} />
-                <path d={handOutline} />
-                <path d={bulbOutline} />
-              </clipPath>
+              <mask
+                id={`${id}-alpha`}
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="1785"
+                height="881"
+                style={{ maskType: "alpha" }}
+              >
+                {frame(original)}
+              </mask>
               <clipPath id={`${id}-head`}>
                 <path d={headOutline} />
               </clipPath>
@@ -351,12 +353,15 @@ export function HeroFolder() {
                 <stop offset="1" stopColor="#FFD45C" stopOpacity="0" />
               </radialGradient>
             </defs>
-            <g clipPath={clip("repair")}>{frame(layers[0])}</g>
             <g className="folder-character-breathe">
-              <g className="folder-character-head" clipPath={clip("head")}>
-                {frame(layers[1], "folder-face-rest")}
-                {frame(layers[2], "folder-face-blink")}
-                {frame(layers[3], "folder-face-notice")}
+              <g
+                className="folder-character-head"
+                clipPath={clip("head")}
+                mask={clip("alpha")}
+              >
+                {frame(layers[0], "folder-face-rest")}
+                {frame(layers[1], "folder-face-blink")}
+                {frame(layers[2], "folder-face-notice")}
                 {frame(original, "folder-face-happy")}
               </g>
             </g>

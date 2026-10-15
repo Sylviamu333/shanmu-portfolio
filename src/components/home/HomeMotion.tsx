@@ -55,17 +55,16 @@ export function HeroParticles() {
 
 export function HomeMotion({ children }: { children: ReactNode }) {
   const root = useRef<HTMLElement>(null);
-  const ribbon = useRef<SVGSVGElement>(null);
-  const ribbonPath = useRef<SVGPathElement>(null);
   const pausedRef = useRef(false);
   const [paused, setPaused] = useState(false);
   const controller = useRef<{ pause: (value: boolean) => void } | null>(null);
 
   useEffect(() => {
     const element = root.current;
-    const svg = ribbon.current;
-    const path = ribbonPath.current;
-    if (!element || !svg || !path) return;
+    const atmosphere = element?.querySelector<SVGSVGElement>(
+      ".hero-atmosphere-art",
+    );
+    if (!element || !atmosphere) return;
     const media = gsap.matchMedia();
     let disposed = false;
     let resizeFrame = 0;
@@ -75,38 +74,20 @@ export function HomeMotion({ children }: { children: ReactNode }) {
         const context = gsap.context(() => {
           const hero = element.querySelector<HTMLElement>(".home-intro")!;
           const work = element.querySelector<HTMLElement>(".home-work")!;
-          const footer = element.querySelector<HTMLElement>(".home-footer")!;
-          const measure = () => {
-            const w = element.clientWidth;
-            const h = element.offsetHeight;
-            const heroH = hero.offsetHeight;
-            const footerY = footer.offsetTop;
-            const middle = heroH + (footerY - heroH) * 0.52;
-            svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-            // An original continuous ribbon follows this site's shorter five-project layout.
-            path.setAttribute(
-              "d",
-              `M ${-w * 0.3} ${heroH * 0.3} C ${w * 0.15} ${heroH * 0.32}, ${w * 0.29} ${heroH * 0.42}, ${w * 0.45} ${heroH * 0.76} S ${w * 0.73} ${heroH * 1.02}, ${w * 0.96} ${heroH * 0.65} C ${w * 1.2} ${heroH * 0.4}, ${w * 1.35} ${heroH * 0.9}, ${w * 1.04} ${middle} S ${-w * 0.28} ${middle - 100}, ${-w * 0.08} ${middle + 230} C ${w * 0.1} ${middle + 340}, ${w * 1.05} ${footerY - 70}, ${w * 1.18} ${footerY + 90} S ${w * 0.26} ${footerY + 130}, ${-w * 0.2} ${footerY - 150}`,
-            );
-            path.style.strokeWidth = `${Math.min(225, w * 0.17)}px`;
-          };
-          measure();
           const draw = gsap.fromTo(
-            path,
-            { strokeDashoffset: 1 },
+            atmosphere,
+            { xPercent: -1, y: 0 },
             {
-              strokeDashoffset: 0,
-              // Normalized SVG dash distances must retain subpixel precision.
-              autoRound: false,
+              xPercent: 1,
+              y: 28,
               ease: "none",
-              duration: 1,
+              autoRound: false,
               scrollTrigger: {
-                trigger: element,
+                trigger: hero,
                 start: "top top",
-                end: "bottom bottom",
-                scrub: 0.18,
+                end: "bottom top",
+                scrub: 0.35,
                 invalidateOnRefresh: true,
-                onRefreshInit: measure,
               },
             },
           );
@@ -237,27 +218,6 @@ export function HomeMotion({ children }: { children: ReactNode }) {
         className="homepage"
         data-motion-paused={paused}
       >
-        <div className="home-scroll-ribbon" aria-hidden="true">
-          <svg ref={ribbon} viewBox="0 0 1440 3600" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="shan-scroll-pink" x2="0" y2="1">
-                <stop stopColor="#FFA3D6" />
-                <stop offset="1" stopColor="#F58ACB" />
-              </linearGradient>
-            </defs>
-            <path
-              ref={ribbonPath}
-              d="M-432 250C216 250 418 350 648 600S1050 850 1382 550C1730 330 1940 740 1500 1900S-400 1800-115 2300C150 2550 1500 2900 1700 3100S375 3300-288 2900"
-              fill="none"
-              stroke="url(#shan-scroll-pink)"
-              strokeWidth="225"
-              strokeLinecap="round"
-              pathLength="1"
-              strokeDasharray="1 1"
-              strokeDashoffset="1"
-            />
-          </svg>
-        </div>
         {children}
       </main>
       <ReferenceCursor paused={paused} />

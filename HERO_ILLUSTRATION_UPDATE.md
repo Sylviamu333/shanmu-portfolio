@@ -1,5 +1,7 @@
 # Pink folder hero and interactive Memoji
 
+The later background refinement supersedes the opaque PNG/repair rendering described below. See [HERO_SEAMLESS_BACKGROUND.md](HERO_SEAMLESS_BACKGROUND.md) for the transparent foregrounds, unified approved wash, and current verification.
+
 ## Scope and original image
 
 The final `source-assets/hero-pink-folder.png` was fetched from the existing repository's main branch at upload commit `bc195b5`. It is 1785 × 881, RGB, with an opaque white/pink background. `public/hero/hero-pink-folder.png` is a byte-for-byte copy, used directly by Next.js Image with its original aspect ratio, fixed intrinsic dimensions, and priority loading. It is not cropped, stretched, or replaced by a newly generated full composition.
