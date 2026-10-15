@@ -83,8 +83,11 @@ export function ReferenceCursor({ paused }: { paused: boolean }) {
       el.dataset.visible = "true";
       document.body.dataset.homeCursor = "true";
       const project = target.closest(".home-project-link");
-      text.textContent = project ? "Read case study" : "";
-      el.dataset.label = project ? "true" : "false";
+      // The Castle card has a badge in its empty corner, keeping the pointer
+      // label from obscuring its central logo. All other cards retain theirs.
+      const pointerLabel = project && project.getAttribute("data-case-study-badge") !== "fixed";
+      text.textContent = pointerLabel ? "Read case study" : "";
+      el.dataset.label = pointerLabel ? "true" : "false";
       text.style.left = x < 165 ? "7px" : "-149px";
       text.style.top = y < 30 ? "7px" : "-25px";
       const now = performance.now();

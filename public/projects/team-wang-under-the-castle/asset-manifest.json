@@ -171,5 +171,18 @@
     "method": "Visible unobstructed photo crop; not a full original photograph",
     "width": 495,
     "height": 334
+  },
+  {
+    "file": "logo.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      620,
+      500,
+      990,
+      700
+    ],
+    "method": "Original logo, black matte converted to transparency; composites to source RGB on black",
+    "width": 370,
+    "height": 200
   }
 ]

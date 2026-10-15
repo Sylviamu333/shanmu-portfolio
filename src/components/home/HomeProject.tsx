@@ -28,6 +28,7 @@ export function HomeProject({ project }: { project: Project }) {
       <Link
         href={`/work/${project.slug}/`}
         className="home-project-link"
+        data-case-study-badge={castle ? "fixed" : undefined}
         aria-label={`View ${project.title} case study`}
       >
         <div className={`home-project-art art-${project.slug}`}>
@@ -53,9 +54,13 @@ export function HomeProject({ project }: { project: Project }) {
               <Artwork image={project.cover} />
             </div>
           )}
-          <span className="home-view-project" aria-hidden="true">
-            <Arrow diagonal />
-          </span>
+          {castle ? (
+            <span className="castle-case-study" aria-hidden="true">Read case study ↗</span>
+          ) : (
+            <span className="home-view-project" aria-hidden="true">
+              <Arrow diagonal />
+            </span>
+          )}
         </div>
         <div className={`home-project-caption${earlyBirds ? " ebc-caption" : castle ? " castle-caption" : ""}`}>
           <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : project.title}</h3>

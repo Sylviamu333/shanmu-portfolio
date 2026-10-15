@@ -37,8 +37,8 @@ for page, assets in [
                          'image_block': number, 'method': 'Original embedded image',
                          'width': block['width'], 'height': block['height']})
 
-# Unobstructed rectangular crops for the case study only. These are intentionally
-# NOT used as floating layers: the full photo bounds are hidden in the collage.
+# Unobstructed rectangular crops, used in the case study and the recomposed
+# animated cover. These are partial photographs, not recovered full originals.
 cover = Image.open(ROOT / COVER)
 for name, rect in [
     ('event-pumpkin', (0, 454, 429, 861)),
@@ -53,5 +53,20 @@ for name, rect in [
     manifest.append({'file': name + '.png', 'source': COVER,
                      'crop': rect, 'method': 'Visible unobstructed photo crop; not a full original photograph',
                      'width': image.width, 'height': image.height})
+
+# Unpremultiply the source logo's black matte. On black, the transparent output
+# reproduces the source RGB to within rounding precision, including soft edges.
+rect = (620, 500, 990, 700)
+logo = cover.convert('RGBA').crop(rect)
+pixels = []
+for r, g, b, _ in logo.get_flattened_data():
+    alpha = max(r, g, b)
+    pixels.append((round(r * 255 / alpha), round(g * 255 / alpha),
+                   round(b * 255 / alpha), alpha) if alpha else (0, 0, 0, 0))
+logo.putdata(pixels)
+logo.save(OUT / 'logo.png')
+manifest.append({'file': 'logo.png', 'source': COVER, 'crop': rect,
+                 'method': 'Original logo, black matte converted to transparency; composites to source RGB on black',
+                 'width': logo.width, 'height': logo.height})
 (OUT / 'asset-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print(f'Exported {len(manifest)} original/cropped assets with provenance.')
