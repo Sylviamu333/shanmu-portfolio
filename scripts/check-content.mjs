@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
+import { homepageUX, uxDecisions } from "../src/data/eleven-oasis-case-study.ts";
 const root = resolve(import.meta.dirname, "..");
 const photoManifest = JSON.parse(readFileSync(resolve(root, "public/projects/visual-experiments/photography/manifest.json"), "utf8"));
 for (const series of photographySeries) {
@@ -20,6 +21,11 @@ for (const series of photographySeries) {
 }
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
+assert.equal(
+  hash(resolve(root, "source-assets/eleven-oasis-homepage-ux.png")),
+  hash(resolve(root, "public", homepageUX.src.slice(1))),
+  "Homepage UX presentation must remain byte-for-byte original",
+);
 assert.equal(
   new Set(projects.map((p) => p.slug)).size,
   projects.length,
@@ -94,6 +100,19 @@ assert.equal(
 assert(Math.abs((2.1 / 1.2 - 1) * 100 - 75) < 1e-9);
 assert(Math.abs((25 / 5 - 1) * 100 - 400) < 1e-9);
 if (process.argv.includes("--build")) {
+  const elevenPage = readFileSync(resolve(root, "out/work/eleven-oasis/index.html"), "utf8");
+  const elevenAnchors = ["homepage", "ux-design-details", "collection-pdp-design-system"];
+  let lastAnchor = -1;
+  for (const anchor of elevenAnchors) {
+    const position = elevenPage.indexOf(`id="${anchor}"`);
+    assert(position > lastAnchor, `Missing or out-of-order Eleven Oasis section: ${anchor}`);
+    lastAnchor = position;
+  }
+  assert(elevenPage.includes(homepageUX.src), "Missing authentic Homepage UX presentation");
+  for (const decision of uxDecisions)
+    assert(elevenPage.includes(`id="${decision.id}"`), `Missing UX decision: ${decision.id}`);
+  assert(!elevenPage.includes('class="results-panel"'), "Do not publish unverified conversion results");
+  assert(!elevenPage.includes('class="missing-screenshot"'), "Do not publish empty after-screen placeholders");
   for (const project of projects)
     assert(
       existsSync(resolve(root, "out/work", project.slug, "index.html")),

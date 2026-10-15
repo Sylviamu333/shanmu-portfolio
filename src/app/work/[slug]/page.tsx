@@ -8,6 +8,7 @@ import { Arrow } from "@/components/Arrow";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { PhotographyExperience } from "@/components/photography/PhotographyExperience";
 import { ElevenOasisIntroduction } from "@/components/ElevenOasisIntroduction";
+import { ElevenOasisCaseStudy } from "@/components/eleven-oasis/ElevenOasisCaseStudy";
 import "./castle.css";
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -65,7 +66,10 @@ export default async function ProjectPage({
           </span>
         </div>
         {slug === "eleven-oasis" ? (
-          <ElevenOasisIntroduction project={project} />
+          <>
+            <ElevenOasisIntroduction project={project} />
+            <ElevenOasisCaseStudy project={project} previous={previous} next={next} />
+          </>
         ) : (
           <>
             {project.overviewLabel && <p className="eyebrow">{project.overviewLabel}</p>}
@@ -101,39 +105,43 @@ export default async function ProjectPage({
             )}
           </>
         )}
-        <div className={`case-cover case-cover-${slug}`}>
-          <Image
-            src={project.cover.src}
-            alt={project.cover.alt}
-            width={project.cover.width}
-            height={project.cover.height}
-            sizes="100vw"
-            preload
-          />
-        </div>
-        <p className="asset-caption">
-          {project.cover.caption || project.title}
-        </p>
+        {slug !== "eleven-oasis" && <>
+          <div className={`case-cover case-cover-${slug}`}>
+            <Image
+              src={project.cover.src}
+              alt={project.cover.alt}
+              width={project.cover.width}
+              height={project.cover.height}
+              sizes="100vw"
+              preload
+            />
+          </div>
+          <p className="asset-caption">
+            {project.cover.caption || project.title}
+          </p>
+        </>}
       </section>
-      <nav className="case-index" aria-label="Case study sections">
-        {project.sections.map((section) => (
-          <a key={section.id} href={`#${section.id}`}>
-            {section.id.replaceAll("-", " ")}
-          </a>
-        ))}
-      </nav>
-      <div className="case-sections">
-        {project.sections.map((section, index) => (
-          <CaseStudySection
-            key={section.id}
-            section={section}
-            index={index}
-            project={project}
-          />
-        ))}
-      </div>
-      <ProjectNavigation next={next} previous={previous} />
-      <RelatedProjects current={project} projects={orderedProjects} />
+      {slug !== "eleven-oasis" && <>
+        <nav className="case-index" aria-label="Case study sections">
+          {project.sections.map((section) => (
+            <a key={section.id} href={`#${section.id}`}>
+              {section.id.replaceAll("-", " ")}
+            </a>
+          ))}
+        </nav>
+        <div className="case-sections">
+          {project.sections.map((section, index) => (
+            <CaseStudySection
+              key={section.id}
+              section={section}
+              index={index}
+              project={project}
+            />
+          ))}
+        </div>
+        <ProjectNavigation next={next} previous={previous} />
+        <RelatedProjects current={project} projects={orderedProjects} />
+      </>}
     </main>
   );
 }
