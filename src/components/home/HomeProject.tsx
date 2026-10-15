@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project, ProjectImage } from "@/data/projects";
 import { Arrow } from "@/components/Arrow";
+import { ElevenOasisPreview } from "./ElevenOasisPreview";
 function Artwork({ image }: { image: ProjectImage }) {
   return (
     <Image
@@ -14,6 +15,7 @@ function Artwork({ image }: { image: ProjectImage }) {
   );
 }
 export function HomeProject({ project }: { project: Project }) {
+  const elevenOasis = project.slug === "eleven-oasis";
   return (
     <article
       className={`home-project project-discipline-${project.discipline.toLowerCase()}`}
@@ -24,16 +26,8 @@ export function HomeProject({ project }: { project: Project }) {
         aria-label={`View ${project.title} case study`}
       >
         <div className={`home-project-art art-${project.slug}`}>
-          {project.slug === "eleven-oasis" ? (
-            <div className="home-site-window">
-              <div className="home-window-top">
-                <span>Eleven Oasis</span>
-                <span>Original website · before redesign</span>
-              </div>
-              <div className="home-site-screenshot">
-                <Artwork image={project.cover} />
-              </div>
-            </div>
+          {elevenOasis ? (
+            <ElevenOasisPreview />
           ) : project.slug === "pix-metaborg" ? (
             <div className="home-poster-pair">
               <Artwork image={project.cover} />
@@ -54,11 +48,19 @@ export function HomeProject({ project }: { project: Project }) {
             <Arrow diagonal />
           </span>
         </div>
-        <div className="home-project-caption">
-          <h3>{project.title}</h3>
+        <div
+          className={`home-project-caption${elevenOasis ? " eleven-oasis-caption" : ""}`}
+        >
+          <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : project.title}</h3>
           <p>
-            {project.category.split(" / ")[0].trim()}
-            {project.year && <span> · {project.year}</span>}
+            {elevenOasis ? (
+              "UI/UX DESIGN - 2026"
+            ) : (
+              <>
+                {project.category.split(" / ")[0].trim()}
+                {project.year && <span> · {project.year}</span>}
+              </>
+            )}
           </p>
         </div>
         <span className="home-project-description">{project.description}</span>
