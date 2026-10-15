@@ -2,12 +2,7 @@
 import { HeroParticles, useHomepageMotion } from "./HomeMotion";
 import { personal } from "@/data/personal";
 import { homepage } from "@/data/homepage";
-import {
-  Flower,
-  CursorSticker,
-  DeviceSticker,
-  SketchBook,
-} from "./Decorations";
+import { HeroFolder } from "./HeroFolder";
 export function HomeIntro() {
   const { paused, toggle } = useHomepageMotion();
   const roles = personal.positioning.split(" · ");
@@ -43,12 +38,9 @@ export function HomeIntro() {
             strokeLinecap="round"
           />
         </svg>
-        <div className="hero-art-stage" aria-hidden="true">
-          <SketchBook className="hero-sketchbook" />
-          <Flower className="hero-flower" />
-          <DeviceSticker className="hero-device" />
-          <CursorSticker className="hero-cursor" />
-          <span className="hero-note">
+        <div className="hero-art-stage">
+          <HeroFolder />
+          <span className="hero-note" aria-hidden="true">
             {homepage.heroNote[0]}
             <br />
             {homepage.heroNote[1]}
