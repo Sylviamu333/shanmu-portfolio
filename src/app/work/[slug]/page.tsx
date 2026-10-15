@@ -7,6 +7,7 @@ import { CaseStudySection, ProjectNavigation } from "@/components/CaseStudy";
 import { Contact } from "@/components/Contact";
 import { Arrow } from "@/components/Arrow";
 import { RelatedProjects } from "@/components/RelatedProjects";
+import { PhotographyExperience } from "@/components/photography/PhotographyExperience";
 import "./castle.css";
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -20,12 +21,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return { title: "Project not found" };
+  const description = slug === "visual-experiments"
+    ? "Photography and art direction: STAY FOR THE NIGHT, THE ORIGINAL 1, and Early Birds Club Drop 1."
+    : project.description;
   return {
     title: project.title,
-    description: project.description,
+    description,
     openGraph: {
       title: `${project.title} — SHAN MU`,
-      description: project.description,
+      description,
     },
   };
 }
@@ -37,6 +41,14 @@ export default async function ProjectPage({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
+  if (slug === "visual-experiments") {
+    return (
+      <main id="main" className="visual-photography-page">
+        <PhotographyExperience />
+        <Contact />
+      </main>
+    );
+  }
   const index = orderedProjects.findIndex((item) => item.slug === slug);
   const next = orderedProjects[(index + 1) % orderedProjects.length];
   const previous =

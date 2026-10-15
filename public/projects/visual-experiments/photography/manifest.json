@@ -1,0 +1,212 @@
+[
+  {
+    "file": "stay-01.webp",
+    "source": "粉蓝摄影原图.png",
+    "crop": [
+      17,
+      174,
+      295,
+      668
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "stay-02.webp",
+    "source": "粉蓝摄影原图.png",
+    "crop": [
+      325,
+      174,
+      603,
+      668
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "stay-03.webp",
+    "source": "粉蓝摄影原图.png",
+    "crop": [
+      633,
+      174,
+      911,
+      668
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "stay-04.webp",
+    "source": "粉蓝摄影原图.png",
+    "crop": [
+      936,
+      174,
+      1214,
+      668
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "stay-05.webp",
+    "source": "粉蓝摄影原图.png",
+    "crop": [
+      1238,
+      174,
+      1516,
+      668
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "stay-06.webp",
+    "source": "粉蓝摄影原图.png",
+    "crop": [
+      1541,
+      174,
+      1819,
+      668
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "original-01.webp",
+    "source": "黑白摄影原图.png",
+    "crop": [
+      23,
+      199,
+      301,
+      693
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "original-02.webp",
+    "source": "黑白摄影原图.png",
+    "crop": [
+      331,
+      199,
+      609,
+      693
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "original-03.webp",
+    "source": "黑白摄影原图.png",
+    "crop": [
+      639,
+      199,
+      917,
+      693
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "original-04.webp",
+    "source": "黑白摄影原图.png",
+    "crop": [
+      942,
+      199,
+      1220,
+      693
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "original-05.webp",
+    "source": "黑白摄影原图.png",
+    "crop": [
+      1244,
+      199,
+      1522,
+      693
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "original-06.webp",
+    "source": "黑白摄影原图.png",
+    "crop": [
+      1547,
+      199,
+      1825,
+      693
+    ],
+    "width": 278,
+    "height": 494
+  },
+  {
+    "file": "ebc-01.webp",
+    "source": "EBC Drop 1 Lookbook .pdf",
+    "page": 4,
+    "embedded_size": [
+      1389,
+      1855
+    ],
+    "width": 1278,
+    "height": 1707
+  },
+  {
+    "file": "ebc-02.webp",
+    "source": "EBC Drop 1 Lookbook .pdf",
+    "page": 6,
+    "embedded_size": [
+      1392,
+      1855
+    ],
+    "width": 1280,
+    "height": 1706
+  },
+  {
+    "file": "ebc-03.webp",
+    "source": "EBC Drop 1 Lookbook .pdf",
+    "page": 8,
+    "embedded_size": [
+      903,
+      1207
+    ],
+    "width": 903,
+    "height": 1207
+  },
+  {
+    "file": "ebc-04.webp",
+    "source": "EBC Drop 1 Lookbook .pdf",
+    "page": 14,
+    "embedded_size": [
+      1389,
+      1855
+    ],
+    "width": 1278,
+    "height": 1707
+  },
+  {
+    "file": "ebc-05.webp",
+    "source": "EBC Drop 1 Lookbook .pdf",
+    "page": 16,
+    "embedded_size": [
+      1390,
+      1853
+    ],
+    "width": 1280,
+    "height": 1706
+  },
+  {
+    "file": "ebc-06.webp",
+    "source": "EBC Drop 1 Lookbook .pdf",
+    "page": 17,
+    "embedded_size": [
+      1391,
+      1855
+    ],
+    "width": 1280,
+    "height": 1707
+  }
+]

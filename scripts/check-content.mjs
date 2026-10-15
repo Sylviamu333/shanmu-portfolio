@@ -3,7 +3,21 @@ import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
+import { photographySeries } from "../src/components/photography/photography.ts";
 const root = resolve(import.meta.dirname, "..");
+const photoManifest = JSON.parse(readFileSync(resolve(root, "public/projects/visual-experiments/photography/manifest.json"), "utf8"));
+for (const series of photographySeries) {
+  for (const photo of series.photos) {
+    const filename = photo.src.split("/").at(-1);
+    const entry = photoManifest.find(item => item.file === filename);
+    assert(entry, `Missing photography provenance: ${filename}`);
+    assert(existsSync(resolve(root, "public", photo.src.slice(1))), `Missing photograph: ${filename}`);
+    assert(existsSync(resolve(root, "source-assets", entry.source)), `Missing original: ${entry.source}`);
+    assert.equal(photo.width, entry.width, `Incorrect photograph width: ${filename}`);
+    assert.equal(photo.height, entry.height, `Incorrect photograph height: ${filename}`);
+    assert(photo.alt.trim(), `Missing photography alt text: ${filename}`);
+  }
+}
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
 assert.equal(
@@ -80,6 +94,12 @@ if (process.argv.includes("--build")) {
       existsSync(resolve(root, "out/work", project.slug, "index.html")),
       `Missing exported route: ${project.slug}`,
     );
+  const photographyPage = readFileSync(resolve(root, "out/work/visual-experiments/index.html"), "utf8");
+  for (const series of photographySeries) {
+    assert(photographyPage.includes(`id="${series.id}"`), `Missing photography series: ${series.id}`);
+    for (const photo of series.photos)
+      assert(photographyPage.includes(photo.src), `Missing rendered photograph: ${photo.src}`);
+  }
   const homepage = readFileSync(resolve(root, "out/index.html"), "utf8");
   for (const project of projects)
     assert(

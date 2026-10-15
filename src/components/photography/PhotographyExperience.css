@@ -1,0 +1,148 @@
+.photo-experience {
+  background: #fff;
+  color: #101010;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.photo-detail-intro { padding: 28px var(--gutter) 65px; }
+.photo-detail-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 65px;
+  font-size: 11px;
+}
+.photo-detail-intro > .eyebrow { color: #a45673; }
+.photo-detail-intro h1 {
+  font-size: clamp(64px, 12vw, 190px);
+  font-weight: 400;
+  line-height: .88;
+  letter-spacing: -.075em;
+  margin-block: 23px 45px;
+}
+.photo-detail-intro h1 > span { margin-left: 12vw; }
+.photo-detail-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #dcdcdc;
+}
+.photo-detail-summary > p { font-size: clamp(16px, 1.6vw, 23px); line-height: 1.4; }
+.photo-detail-summary nav { display: grid; gap: 11px; font-size: 10px; letter-spacing: .035em; }
+.photo-detail-summary nav a { min-height: 26px; display: flex; align-items: center; }
+.photo-stills-toggle { font-size: 11px; margin-top: 22px; padding: 9px 0; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.photo-series { position: relative; height: 320svh; scroll-margin-top: 0; }
+.photo-series-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 420px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #fff;
+  border-top: 1px solid #ededed;
+}
+.photo-series-label {
+  position: absolute;
+  z-index: 30;
+  top: 29px;
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 10px;
+  letter-spacing: .035em;
+  line-height: 1.5;
+}
+.photo-series-title {
+  position: absolute;
+  z-index: 1;
+  bottom: 11%;
+  left: 0;
+  font-size: clamp(100px, 17vw, 280px);
+  font-weight: 400;
+  line-height: .85;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+  will-change: transform;
+}
+.photo-tone-pink .photo-series-title { color: #161214; }
+.photo-tone-green .photo-series-title { color: #15251c; }
+.photo-frame {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  height: min(76svh, 105vw, 600px);
+  aspect-ratio: var(--photo-ratio);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3px 9px #0000000d;
+  will-change: transform;
+  background: #f7f7f7;
+}
+.photo-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.photo-frame figcaption {
+  position: absolute;
+  right: -18px;
+  bottom: 0;
+  font-size: 8px;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  color: #888;
+}
+.photo-scroll-cue { position: absolute; bottom: 25px; left: var(--gutter); font-size: 10px; color: #707070; }
+.photo-detail-outro {
+  min-height: 240px;
+  padding: 60px var(--gutter);
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.photo-detail-outro p { font-size: 11px; color: #747474; }
+.photo-detail-outro a { font-size: clamp(24px, 4vw, 60px); letter-spacing: -.04em; }
+
+.photo-stills-toggle, .photo-detail-outro a { display: inline-flex; align-items: center; gap: 10px; }
+.photo-stills-toggle svg { width: 12px; height: 12px; }
+.photo-detail-outro svg { width: .6em; height: .6em; }
+/* Full static editorial view is available to everyone and is the reduced-motion
+   default. Nothing remains hidden behind the front card in this layout. */
+.photo-experience[data-stills="true"] .photo-series { height: auto; }
+.photo-experience[data-stills="true"] .photo-series-stage { position: relative; height: auto; overflow: visible; padding: 45px var(--gutter) 70px; }
+.photo-experience[data-stills="true"] .photo-series-label { position: static; }
+.photo-experience[data-stills="true"] .photo-series-title { position: static; white-space: normal; font-size: clamp(50px, 10vw, 150px); margin-block: 42px; transform: none !important; opacity: 1 !important; }
+.photo-experience[data-stills="true"] .photo-frames { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 70px 6vw; }
+.photo-experience[data-stills="true"] .photo-frame { position: relative; left: auto; top: auto; width: 100%; height: auto; transform: none !important; will-change: auto; }
+.photo-experience[data-stills="true"] .photo-frame:nth-child(3n+2) { margin-top: 70px; }
+.photo-experience[data-stills="true"] .photo-scroll-cue { display: none; }
+@media (max-width: 700px) {
+  .photo-detail-topline { margin-bottom: 45px; }
+  .photo-detail-intro { padding-bottom: 40px; }
+  .photo-detail-intro h1 { font-size: clamp(40px, 12.8vw, 90px); letter-spacing: -.07em; }
+  .photo-detail-intro h1 > span { margin-left: 0; }
+  .photo-detail-summary { align-items: start; flex-direction: column; gap: 25px; }
+  .photo-series { height: 280svh; }
+  .photo-series-label { top: 22px; font-size: 9px; flex-direction: column; gap: 6px; }
+  .photo-series-title { bottom: 15%; font-size: 25vw; }
+  .photo-detail-outro { min-height: 180px; padding-block: 40px; flex-direction: column; align-items: start; gap: 18px; }
+  .photo-experience[data-stills="true"] .photo-frames { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 40px 28px; }
+  .photo-experience[data-stills="true"] .photo-frame:nth-child(3n+2) { margin-top: 0; }
+  .photo-experience[data-stills="true"] .photo-frame:nth-child(even) { margin-top: 45px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-series { height: auto; }
+  .photo-series-stage { position: relative; height: auto; overflow: visible; padding: 45px var(--gutter) 70px; }
+  .photo-series-label { position: static; }
+  .photo-series-title { position: static; white-space: normal; font-size: clamp(50px, 10vw, 150px); margin-block: 42px; transform: none !important; opacity: 1 !important; }
+  .photo-frames { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 70px 6vw; }
+  .photo-frame { position: relative; left: auto; top: auto; width: 100%; height: auto; transform: none !important; will-change: auto; }
+  .photo-frame:nth-child(3n+2) { margin-top: 70px; }
+  .photo-scroll-cue, .photo-stills-toggle { display: none; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 700px) {
+  .photo-frames { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px 28px; }
+  .photo-frame:nth-child(3n+2) { margin-top: 0; }
+  .photo-frame:nth-child(even) { margin-top: 45px; }
+}
