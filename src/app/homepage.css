@@ -58,9 +58,10 @@ body:has(.homepage) {
   font-weight: 650;
   line-height: 1;
 }
-.home-brand-flower {
+.home-brand-monogram {
   width: 37px;
   height: 37px;
+  flex-shrink: 0;
 }
 .home-header .navigation {
   gap: 0;
@@ -109,19 +110,19 @@ body:has(.homepage) {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 0.25em;
   margin-top: 23px;
   font-family: var(--folio-serif);
   font-weight: 300;
-  font-size: clamp(32px, 4.3vw, 60px);
+  font-size: clamp(25.6px, 2.944vw, 42.24px);
   line-height: 1.22;
   letter-spacing: -0.035em;
 }
 .hero-lime,
 .hero-blue {
   display: inline-block;
-  padding: 5px 15px 8px;
-  border-radius: 11px;
+  padding: 0.09em 0.25em 0.14em;
+  border-radius: 0.18em;
   white-space: nowrap;
 }
 .hero-lime {
@@ -245,19 +246,18 @@ body:has(.homepage) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
   border-bottom: 1px solid var(--folio-rule);
 }
 .home-work-heading h2 {
-  font: 300 42px/1.2 var(--folio-serif);
+  font: 300 25.2px/1.2 var(--folio-serif);
   letter-spacing: 0;
 }
-.home-work-heading > svg {
-  height: 39px;
-  width: 39px;
-}
-.home-work-heading > svg:first-child {
-  transform: rotate(-12deg);
+.home-work-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 23.4px;
+  line-height: 1;
+  flex-shrink: 0;
 }
 .home-project-grid {
   display: grid;
@@ -663,7 +663,7 @@ body:has(.homepage) {
     padding-top: 74px;
   }
   .home-role {
-    font-size: clamp(32px, 4.3vw, 48px);
+    font-size: 32px;
   }
   .home-intro h1 {
     font-size: 50px;
@@ -750,7 +750,7 @@ body:has(.homepage) {
     min-height: 130px;
   }
   .home-work-heading h2 {
-    font-size: 36px;
+    font-size: 21.6px;
   }
   .home-footer-inner {
     gap: 25px;
@@ -787,7 +787,7 @@ body:has(.homepage) {
     position: sticky;
     gap: 10px;
   }
-  .home-brand-flower {
+  .home-brand-monogram {
     width: 32px;
     height: 32px;
   }
@@ -841,8 +841,8 @@ body:has(.homepage) {
     letter-spacing: -0.025em;
   }
   .home-role {
-    font-size: clamp(26px, 7.5vw, 37px);
-    gap: 9px;
+    font-size: clamp(18.56px, 4.992vw, 28.16px);
+    gap: 0.3em;
     margin-top: 17px;
     flex-direction: column;
     line-height: 1.25;
@@ -850,8 +850,8 @@ body:has(.homepage) {
   }
   .hero-lime,
   .hero-blue {
-    padding: 4px 10px 6px;
-    border-radius: 7px;
+    padding: 0.14em 0.34em 0.2em;
+    border-radius: 0.24em;
   }
   .hero-role-divider {
     display: none;
@@ -913,14 +913,13 @@ body:has(.homepage) {
   }
   .home-work-heading {
     min-height: 112px;
-    gap: 19px;
+    gap: 11.4px;
   }
   .home-work-heading h2 {
-    font-size: 32px;
+    font-size: 19.2px;
   }
-  .home-work-heading > svg {
-    width: 29px;
-    height: 29px;
+  .home-work-emoji {
+    font-size: 17.4px;
   }
   .home-project-grid {
     padding: 14px 0;

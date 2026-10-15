@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
-import { Flower } from "./home/Decorations";
 export function Header() {
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -24,7 +23,15 @@ export function Header() {
       >
         {home ? (
           <>
-            <Flower className="home-brand-flower" />
+            <svg
+              className="home-brand-monogram"
+              viewBox="284 384 684 560"
+              aria-hidden="true"
+              focusable="false"
+            >
+              {/* Crop only the transparent padding; retain the uploaded pixels. */}
+              <image href="/brand/s-monogram.png" width="1254" height="1254" />
+            </svg>
             <span className="home-brand-name">SHAN MU</span>
           </>
         ) : (

@@ -7,7 +7,7 @@ import { HeroAtmosphere } from "./HeroAtmosphere";
 import "./HeroRefinements.css";
 export function HomeIntro() {
   const { paused, toggle } = useHomepageMotion();
-  const roles = personal.positioning.split(" · ");
+  const roles = homepage.heroRoles;
   return (
     <section
       className="home-intro"
@@ -20,7 +20,7 @@ export function HomeIntro() {
         <h1 id="home-title">
           {homepage.greeting} <span>{personal.name}</span>
         </h1>
-        <p className="home-role" aria-label={personal.positioning}>
+        <p className="home-role" aria-label={roles.join(" · ")}>
           <span className="hero-lime">{roles[0]}</span>
           <span className="hero-role-divider" aria-hidden="true">
             ·
