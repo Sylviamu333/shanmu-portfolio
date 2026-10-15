@@ -10,7 +10,7 @@ The approved `source-assets/pink-gradient-reference.svg` was read and rendered b
 - Stroke: `#F48CCB`, opacity `.65`, width `43`
 - Gaussian blur: `stdDeviation="12"`, with the supplied filter bounds
 
-`HeroAtmosphere.tsx` uses those exact definitions. Its viewBox adds transparent padding so the wash can move without clipping its feathering. This is the sole Hero atmospheric background. The obsolete page-wide ribbon is removed; no blur is applied to the folder or character to conceal seams. ScrollTrigger now moves the wash subtly in both directions while preserving pause/resume and reduced-motion behavior.
+`HeroAtmosphere.tsx` uses those exact definitions. Its viewBox adds transparent padding around the feathering. This is the sole Hero atmospheric background. The obsolete page-wide ribbon is removed; no blur is applied to the folder or character to conceal seams. The initial replacement in `51a2cef` substituted subtle translation for path drawing; the subsequent restoration of progressive scroll drawing is documented in [HERO_BRUSH_REVEAL.md](HERO_BRUSH_REVEAL.md).
 
 ## Foreground extraction
 
@@ -40,7 +40,7 @@ Its serif styling and color are retained. It sits to the left of the illustratio
 
 The visible Pause/Resume label, icon, padding and backdrop are scaled to exactly 50% of their previous width and height. The surrounding native button retains its accessible name, pressed state, keyboard behavior, and a minimum 44 px interaction height; measured targets are approximately 91 × 44 px on mobile and 110 × 44 px on desktop. Focus styling remains on the full target.
 
-## Verification
+## Verification of the seamless-background update (`51a2cef`)
 
 - TypeScript, lint, production build, project/content checks, and whitespace checks pass.
 - Browser verification covers 320, 390, 768, 1440 and 1920 px, each at six scroll positions through the Hero and into Work: 30 responsive scroll positions. Exact SVG attributes, one background, correct note, non-overlap, 0.5 width/height ratios, touch-target dimensions, no horizontal overflow, scroll reversal, pause/resume, and reduced motion pass.

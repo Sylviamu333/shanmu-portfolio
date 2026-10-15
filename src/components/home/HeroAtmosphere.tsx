@@ -18,7 +18,10 @@ export function HeroAtmosphere() {
         {/* Exact path, color, alpha, width and softness from the approved SVG.
             Only the canvas is enlarged to leave transparent space around it. */}
         <path
+          className="hero-wash-stroke"
           d="M-25 28 C55 -2 90 85 175 65 S285 17 365 67"
+          pathLength="1"
+          strokeDasharray="1 1"
           fill="none"
           stroke="#F48CCB"
           strokeOpacity=".65"

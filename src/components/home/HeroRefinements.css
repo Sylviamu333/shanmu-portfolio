@@ -12,6 +12,13 @@
   height: 85%;
   overflow: visible;
 }
+@media (prefers-reduced-motion: no-preference) {
+  /* Match the first scripted frame without flashing the complete wash while
+     fonts load. With reduced motion the approved full wash stays static. */
+  .hero-wash-stroke {
+    stroke-dashoffset: 0.94;
+  }
+}
 .hero-art-composition {
   position: relative;
 }

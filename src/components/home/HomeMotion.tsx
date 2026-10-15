@@ -61,10 +61,10 @@ export function HomeMotion({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const element = root.current;
-    const atmosphere = element?.querySelector<SVGSVGElement>(
-      ".hero-atmosphere-art",
+    const wash = element?.querySelector<SVGPathElement>(
+      ".hero-wash-stroke",
     );
-    if (!element || !atmosphere) return;
+    if (!element || !wash) return;
     const media = gsap.matchMedia();
     let disposed = false;
     let resizeFrame = 0;
@@ -75,18 +75,21 @@ export function HomeMotion({ children }: { children: ReactNode }) {
           const hero = element.querySelector<HTMLElement>(".home-intro")!;
           const work = element.querySelector<HTMLElement>(".home-work")!;
           const draw = gsap.fromTo(
-            atmosphere,
-            { xPercent: -1, y: 0 },
+            wash,
+            { strokeDashoffset: 0.94, autoRound: false },
             {
-              xPercent: 1,
-              y: 28,
+              // Draw before the approved Gaussian filter is applied: the
+              // advancing brush tip stays as soft as the rest of the wash.
+              strokeDashoffset: 0,
               ease: "none",
               autoRound: false,
               scrollTrigger: {
                 trigger: hero,
                 start: "top top",
-                end: "bottom top",
-                scrub: 0.35,
+                // The old ribbon continued to the footer. This single Hero
+                // wash completes its sweep before the illustration leaves.
+                end: () => `+=${hero.offsetHeight * 0.6}`,
+                scrub: 0.18,
                 invalidateOnRefresh: true,
               },
             },
@@ -171,7 +174,11 @@ export function HomeMotion({ children }: { children: ReactNode }) {
               if (value) {
                 draw.scrollTrigger?.disable(false);
                 for (const tween of revealTweens) tween.progress(1);
-              } else draw.scrollTrigger?.enable(false, false);
+              } else {
+                // A resize while paused skips disabled triggers. Refresh their
+                // range on resume while keeping the frozen drawing progress.
+                draw.scrollTrigger?.enable(false);
+              }
             },
           };
           controller.current.pause(pausedRef.current);
