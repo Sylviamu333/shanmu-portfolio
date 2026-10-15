@@ -1,7 +1,7 @@
 import { personal } from "@/data/personal";
 import { homepage } from "@/data/homepage";
 import { FooterFolder } from "./FooterFolder";
-export function HomeFooter() {
+export function HomeFooter({ workHref = "#work" }: { workHref?: string }) {
   const socialLinks = [
     { label: "LinkedIn", url: personal.linkedin },
     { label: "Behance", url: personal.behance },
@@ -14,7 +14,7 @@ export function HomeFooter() {
         <div className="home-footer-inner">
           <a
             className="home-footer-art"
-            href="#work"
+            href={workHref}
             aria-label="View selected work"
             data-home-reveal="0"
           >
@@ -22,7 +22,7 @@ export function HomeFooter() {
           </a>
           <div className="home-footer-links" data-home-reveal="0.09">
             <nav aria-label="Footer navigation">
-              <a href="#work">Work</a>
+              <a href={workHref}>Work</a>
               <a href="/about/">About</a>
               {personal.email ? (
                 <a href={`mailto:${personal.email}`}>Say hello ↗</a>

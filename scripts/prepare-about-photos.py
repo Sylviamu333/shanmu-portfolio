@@ -8,7 +8,7 @@ from PIL import Image, ImageOps
 root = Path(__file__).resolve().parents[1]
 out = root / 'public/about'
 out.mkdir(parents=True, exist_ok=True)
-for name in ['about-portrait', 'about-life-01', 'about-life-02']:
+for name in ['about-portrait', *[f'about-life-{i:02}' for i in range(1, 6)]]:
     source = root / 'source-assets' / f'{name}.jpg'
     shutil.copyfile(source, out / f'{name}.jpg')
     image = ImageOps.exif_transpose(Image.open(source)).convert('RGB')
@@ -16,3 +16,9 @@ for name in ['about-portrait', 'about-life-01', 'about-life-02']:
         resized = image.resize((width, round(image.height * width / image.width)), Image.Resampling.LANCZOS)
         resized.save(out / f'{name}-{width}.webp', quality=90, method=6)
     print(name, image.size)
+
+illustration = root / 'source-assets/about-shan-illustration.png'
+shutil.copyfile(illustration, out / illustration.name)
+image = Image.open(illustration).convert('RGB')
+image.save(out / 'about-shan-illustration.webp', lossless=True, method=6)
+print('Full uncropped illustration', image.size)

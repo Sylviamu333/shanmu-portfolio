@@ -7,6 +7,7 @@ export function Header() {
   const menuButton = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const home = pathname === "/";
+  const portfolioHeader = home || pathname === "/about" || pathname === "/about/";
   const links = [
     { label: "Home", href: "/" },
     { label: "Work", href: "/#work" },
@@ -14,14 +15,14 @@ export function Header() {
     { label: "Contact", href: "/#contact" },
   ];
   return (
-    <header className={home ? "site-header home-header" : "site-header"}>
+    <header className={portfolioHeader ? "site-header home-header" : "site-header"}>
       <Link
         href="/"
         className="wordmark"
         aria-label="SHAN MU home"
         onClick={() => setOpen(false)}
       >
-        {home ? (
+        {portfolioHeader ? (
           <svg
             className="home-brand-monogram"
             viewBox="284 384 684 560"
@@ -38,7 +39,7 @@ export function Header() {
           </>
         )}
       </Link>
-      {!home && (
+      {!portfolioHeader && (
         <span className="header-caption">Independent design practice</span>
       )}
       <button
@@ -68,7 +69,7 @@ export function Header() {
         }}
       >
         {links
-          .filter((link) => !home || link.label !== "Home")
+          .filter((link) => !portfolioHeader || link.label !== "Home")
           .map((link) => (
             <Link
               key={link.label}

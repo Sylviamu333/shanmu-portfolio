@@ -6,23 +6,33 @@ import { motion, useReducedMotion } from "motion/react";
 import "./AboutPhotoCollage.css";
 
 const photos = [
-  { id: "about-portrait", label: "Portrait", alt: "Shan standing at a city crossing at night", width: 1080, height: 1440 },
-  { id: "about-life-01", label: "In the sunlight", alt: "Shan standing beside stone columns in warm sunlight", width: 1536, height: 2048 },
-  { id: "about-life-02", label: "A day exploring", alt: "Shan in front of a classical stone temple under a blue sky", width: 2304, height: 4096 },
+  { id: "about-portrait", label: "Portrait", alt: "Shan at a city crossing at night", width: 1080, height: 1440, position: "50% 55%" },
+  { id: "about-life-01", label: "In the sunlight", alt: "Shan standing beside stone columns in sunlight", width: 1536, height: 2048, position: "50% 44%" },
+  { id: "about-life-02", label: "A day exploring", alt: "Shan in front of a classical stone temple under a blue sky", width: 2304, height: 4096, position: "50% 57%" },
+  { id: "about-life-04", label: "With Team Wang Design", alt: "A group photograph outside a TEAM WANG DESIGN venue", width: 1620, height: 1080, position: "50% 50%" },
+  { id: "about-life-03", label: "A moment in the city", alt: "Two people walking past a brick wall as pigeons take flight", width: 1920, height: 1080, position: "50% 52%" },
+  { id: "about-life-05", label: "Together on the green", alt: "A group photograph on a golf course beside golf bags and event signage", width: 1290, height: 834, position: "50% 50%" },
 ];
-const sizes = "(max-width: 700px) 75vw, (max-width: 1200px) 42vw, 462px";
+// Fixed rectangles reproduce the reference's large / pair / large / pair mosaic.
+// Animating only two absolute frame bounds leaves every surrounding row intact.
+const slots = [
+  { left: "0%", top: "0%", width: "100%", height: "28.45%" },
+  { left: "0%", top: "30.1%", width: "57%", height: "20.8%" },
+  { left: "60%", top: "30.1%", width: "40%", height: "20.8%" },
+  { left: "0%", top: "53.3%", width: "100%", height: "24.3%" },
+  { left: "0%", top: "79.5%", width: "46%", height: "20.5%" },
+  { left: "49%", top: "79.5%", width: "51%", height: "20.5%" },
+];
+const sizes = "(max-width: 1100px) calc(100vw - 100px), (max-width: 1920px) 44vw, 744px";
 
 export function AboutPhotoCollage() {
-  // Photo elements keep their identity and DOM order; only their slot changes.
-  // Motion's layout projection animates the measured before/after rectangles.
   const [order, setOrder] = useState(photos.map(photo => photo.id));
   const [announcement, setAnnouncement] = useState("");
   const reduced = useReducedMotion();
   const hint = useId();
 
   function feature(id: string) {
-    const slot = order.indexOf(id);
-    if (slot === 0) return;
+    if (order[0] === id) return;
     setOrder(current => {
       const next = [...current];
       const position = next.indexOf(id);
@@ -33,37 +43,26 @@ export function AboutPhotoCollage() {
   }
 
   return (
-    <section className="about-photos" aria-label="Personal photo collage">
-      <div className="about-photos-heading">
-        <span className="eyebrow">A few moments</span>
-        <p id={hint}>Select a smaller photo to bring it into focus.</p>
-      </div>
+    <section className="about-photos" aria-label="Personal photo mosaic">
+      <p className="about-photo-status" id={hint}>Select a photograph to swap it with the featured photo.</p>
       <div className="about-photo-stage">
-        {photos.map((photo, index) => {
+        {photos.map(photo => {
           const slot = order.indexOf(photo.id);
-          const featured = slot === 0;
           const widths = [480, 960, Math.min(1600, photo.width)];
           return (
-            <motion.button
-              key={photo.id}
-              type="button"
-              layout={reduced !== true}
-              transition={{ layout: { duration: reduced ? 0 : .56, ease: [.22, 1, .36, 1] } }}
-              className="about-photo"
-              data-photo={photo.id}
-              data-slot={slot}
-              aria-pressed={featured}
-              aria-label={`${featured ? "Featured photo" : "Feature photo"}: ${photo.label}`}
-              aria-describedby={hint}
-              onClick={() => feature(photo.id)}
-            >
+            <motion.button key={photo.id} type="button" initial={false}
+              animate={slots[slot]}
+              transition={{ duration: reduced ? 0 : .56, ease: [.22, 1, .36, 1] }}
+              className="about-photo" data-photo={photo.id} data-slot={slot}
+              aria-pressed={slot === 0}
+              aria-label={`${slot === 0 ? "Featured photo" : "Feature photo"}: ${photo.label}`}
+              aria-describedby={hint} onClick={() => feature(photo.id)}>
               <span className="about-photo-image">
                 <picture>
                   <source type="image/webp" srcSet={widths.map(width => `/about/${photo.id}-${width}.webp ${width}w`).join(", ")} sizes={sizes} />
-                  <Image src={`/about/${photo.id}.jpg`} alt={photo.alt} width={photo.width} height={photo.height} sizes={sizes} loading="eager" />
+                  <Image src={`/about/${photo.id}.jpg`} alt={photo.alt} width={photo.width} height={photo.height} sizes={sizes} loading="eager" style={{ objectPosition: photo.position }} />
                 </picture>
               </span>
-              <span className="about-photo-number" aria-hidden="true">0{index + 1}</span>
             </motion.button>
           );
         })}
