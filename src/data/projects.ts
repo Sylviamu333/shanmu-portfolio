@@ -48,6 +48,7 @@ export type Project = {
   resultsSummary?: string;
   coverStatement?: string;
   coverContext?: string;
+  overviewLabel?: string;
 };
 const img = (
   slug: string,
@@ -317,6 +318,101 @@ const visualGallery = [
     "Collage, sketching & painting · portfolio page 6",
   ),
 ];
+const asset = (
+  name: string,
+  alt: string,
+  width: number,
+  height: number,
+  caption: string,
+): ProjectImage => ({
+  src: `/projects/team-wang-under-the-castle/${name}.png`,
+  alt,
+  width,
+  height,
+  caption,
+});
+
+const cover = asset("cover", "Under the Castle event collage: green pumpkin installation, entrance crowds, TEAM WANG DESIGN signage and medieval exhibition interiors", 1600, 1200, "Original supplied event collage · 2023");
+const keyVisuals = [
+  asset("key-visual-castle", "Neon green castle illustration with the pumpkin IP and campaign typography", 397, 497, "Castle key visual · original portfolio, page 3"),
+  asset("key-visual-entrance", "Illustrated castle entrance framing the green pumpkin IP", 268, 335, "Entrance key visual · original portfolio, page 3"),
+  asset("key-visual-moon", "Castle silhouette against a neon green moon", 279, 496, "Moon and castle key visual · original portfolio, page 3"),
+  asset("key-visual-pumpkin", "Neon green pumpkin face with TEAM WANG DESIGN campaign lockup", 279, 496, "Pumpkin key visual · original portfolio, page 3"),
+];
+const posters = [
+  asset("poster-vintage-01", "Vintage-style Under the Castle poster with a group of illustrated pumpkin characters", 298, 496, "Vintage poster variation 01 · original portfolio, page 3"),
+  asset("poster-vintage-02", "Vintage-style poster featuring the Pumpkie pumpkin character", 298, 496, "Vintage poster variation 02 · original portfolio, page 3"),
+  asset("poster-vintage-03", "Vintage-style Hidden Gem poster with an illustrated chest", 298, 496, "Vintage poster variation 03 · original portfolio, page 3"),
+  asset("poster-vintage-04", "Vintage-style Spookie poster with an illustrated pumpkin character", 298, 496, "Vintage poster variation 04 · original portfolio, page 3"),
+];
+const applications = [
+  asset("merchandise", "Original Halloween merchandise board: pumpkin plush toys, hot-water bags, towels, notebook, mug, keychains, stickers and apparel", 1594, 561, "Merchandise application board · original portfolio, page 8"),
+  asset("packaging", "Original black and green campaign packaging: tote bag, shipping box, product boxes, stickers, tags and labels", 1410, 679, "Packaging application board · original portfolio, page 9"),
+];
+const events = [
+  asset("event-pumpkin", "Giant illuminated green pumpkin installation beneath TEAM WANG DESIGN signage", 429, 407, "Pumpkin installation · crop from the supplied event collage"),
+  asset("event-entrance", "Under the Castle entrance arch and visitors at night", 370, 453, "Entrance and visitors · crop from the supplied event collage"),
+  asset("event-crowd", "Visitors gathering around the glowing pumpkin installation", 498, 318, "Event atmosphere · crop from the supplied event collage"),
+  asset("event-interior", "Stone castle exhibition interior with glowing green TEAM WANG DESIGN signage", 597, 316, "Exhibition environment · crop from the supplied event collage"),
+  asset("event-merchandise", "Campaign apparel displayed in the stone exhibition environment", 464, 367, "Merchandise display · crop from the supplied event collage"),
+  asset("event-display", "Campaign accessories arranged beneath a stone exhibition arch", 495, 334, "Product display · crop from the supplied event collage"),
+];
+
+const teamWangProject: Project = {
+  slug: "team-wang-under-the-castle",
+  title: "TEAM WANG DESIGN — UNDER THE CASTLE",
+  subtitle: "A Halloween world in black and neon green.",
+  overviewLabel: "01 / Campaign Overview",
+  category: "Campaign Design",
+  discipline: "Graphic",
+  year: "2023",
+  order: 3,
+  accent: "#00AB00",
+  description: "For TEAM WANG DESIGN's 2023 Halloween campaign, Under the Castle, I developed Halloween-themed illustration key visuals centered around the brand's pumpkin IP. The visual direction combines eerie castle imagery with a distinctive black-and-neon-green palette, extending across online and offline campaign materials.",
+  cover,
+  gallery: [...keyVisuals, ...posters, ...applications, ...events],
+  facts: [
+    { label: "Campaign", value: "Under the Castle" },
+    { label: "Category", value: "Campaign Design" },
+    { label: "Year", value: "2023" },
+    { label: "Focus", value: "Halloween illustration key visuals" },
+  ],
+  sections: [
+    {
+      id: "main-key-visual",
+      title: "Main Key Visual",
+      type: "gallery",
+      layout: "pair",
+      body: ["Pumpkin characters, castle-inspired compositions and expressive typography establish the campaign's black-and-neon-green visual language."],
+      images: keyVisuals,
+    },
+    {
+      id: "campaign-posters",
+      title: "Campaign Posters",
+      type: "gallery",
+      layout: "pair",
+      body: ["The original vintage-inspired poster variations explore the campaign's illustrated characters and motifs."],
+      images: posters,
+    },
+    {
+      id: "merchandise-packaging",
+      title: "Merchandise & Packaging",
+      type: "gallery",
+      layout: "full",
+      body: ["The campaign's pumpkin motifs and green-and-black palette extend across the supplied merchandise and packaging applications."],
+      images: applications,
+    },
+    {
+      id: "offline-campaign-experience",
+      title: "Offline Campaign Experience",
+      type: "gallery",
+      layout: "pair",
+      body: ["The event imagery documents the giant pumpkin installation, exterior signage, entrance, exhibition environment, merchandise displays and visitors."],
+      images: events,
+    },
+  ],
+};
+
 export const projects: Project[] = [
   {
     slug: "eleven-oasis",
@@ -522,6 +618,7 @@ export const projects: Project[] = [
       },
     ],
   },
+  teamWangProject,
   {
     slug: "covers",
     title: "Covers",
@@ -529,7 +626,7 @@ export const projects: Project[] = [
     category: "Branding / Visual Identity / Packaging",
     discipline: "Brand",
     year: "2022",
-    order: 3,
+    order: 4,
     accent: "#9c967d",
     cover: coversGallery[2],
     gallery: coversGallery,
@@ -588,7 +685,7 @@ export const projects: Project[] = [
     category: "Graphic Design / Art Direction",
     discipline: "Graphic",
     year: null,
-    order: 4,
+    order: 5,
     accent: "#a62c28",
     cover: pixGallery[0],
     gallery: pixGallery,
@@ -633,7 +730,7 @@ export const projects: Project[] = [
     category: "Graphic Design / Visual Exploration",
     discipline: "Graphic",
     year: null,
-    order: 5,
+    order: 6,
     accent: "#63cad7",
     cover: visualGallery[2],
     gallery: visualGallery,

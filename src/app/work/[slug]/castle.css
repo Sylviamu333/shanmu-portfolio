@@ -1,0 +1,7 @@
+.project-team-wang-under-the-castle .case-cover {
+  max-height: none;
+  background: #000;
+}
+.project-team-wang-under-the-castle .case-cover img {
+  width: min(100%, 1133px);
+}

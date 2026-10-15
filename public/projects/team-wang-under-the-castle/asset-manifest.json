@@ -1,0 +1,175 @@
+[
+  {
+    "file": "cover.png",
+    "source": "source-assets/under the castle-cover.png",
+    "method": "Unchanged original PNG"
+  },
+  {
+    "file": "key-visual-castle.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 4,
+    "method": "Original embedded image",
+    "width": 397,
+    "height": 497
+  },
+  {
+    "file": "key-visual-entrance.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 7,
+    "method": "Original embedded image",
+    "width": 268,
+    "height": 335
+  },
+  {
+    "file": "key-visual-moon.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 11,
+    "method": "Original embedded image",
+    "width": 279,
+    "height": 496
+  },
+  {
+    "file": "key-visual-pumpkin.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 12,
+    "method": "Original embedded image",
+    "width": 279,
+    "height": 496
+  },
+  {
+    "file": "poster-vintage-01.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 16,
+    "method": "Original embedded image",
+    "width": 298,
+    "height": 496
+  },
+  {
+    "file": "poster-vintage-02.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 13,
+    "method": "Original embedded image",
+    "width": 298,
+    "height": 496
+  },
+  {
+    "file": "poster-vintage-03.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 15,
+    "method": "Original embedded image",
+    "width": 298,
+    "height": 496
+  },
+  {
+    "file": "poster-vintage-04.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 3,
+    "image_block": 14,
+    "method": "Original embedded image",
+    "width": 298,
+    "height": 496
+  },
+  {
+    "file": "merchandise.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 8,
+    "image_block": 2,
+    "method": "Original embedded image",
+    "width": 1594,
+    "height": 561
+  },
+  {
+    "file": "packaging.png",
+    "source": "Portfolio- SHAN MU.pdf",
+    "page": 9,
+    "image_block": 1,
+    "method": "Original embedded image",
+    "width": 1410,
+    "height": 679
+  },
+  {
+    "file": "event-pumpkin.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      0,
+      454,
+      429,
+      861
+    ],
+    "method": "Visible unobstructed photo crop; not a full original photograph",
+    "width": 429,
+    "height": 407
+  },
+  {
+    "file": "event-entrance.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      430,
+      0,
+      800,
+      453
+    ],
+    "method": "Visible unobstructed photo crop; not a full original photograph",
+    "width": 370,
+    "height": 453
+  },
+  {
+    "file": "event-crowd.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      801,
+      112,
+      1299,
+      430
+    ],
+    "method": "Visible unobstructed photo crop; not a full original photograph",
+    "width": 498,
+    "height": 318
+  },
+  {
+    "file": "event-interior.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      1001,
+      432,
+      1598,
+      748
+    ],
+    "method": "Visible unobstructed photo crop; not a full original photograph",
+    "width": 597,
+    "height": 316
+  },
+  {
+    "file": "event-merchandise.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      919,
+      751,
+      1383,
+      1118
+    ],
+    "method": "Visible unobstructed photo crop; not a full original photograph",
+    "width": 464,
+    "height": 367
+  },
+  {
+    "file": "event-display.png",
+    "source": "source-assets/under the castle-cover.png",
+    "crop": [
+      422,
+      864,
+      917,
+      1198
+    ],
+    "method": "Visible unobstructed photo crop; not a full original photograph",
+    "width": 495,
+    "height": 334
+  }
+]

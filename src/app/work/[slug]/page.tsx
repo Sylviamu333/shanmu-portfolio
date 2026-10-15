@@ -7,6 +7,7 @@ import { CaseStudySection, ProjectNavigation } from "@/components/CaseStudy";
 import { Contact } from "@/components/Contact";
 import { Arrow } from "@/components/Arrow";
 import { RelatedProjects } from "@/components/RelatedProjects";
+import "./castle.css";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return orderedProjects.map((project) => ({ slug: project.slug }));
@@ -52,6 +53,7 @@ export default async function ProjectPage({
             {String(orderedProjects.length).padStart(2, "0")}
           </span>
         </div>
+        {project.overviewLabel && <p className="eyebrow">{project.overviewLabel}</p>}
         <p className="eyebrow">
           {project.category}
           {project.year ? ` · ${project.year}` : ""}

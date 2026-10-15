@@ -4,6 +4,7 @@ import type { Project, ProjectImage } from "@/data/projects";
 import { Arrow } from "@/components/Arrow";
 import { ElevenOasisPreview } from "./ElevenOasisPreview";
 import { EarlyBirdsPreview } from "./EarlyBirdsPreview";
+import { CastlePreview } from "./CastlePreview";
 function Artwork({ image }: { image: ProjectImage }) {
   return (
     <Image
@@ -18,6 +19,7 @@ function Artwork({ image }: { image: ProjectImage }) {
 export function HomeProject({ project }: { project: Project }) {
   const elevenOasis = project.slug === "eleven-oasis";
   const earlyBirds = project.slug === "early-birds-club";
+  const castle = project.slug === "team-wang-under-the-castle";
   const year = elevenOasis ? "2026" : earlyBirds ? "2024" : project.year;
   return (
     <article
@@ -33,6 +35,8 @@ export function HomeProject({ project }: { project: Project }) {
             <ElevenOasisPreview />
           ) : earlyBirds ? (
             <EarlyBirdsPreview />
+          ) : castle ? (
+            <CastlePreview image={project.cover} />
           ) : project.slug === "pix-metaborg" ? (
             <div className="home-poster-pair">
               <Artwork image={project.cover} />
@@ -53,7 +57,7 @@ export function HomeProject({ project }: { project: Project }) {
             <Arrow diagonal />
           </span>
         </div>
-        <div className={`home-project-caption${earlyBirds ? " ebc-caption" : ""}`}>
+        <div className={`home-project-caption${earlyBirds ? " ebc-caption" : castle ? " castle-caption" : ""}`}>
           <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : project.title}</h3>
           <p>
             <span className="home-project-category">
@@ -61,7 +65,7 @@ export function HomeProject({ project }: { project: Project }) {
             </span>
             {year && (
               <span className="home-project-year">
-                {elevenOasis || earlyBirds ? " - " : " · "}{year}
+                {elevenOasis || earlyBirds || castle ? " - " : " · "}{year}
               </span>
             )}
           </p>
