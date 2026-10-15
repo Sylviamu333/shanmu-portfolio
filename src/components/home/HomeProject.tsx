@@ -37,7 +37,7 @@ export function HomeProject({ project }: { project: Project }) {
           ) : earlyBirds ? (
             <EarlyBirdsPreview />
           ) : castle ? (
-            <CastlePreview image={project.cover} />
+            <CastlePreview />
           ) : project.slug === "pix-metaborg" ? (
             <div className="home-poster-pair">
               <Artwork image={project.cover} />

@@ -1,7 +1,6 @@
 import type { Project } from "@/data/projects";
 import { homepage } from "@/data/homepage";
 import { HomeProject } from "./HomeProject";
-import { HomeAbout } from "./HomeAbout";
 export function HomeWork({ projects }: { projects: Project[] }) {
   return (
     <section id="work" className="home-work" aria-labelledby="work-heading">
@@ -21,9 +20,6 @@ export function HomeWork({ projects }: { projects: Project[] }) {
               <HomeProject project={project} />
             </div>
           ))}
-          <div className="home-about-reveal" data-home-reveal="0.09">
-            <HomeAbout />
-          </div>
         </div>
       </div>
     </section>

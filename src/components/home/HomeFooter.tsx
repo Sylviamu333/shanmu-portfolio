@@ -23,7 +23,7 @@ export function HomeFooter() {
           <div className="home-footer-links" data-home-reveal="0.09">
             <nav aria-label="Footer navigation">
               <a href="#work">Work</a>
-              <a href="#about">About</a>
+              <a href="/about/">About</a>
               {personal.email ? (
                 <a href={`mailto:${personal.email}`}>Say hello ↗</a>
               ) : (

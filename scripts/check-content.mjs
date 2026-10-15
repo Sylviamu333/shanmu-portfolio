@@ -79,7 +79,15 @@ if (process.argv.includes("--build")) {
       homepage.includes(`/work/${project.slug}/`),
       `Missing homepage project link: ${project.slug}`,
     );
-  for (const id of ["work", "about", "contact"])
+  assert(!homepage.includes('class="home-about'), "Removed homepage practice section must stay absent");
+  assert(homepage.includes('href="/about/"'), "About navigation must retain a valid destination");
+  assert(existsSync(resolve(root, "out/about/index.html")), "Missing About route");
+  assert.equal(
+    hash(resolve(root, "source-assets/under-the-castle-kv.png")),
+    hash(resolve(root, "public/projects/team-wang-under-the-castle/homepage-kv.png")),
+    "Homepage Halloween artwork must remain byte-for-byte original",
+  );
+  for (const id of ["work", "contact"])
     assert(homepage.includes(`id="${id}"`), `Missing navigation target: ${id}`);
 }
 console.log(

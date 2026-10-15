@@ -1,0 +1,31 @@
+.about-page-content {
+  width: min(1100px, calc(100% - var(--gutter) * 2));
+  margin-inline: auto;
+  padding-block: clamp(45px, 7vw, 100px);
+}
+.about-page-content h1 {
+  font: 400 clamp(40px, 7vw, 88px)/1.1 var(--serif);
+  margin-top: 42px;
+  letter-spacing: -.035em;
+}
+.about-page-role {
+  color: var(--muted);
+  margin-top: 16px;
+}
+.about-page-copy {
+  max-width: 680px;
+  margin-top: 40px;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.about-page-copy > p + p { margin-top: 20px; }
+.about-page-copy h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 38px;
+}
+.about-page-copy ul { margin-top: 16px; }
+.about-page-copy li {
+  padding-block: 10px;
+  border-bottom: 1px solid var(--line);
+}

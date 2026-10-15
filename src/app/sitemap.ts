@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return personal.siteUrl
     ? [
         { url: personal.siteUrl },
+        { url: `${personal.siteUrl}/about/` },
         ...orderedProjects.map((p) => ({
           url: `${personal.siteUrl}/work/${p.slug}/`,
         })),

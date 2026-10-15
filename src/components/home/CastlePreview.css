@@ -3,78 +3,39 @@
   background: #000;
 }
 .castle-preview {
-  --castle-pointer-x: 0px;
-  --castle-pointer-y: 0px;
-  --castle-travel: 1;
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  container-type: inline-size;
 }
-.castle-preview[data-collage-mode="static-fallback"] > img {
-  object-fit: contain;
-}
-.castle-scene {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: calc(100% * 1888 / 2343);
-  height: 100%;
-  transform: translateX(-50%);
-}
-.castle-photo,
-.castle-logo {
-  position: absolute;
-}
-.castle-photo :is(div, img),
-.castle-logo :is(div, img) {
+.castle-preview > svg {
+  display: block;
   width: 100%;
   height: 100%;
 }
-.castle-photo img,
-.castle-logo img {
-  display: block;
-}
-.castle-logo {
-  left: 38.75%;
-  top: 41.666667%;
-  width: 23.125%;
-  height: 16.666667%;
-  z-index: 20;
-  pointer-events: none;
-}
-.castle-arrange {
-  animation: castle-recompose 21s cubic-bezier(.45, 0, .55, 1) infinite;
-}
-.castle-float {
-  animation: castle-float var(--castle-duration) ease-in-out var(--castle-phase) infinite;
-}
-.castle-logo-pulse {
-  animation: castle-logo-breathe 7.8s ease-in-out infinite;
-}
-.castle-preview :is(.castle-arrange, .castle-float, .castle-logo-pulse) {
+/* The illustration never moves or changes brightness. Only this eye-shaped
+   illumination group flickers; static filters keep bloom local to the eyes. */
+.castle-eye-flicker {
+  opacity: .25;
+  animation: castle-eye-flicker 5s linear infinite;
   animation-play-state: paused;
 }
-.castle-preview[data-floating="true"] :is(.castle-arrange, .castle-float, .castle-logo-pulse) {
+.castle-preview[data-active="true"] .castle-eye-flicker {
   animation-play-state: running;
 }
-.castle-parallax {
-  transform: translate3d(calc(var(--castle-pointer-x) * var(--castle-depth)), calc(var(--castle-pointer-y) * var(--castle-depth)), 0);
-  transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+@keyframes castle-eye-flicker {
+  0%, 100% { opacity: .25; }
+  10% { opacity: .35; }
+  13% { opacity: 1; }
+  16% { opacity: .2; }
+  19% { opacity: .9; }
+  22% { opacity: .4; }
+  45%, 65% { opacity: .3; }
+  70% { opacity: 1; }
+  74% { opacity: .45; }
 }
-@keyframes castle-recompose {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
-  28%, 36% { transform: translate3d(var(--castle-a-x), var(--castle-a-y), 0) rotate(var(--castle-tilt)) scale(1.015); }
-  62%, 72% { transform: translate3d(var(--castle-b-x), var(--castle-b-y), 0) rotate(calc(var(--castle-tilt) * -.7)) scale(.985); }
-}
-@keyframes castle-float {
-  0%, 100% { transform: translate3d(calc(-.9cqw * var(--castle-travel)), calc(.7cqw * var(--castle-travel)), 0) rotate(-.45deg) scale(.99); }
-  50% { transform: translate3d(calc(1.2cqw * var(--castle-travel)), calc(-1.1cqw * var(--castle-travel)), 0) rotate(.5deg) scale(1.02); }
-}
-@keyframes castle-logo-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.012); }
+@media (prefers-reduced-motion: reduce) {
+  .castle-eye-flicker { animation: none; opacity: .25; }
 }
 .castle-case-study {
   position: absolute;
@@ -100,16 +61,10 @@
   transform: none;
 }
 @media (max-width: 700px) {
-  .castle-preview { --castle-travel: .65; }
   .castle-case-study { left: 9px; top: 9px; font-size: 8px; padding-inline: 10px; }
 }
 @media (hover: none), (pointer: coarse) {
   .castle-case-study { opacity: 1; transform: none; }
-  .castle-parallax { transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .castle-preview :is(.castle-arrange, .castle-float, .castle-logo-pulse) { animation: none; }
-  .castle-parallax { transform: none; transition: none; }
 }
 .home-project:has(.castle-caption) {
   container-type: inline-size;

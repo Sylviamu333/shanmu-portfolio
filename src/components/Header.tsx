@@ -10,7 +10,7 @@ export function Header() {
   const links = [
     { label: "Home", href: "/" },
     { label: "Work", href: "/#work" },
-    { label: "About", href: "/#about" },
+    { label: "About", href: "/about/" },
     { label: "Contact", href: "/#contact" },
   ];
   return (
@@ -76,7 +76,8 @@ export function Header() {
               onClick={() => setOpen(false)}
               aria-current={
                 (link.label === "Work" && pathname.startsWith("/work")) ||
-                (link.label === "Home" && home)
+                (link.label === "Home" && home) ||
+                (link.label === "About" && pathname.startsWith("/about"))
                   ? "page"
                   : undefined
               }

@@ -1,36 +1,4 @@
 // Original SVG illustrations drawn for SHAN MU. No reference paths or assets are reused.
-export function Flower({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 120 120"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M59 50C32 20 9 37 26 57C-4 63 8 94 37 81C40 113 69 116 76 86C103 108 120 86 98 67C128 49 111 25 85 39C82 7 52 17 59 50Z"
-        fill="#AFE3FF"
-        stroke="#2755C5"
-        strokeWidth="2.2"
-        strokeLinejoin="round"
-      />
-      <circle
-        cx="65"
-        cy="65"
-        r="17"
-        fill="#E7FF7D"
-        stroke="#2755C5"
-        strokeWidth="2.2"
-      />
-      <path
-        d="M57 63v1m14-1v1m-14 7c3 5 11 6 15 0"
-        stroke="#2755C5"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
 export function PixelSprout({ className = "" }: { className?: string }) {
   return (
     <svg
