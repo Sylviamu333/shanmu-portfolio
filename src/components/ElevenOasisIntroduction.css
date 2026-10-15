@@ -1,0 +1,69 @@
+.project-eleven-oasis .case-topline { margin-bottom: 28px; }
+.eleven-introduction { border-bottom: 1px solid var(--folio-rule); }
+.eleven-introduction-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--folio-rule);
+}
+.eleven-introduction-title { padding: 28px 40px 36px 0; }
+.eleven-introduction-category {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .045em;
+}
+.eleven-introduction-title h1 {
+  margin-top: 18px;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.eleven-introduction-details {
+  min-width: 0;
+  border-left: 1px solid var(--folio-rule);
+  padding: 28px 0 32px 40px;
+}
+.eleven-introduction-summary { max-width: 560px; font-size: 20px; line-height: 1.4; }
+.eleven-introduction-body { max-width: 870px; padding-block: 24px 28px; font-size: 18px; line-height: 1.5; }
+.eleven-introduction-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 28px;
+  margin: 28px 0 24px;
+}
+.eleven-introduction-facts dt { color: var(--muted); font-size: 12px; line-height: 1.4; margin-bottom: 6px; }
+.eleven-introduction-facts dd { margin: 0; font-size: 14px; line-height: 1.5; }
+.eleven-introduction-nowrap { white-space: nowrap; }
+.eleven-introduction-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.eleven-introduction-link svg { width: 16px; height: 16px; }
+.eleven-introduction-link:hover { color: var(--accent); }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .eleven-introduction-title { padding-right: 24px; }
+  .eleven-introduction-title h1 { font-size: clamp(42px, 6vw, 48px); }
+  .eleven-introduction-details { padding-left: 24px; }
+  .eleven-introduction-summary { font-size: 18px; }
+  .eleven-introduction-body { font-size: 17px; }
+  .eleven-introduction-facts { gap: 22px 20px; }
+}
+@media (max-width: 700px) {
+  .project-eleven-oasis .case-topline { margin-bottom: 18px; }
+  .eleven-introduction-columns { grid-template-columns: minmax(0, 1fr); }
+  .eleven-introduction-title { padding: 16px 0 20px; }
+  .eleven-introduction-title h1 { font-size: 36px; margin-top: 12px; line-height: 1.12; }
+  .eleven-introduction-details { border-left: 0; border-top: 1px solid var(--folio-rule); padding: 20px 0; }
+  .eleven-introduction-summary { font-size: 16px; line-height: 1.45; }
+  .eleven-introduction-body { font-size: 15px; line-height: 1.5; padding-block: 16px 20px; }
+  .eleven-introduction-facts { gap: 16px 18px; margin-block: 18px 12px; }
+  .eleven-introduction-facts dt { margin-bottom: 4px; }
+  .eleven-introduction-facts dd { line-height: 1.45; }
+}
