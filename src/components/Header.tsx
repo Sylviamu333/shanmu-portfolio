@@ -6,42 +6,29 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
-  const home = pathname === "/";
-  const portfolioHeader = home || pathname === "/about" || pathname === "/about/";
   const links = [
-    { label: "Home", href: "/" },
     { label: "Work", href: "/#work" },
     { label: "About", href: "/about/" },
     { label: "Contact", href: "/#contact" },
   ];
   return (
-    <header className={portfolioHeader ? "site-header home-header" : "site-header"}>
+    <header className="site-header home-header">
       <Link
         href="/"
         className="wordmark"
         aria-label="SHAN MU home"
         onClick={() => setOpen(false)}
       >
-        {portfolioHeader ? (
-          <svg
-            className="home-brand-monogram"
-            viewBox="284 384 684 560"
-            aria-hidden="true"
-            focusable="false"
-          >
-            {/* Crop only the transparent padding; retain the uploaded pixels. */}
-            <image href="/brand/s-monogram.png" width="1254" height="1254" />
-          </svg>
-        ) : (
-          <>
-            SHAN MU
-            <span className="brand-dot" />
-          </>
-        )}
+        <svg
+          className="home-brand-monogram"
+          viewBox="284 384 684 560"
+          aria-hidden="true"
+          focusable="false"
+        >
+          {/* Crop only the transparent padding; retain the uploaded pixels. */}
+          <image href="/brand/s-monogram.png" width="1254" height="1254" />
+        </svg>
       </Link>
-      {!portfolioHeader && (
-        <span className="header-caption">Independent design practice</span>
-      )}
       <button
         className="menu-button"
         ref={menuButton}
@@ -68,25 +55,22 @@ export function Header() {
           }
         }}
       >
-        {links
-          .filter((link) => !portfolioHeader || link.label !== "Home")
-          .map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              aria-current={
-                (link.label === "Work" && pathname.startsWith("/work")) ||
-                (link.label === "Home" && home) ||
-                (link.label === "About" && pathname.startsWith("/about"))
-                  ? "page"
-                  : undefined
-              }
-            >
-              {link.label}
-              <span className="nav-dot" />
-            </Link>
-          ))}
+        {links.map((link) => (
+          <Link
+            key={link.label}
+            href={link.href}
+            onClick={() => setOpen(false)}
+            aria-current={
+              (link.label === "Work" && pathname.startsWith("/work")) ||
+              (link.label === "About" && pathname.startsWith("/about"))
+                ? "page"
+                : undefined
+            }
+          >
+            {link.label}
+            <span className="nav-dot" />
+          </Link>
+        ))}
       </nav>
     </header>
   );

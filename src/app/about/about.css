@@ -1,12 +1,4 @@
-body:has(.about-page) { background: #fff; }
 .about-page {
-  --folio-rule: #e5e5e5;
-  --folio-ink: #252323;
-  --folio-pink: #da5168;
-  --folio-serif: "Averia Serif Libre", Georgia, "Times New Roman", serif;
-  --folio-sans: Manrope, Arial, sans-serif;
-  --folio-ease: cubic-bezier(.22, 1, .36, 1);
-  background: #fff;
   color: #68717a;
   font-family: var(--folio-sans);
 }

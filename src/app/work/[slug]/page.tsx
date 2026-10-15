@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, orderedProjects } from "@/data/projects";
 import { CaseStudySection, ProjectNavigation } from "@/components/CaseStudy";
-import { Contact } from "@/components/Contact";
 import { Arrow } from "@/components/Arrow";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { PhotographyExperience } from "@/components/photography/PhotographyExperience";
@@ -45,7 +44,6 @@ export default async function ProjectPage({
     return (
       <main id="main" className="visual-photography-page">
         <PhotographyExperience />
-        <Contact />
       </main>
     );
   }
@@ -129,7 +127,6 @@ export default async function ProjectPage({
       </div>
       <ProjectNavigation next={next} previous={previous} />
       <RelatedProjects current={project} projects={orderedProjects} />
-      <Contact />
     </main>
   );
 }

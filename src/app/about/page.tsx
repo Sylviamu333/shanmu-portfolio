@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { about } from "@/data/about";
 import { AboutPhotoCollage } from "@/components/about/AboutPhotoCollage";
-import { HomeFooter } from "@/components/home/HomeFooter";
 import "./about.css";
 
 export const metadata: Metadata = {
@@ -50,7 +49,6 @@ export default function AboutPage() {
         </div>
         <div className="about-bottom-rule" aria-hidden="true" />
       </div>
-      <HomeFooter workHref="/#work" />
     </main>
   );
 }

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1606 979">
+  <defs><filter id="soft" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+  <rect width="1606" height="979" fill="white"/>
+  <g fill="black" stroke="black" stroke-width="24" stroke-linejoin="round" filter="url(#soft)">
+    <path d="M138 192L552 138L591 778L219 839Z"/>
+    <path d="M568 90L1026 114L1049 819L578 826Z"/>
+    <path d="M1053 158L1467 210L1398 828L1039 783Z"/>
+  </g>
+</svg>

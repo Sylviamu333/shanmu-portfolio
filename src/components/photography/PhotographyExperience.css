@@ -46,7 +46,8 @@
 .photo-series-label {
   position: absolute;
   z-index: 30;
-  top: 29px;
+  /* Keep the series caption visible beneath the shared sticky navigation. */
+  top: calc(var(--portfolio-header-height) + 29px);
   left: var(--gutter);
   right: var(--gutter);
   display: flex;
@@ -124,7 +125,7 @@
   .photo-detail-intro h1 > span { margin-left: 0; }
   .photo-detail-summary { align-items: start; flex-direction: column; gap: 25px; }
   .photo-series { height: 280svh; }
-  .photo-series-label { top: 22px; font-size: 9px; flex-direction: column; gap: 6px; }
+  .photo-series-label { top: calc(var(--portfolio-header-height) + 22px); font-size: 9px; flex-direction: column; gap: 6px; }
   .photo-series-title { bottom: 15%; font-size: 25vw; }
   .photo-detail-outro { min-height: 180px; padding-block: 40px; flex-direction: column; align-items: start; gap: 18px; }
   .photo-experience[data-stills="true"] .photo-frames { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 40px 28px; }

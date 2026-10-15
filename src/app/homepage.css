@@ -19,16 +19,17 @@
   font-style: normal;
   font-display: swap;
 }
-body:has(.homepage) {
-  background: #fff;
-}
-.homepage {
+:root { --portfolio-header-height: 66px; }
+.homepage,
+.internal-page {
   --folio-rule: #e5e5e5;
   --folio-ink: #252323;
   --folio-pink: #da5168;
   --folio-serif: "Averia Serif Libre", Georgia, "Times New Roman", serif;
   --folio-sans: Manrope, Arial, sans-serif;
   --folio-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.homepage {
   position: relative;
   isolation: isolate;
   color: var(--folio-ink);
@@ -47,7 +48,7 @@ body:has(.homepage) {
   width: calc(100% - 96px);
   max-width: 1664px;
   margin: 0 auto;
-  height: 66px;
+  height: var(--portfolio-header-height);
   padding: 0 0 0 16px;
   border-inline: 1px solid var(--folio-rule);
   border-bottom: 1px solid var(--folio-rule);
@@ -486,6 +487,7 @@ body:has(.homepage) {
 .home-footer {
   background: #fff5fb;
   color: var(--folio-pink);
+  font-family: var(--folio-sans);
   scroll-margin-top: 66px;
 }
 .home-footer > .home-container {
@@ -730,12 +732,13 @@ body:has(.homepage) {
   }
 }
 @media (max-width: 700px) {
+  :root { --portfolio-header-height: 58px; }
   .home-container,
   .home-header {
     width: calc(100% - 26px);
   }
   .home-header {
-    height: 58px;
+    height: var(--portfolio-header-height);
     padding-left: 7px;
     position: sticky;
     gap: 10px;
@@ -1010,6 +1013,7 @@ body:has(.homepage) {
 
 .homepage a:focus-visible,
 .homepage button:focus-visible,
+.home-footer a:focus-visible,
 .home-header a:focus-visible,
 .home-header button:focus-visible {
   outline: 2px solid #2755c5;

@@ -5,6 +5,7 @@ import { Arrow } from "@/components/Arrow";
 import { ElevenOasisPreview } from "./ElevenOasisPreview";
 import { EarlyBirdsPreview } from "./EarlyBirdsPreview";
 import { CastlePreview } from "./CastlePreview";
+import { KeyVisualPreview } from "./KeyVisualPreview";
 function Artwork({ image }: { image: ProjectImage }) {
   return (
     <Image
@@ -46,12 +47,8 @@ export function HomeProject({ project }: { project: Project }) {
               <Artwork image={project.cover} />
               {project.gallery[1] && <Artwork image={project.gallery[1]} />}
             </div>
-          ) : project.slug === "visual-experiments" ? (
-            <div className="home-visual-fan">
-              {project.gallery.slice(0, 3).map((image) => (
-                <Artwork key={image.src} image={image} />
-              ))}
-            </div>
+          ) : keyVisual ? (
+            <KeyVisualPreview />
           ) : (
             <div className="home-single-art">
               <Artwork image={project.cover} />
