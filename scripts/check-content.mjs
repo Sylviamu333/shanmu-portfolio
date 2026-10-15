@@ -65,6 +65,13 @@ for (const [original, copy] of [
     "Original screenshot content changed",
   );
 }
+for (const name of ["about-portrait", "about-life-01", "about-life-02"]) {
+  assert.equal(
+    hash(resolve(root, "source-assets", `${name}.jpg`)),
+    hash(resolve(root, "public/about", `${name}.jpg`)),
+    `Original About photograph changed: ${name}`,
+  );
+}
 assert(Math.abs((2.1 / 1.2 - 1) * 100 - 75) < 1e-9);
 assert(Math.abs((25 / 5 - 1) * 100 - 400) < 1e-9);
 if (process.argv.includes("--build")) {
