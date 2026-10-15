@@ -1,0 +1,47 @@
+{
+  "source": "source-assets/footer-pink-glass-folder.png",
+  "portrait.png": {
+    "source_quad_UL_LL_LR_UR": [
+      200,
+      365,
+      248,
+      590,
+      468,
+      543,
+      420,
+      318
+    ],
+    "size": [
+      225,
+      230
+    ],
+    "method": "Visible source photo crop and geometric rectification only; no retouching or generated content"
+  },
+  "whiteboarding-ink.png": {
+    "crop": [
+      510,
+      425,
+      822,
+      660
+    ],
+    "method": "Original dark lettering and heart isolated from yellow; truncated underline replaced by SVG stroke"
+  },
+  "threads-ink.png": {
+    "crop": [
+      810,
+      345,
+      1150,
+      455
+    ],
+    "method": "Original green lettering isolated by chroma"
+  },
+  "glass-pocket.png": {
+    "crop": [
+      82,
+      674,
+      1208,
+      1063
+    ],
+    "method": "Front pocket texture with original alpha and rounded edge mask"
+  }
+}

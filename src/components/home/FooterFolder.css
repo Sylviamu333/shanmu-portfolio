@@ -1,0 +1,195 @@
+.footer-folder {
+  position: absolute;
+  inset: 0;
+  container-type: inline-size;
+  pointer-events: none;
+  --folder-travel: 1;
+}
+.footer-folder-stage {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  aspect-ratio: 360 / 250;
+  isolation: isolate;
+}
+.footer-folder-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 5px #d8427a26);
+}
+.footer-folder-card {
+  position: absolute;
+  transform-origin: 50% 100%;
+  border-radius: 3cqw;
+  transition: transform .56s cubic-bezier(.22, 1, .36, 1);
+  box-shadow: 0 2px 6px #8d335a24, inset 0 0 0 1px #ffffff80;
+  overflow: hidden;
+  transform: var(--folder-rest);
+}
+.footer-folder-card-portrait {
+  --folder-rest: rotate(-11deg);
+  left: 13%;
+  top: 18%;
+  width: 38%;
+  height: 67%;
+  padding: 1.2cqw;
+  background: #fff8fa;
+  z-index: 2;
+}
+.footer-folder-card-portrait img {
+  display: block;
+  width: 100%;
+  height: 82%;
+  object-fit: cover;
+  border-radius: 1.9cqw;
+}
+.footer-folder-card-threads {
+  --folder-rest: rotate(10deg);
+  left: 56%;
+  top: 23%;
+  width: 36%;
+  height: 65%;
+  background: linear-gradient(135deg, #ff735b, #ff543d 60%, #f65147);
+  border: 1.2cqw solid #fff0f0;
+  z-index: 3;
+  transition-delay: 0s;
+}
+.footer-folder-threads-ink {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  width: 90%;
+  height: auto;
+  /* The source lettering already follows the card's original tilt. */
+  transform: rotate(-10deg);
+}
+.footer-folder-star {
+  position: absolute;
+  right: 10%;
+  top: 47%;
+  width: 22%;
+  height: auto;
+}
+.footer-folder-card-note {
+  --folder-rest: rotate(-8deg);
+  left: 39%;
+  top: 25%;
+  width: 33%;
+  height: 60%;
+  z-index: 4;
+  background: radial-gradient(ellipse at 25% 20%, #fff8b2, #ffe772 60%, #ffd45c);
+}
+.footer-folder-note-art {
+  position: absolute;
+  left: 4%;
+  top: 5%;
+  width: 92%;
+  aspect-ratio: 312 / 260;
+  transform: rotate(8deg);
+}
+.footer-folder-note-art :is(img, svg) {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.footer-folder-pocket {
+  position: absolute;
+  z-index: 5;
+  left: 3.9%;
+  top: 52.8%;
+  width: 92.2%;
+  height: 46.4%;
+  border-radius: 5cqw;
+  background: linear-gradient(130deg, #ffd7eb80, #f69ac188 55%, #ed639f99);
+  backdrop-filter: blur(8px) saturate(.9);
+  -webkit-backdrop-filter: blur(8px) saturate(.9);
+  box-shadow: inset 0 1px 2px #ffffffdd, inset 0 -2px 4px #dd347e70, 0 5px 8px #c6397029;
+  overflow: hidden;
+}
+.footer-folder-pocket img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .88;
+}
+.footer-folder-view {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 75%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 17px;
+  border-radius: 100px;
+  background: #ffd64f;
+  color: #17120b;
+  box-shadow: 0 3px 9px #6d3a2a29, inset 0 1px 0 #fff4b7;
+  font: 700 12px/1 Manrope, Arial, sans-serif;
+  opacity: 0;
+  transform: translate(-50%, 10px) scale(.88);
+  transition: opacity .2s, transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+.footer-folder-view > span {
+  font-size: 13px;
+}
+/* Keyboard has the same reveal as fine-pointer hover. The surrounding anchor
+   is the sole interactive element; the View label is purely visual. */
+.home-footer-art:focus-visible .footer-folder-card-portrait {
+  transform: translate(calc(-8px * var(--folder-travel)), calc(-32px * var(--folder-travel))) rotate(-16deg);
+}
+.home-footer-art:focus-visible .footer-folder-card-note {
+  transform: translateY(calc(-48px * var(--folder-travel))) rotate(-8deg) scale(1.03);
+  transition-delay: .06s;
+}
+.home-footer-art:focus-visible .footer-folder-card-threads {
+  transform: translate(calc(8px * var(--folder-travel)), calc(-36px * var(--folder-travel))) rotate(15deg);
+  transition-delay: .12s;
+}
+.home-footer-art:focus-visible .footer-folder-view {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  transition-delay: .14s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .home-footer-art:hover .footer-folder-card-portrait {
+    transform: translate(calc(-8px * var(--folder-travel)), calc(-32px * var(--folder-travel))) rotate(-16deg);
+  }
+  .home-footer-art:hover .footer-folder-card-note {
+    transform: translateY(calc(-48px * var(--folder-travel))) rotate(-8deg) scale(1.03);
+    transition-delay: .06s;
+  }
+  .home-footer-art:hover .footer-folder-card-threads {
+    transform: translate(calc(8px * var(--folder-travel)), calc(-36px * var(--folder-travel))) rotate(15deg);
+    transition-delay: .12s;
+  }
+  .home-footer-art:hover .footer-folder-view {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    transition-delay: .14s;
+  }
+}
+@media (max-width: 700px) {
+  .footer-folder-stage { width: 90%; left: 5%; }
+  .footer-folder { --folder-travel: .6; }
+  .footer-folder-view { font-size: 10px; padding: 7px 13px; }
+}
+@media (hover: none), (pointer: coarse) {
+  .footer-folder-view { opacity: 1; transform: translate(-50%, 0); }
+}
+.homepage[data-motion-paused="true"] .footer-folder-card {
+  transform: var(--folder-rest) !important;
+  transition: none !important;
+}
+.homepage[data-motion-paused="true"] .footer-folder-view {
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-folder-card { transform: var(--folder-rest) !important; transition: none !important; }
+  .footer-folder-view { transition: none !important; }
+}

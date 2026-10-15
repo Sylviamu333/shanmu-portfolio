@@ -1,6 +1,6 @@
 import { personal } from "@/data/personal";
 import { homepage } from "@/data/homepage";
-import { PortfolioCard } from "./Decorations";
+import { FooterFolder } from "./FooterFolder";
 export function HomeFooter() {
   const socialLinks = [
     { label: "LinkedIn", url: personal.linkedin },
@@ -14,11 +14,11 @@ export function HomeFooter() {
         <div className="home-footer-inner">
           <a
             className="home-footer-art"
-            href="#top"
-            aria-label="SHAN MU — return to top"
+            href="#work"
+            aria-label="View selected work"
             data-home-reveal="0"
           >
-            <PortfolioCard name={personal.name} role={personal.positioning} />
+            <FooterFolder />
           </a>
           <div className="home-footer-links" data-home-reveal="0.09">
             <nav aria-label="Footer navigation">
