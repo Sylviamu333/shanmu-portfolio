@@ -536,19 +536,18 @@ body:has(.homepage) {
 }
 .home-footer > .home-container {
   border-color: transparent;
-  padding: 44px 0 23px;
+  padding: 32px 0 17px;
 }
 .home-footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  min-height: 310px;
 }
 .home-footer-art {
   position: relative;
-  width: 420px;
-  height: 290px;
+  width: 357px;
+  height: 246.5px;
   flex: none;
   display: block;
 }
@@ -588,7 +587,7 @@ body:has(.homepage) {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 7px;
+  gap: 5.6px;
   font: 300 38px/1.15 var(--folio-serif);
 }
 .home-footer-links a {
@@ -598,18 +597,24 @@ body:has(.homepage) {
   align-items: center;
   isolation: isolate;
 }
+.home-footer-links nav > a[href="#top"] {
+  font-size: 0.3em;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: flex-end;
+}
 .home-social-links {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 5px;
-  margin-top: 28px;
+  gap: 4px;
+  margin-top: 22px;
   font: 300 30px/1.2 var(--folio-serif);
 }
 .home-contact-note {
   font-size: 10px;
   color: #bc697c;
-  margin-top: 26px;
+  margin-top: 18px;
   line-height: 1.6;
 }
 .home-footer-bottom {
@@ -618,7 +623,7 @@ body:has(.homepage) {
   justify-content: center;
   gap: 28px;
   font: 300 14px/1.5 var(--folio-serif);
-  padding-top: 25px;
+  padding-top: 18px;
   flex-wrap: wrap;
 }
 @keyframes sketchbook-settle {
@@ -724,8 +729,8 @@ body:has(.homepage) {
     height: 47px;
   }
   .home-footer-art {
-    width: 370px;
-    height: 265px;
+    width: 333px;
+    height: 238.5px;
   }
   .footer-handwriting {
     left: 75px;
@@ -1003,18 +1008,24 @@ body:has(.homepage) {
     scroll-margin-top: 58px;
   }
   .home-footer > .home-container {
-    padding: 25px 15px 20px;
+    padding: 18px 15px 14px;
   }
   .home-footer-inner {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
     min-height: 0;
   }
   .home-footer-art {
-    width: 290px;
-    height: 205px;
+    width: 246.5px;
+    height: 135px;
     max-width: 100%;
+  }
+  /* Trim empty SVG canvas above/below the artwork while scaling the artwork
+     itself by just 15%. The paper and clip retain their original proportions. */
+  .home-footer-art .footer-sketchbook {
+    height: 174.25px;
+    top: -18px;
   }
   .footer-handwriting {
     left: 58px;
@@ -1033,7 +1044,7 @@ body:has(.homepage) {
   }
   .home-footer-links nav {
     align-items: center;
-    gap: 9px;
+    gap: 7.2px;
     font-size: 29px;
   }
   .home-footer-links a {
@@ -1042,15 +1053,15 @@ body:has(.homepage) {
   .home-social-links {
     align-items: center;
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 14px;
   }
   .home-contact-note {
     font-size: 9px;
-    margin-top: 20px;
+    margin-top: 14px;
   }
   .home-footer-bottom {
-    padding-top: 28px;
-    gap: 8px;
+    padding-top: 20px;
+    gap: 6px;
     font-size: 12px;
     flex-direction: column;
     text-align: center;
