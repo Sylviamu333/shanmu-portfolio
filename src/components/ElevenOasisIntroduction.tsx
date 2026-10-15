@@ -9,20 +9,24 @@ export function ElevenOasisIntroduction({ project }: { project: Project }) {
         <div className="eleven-introduction-title">
           <p className="eleven-introduction-category">UI/UX DESIGN / E-COMMERCE</p>
           <h1>{project.title}</h1>
+          <p className="eleven-introduction-body">{project.description}</p>
         </div>
         <div className="eleven-introduction-details">
           <p className="eleven-introduction-summary">{project.subtitle}</p>
           <dl className="eleven-introduction-facts">
-            {project.facts.map(fact => (
-              <div key={fact.label}>
-                <dt>{fact.label}</dt>
-                <dd>{fact.value.split(/(\d+–\d+)/).map((part, index) =>
-                  /\d+–\d+/.test(part)
-                    ? <span className="eleven-introduction-nowrap" key={index}>{part}</span>
-                    : part,
-                )}</dd>
-              </div>
-            ))}
+            {project.facts.map(fact => {
+              const value = fact.label === "Role" ? "UI/UX DESIGNER" : fact.value;
+              return (
+                <div key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  <dd>{value.split(/(\d+–\d+)/).map((part, index) =>
+                    /\d+–\d+/.test(part)
+                      ? <span className="eleven-introduction-nowrap" key={index}>{part}</span>
+                      : part,
+                  )}</dd>
+                </div>
+              );
+            })}
           </dl>
           {project.website && (
             <a className="eleven-introduction-link" href={project.website} target="_blank" rel="noreferrer">
@@ -31,7 +35,6 @@ export function ElevenOasisIntroduction({ project }: { project: Project }) {
           )}
         </div>
       </div>
-      <p className="eleven-introduction-body">{project.description}</p>
     </div>
   );
 }
