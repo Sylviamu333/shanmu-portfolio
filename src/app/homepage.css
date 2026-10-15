@@ -321,31 +321,6 @@
   max-width: 100%;
   filter: drop-shadow(0 10px 14px #44392318);
 }
-.art-pix-metaborg {
-  background: #f1d7dc;
-}
-.home-poster-pair {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 40px;
-  gap: 28px;
-}
-.home-poster-pair img {
-  height: 100%;
-  max-width: 42%;
-  width: auto;
-  object-fit: contain;
-  box-shadow: 0 5px 10px #00000010;
-}
-.home-poster-pair img:first-child {
-  transform: rotate(-3deg);
-}
-.home-poster-pair img:nth-child(2) {
-  transform: rotate(3deg);
-}
 .art-visual-experiments {
   background: #dfeff0;
 }
@@ -909,10 +884,6 @@
   .art-covers .home-single-art {
     padding: 22px;
   }
-  .home-poster-pair {
-    padding: 21px 28px;
-    gap: 22px;
-  }
   .home-visual-fan {
     padding: 25px;
   }
@@ -1003,7 +974,6 @@
     transition: none !important;
   }
   .home-project-link:hover .home-single-art,
-  .home-project-link:hover .home-poster-pair,
   .home-project-link:hover .home-visual-fan,
   .home-project-link:hover .home-site-window,
   .home-footer-art:hover .footer-sketchbook {

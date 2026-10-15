@@ -43,7 +43,7 @@ export default async function ProjectPage({
   if (slug === "visual-experiments") {
     return (
       <main id="main" className="visual-photography-page">
-        <PhotographyExperience />
+        <PhotographyExperience projectNumber={project.order} />
       </main>
     );
   }

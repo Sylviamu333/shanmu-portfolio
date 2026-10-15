@@ -11,7 +11,7 @@ import "./PhotographyExperience.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function PhotographyExperience() {
+export function PhotographyExperience({ projectNumber }: { projectNumber: number }) {
   const root = useRef<HTMLDivElement>(null);
   const [stills, setStills] = useState(false);
 
@@ -73,7 +73,7 @@ export function PhotographyExperience() {
       <section className="photo-detail-intro" aria-labelledby="photo-detail-title">
         <div className="photo-detail-topline">
           <Link href="/#work">← Back to Work</Link>
-          <span>06 / Selected work</span>
+          <span>{String(projectNumber).padStart(2, "0")} / Selected work</span>
         </div>
         <p className="eyebrow">Photography &amp; Art Direction</p>
         <h1 id="photo-detail-title">Visual<br /><span>Experiments</span></h1>

@@ -80,15 +80,6 @@ const cov = (
   height: number,
   caption?: string,
 ) => img("covers", name, alt, width, height, caption);
-const pix = (name: string, alt: string, caption?: string) =>
-  img(
-    "pix-metaborg",
-    name,
-    alt,
-    name === "invitation-01" ? 417 : 418,
-    name === "invitation-01" ? 586 : 591,
-    caption,
-  );
 const vis = (name: string, alt: string, caption?: string) =>
   img(
     "visual-experiments",
@@ -246,41 +237,6 @@ const coversGallery = [
   ),
   cov("woven-labels", "Covers woven label designs", 318, 484, "Woven labels"),
   cov("tag", "Covers hangtag design", 185, 292, "Tag design"),
-];
-const pixGallery = [
-  pix(
-    "cover",
-    "Red PIX Metaborg poster with character and futuristic vehicle",
-    "Poster concept 01",
-  ),
-  pix(
-    "poster-02",
-    "PIX Metaborg red and black campaign poster",
-    "Poster concept 02",
-  ),
-  pix(
-    "poster-03",
-    "PIX Metaborg typographic event poster",
-    "Poster concept 03",
-  ),
-  pix(
-    "poster-04",
-    "PIX Metaborg futuristic vehicle campaign poster",
-    "Poster concept 04",
-  ),
-  pix(
-    "invitation-01",
-    "PIX Toy World black and white invitation",
-    "Invitation concept",
-  ),
-  img(
-    "pix-metaborg",
-    "invitations",
-    "Four PIX invitation concepts",
-    1201,
-    1605,
-    "Invitation studies",
-  ),
 ];
 const visualGallery = [
   vis(
@@ -679,58 +635,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "pix-metaborg",
-    title: "PIX Metaborg",
-    subtitle: "Emotion, memory, and a future in motion.",
-    category: "Graphic Design / Art Direction",
-    discipline: "Graphic",
-    year: null,
-    order: 5,
-    accent: "#a62c28",
-    cover: pixGallery[0],
-    gallery: pixGallery,
-    description:
-      "Poster and invitation concepts connecting emotional memory with an automated future.",
-    facts: [
-      { label: "Discipline", value: "Graphic design / art direction" },
-      { label: "Deliverables", value: "Posters & invitations" },
-      { label: "Themes", value: "Inner child & emotional memory" },
-      { label: "Source", value: "Portfolio pages 4–5" },
-    ],
-    sections: [
-      {
-        id: "overview",
-        title: "A visual world between memory and tomorrow.",
-        type: "text",
-        body: [
-          "The portfolio frames PIX Metaborg around the inner child, emotional memories, and automated space. The campaign studies combine expressive typography, a red-and-black palette, character imagery, and futuristic vehicles.",
-          "The gallery includes poster and invitation designs from the source portfolio. The separately labeled visual-style references and inspiration imagery are excluded. Character and vehicle imagery are presented as elements of the campaign compositions, without claiming original authorship of those underlying assets.",
-        ],
-      },
-      {
-        id: "posters",
-        title: "A series with a shared pulse.",
-        type: "gallery",
-        layout: "pair",
-        images: pixGallery.slice(0, 4),
-      },
-      {
-        id: "invitations",
-        title: "An invitation into the world.",
-        type: "gallery",
-        layout: "pair",
-        images: pixGallery.slice(4),
-      },
-    ],
-  },
-  {
     slug: "visual-experiments",
     title: "Visual Experiments",
     subtitle: "An ongoing conversation with form.",
     category: "Graphic Design / Visual Exploration",
     discipline: "Graphic",
     year: null,
-    order: 6,
+    order: 5,
     accent: "#63cad7",
     cover: visualGallery[2],
     gallery: visualGallery,
