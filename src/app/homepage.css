@@ -114,7 +114,7 @@ body:has(.homepage) {
   margin-top: 23px;
   font-family: var(--folio-serif);
   font-weight: 300;
-  font-size: clamp(25.6px, 2.944vw, 42.24px);
+  font-size: clamp(15.36px, 1.7664vw, 25.344px);
   line-height: 1.22;
   letter-spacing: -0.035em;
 }
@@ -242,20 +242,20 @@ body:has(.homepage) {
   scroll-margin-top: 66px;
 }
 .home-work-heading {
-  min-height: 190px;
+  padding-block: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 10.5px;
   border-bottom: 1px solid var(--folio-rule);
 }
 .home-work-heading h2 {
-  font: 300 25.2px/1.2 var(--folio-serif);
+  font: 300 17.64px/1.2 var(--folio-serif);
   letter-spacing: 0;
 }
 .home-work-emoji {
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  font-size: 23.4px;
+  font-size: 16.38px;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -663,7 +663,7 @@ body:has(.homepage) {
     padding-top: 74px;
   }
   .home-role {
-    font-size: 32px;
+    font-size: 19.2px;
   }
   .home-intro h1 {
     font-size: 50px;
@@ -692,7 +692,7 @@ body:has(.homepage) {
     top: 160px;
   }
   .home-work-heading {
-    min-height: 155px;
+    padding-block: 31px;
   }
   .home-project-grid {
     gap: 20px;
@@ -747,10 +747,10 @@ body:has(.homepage) {
     min-height: 310px;
   }
   .home-work-heading {
-    min-height: 130px;
+    padding-block: 26px;
   }
   .home-work-heading h2 {
-    font-size: 21.6px;
+    font-size: 15.12px;
   }
   .home-footer-inner {
     gap: 25px;
@@ -790,9 +790,6 @@ body:has(.homepage) {
   .home-brand-monogram {
     width: 32px;
     height: 32px;
-  }
-  .home-brand-name {
-    font-size: 10px;
   }
   .home-header .menu-button {
     font-size: 11px;
@@ -841,7 +838,7 @@ body:has(.homepage) {
     letter-spacing: -0.025em;
   }
   .home-role {
-    font-size: clamp(18.56px, 4.992vw, 28.16px);
+    font-size: clamp(11.136px, 2.9952vw, 16.896px);
     gap: 0.3em;
     margin-top: 17px;
     flex-direction: column;
@@ -912,14 +909,14 @@ body:has(.homepage) {
     scroll-margin-top: 58px;
   }
   .home-work-heading {
-    min-height: 112px;
-    gap: 11.4px;
+    padding-block: 22px;
+    gap: 7.98px;
   }
   .home-work-heading h2 {
-    font-size: 19.2px;
+    font-size: 13.44px;
   }
   .home-work-emoji {
-    font-size: 17.4px;
+    font-size: 12.18px;
   }
   .home-project-grid {
     padding: 14px 0;
