@@ -20,7 +20,10 @@ export function HomeProject({ project }: { project: Project }) {
   const elevenOasis = project.slug === "eleven-oasis";
   const earlyBirds = project.slug === "early-birds-club";
   const castle = project.slug === "team-wang-under-the-castle";
-  const year = elevenOasis ? "2026" : earlyBirds ? "2024" : project.year;
+  // Homepage presentation only: the existing photography detail keeps its identity.
+  const keyVisual = project.slug === "visual-experiments";
+  const title = keyVisual ? "Key Visual" : project.title;
+  const year = keyVisual ? "2023 & 2024" : elevenOasis ? "2026" : earlyBirds ? "2024" : project.year;
   return (
     <article
       className={`home-project project-discipline-${project.discipline.toLowerCase()}`}
@@ -29,7 +32,7 @@ export function HomeProject({ project }: { project: Project }) {
         href={`/work/${project.slug}/`}
         className="home-project-link"
         data-case-study-badge={castle ? "fixed" : undefined}
-        aria-label={`View ${project.title} case study`}
+        aria-label={`View ${title} case study`}
       >
         <div className={`home-project-art art-${project.slug}`}>
           {elevenOasis ? (
@@ -62,15 +65,15 @@ export function HomeProject({ project }: { project: Project }) {
             </span>
           )}
         </div>
-        <div className={`home-project-caption${earlyBirds ? " ebc-caption" : castle ? " castle-caption" : ""}`}>
-          <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : project.title}</h3>
+        <div className={`home-project-caption${earlyBirds ? " ebc-caption" : castle ? " castle-caption" : keyVisual ? " key-visual-caption" : ""}`}>
+          <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : title}</h3>
           <p>
             <span className="home-project-category">
-              {earlyBirds ? "BRANDING" : project.category.split(" / ")[0].trim()}
+              {keyVisual ? "PHOTOGRAPHY" : earlyBirds ? "BRANDING" : project.category.split(" / ")[0].trim()}
             </span>
             {year && (
               <span className="home-project-year">
-                {elevenOasis || earlyBirds || castle ? " - " : " · "}{year}
+                {elevenOasis || earlyBirds || castle || keyVisual ? " - " : " · "}{year}
               </span>
             )}
           </p>

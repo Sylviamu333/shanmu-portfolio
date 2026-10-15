@@ -24,7 +24,6 @@ export function FooterFolder() {
           <Image src="/footer-folder/portrait.png" width={225} height={230} alt="" sizes="150px" />
         </div>
         <div className="footer-folder-card footer-folder-card-threads">
-          <Image className="footer-folder-threads-ink" src="/footer-folder/threads-ink.png" width={340} height={110} alt="" sizes="150px" />
           <svg className="footer-folder-star" viewBox="0 0 50 50" fill="none">
             <path d="M25 0C27 19 31 23 50 25C31 27 27 31 25 50C23 31 19 27 0 25C19 23 23 19 25 0Z" fill="#fff9f1" />
           </svg>

@@ -448,6 +448,9 @@ body:has(.homepage) {
 .home-project-caption .home-project-year {
   color: #333333;
 }
+.key-visual-caption .home-project-category {
+  color: var(--folio-pink);
+}
 .home-project-description {
   position: absolute;
   width: 1px;

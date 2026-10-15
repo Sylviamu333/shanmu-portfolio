@@ -2,6 +2,11 @@
 
 Source: `footer-pink-glass-folder.png`. The original uploaded PNG is unchanged.
 
+The shared footer no longer renders the separate green `threads-ink.png`
+lettering layer. The coral card surface, white star, dimensions, transforms,
+and fan-out remain intact. The extracted source asset is retained for provenance;
+it is not loaded or displayed on either the homepage or About page.
+
 ## Layers and provenance
 
 - `src/components/home/FooterFolder.tsx` renders a separate back panel, portrait card, coral card, yellow note, front pocket, and decorative View label. `HomeFooter.tsx` supplies the single accessible Work link.

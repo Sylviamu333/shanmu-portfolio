@@ -57,15 +57,6 @@
   z-index: 3;
   transition-delay: 0s;
 }
-.footer-folder-threads-ink {
-  position: absolute;
-  left: 5%;
-  top: 10%;
-  width: 90%;
-  height: auto;
-  /* The source lettering already follows the card's original tilt. */
-  transform: rotate(-10deg);
-}
 .footer-folder-star {
   position: absolute;
   right: 10%;
