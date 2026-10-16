@@ -35,4 +35,6 @@ Results use the project owner's three supplied design-deliverable statements and
 
 ## Mobile-image reveal
 
-The composite animates as one image from opacity 0 / translateY(24px) to opacity 1 / translateY(0), over 700ms with cubic-bezier(0.22, 1, 0.36, 1). An IntersectionObserver on its stable outer figure triggers at 15% visibility and disconnects after its first reveal. Native animation effects are removed on completion. Reduced-motion users, missing animation APIs, failed initialization and pages without JavaScript retain the visible static image.
+The composite animates as one image as a single wrapper from opacity 0 / translate3d(0, 24px, 0) to opacity 1 / translate3d(0, 0, 0), over 700ms with cubic-bezier(0.22, 1, 0.36, 1). An IntersectionObserver on its stable outer figure triggers at 15% visibility and disconnects after its first reveal. Native animation effects are removed on completion. Reduced-motion users, missing animation APIs, failed initialization and pages without JavaScript retain the visible static image.
+
+The Problem media column stacks a PC SHOPPING JOURNEY eyebrow, MacBook figure with its own in-flow caption, and the Mobile Shopping Journey section. Both eyebrows share one typography rule; From Discovery to Checkout is the mobile section's semantic heading. The former redesigned-storefront side rail has been removed, and both media assets retain the shared column width.

@@ -16,11 +16,14 @@
 .eleven-case-study > .eleven-problem { margin-top: 0; }
 .eleven-problem .eleven-study-heading { padding: 0; }
 .eleven-problem-content, .eleven-project-preview { min-width: 0; }
-.eleven-project-preview { width: min(100%, 1200px); justify-self: center; }
-.eleven-mobile-journey > header { margin-bottom: 16px; }
-.eleven-mobile-journey h3 { color: #555; font: 400 11px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .06em; }
-.eleven-mobile-journey header > p { margin-top: 8px; font-size: 14px; line-height: 1.5; }
+.eleven-project-preview { display: flex; flex-direction: column; width: min(100%, 1200px); justify-self: center; }
+.eleven-desktop-journey, .eleven-mobile-journey { width: 100%; min-width: 0; }
+.eleven-journey-eyebrow { margin: 0; color: #666; font: 400 14px/1.4 var(--sans); letter-spacing: .025em; text-transform: uppercase; }
+.eleven-desktop-journey > .eleven-journey-eyebrow { margin-bottom: 16px; }
+.eleven-mobile-journey { margin-top: clamp(40px, 4vw, 64px); }
+.eleven-mobile-journey h3 { margin: 12px 0 24px; color: #222; font: 600 clamp(24px, 2.2vw, 34px)/1.2 var(--sans); }
 .eleven-mobile-browsing { width: 100%; margin: 0; }
+.eleven-mobile-browsing-reveal { width: 100%; }
 .eleven-mobile-browsing-image { display: block; width: 100%; height: auto; }
 .eleven-problem .eleven-problem-headline { max-width: 390px; margin-top: 24px; font: 400 18px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0; }
 .eleven-problem-statements { margin: 28px 0 0; padding: 0; list-style: none; }

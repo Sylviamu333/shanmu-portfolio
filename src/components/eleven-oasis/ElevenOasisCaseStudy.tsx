@@ -46,7 +46,10 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
           </ol>
         </div>
         <div className="eleven-project-preview">
-          <ElevenOasisMacbookVideo />
+          <section className="eleven-desktop-journey" aria-labelledby="eleven-desktop-journey-title">
+            <p id="eleven-desktop-journey-title" className="eleven-journey-eyebrow">PC SHOPPING JOURNEY</p>
+            <ElevenOasisMacbookVideo />
+          </section>
           <ElevenOasisMobileBrowsing />
         </div>
       </section>

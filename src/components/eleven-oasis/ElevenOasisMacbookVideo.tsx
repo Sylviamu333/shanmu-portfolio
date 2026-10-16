@@ -107,42 +107,37 @@ export function ElevenOasisMacbookVideo() {
 
   return (
     <figure ref={root} className="eleven-macbook-showcase" aria-describedby={description}>
-      <div className="eleven-macbook-composition">
-        <div className="eleven-macbook-label-rail">
-          <p className="eleven-preview-label">REDESIGNED STOREFRONT</p>
-        </div>
-        <div className="eleven-macbook-device" data-playback={playback}>
-          <div className="eleven-macbook-display">
-            <div className="eleven-macbook-picture" style={{ backgroundImage: `url("${demo.poster}")` }}>
-              <video
-                ref={video}
-                autoPlay muted loop playsInline preload="metadata"
-                poster={demo.poster}
-                aria-label="Eleven Oasis website browsing demonstration"
-                aria-describedby={description}
-              />
-              <button
-                className="eleven-macbook-control"
-                type="button"
-                onClick={() => toggle.current()}
-                disabled={playback === "loading" || playback === "error"}
-                aria-label={playback === "error" ? "Website demo unavailable" : playback === "playing" ? "Pause website demo" : "Resume website demo"}
-                aria-describedby={description}
-              >
-                <span className="eleven-macbook-play-circle" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d="M8 5L19 12L8 19Z" fill="currentColor" /></svg>
-                </span>
-              </button>
-            </div>
+      <div className="eleven-macbook-device" data-playback={playback}>
+        <div className="eleven-macbook-display">
+          <div className="eleven-macbook-picture" style={{ backgroundImage: `url("${demo.poster}")` }}>
+            <video
+              ref={video}
+              autoPlay muted loop playsInline preload="metadata"
+              poster={demo.poster}
+              aria-label="Eleven Oasis website browsing demonstration"
+              aria-describedby={description}
+            />
+            <button
+              className="eleven-macbook-control"
+              type="button"
+              onClick={() => toggle.current()}
+              disabled={playback === "loading" || playback === "error"}
+              aria-label={playback === "error" ? "Website demo unavailable" : playback === "playing" ? "Pause website demo" : "Resume website demo"}
+              aria-describedby={description}
+            >
+              <span className="eleven-macbook-play-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5L19 12L8 19Z" fill="currentColor" /></svg>
+              </span>
+            </button>
           </div>
-          <Image
-            className="eleven-macbook-overlay"
-            src={`${assets}/macbook-frame.webp`}
-            width={1600} height={1020}
-            sizes="(max-width: 1200px) 92vw, 1200px"
-            alt="Eleven Oasis website demo inside the original MacBook frame"
-          />
         </div>
+        <Image
+          className="eleven-macbook-overlay"
+          src={`${assets}/macbook-frame.webp`}
+          width={1600} height={1020}
+          sizes="(max-width: 1200px) 92vw, 1200px"
+          alt="Eleven Oasis website demo inside the original MacBook frame"
+        />
       </div>
       <figcaption>
         <span id={description}>Eleven Oasis — a recorded walkthrough of the live storefront.</span>

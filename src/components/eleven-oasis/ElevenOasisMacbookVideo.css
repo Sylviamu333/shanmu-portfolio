@@ -1,19 +1,4 @@
-.eleven-macbook-showcase { width: min(100%, 1200px); margin: 0 auto 28px; }
-.eleven-macbook-composition { min-width: 0; }
-.eleven-preview-label { margin: 0 0 12px; color: #555; font: 400 11px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .06em; }
-@media (min-width: 1001px) {
-  .eleven-macbook-composition {
-    display: grid;
-    grid-template-columns: min-content minmax(0, 1fr);
-    /* Active picture in the original 1600 × 1020 artwork: y 139, h 736.25.
-       Center the side label in that row, excluding the caption and base. */
-    grid-template-rows: 139fr 736.25fr 144.75fr;
-    column-gap: 16px;
-  }
-  .eleven-macbook-label-rail { grid-column: 1; grid-row: 2; align-self: center; }
-  .eleven-macbook-label-rail .eleven-preview-label { margin: 0; }
-  .eleven-macbook-composition > .eleven-macbook-device { grid-column: 2; grid-row: 1 / 4; min-width: 0; }
-}
+.eleven-macbook-showcase { width: min(100%, 1200px); margin: 0 auto; }
 .eleven-macbook-device { position: relative; width: 100%; aspect-ratio: 1600 / 1020; isolation: isolate; }
 /* Original 1600 × 1020 coordinates: x 208, y 137, w 1180, h 742.
    This outer opening includes black overscan beneath the unchanged bezel. */
@@ -35,11 +20,10 @@
 .eleven-macbook-play-circle svg { width: 38%; height: 38%; margin-left: 3%; }
 .eleven-macbook-device:is([data-playback="paused"], [data-playback="blocked"], [data-playback="reduced"]) .eleven-macbook-play-circle { opacity: 1; transform: scale(1); }
 .eleven-macbook-device[data-playback="loading"] .eleven-macbook-control { visibility: hidden; }
-.eleven-macbook-showcase figcaption { display: flex; justify-content: space-between; align-items: center; min-height: 44px; gap: 8px 24px; font: 400 11px/1.5 Arial, Helvetica, sans-serif; color: #555; }
+.eleven-macbook-showcase figcaption { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 8px 24px; font: 400 13px/1.5 Arial, Helvetica, sans-serif; color: #666; }
 @media (prefers-reduced-motion: reduce) {
   .eleven-macbook-play-circle { transition: none; transform: none; }
 }
 @media (max-width: 700px) {
-  .eleven-macbook-showcase { margin-bottom: 20px; }
-  .eleven-macbook-showcase figcaption { flex-wrap: wrap; gap: 0 16px; font-size: 10px; }
+  .eleven-macbook-showcase figcaption { flex-wrap: wrap; gap: 0 16px; font-size: 12px; }
 }
