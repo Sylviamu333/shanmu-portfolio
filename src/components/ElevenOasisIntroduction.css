@@ -28,7 +28,9 @@
   font-weight: 400;
   font-synthesis: none;
 }
-.eleven-introduction-summary { max-width: 560px; font-size: 18px; line-height: 1.4; }
+.eleven-introduction-summary { max-width: 560px; }
+.eleven-introduction-summary,
+.eleven-section-navigation a { font-size: 18px; line-height: 1.4; }
 .eleven-introduction-body { max-width: 440px; margin-top: 28px; font-size: 16px; line-height: 1.5; }
 .eleven-introduction-facts {
   display: grid;
@@ -63,7 +65,8 @@
   .eleven-introduction-title { padding: 12px 0 16px; }
   .eleven-introduction-title h1 { font-size: 30px; margin-top: 12px; line-height: 1.12; }
   .eleven-introduction-details { border-left: 0; border-top: 1px solid var(--folio-rule); padding: 16px 0; }
-  .eleven-introduction-summary { font-size: 16px; line-height: 1.45; }
+  .eleven-introduction-summary,
+  .eleven-section-navigation a { font-size: 16px; line-height: 1.45; }
   .eleven-introduction-body { font-size: 15px; line-height: 1.5; margin-top: 24px; }
   .eleven-introduction-facts { gap: 12px 18px; margin-block: 14px 8px; }
   .eleven-introduction-facts dt { margin-bottom: 4px; }
