@@ -1,11 +1,25 @@
-.eleven-case-study { margin-top: 24px; background: #fff; }
-.eleven-section-topline { display: flex; justify-content: space-between; align-items: start; gap: 24px; padding-bottom: 18px; }
-.eleven-section-topline h2,
+.eleven-case-study { margin-top: 0; background: #fff; }
+.eleven-section-navigation { padding: 36px 4px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; background: #fff; }
+.eleven-section-navigation::-webkit-scrollbar { display: none; }
+.eleven-section-navigation ul { display: flex; align-items: center; gap: 44px; width: max-content; margin: 0 auto; padding: 0; list-style: none; }
+.eleven-section-navigation a { display: inline-flex; align-items: center; min-height: 44px; color: #555; font: 400 19px/1.4 Arial, Helvetica, sans-serif; letter-spacing: .01em; white-space: nowrap; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 7px; text-decoration-thickness: 1px; transition: color 200ms ease, text-decoration-color 200ms ease; }
+.eleven-section-navigation a:hover,
+.eleven-section-navigation a[aria-current="location"] { color: #111; }
+.eleven-section-navigation a[aria-current="location"] { text-decoration-color: currentColor; }
+.eleven-section-navigation a:focus-visible { outline: 2px solid #111; outline-offset: 4px; }
+/* Shared html scroll-padding clears the fixed header. Avoid adding the global
+   section margin a second time, including on direct hash entry and without JS. */
+.eleven-case-study .eleven-main-section { scroll-margin-top: 0; }
 .eleven-study-heading > p,
 .eleven-study-heading > h2:only-child { font: 400 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .06em; }
-.eleven-section-topline h2 { flex: none; padding-block: 10px; }
-.eleven-section-topline nav { display: flex; flex-wrap: wrap; justify-content: end; gap: 8px 24px; font-size: 11px; }
-.eleven-section-topline nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--folio-rule); }
+.eleven-strategy-summary { margin-bottom: 24px; }
+@media (max-width: 1000px) {
+  .eleven-section-navigation ul { gap: 32px; }
+  .eleven-section-navigation a { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eleven-section-navigation a { transition: none; }
+}
 .eleven-homepage > .image-gallery { margin-top: 0; }
 .eleven-case-study .gallery-image { background: #fff; flex-direction: column; align-items: stretch; }
 .eleven-case-study .gallery-image img { object-fit: contain; }
@@ -37,10 +51,9 @@
 .eleven-case-pagination { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--folio-rule); display: flex; justify-content: space-between; gap: 20px; font-size: 12px; }
 .eleven-case-pagination a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (max-width: 700px) {
-  .eleven-case-study { margin-top: 20px; }
-  .eleven-section-topline { flex-direction: column; gap: 4px; padding-bottom: 16px; }
-  .eleven-section-topline h2 { padding-block: 0; }
-  .eleven-section-topline nav { justify-content: start; gap: 0 16px; font-size: 10px; }
+  .eleven-section-navigation { padding-block: 24px; }
+  .eleven-section-navigation ul { gap: 16px; }
+  .eleven-section-navigation a { font-size: 14px; }
   .eleven-study-section { margin-top: 32px; }
   .eleven-study-heading { padding-block: 22px; }
   .eleven-study-heading > h2:not(:only-child) { font-size: 24px; }

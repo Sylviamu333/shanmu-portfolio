@@ -23,7 +23,7 @@ type UXDecision = {
 export const uxDecisions: UXDecision[] = [
   {
     id: "dual-collection-navigation",
-    number: "02.1",
+    number: "03.1",
     label: "Dual-Collection Navigation",
     title: "One Storefront, Two Shopping Journeys",
     body: "PRINT and CLASSIC GEAR share a storefront, with a collection switcher directly beneath the primary navigation. Keeping that choice visible gives shoppers a clear sense of where they are without introducing a different shopping structure for each collection.",
@@ -35,7 +35,7 @@ export const uxDecisions: UXDecision[] = [
   },
   {
     id: "shoppable-hero",
-    number: "02.2",
+    number: "03.2",
     label: "Shoppable Hero Experience",
     title: "Turning the Hero into a Shopping Entry Point",
     body: "The hero pairs campaign storytelling with direct shopping routes. Featured collections, campaign links and category entry points help visitors move from an initial impression to relevant products.",
@@ -47,7 +47,7 @@ export const uxDecisions: UXDecision[] = [
   },
   {
     id: "trust-conversion",
-    number: "02.3",
+    number: "03.3",
     label: "Trust & Conversion",
     title: "Building Purchase Confidence Above the Fold",
     body: "Review signals, order volume and the 30-day guarantee bring reassurance into the first screen. Placing these cues close to the shopping CTA helps communicate credibility and fit reassurance before visitors move deeper into the purchase journey.",
@@ -59,7 +59,7 @@ export const uxDecisions: UXDecision[] = [
   },
   {
     id: "responsive-design",
-    number: "02.4",
+    number: "03.4",
     label: "Responsive Design",
     title: "One Experience, Optimized for Every Screen",
     body: "The desktop and mobile layouts keep the same collection choice and shopping priorities. On smaller screens, the hero and category entries stack into a readable sequence while retaining direct access to products.",
