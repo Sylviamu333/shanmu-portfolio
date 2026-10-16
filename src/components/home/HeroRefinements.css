@@ -97,3 +97,77 @@
     transform: none !important;
   }
 }
+
+/* Reserve the lower edge of the desktop viewport for a glimpse of the folder.
+   A flexible gap absorbs screen height; the greeting itself stays near the top. */
+.home-intro .hero-content {
+  --hero-stage-height: 320px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - var(--portfolio-header-height) + var(--hero-stage-height) * .66 + 66px);
+  padding-top: 64px;
+}
+.hero-greeting {
+  display: block;
+  flex: 0 0 auto;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.hero-greeting:focus-visible {
+  outline: 2px solid #4294db;
+  outline-offset: 8px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-greeting {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='36' viewBox='0 0 32 36'%3E%3Cpath d='M16 3v27M6 20l10 10 10-10' fill='none' stroke='%23252323' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 16 18, pointer;
+  }
+}
+.home-intro h1 {
+  font-size: clamp(32.8px, 3.772vw, 54.12px);
+  line-height: 1.12;
+}
+.home-intro .home-role {
+  font-size: clamp(12.5952px, 1.448448vw, 20.78208px);
+  line-height: 1.18;
+  margin-top: 19px;
+}
+.home-intro .home-introduction {
+  font-size: clamp(14.76px, 1.435vw, 20.5px);
+  line-height: 1.45;
+  margin-top: 23px;
+}
+.home-intro .hero-art-composition {
+  margin-top: auto;
+  padding-top: 40px;
+}
+.home-intro .hero-art-stage {
+  height: var(--hero-stage-height);
+  margin: 0 auto 8px;
+}
+@media (max-width: 1100px) {
+  .home-intro .hero-content { --hero-stage-height: 280px; padding-top: 58px; }
+  .home-intro h1 { font-size: 41px; }
+  .home-intro .home-role { font-size: 15.744px; }
+  .home-intro .home-introduction { font-size: 17.22px; }
+  .home-intro .hero-note { margin-bottom: 12px; }
+}
+@media (max-width: 700px) {
+  .home-intro .hero-content {
+    --hero-stage-height: 210px;
+    min-height: 0;
+    padding-top: 34px;
+  }
+  .home-intro h1 { font-size: clamp(23.78px, 6.396vw, 36.08px); line-height: 1.2; }
+  .home-intro .home-role {
+    font-size: clamp(11px, 2.456064vw, 13.85472px);
+    margin-top: 14px;
+    line-height: 1.2;
+  }
+  .home-intro .home-introduction {
+    font-size: clamp(15px, 3.649vw, 18.04px);
+    line-height: 1.5;
+    margin-top: 19px;
+  }
+  .home-intro .hero-art-composition { margin-top: 0; padding-top: 24px; }
+}

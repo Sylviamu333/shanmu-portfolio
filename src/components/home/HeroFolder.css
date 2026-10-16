@@ -5,6 +5,7 @@
   align-items: center;
   pointer-events: auto;
 }
+.folder-interaction,
 .folder-depth,
 .folder-float {
   width: 100%;
@@ -47,13 +48,13 @@
 }
 .folder-character-trigger {
   position: absolute;
-  left: 46.5%;
-  top: 19%;
-  width: 14.5%;
-  height: 30%;
+  left: 19%;
+  top: 12%;
+  width: 75%;
+  height: 88%;
   min-width: 44px;
   min-height: 44px;
-  border-radius: 45%;
+  border-radius: 15%;
   background: transparent;
   padding: 0;
   -webkit-tap-highlight-color: transparent;

@@ -37,35 +37,6 @@
 @media (prefers-reduced-motion: reduce) {
   .castle-eye-flicker { animation: none; opacity: .25; }
 }
-.castle-case-study {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  z-index: 30;
-  min-height: 25px;
-  padding: 0 13px;
-  display: flex;
-  align-items: center;
-  border-radius: 140px;
-  background: #ffd360;
-  color: #17120b;
-  font: 650 10px/1 Manrope, Arial, sans-serif;
-  text-transform: uppercase;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(3px) scale(.96);
-  transition: opacity .18s, transform .25s;
-}
-.home-project-link:is(:hover, :focus-visible) .castle-case-study {
-  opacity: 1;
-  transform: none;
-}
-@media (max-width: 700px) {
-  .castle-case-study { left: 9px; top: 9px; font-size: 8px; padding-inline: 10px; }
-}
-@media (hover: none), (pointer: coarse) {
-  .castle-case-study { opacity: 1; transform: none; }
-}
 .home-project:has(.castle-caption) {
   container-type: inline-size;
   /* Keep the overflowing Hero wash beneath this card's opaque backgrounds,

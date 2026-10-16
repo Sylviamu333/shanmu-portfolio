@@ -22,6 +22,11 @@ const bulbOutline =
 const foreground =
   "M810 402L948 409L957 516L805 510Z M967 423L1110 434L1100 538L955 515Z M1086 310L1245 325L1239 445L1068 433Z";
 
+// Only this card has a complete visible boundary in the flattened artwork.
+// Its revealed backing reuses a neighboring strip of the same pink paper.
+// Occluded tool bases are not invented; the other icons and folder stay intact.
+const toolCard = "M731 164L820 160Q858 161 860 198L863 276Q863 302 835 309L746 314Q712 316 706 284L701 203Q698 175 731 164Z";
+
 export function HeroFolder() {
   const id = useId().replaceAll(":", "");
   const root = useRef<HTMLDivElement>(null);
@@ -29,6 +34,12 @@ export function HeroFolder() {
   const [ready, setReady] = useState(false);
   const [announcement, setAnnouncement] = useState("");
   const { paused } = useHomepageMotion();
+  const pausedRef = useRef(paused);
+  const availabilityRef = useRef<() => void>(() => {});
+  useEffect(() => {
+    pausedRef.current = paused;
+    availabilityRef.current();
+  }, [paused]);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,8 +65,7 @@ export function HeroFolder() {
   useEffect(() => {
     const element = root.current;
     if (!element || !ready) return;
-    const find = (selector: string) =>
-      element.querySelector<SVGElement>(selector)!;
+    const find = (selector: string) => element.querySelector<SVGElement>(selector)!;
     const head = find(".folder-character-head");
     const rest = find(".folder-face-rest");
     const blink = find(".folder-face-blink");
@@ -65,230 +75,158 @@ export function HeroFolder() {
     const bulb = find(".folder-bulb");
     const glow = find(".folder-bulb-glow");
     const rays = find(".folder-bulb-rays");
-    const sparks = [
-      ...element.querySelectorAll<SVGElement>(".folder-idea-spark"),
-    ];
+    const sparks = [...element.querySelectorAll<SVGElement>(".folder-idea-spark")];
+    const card = find(".folder-content-card");
     const parallax = element.querySelector<HTMLElement>(".folder-depth")!;
-    const button = element.querySelector<HTMLButtonElement>(
-      ".folder-character-trigger",
-    )!;
+    const button = element.querySelector<HTMLButtonElement>(".folder-character-trigger")!;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const fine = matchMedia("(hover: hover) and (pointer: fine)");
     let idleTimer: ReturnType<typeof setTimeout> | undefined;
-    let staticTimer: ReturnType<typeof setTimeout> | undefined;
-    let reaction: gsap.core.Timeline | null = null;
     let idle: gsap.core.Timeline | null = null;
-    let busy = false;
+    let hovering = false;
+    let focused = false;
     let visible = true;
-    let blinks = 0;
+    let active = false;
     let disposed = false;
+    let blinks = 0;
 
-    const phase = (value: string) => {
-      element.dataset.expression = value;
-      button.setAttribute("aria-busy", String(value !== "idle"));
-    };
-    const reset = () => {
-      gsap.set([blink, notice, happy, hand, bulb, glow, rays, ...sparks], {
-        opacity: 0,
-      });
-      gsap.set(rest, { opacity: 1 });
-      gsap.set(head, {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        scale: 1,
-        svgOrigin: "985 390",
-      });
-      gsap.set(hand, {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        scale: 1,
-        svgOrigin: "853 401",
-      });
-      gsap.set(bulb, { y: 0, scale: 1, svgOrigin: "1036 135" });
-      phase("idle");
-    };
-    const scheduleBlink = () => {
+    gsap.set([blink, notice, happy, hand, bulb, glow, rays, ...sparks], { opacity: 0 });
+    gsap.set(rest, { opacity: 1 });
+    gsap.set(head, { svgOrigin: "985 390" });
+    gsap.set(hand, { y: 65, rotation: 10, scale: .86, svgOrigin: "853 401" });
+    gsap.set(bulb, { y: 15, scale: .8, svgOrigin: "1036 135" });
+    gsap.set(rays, { scale: .75, svgOrigin: "1038 104" });
+    gsap.set(sparks, { scale: .4, transformOrigin: "50% 50%" });
+
+    // One reversible timeline holds the idea pose until the stable hit area is
+    // left. Reversing mid-flight never resets poses or queues another animation.
+    const reaction = gsap.timeline({
+      paused: true,
+      onUpdate: () => {
+        element.dataset.expression = reaction.progress() === 0 ? "idle"
+          : reaction.reversed() ? "returning"
+          : reaction.progress() === 1 ? "holding" : "happy";
+      },
+      onReverseComplete: () => {
+        element.dataset.expression = "idle";
+        scheduleBlink();
+      },
+    });
+    reaction
+      .to(card, { y: -82, rotation: -3, svgOrigin: "780 310", duration: .56, ease: "back.out(1.25)" }, 0)
+      .to(head, { y: -52, rotation: -1, scale: 1.01, duration: .56, ease: "back.out(1.2)" }, .08)
+      .to(notice, { opacity: 1, duration: .14 }, .08)
+      .to(happy, { opacity: 1, duration: .18 }, .22)
+      .to(hand, { opacity: 1, y: -30, rotation: 0, scale: 1, duration: .5, ease: "back.out(1.3)" }, .22)
+      .to(bulb, { opacity: 1, y: -62, scale: 1, duration: .4, ease: "back.out(1.4)" }, .3)
+      .to(glow, { opacity: .75, y: -62, duration: .4, ease: "sine.inOut" }, .38)
+      .to(rays, { opacity: .8, y: -62, scale: 1.06, duration: .35, ease: "sine.out" }, .45)
+      .to(sparks, { opacity: .85, y: -62, scale: 1, duration: .22, stagger: .045, ease: "power2.out" }, .46);
+
+    function scheduleBlink() {
       clearTimeout(idleTimer);
-      if (disposed || paused || reduced.matches || !visible || document.hidden)
-        return;
-      idleTimer = setTimeout(
-        () => {
-          if (busy) return;
-          blinks++;
-          idle = gsap.timeline({ onComplete: scheduleBlink });
-          idle
-            .set(blink, { opacity: 1 })
-            .to(blink, { opacity: 0, duration: 0.08 }, 0.13);
-          if (blinks % 3 === 0) {
-            // An actual mouth-state change, separate from breathing/tilting.
-            idle
-              .to(happy, { opacity: 1, duration: 0.16 }, 0.4)
-              .to(happy, { opacity: 0, duration: 0.2 }, 1.05);
-          }
-        },
-        4000 + Math.random() * 3000,
-      );
-    };
-    const stop = () => {
-      clearTimeout(idleTimer);
-      clearTimeout(staticTimer);
-      idle?.kill();
-      reaction?.kill();
-      busy = false;
-      reset();
-      gsap.set(parallax, { x: 0, y: 0 });
-    };
-    reset();
-    scheduleBlink();
-    playRef.current = () => {
-      if (busy || paused || !visible || document.hidden) return;
+      if (disposed || active || pausedRef.current || reduced.matches || !visible || document.hidden) return;
+      idleTimer = setTimeout(() => {
+        if (active) return;
+        blinks++;
+        idle = gsap.timeline({ onComplete: scheduleBlink });
+        idle.set(blink, { opacity: 1 }).to(blink, { opacity: 0, duration: .08 }, .13);
+        if (blinks % 3 === 0)
+          idle.to(happy, { opacity: 1, duration: .16 }, .4).to(happy, { opacity: 0, duration: .2 }, 1.05);
+      }, 4000 + Math.random() * 3000);
+    }
+    const update = () => {
       clearTimeout(idleTimer);
       idle?.kill();
-      reset();
-      busy = true;
-      setAnnouncement("Aha! An idea.");
-      phase("noticed");
-      if (reduced.matches) {
-        // Reduced motion keeps the interaction as a still expression change.
-        gsap.set(rest, { opacity: 0 });
-        gsap.set([happy, hand, bulb], { opacity: 1 });
-        phase("happy");
-        staticTimer = setTimeout(() => {
-          busy = false;
-          reset();
-          setAnnouncement("");
-        }, 2500);
+      idle = null;
+      if (reaction.progress() === 0) gsap.set(happy, { opacity: 0 });
+      gsap.set(blink, { opacity: 0 });
+      if (pausedRef.current) {
+        reaction.pause();
+        gsap.killTweensOf(parallax);
         return;
       }
-      reaction = gsap.timeline({
-        onComplete: () => {
-          busy = false;
-          reset();
-          setAnnouncement("");
+      const next = visible && !document.hidden && (hovering || focused);
+      if (next !== active) {
+        active = next;
+        setAnnouncement(active ? "Aha! An idea." : "");
+      }
+      if (reduced.matches || !visible || document.hidden) {
+        reaction.progress(next ? 1 : 0).pause();
+        element.dataset.expression = next ? "holding" : "idle";
+      } else if (next) {
+        reaction.timeScale(1).play();
+      } else {
+        reaction.timeScale(1.25).reverse();
+        if (reaction.progress() === 0) {
+          gsap.set(happy, { opacity: 0 });
           scheduleBlink();
-        },
-      });
-      reaction
-        .to(
-          head,
-          { y: -2, rotation: -0.5, duration: 0.2, ease: "power2.out" },
-          0,
-        )
-        .call(() => phase("curious"), [], 0.2)
-        .to(notice, { opacity: 1, duration: 0.16, ease: "sine.inOut" }, 0.2)
-        .call(() => phase("happy"), [], 0.4)
-        .to(happy, { opacity: 1, duration: 0.18, ease: "sine.inOut" }, 0.4)
-        .to(
-          head,
-          {
-            y: -5,
-            rotation: -1,
-            scale: 1.01,
-            duration: 0.55,
-            ease: "back.out(1.35)",
-          },
-          0.4,
-        )
-        .fromTo(
-          hand,
-          { opacity: 0, y: 65, rotation: 10, scale: 0.86 },
-          {
-            opacity: 1,
-            y: 0,
-            rotation: 0,
-            scale: 1,
-            duration: 0.5,
-            ease: "back.out(1.3)",
-          },
-          0.5,
-        )
-        .fromTo(
-          bulb,
-          { opacity: 0, y: 15, scale: 0.8 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.4)" },
-          0.6,
-        )
-        .to(glow, { opacity: 0.75, duration: 0.4, ease: "sine.inOut" }, 0.8)
-        .fromTo(
-          sparks,
-          { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" },
-          {
-            opacity: 0.85,
-            scale: 1,
-            duration: 0.22,
-            stagger: 0.045,
-            ease: "power2.out",
-          },
-          0.8,
-        )
-        .to(bulb, { y: -8, duration: 0.17, ease: "power2.out" }, 1.1)
-        .to(bulb, { y: 0, duration: 0.35, ease: "back.out(1.25)" }, 1.27)
-        .fromTo(
-          rays,
-          { opacity: 0, scale: 0.75, svgOrigin: "1038 104" },
-          { opacity: 0.8, scale: 1.12, duration: 0.4, ease: "sine.out" },
-          1.1,
-        )
-        .to(sparks, { opacity: 0, duration: 0.45, stagger: 0.035 }, 1.35)
-        .call(() => phase("holding"), [], 1.5)
-        .call(() => phase("returning"), [], 2.5)
-        .to(
-          [happy, notice, hand, bulb, glow, rays],
-          { opacity: 0, duration: 0.5, ease: "sine.inOut" },
-          2.5,
-        )
-        .to(
-          head,
-          { y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "sine.inOut" },
-          2.5,
-        );
+        }
+      }
     };
+    availabilityRef.current = update;
+    const enter = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse" || !fine.matches) return;
+      hovering = true;
+      update();
+    };
+    const leave = () => { hovering = false; update(); };
+    const focus = () => { focused = button.matches(":focus-visible"); update(); };
+    const blur = () => { focused = false; update(); };
+    playRef.current = () => { focused = button.matches(":focus-visible"); update(); };
     const pointer = (event: PointerEvent) => {
-      if (paused || reduced.matches || event.pointerType !== "mouse") return;
+      if (pausedRef.current || reduced.matches || event.pointerType !== "mouse") return;
       const bounds = element.getBoundingClientRect();
       gsap.to(parallax, {
-        x: ((event.clientX - bounds.left) / bounds.width - 0.5) * 4,
-        y: ((event.clientY - bounds.top) / bounds.height - 0.5) * 3,
-        duration: 0.55,
-        ease: "sine.out",
-        overwrite: true,
+        x: ((event.clientX - bounds.left) / bounds.width - .5) * 4,
+        y: ((event.clientY - bounds.top) / bounds.height - .5) * 3,
+        duration: .55, ease: "sine.out", overwrite: true,
       });
     };
-    const leave = () => {
-      gsap.to(parallax, {
-        x: 0,
-        y: 0,
-        duration: 0.65,
-        ease: "sine.out",
-        overwrite: true,
-      });
+    const resetParallax = () => {
+      if (pausedRef.current) return;
+      gsap.to(parallax, { x: 0, y: 0, duration: .65, ease: "sine.out", overwrite: true });
     };
     const availability = () => {
-      stop();
-      scheduleBlink();
+      hovering = fine.matches && button.matches(":hover");
+      focused = button.matches(":focus-visible");
+      update();
     };
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       availability();
     });
     observer.observe(element);
+    button.addEventListener("pointerenter", enter);
+    button.addEventListener("pointerleave", leave);
+    button.addEventListener("focus", focus);
+    button.addEventListener("blur", blur);
     element.addEventListener("pointermove", pointer, { passive: true });
-    element.addEventListener("pointerleave", leave);
+    element.addEventListener("pointerleave", resetParallax);
     reduced.addEventListener("change", availability);
+    fine.addEventListener("change", availability);
     document.addEventListener("visibilitychange", availability);
+    availability();
     return () => {
       disposed = true;
-      stop();
+      clearTimeout(idleTimer);
+      idle?.kill();
+      reaction.kill();
       gsap.killTweensOf(parallax);
       observer.disconnect();
+      button.removeEventListener("pointerenter", enter);
+      button.removeEventListener("pointerleave", leave);
+      button.removeEventListener("focus", focus);
+      button.removeEventListener("blur", blur);
       element.removeEventListener("pointermove", pointer);
-      element.removeEventListener("pointerleave", leave);
+      element.removeEventListener("pointerleave", resetParallax);
       reduced.removeEventListener("change", availability);
+      fine.removeEventListener("change", availability);
       document.removeEventListener("visibilitychange", availability);
       playRef.current = () => {};
+      availabilityRef.current = () => {};
     };
-  }, [ready, paused]);
+  }, [ready]);
 
   const clip = (name: string) => `url(#${id}-${name})`;
   const frame = (src: string, className?: string) => (
@@ -307,99 +245,108 @@ export function HeroFolder() {
       data-ready={ready}
       data-expression="idle"
     >
-      <div className="folder-depth">
-        <div className="folder-float">
-          <Image
-            src={ready ? resting : original}
-            alt="Pink glass folder filled with creative tools and SHAN MU’s blonde Memoji."
-            width={1785}
-            height={881}
-            sizes="(max-width: 700px) 90vw, (max-width: 1100px) 470px, 540px"
-            priority
-            className="folder-original"
-          />
-          <svg
-            className="folder-layers"
-            viewBox="0 0 1785 881"
-            fill="none"
-            aria-hidden="true"
-          >
-            <defs>
-              <mask
-                id={`${id}-alpha`}
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="1785"
-                height="881"
-                style={{ maskType: "alpha" }}
-              >
-                {frame(original)}
-              </mask>
-              <clipPath id={`${id}-head`}>
-                <path d={headOutline} />
-              </clipPath>
-              <clipPath id={`${id}-hand`}>
-                <path d={handOutline} />
-              </clipPath>
-              <clipPath id={`${id}-bulb`}>
-                <path d={bulbOutline} />
-              </clipPath>
-              <clipPath id={`${id}-foreground`}>
-                <path d={foreground} />
-              </clipPath>
-              <radialGradient id={`${id}-warm`}>
-                <stop stopColor="#FFE283" stopOpacity="0.8" />
-                <stop offset="1" stopColor="#FFD45C" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-            <g className="folder-character-breathe">
-              <g
-                className="folder-character-head"
-                clipPath={clip("head")}
-                mask={clip("alpha")}
-              >
-                {frame(layers[0], "folder-face-rest")}
-                {frame(layers[1], "folder-face-blink")}
-                {frame(layers[2], "folder-face-notice")}
-                {frame(original, "folder-face-happy")}
-              </g>
-            </g>
-            <g className="folder-character-hand" clipPath={clip("hand")}>
-              {frame(original)}
-            </g>
-            <g clipPath={clip("foreground")}>{frame(original)}</g>
-            <circle
-              className="folder-bulb-glow"
-              cx="1038"
-              cy="104"
-              r="115"
-              fill={clip("warm")}
+      <div className="folder-interaction">
+        <div className="folder-depth">
+          <div className="folder-float">
+            <Image
+              src={ready ? resting : original}
+              alt="Pink glass folder filled with creative tools and SHAN MU’s blonde Memoji."
+              width={1785}
+              height={881}
+              sizes="(max-width: 700px) 90vw, (max-width: 1100px) 470px, 540px"
+              priority
+              className="folder-original"
             />
-            <g className="folder-bulb" clipPath={clip("bulb")}>
-              {frame(original)}
-            </g>
-            <g
-              className="folder-bulb-rays"
-              stroke="#F4BF45"
-              strokeWidth="5"
-              strokeLinecap="round"
+            <svg
+              className="folder-layers"
+              viewBox="0 0 1785 881"
+              fill="none"
+              aria-hidden="true"
             >
-              <path d="M1010 27l-7-14M1096 47l12-10M1130 113l16 3M1087 186l6 12M959 131l-15 7" />
-            </g>
-            {[
-              [944, 49],
-              [1147, 80],
-              [1114, 193],
-            ].map(([x, y], i) => (
-              <path
-                key={i}
-                className="folder-idea-spark"
-                d={`M${x} ${y - 8}q0 8 8 8q-8 0-8 8q0-8-8-8q8 0 8-8Z`}
-                fill="#F6C94F"
+              <defs>
+                <mask
+                  id={`${id}-alpha`}
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="0"
+                  width="1785"
+                  height="881"
+                  style={{ maskType: "alpha" }}
+                >
+                  {frame(original)}
+                </mask>
+                <clipPath id={`${id}-tool-card`}><path d={toolCard} /></clipPath>
+                <clipPath id={`${id}-head`}>
+                  <path d={headOutline} />
+                </clipPath>
+                <clipPath id={`${id}-hand`}>
+                  <path d={handOutline} />
+                </clipPath>
+                <clipPath id={`${id}-bulb`}>
+                  <path d={bulbOutline} />
+                </clipPath>
+                <clipPath id={`${id}-foreground`}>
+                  <path d={foreground} />
+                </clipPath>
+                <radialGradient id={`${id}-warm`}>
+                  <stop stopColor="#FFE283" stopOpacity="0.8" />
+                  <stop offset="1" stopColor="#FFD45C" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+              <g clipPath={clip("tool-card")}>
+                <svg x="698" y="158" width="170" height="160" viewBox="866 185 41 122" preserveAspectRatio="none">
+                  {frame(resting)}
+                </svg>
+              </g>
+              <g className="folder-content-card" clipPath={clip("tool-card")}>{frame(resting)}</g>
+              <g className="folder-character-breathe">
+                <g
+                  className="folder-character-head"
+                  clipPath={clip("head")}
+                  mask={clip("alpha")}
+                >
+                  {frame(layers[0], "folder-face-rest")}
+                  {frame(layers[1], "folder-face-blink")}
+                  {frame(layers[2], "folder-face-notice")}
+                  {frame(original, "folder-face-happy")}
+                </g>
+              </g>
+              <g className="folder-character-hand" clipPath={clip("hand")}>
+                {frame(original)}
+              </g>
+              <g clipPath={clip("foreground")}>{frame(original)}</g>
+              <circle
+                className="folder-bulb-glow"
+                cx="1038"
+                cy="104"
+                r="115"
+                fill={clip("warm")}
               />
-            ))}
-          </svg>
+              <g className="folder-bulb" clipPath={clip("bulb")}>
+                {frame(original)}
+              </g>
+              <g
+                className="folder-bulb-rays"
+                stroke="#F4BF45"
+                strokeWidth="5"
+                strokeLinecap="round"
+              >
+                <path d="M1010 27l-7-14M1096 47l12-10M1130 113l16 3M1087 186l6 12M959 131l-15 7" />
+              </g>
+              {[
+                [944, 49],
+                [1147, 80],
+                [1114, 193],
+              ].map(([x, y], i) => (
+                <path
+                  key={i}
+                  className="folder-idea-spark"
+                  d={`M${x} ${y - 8}q0 8 8 8q-8 0-8 8q0-8-8-8q8 0 8-8Z`}
+                  fill="#F6C94F"
+                />
+              ))}
+            </svg>
+          </div>
         </div>
         <button
           type="button"
@@ -407,14 +354,11 @@ export function HeroFolder() {
           aria-label="Play SHAN MU’s aha moment"
           aria-describedby={`${id}-hint`}
           disabled={!ready || paused}
-          onPointerEnter={(event) => {
-            if (event.pointerType === "mouse") playRef.current();
-          }}
           onClick={() => playRef.current()}
         />
       </div>
       <span id={`${id}-hint`} className="folder-sr-only">
-        Hover, tap, or press Enter to spark an idea.
+        Hover over the folder or focus this button to reveal a creative idea. Move away to close it.
       </span>
       <span className="folder-sr-only" role="status" aria-live="polite">
         {announcement}

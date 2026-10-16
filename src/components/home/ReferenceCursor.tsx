@@ -31,6 +31,9 @@ export function ReferenceCursor({ paused }: { paused: boolean }) {
     let active = false;
     let x = 0;
     let y = 0;
+    let drawnX = 0;
+    let drawnY = 0;
+    let arrow = false;
     const dpr = Math.min(devicePixelRatio || 1, 2);
     surface.width = 216 * dpr;
     surface.height = 216 * dpr;
@@ -47,6 +50,11 @@ export function ReferenceCursor({ paused }: { paused: boolean }) {
     const paint = (now: number) => {
       frame = 0;
       if (!active || document.hidden) return;
+      if (arrow) {
+        drawnX += (x - drawnX) * 0.35;
+        drawnY += (y - drawnY) * 0.35;
+        el.style.transform = `translate3d(${drawnX}px,${drawnY}px,0)`;
+      }
       points = points.filter((point) => now - point.time < 300);
       context.clearRect(0, 0, 216, 216);
       context.lineCap = "round";
@@ -64,7 +72,8 @@ export function ReferenceCursor({ paused }: { paused: boolean }) {
         context.lineTo(b.x - x + 108, b.y - y + 108);
         context.stroke();
       }
-      if (points.length) frame = requestAnimationFrame(paint);
+      if (points.length || (arrow && Math.hypot(x - drawnX, y - drawnY) > 0.1))
+        frame = requestAnimationFrame(paint);
     };
     const move = (event: PointerEvent) => {
       const target = event.target instanceof Element ? event.target : null;
@@ -76,22 +85,30 @@ export function ReferenceCursor({ paused }: { paused: boolean }) {
         hide();
         return;
       }
+      const wasActive = active;
       active = true;
       x = event.clientX;
       y = event.clientY;
-      el.style.transform = `translate3d(${x}px,${y}px,0)`;
+      const nextArrow = Boolean(target.closest(".hero-greeting"));
+      if (!wasActive || arrow !== nextArrow || !nextArrow) {
+        drawnX = x;
+        drawnY = y;
+        el.style.transform = `translate3d(${x}px,${y}px,0)`;
+      }
+      arrow = nextArrow;
+      el.dataset.arrow = String(arrow);
       el.dataset.visible = "true";
       document.body.dataset.homeCursor = "true";
       const project = target.closest(".home-project-link");
-      // The Castle card has a badge in its empty corner, keeping the pointer
-      // label from obscuring its central logo. All other cards retain theirs.
-      const pointerLabel = project && project.getAttribute("data-case-study-badge") !== "fixed";
+      // Castle deliberately has no case-study badge, including at the pointer.
+      const pointerLabel = project && !project.hasAttribute("data-case-study-badge");
       text.textContent = pointerLabel ? "Read case study" : "";
       el.dataset.label = pointerLabel ? "true" : "false";
       text.style.left = x < 165 ? "7px" : "-149px";
       text.style.top = y < 30 ? "7px" : "-25px";
       const now = performance.now();
-      points.push({ x, y, time: now });
+      if (arrow) points = [];
+      else points.push({ x, y, time: now });
       if (points.length > 72) points.shift();
       if (!frame) frame = requestAnimationFrame(paint);
     };
@@ -129,6 +146,7 @@ export function ReferenceCursor({ paused }: { paused: boolean }) {
           <canvas ref={canvas} className="home-cursor-trail" />
           <span ref={label} className="home-cursor-label" />
           <span className="home-cursor-dot" />
+          <span className="home-cursor-arrow">↓</span>
         </div>,
         document.body,
       )

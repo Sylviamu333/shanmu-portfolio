@@ -24,7 +24,7 @@ export function HomeProject({ project }: { project: Project }) {
   // Homepage presentation only: the existing photography detail keeps its identity.
   const keyVisual = project.slug === "visual-experiments";
   const title = keyVisual ? "Key Visual" : project.title;
-  const year = keyVisual ? "2023 & 2024" : elevenOasis ? "2026" : earlyBirds ? "2024" : project.year;
+  const year = keyVisual ? "2023 & 2024" : elevenOasis ? "2025–2026" : earlyBirds ? "2024" : project.year;
   return (
     <article
       className={`home-project project-discipline-${project.discipline.toLowerCase()}`}
@@ -32,33 +32,33 @@ export function HomeProject({ project }: { project: Project }) {
       <Link
         href={`/work/${project.slug}/`}
         className="home-project-link"
-        data-case-study-badge={castle ? "fixed" : undefined}
+        data-case-study-badge={castle ? "none" : undefined}
         aria-label={`View ${title} case study`}
       >
         <div className={`home-project-art art-${project.slug}`}>
-          {elevenOasis ? (
-            <ElevenOasisPreview />
-          ) : earlyBirds ? (
-            <EarlyBirdsPreview />
-          ) : castle ? (
-            <CastlePreview />
-          ) : keyVisual ? (
-            <KeyVisualPreview />
-          ) : (
-            <div className="home-single-art">
-              <Artwork image={project.cover} />
-            </div>
-          )}
-          {castle ? (
-            <span className="castle-case-study" aria-hidden="true">Read case study ↗</span>
-          ) : (
+          <div className="home-project-media">
+            {elevenOasis ? (
+              <ElevenOasisPreview />
+            ) : earlyBirds ? (
+              <EarlyBirdsPreview />
+            ) : castle ? (
+              <CastlePreview />
+            ) : keyVisual ? (
+              <KeyVisualPreview />
+            ) : (
+              <div className="home-single-art">
+                <Artwork image={project.cover} />
+              </div>
+            )}
+          </div>
+          {!castle && (
             <span className="home-view-project" aria-hidden="true">
               <Arrow diagonal />
             </span>
           )}
         </div>
         <div className={`home-project-caption${earlyBirds ? " ebc-caption" : castle ? " castle-caption" : keyVisual ? " key-visual-caption" : ""}`}>
-          <h3>{elevenOasis ? "SHOPIFY/E-COMMERCE WEBSITE" : title}</h3>
+          <h3>{title}</h3>
           <p>
             <span className="home-project-category">
               {keyVisual ? "PHOTOGRAPHY" : earlyBirds ? "BRANDING" : project.category.split(" / ")[0].trim()}
