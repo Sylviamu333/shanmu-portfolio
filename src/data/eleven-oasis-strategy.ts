@@ -17,7 +17,7 @@ export const elevenStrategies: ElevenStrategy[] = [
   {
     number: "02", label: "REDESIGNED PDP BUY BOX", title: "Supporting Confident Purchase Decisions",
     description: "I refined the product purchasing experience by bringing essential product information, variant selection, pricing, and purchase actions into a clearer and more accessible hierarchy.",
-    images: [{ src: "/projects/eleven-oasis/mobile/eleven-oasis-mobile-8.png", width: 679, height: 1148, alt: "Redesigned mobile product detail: pullover imagery, price, guarantee, reviews, Beige / S selection and persistent Add to Cart action" }],
+    images: [{ src: "/projects/eleven-oasis/strategy/pdp-ux-decisions.png", width: 1617, height: 973, alt: "Eleven Oasis PDP UX Decisions: a two-by-two breakdown of product information hierarchy, intuitive size selection, contextual bundle upselling and product detail transparency, beside the complete redesigned product page on an iPhone" }],
   },
   {
     number: "03", label: "REUSABLE LANDING PAGES", title: "Flexible Experiences for Different Campaigns",
