@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
+import demo from "./elevenOasisDemo.json";
 import "./ElevenOasisMacbookVideo.css";
 
 const assets = "/projects/eleven-oasis/demo";
@@ -35,7 +36,7 @@ export function ElevenOasisMacbookVideo() {
         setPlayback(idleState());
         return;
       }
-      if (!element.hasAttribute("src")) element.src = `${assets}/homepage-demo1.mp4`;
+      if (!element.hasAttribute("src")) element.src = demo.src;
       element.muted = true;
       // Playback events below own the playing/paused UI, including browser or
       // system pauses. This promise handles only a declined autoplay attempt.
@@ -108,11 +109,11 @@ export function ElevenOasisMacbookVideo() {
     <figure ref={root} className="eleven-macbook-showcase" aria-describedby={description}>
       <div className="eleven-macbook-device" data-playback={playback}>
         <div className="eleven-macbook-display">
-          <div className="eleven-macbook-picture">
+          <div className="eleven-macbook-picture" style={{ backgroundImage: `url("${demo.poster}")` }}>
             <video
               ref={video}
               autoPlay muted loop playsInline preload="metadata"
-              poster={`${assets}/poster.webp`}
+              poster={demo.poster}
               aria-label="Eleven Oasis website browsing demonstration"
               aria-describedby={description}
             />

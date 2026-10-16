@@ -4,11 +4,11 @@
    This outer opening includes black overscan beneath the unchanged bezel. */
 .eleven-macbook-display { position: absolute; left: 13%; top: 13.4313725%; width: 73.75%; height: 72.745098%; overflow: hidden; border-radius: 1.3559322% 1.3559322% 0 0 / 2.1563342% 2.1563342% 0 0; background: #000; outline: 2px solid #000; }
 /* Measured picture edges in the PNG: x 209, y 139, w 1178, bottom ~875.25.
-   1178 × 736.25 is 16:10, matching the ORIGINAL 1440 × 900 recording exactly.
-   Keep the entire frame, including its baked-in white border and watermark;
-   those require a clean source, not CSS cropping or a cover-up. */
-.eleven-macbook-picture { position: absolute; left: .0847458%; top: .2695418%; width: 99.8305085%; height: 99.2250674%; background: #000 url('/projects/eleven-oasis/demo/poster.webp') center / contain no-repeat; }
-.eleven-macbook-picture video { display: block; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; object-fit: contain; object-position: center; background: transparent; }
+   The clean recording's rim/padding is removed by the serving recipe. Its
+   760 × 490 picture fills this 16:10 window with a 15px bottom crop, preserving
+   the top navigation. Video and versioned poster use the same exact framing. */
+.eleven-macbook-picture { position: absolute; left: .0847458%; top: .2695418%; width: 99.8305085%; height: 99.2250674%; background-position: center top; background-size: cover; background-repeat: no-repeat; }
+.eleven-macbook-picture video { display: block; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; object-fit: cover; object-position: center top; background: transparent; }
 .eleven-macbook-device[data-playback="loading"] video,
 .eleven-macbook-device[data-playback="error"] video,
 .eleven-macbook-device[data-playback="blocked"] video { visibility: hidden; }

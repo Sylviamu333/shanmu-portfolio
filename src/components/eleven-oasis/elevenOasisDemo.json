@@ -1,0 +1,21 @@
+{
+  "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+  "poster": "/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+  "source": "source-assets/eleven-oasis-homepage-demo.mp4",
+  "sourceSha256": "a2d29c8295f47fffb71e8f140489558cb8c43dc5f32151535713f786c1a100c9",
+  "sourceWidth": 800,
+  "sourceHeight": 500,
+  "width": 760,
+  "height": 490,
+  "duration": 52.533333,
+  "encodedBorderCrop": {
+    "x": 4,
+    "y": 6,
+    "width": 760,
+    "height": 490
+  },
+  "presentationCrop": {
+    "top": 0,
+    "bottom": 15
+  }
+}
