@@ -31,15 +31,15 @@
 .eleven-introduction-summary { max-width: 560px; }
 .eleven-introduction-summary,
 .eleven-section-navigation a { font-size: 18px; line-height: 1.4; }
-.eleven-introduction-body { max-width: 440px; margin-top: 28px; font-size: 16px; line-height: 1.5; }
+.eleven-introduction-body { max-width: 440px; margin-top: 28px; }
 .eleven-introduction-facts {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px 28px;
   margin: 22px 0 14px;
 }
-.eleven-introduction-facts dt { color: var(--muted); font-size: 10px; line-height: 1.4; margin-bottom: 5px; }
-.eleven-introduction-facts dd { margin: 0; font-size: 14px; line-height: 1.5; }
+.eleven-introduction-facts dt { margin-bottom: 5px; }
+.eleven-introduction-facts dd { margin: 0; }
 .eleven-introduction-nowrap { white-space: nowrap; }
 .eleven-introduction-link {
   display: inline-flex;
@@ -67,8 +67,7 @@
   .eleven-introduction-details { border-left: 0; border-top: 1px solid var(--folio-rule); padding: 16px 0; }
   .eleven-introduction-summary,
   .eleven-section-navigation a { font-size: 16px; line-height: 1.45; }
-  .eleven-introduction-body { font-size: 15px; line-height: 1.5; margin-top: 24px; }
+  .eleven-introduction-body { margin-top: 24px; }
   .eleven-introduction-facts { gap: 12px 18px; margin-block: 14px 8px; }
   .eleven-introduction-facts dt { margin-bottom: 4px; }
-  .eleven-introduction-facts dd { line-height: 1.45; }
 }

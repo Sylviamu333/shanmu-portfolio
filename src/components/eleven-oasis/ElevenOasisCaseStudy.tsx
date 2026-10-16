@@ -9,6 +9,7 @@ import { ElevenOasisMobileBrowsing } from "./ElevenOasisMobileBrowsing";
 import { ElevenOasisStrategyShowcase } from "./ElevenOasisStrategyShowcase";
 import { ElevenOasisSectionNavigation } from "./ElevenOasisSectionNavigation";
 import "./ElevenOasisCaseStudy.css";
+import "./ElevenOasisTypography.css";
 
 export function ElevenOasisCaseStudy({ project, previous, next }: {
   project: Project;
@@ -192,7 +193,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
         <div className="eleven-outcomes">
           {designOutcomes.map(outcome => (
             <article key={outcome.number}>
-              <h3>{outcome.number} / {outcome.title}</h3>
+              <h3><span className="eleven-outcome-number">{outcome.number} / </span>{outcome.title}</h3>
               <p>{outcome.body}</p>
             </article>
           ))}

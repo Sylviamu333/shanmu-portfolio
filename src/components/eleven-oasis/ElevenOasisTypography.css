@@ -1,0 +1,104 @@
+/* Measured from the existing Overview and Problem in Chromium before editing.
+   This scope excludes the shared site header/footer and every other route. */
+.project-eleven-oasis {
+  --eleven-type-sans: Arial, Helvetica, sans-serif;
+  --eleven-type-serif: Georgia, "Times New Roman", serif;
+  --eleven-type-ink: #242521;
+  --eleven-type-muted: #72736b;
+  --eleven-type-body-color: #555;
+  --eleven-type-section-size: 28px;
+  --eleven-type-section-line: 1.2;
+  --eleven-type-section-tracking: -.02em;
+  --eleven-type-editorial-size: 14px;
+  --eleven-type-editorial-line: 1.5;
+  --eleven-type-lead-size: 16px;
+  --eleven-type-lead-line: 1.5;
+  --eleven-type-body-size: 15px;
+  --eleven-type-body-line: 1.6;
+  --eleven-type-eyebrow-size: 10px;
+  --eleven-type-eyebrow-line: 1.4;
+  --eleven-type-control-size: 12px;
+  --eleven-type-control-line: 1.4;
+}
+/* Level 01: the project title's existing rules remain untouched. */
+/* Level 02: preserve the original PROBLEM heading, including responsive values.
+   The source strings are already uppercase; no copy transformation is added. */
+.project-eleven-oasis .eleven-study-heading > h2 {
+  font: 400 var(--eleven-type-section-size)/var(--eleven-type-section-line) var(--eleven-type-sans);
+  letter-spacing: var(--eleven-type-section-tracking);
+  text-transform: none;
+}
+/* Level 03: exact Overview Focus value typography, not the larger subtitle. */
+.project-eleven-oasis :is(
+  .eleven-introduction-facts dd,
+  .eleven-problem-statements h3,
+  .eleven-mobile-journey h3,
+  .eleven-strategy-description h3,
+  .eleven-strategy-unavailable h3,
+  .eleven-editorial-row h3,
+  .eleven-decision-headline,
+  .eleven-decision-note h4,
+  .eleven-system-part h4,
+  .eleven-outcomes h3,
+  .eleven-reflection h3
+) {
+  font: 400 var(--eleven-type-editorial-size)/var(--eleven-type-editorial-line) var(--eleven-type-serif);
+  font-synthesis: none;
+  letter-spacing: normal;
+}
+/* Level 04: Overview introduction's exact color and responsive lead style. */
+.project-eleven-oasis :is(
+  .eleven-introduction-body,
+  .eleven-problem-headline,
+  .eleven-section-headline,
+  .eleven-decisions-introduction
+) {
+  color: var(--eleven-type-ink);
+  font: 400 var(--eleven-type-lead-size)/var(--eleven-type-lead-line) var(--eleven-type-sans);
+  letter-spacing: normal;
+}
+/* Level 05: the original numbered Problem descriptions, shared as body copy.
+   Explicit text selectors avoid styling media buttons, filters or lightboxes. */
+.project-eleven-oasis :is(
+  .eleven-problem-statements p,
+  .eleven-strategy-description > p,
+  .eleven-strategy-brand-notes p,
+  .eleven-strategy-unavailable > p:last-child,
+  .eleven-study-copy,
+  .eleven-study-copy > p,
+  .eleven-decision-note > p,
+  .eleven-outcomes article > p,
+  .eleven-outcomes-note,
+  .eleven-original-context > p
+):not(.eleven-decisions-introduction) {
+  color: var(--eleven-type-body-color);
+  font: 400 var(--eleven-type-body-size)/var(--eleven-type-body-line) var(--eleven-type-sans);
+  letter-spacing: normal;
+}
+/* Level 06: exact Overview dt values; retain each label's existing casing. */
+.project-eleven-oasis :is(
+  .eleven-introduction-facts dt,
+  .eleven-journey-eyebrow,
+  .eleven-subsection-label,
+  .eleven-strategy-evidence-label,
+  .eleven-outcome-number
+),
+.project-eleven-oasis .eleven-study-heading > p:not(.eleven-section-headline):not(.eleven-problem-headline) {
+  color: var(--eleven-type-muted);
+  font: 400 var(--eleven-type-eyebrow-size)/var(--eleven-type-eyebrow-line) var(--eleven-type-serif);
+  font-synthesis: none;
+  letter-spacing: normal;
+}
+/* Level 07: unchanged strategy control typography. The four-part Georgia
+   navigation keeps its existing independent font, hover and active rules. */
+.project-eleven-oasis .eleven-strategy-selectors button {
+  font: 400 var(--eleven-type-control-size)/var(--eleven-type-control-line) var(--eleven-type-sans);
+  letter-spacing: normal;
+}
+@media (max-width: 700px) {
+  .project-eleven-oasis {
+    --eleven-type-section-size: 24px;
+    --eleven-type-editorial-line: 1.45;
+    --eleven-type-lead-size: 15px;
+  }
+}
