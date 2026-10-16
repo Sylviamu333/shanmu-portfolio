@@ -23,8 +23,8 @@ type UXDecision = {
 export const uxDecisions: UXDecision[] = [
   {
     id: "dual-collection-navigation",
-    number: "03.1",
-    label: "Dual-Collection Navigation",
+    number: "01",
+    label: "Navigation Strategy",
     title: "One Storefront, Two Shopping Journeys",
     body: "PRINT and CLASSIC GEAR share a storefront, with a collection switcher directly beneath the primary navigation. Keeping that choice visible gives shoppers a clear sense of where they are without introducing a different shopping structure for each collection.",
     points: [
@@ -35,8 +35,8 @@ export const uxDecisions: UXDecision[] = [
   },
   {
     id: "shoppable-hero",
-    number: "03.2",
-    label: "Shoppable Hero Experience",
+    number: "02",
+    label: "Product Discovery",
     title: "Turning the Hero into a Shopping Entry Point",
     body: "The hero pairs campaign storytelling with direct shopping routes. Featured collections, campaign links and category entry points help visitors move from an initial impression to relevant products.",
     points: [
@@ -47,7 +47,7 @@ export const uxDecisions: UXDecision[] = [
   },
   {
     id: "trust-conversion",
-    number: "03.3",
+    number: "03",
     label: "Trust & Conversion",
     title: "Building Purchase Confidence Above the Fold",
     body: "Review signals, order volume and the 30-day guarantee bring reassurance into the first screen. Placing these cues close to the shopping CTA helps communicate credibility and fit reassurance before visitors move deeper into the purchase journey.",
@@ -59,7 +59,7 @@ export const uxDecisions: UXDecision[] = [
   },
   {
     id: "responsive-design",
-    number: "03.4",
+    number: "04",
     label: "Responsive Design",
     title: "One Experience, Optimized for Every Screen",
     body: "The desktop and mobile layouts keep the same collection choice and shopping priorities. On smaller screens, the hero and category entries stack into a readable sequence while retaining direct access to products.",
@@ -71,8 +71,31 @@ export const uxDecisions: UXDecision[] = [
   },
 ];
 
+// The dedicated central-iPhone UX breakdown has not been supplied. Render an
+// authentic full-width gallery here when available, without a placeholder.
+export const homepageDecisionImages: ProjectImage[] = [];
+export const mobileBrowsingImages: ProjectImage[] = [];
+
 // Add confirmed redesign exports here when supplied; do not substitute source
 // screenshots or generate fictional collection, PDP, or component interfaces.
 export const collectionImages: ProjectImage[] = [];
 export const productDetailImages: ProjectImage[] = [];
 export const interfaceSystemImages: ProjectImage[] = [];
+
+export const designOutcomes = [
+  {
+    number: "01",
+    title: "CLEARER SHOPPING STRUCTURE",
+    body: "Introduced differentiated shopping pathways for PRINT and CLASSIC GEAR within a consistent storefront experience.",
+  },
+  {
+    number: "02",
+    title: "MORE CONNECTED PRODUCT DISCOVERY",
+    body: "Designed clearer product entry points and supporting shopping interfaces across the homepage, collection pages, and product detail pages.",
+  },
+  {
+    number: "03",
+    title: "CONSISTENT CROSS-DEVICE DESIGN",
+    body: "Developed reusable interface patterns and responsive specifications to support consistency across desktop and mobile experiences.",
+  },
+] as const;
