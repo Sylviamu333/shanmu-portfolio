@@ -9,7 +9,11 @@ export function ElevenOasisIntroduction({ project }: { project: Project }) {
         <div className="eleven-introduction-title">
           <p className="eleven-introduction-category">UI/UX DESIGN / E-COMMERCE</p>
           <h1>{project.title}</h1>
-          <p className="eleven-introduction-body">{project.description}</p>
+          <p className="eleven-introduction-body">{project.description.split(/(\be-commerce\b)/i).map((part, index) =>
+            part.toLowerCase() === "e-commerce"
+              ? <span className="eleven-introduction-nowrap" key={index}>{part}</span>
+              : part,
+          )}</p>
         </div>
         <div className="eleven-introduction-details">
           <p className="eleven-introduction-summary">{project.subtitle}</p>

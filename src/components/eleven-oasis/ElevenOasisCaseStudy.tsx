@@ -45,7 +45,6 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
           </ol>
         </div>
         <div className="eleven-project-preview">
-          <p className="eleven-preview-label">FINAL DESIGN / REDESIGNED STOREFRONT</p>
           <ElevenOasisMacbookVideo />
         </div>
       </section>

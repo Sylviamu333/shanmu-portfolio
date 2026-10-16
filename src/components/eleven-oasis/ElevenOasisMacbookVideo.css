@@ -1,4 +1,19 @@
 .eleven-macbook-showcase { width: min(100%, 1200px); margin: 0 auto 28px; }
+.eleven-macbook-composition { min-width: 0; }
+.eleven-preview-label { margin: 0 0 12px; color: #555; font: 400 11px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .06em; }
+@media (min-width: 1001px) {
+  .eleven-macbook-composition {
+    display: grid;
+    grid-template-columns: min-content minmax(0, 1fr);
+    /* Active picture in the original 1600 × 1020 artwork: y 139, h 736.25.
+       Center the side label in that row, excluding the caption and base. */
+    grid-template-rows: 139fr 736.25fr 144.75fr;
+    column-gap: 16px;
+  }
+  .eleven-macbook-label-rail { grid-column: 1; grid-row: 2; align-self: center; }
+  .eleven-macbook-label-rail .eleven-preview-label { margin: 0; }
+  .eleven-macbook-composition > .eleven-macbook-device { grid-column: 2; grid-row: 1 / 4; min-width: 0; }
+}
 .eleven-macbook-device { position: relative; width: 100%; aspect-ratio: 1600 / 1020; isolation: isolate; }
 /* Original 1600 × 1020 coordinates: x 208, y 137, w 1180, h 742.
    This outer opening includes black overscan beneath the unchanged bezel. */
