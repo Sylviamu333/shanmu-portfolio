@@ -8,6 +8,13 @@ export const homepageUX: ProjectImage = {
   alt: "Eleven Oasis Homepage UX Strategies: four numbered strategy notes beside the redesigned desktop storefront on a laptop and responsive storefront on an iPhone",
 };
 
+export const mobileBrowsing: ProjectImage = {
+  src: "/projects/eleven-oasis/mobile-browsing.png",
+  width: 1600,
+  height: 1148,
+  alt: "Eleven Oasis mobile shopping journey: two rows of iPhone mockups showing homepage browsing, collections, filtering, product details and cart interactions",
+};
+
 type UXDecision = {
   id: string;
   number: string;
@@ -74,6 +81,8 @@ export const uxDecisions: UXDecision[] = [
 // The dedicated central-iPhone UX breakdown has not been supplied. Render an
 // authentic full-width gallery here when available, without a placeholder.
 export const homepageDecisionImages: ProjectImage[] = [];
+// The supplied mobile composite is presented only in the Problem media column.
+// Keep this Decisions gallery empty to avoid duplicating that presentation.
 export const mobileBrowsingImages: ProjectImage[] = [];
 
 // Add confirmed redesign exports here when supplied; do not substitute source

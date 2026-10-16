@@ -5,6 +5,7 @@ import { ImageGallery } from "@/components/ImageGallery";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Reveal } from "@/components/Motion";
 import { ElevenOasisMacbookVideo } from "./ElevenOasisMacbookVideo";
+import { ElevenOasisMobileBrowsing } from "./ElevenOasisMobileBrowsing";
 import { ElevenOasisSectionNavigation } from "./ElevenOasisSectionNavigation";
 import "./ElevenOasisCaseStudy.css";
 
@@ -46,6 +47,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
         </div>
         <div className="eleven-project-preview">
           <ElevenOasisMacbookVideo />
+          <ElevenOasisMobileBrowsing />
         </div>
       </section>
 

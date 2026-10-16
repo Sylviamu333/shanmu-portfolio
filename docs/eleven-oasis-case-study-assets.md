@@ -6,6 +6,7 @@ Scope: `/work/eleven-oasis/`. This audit accompanies the Problem → Strategy �
 
 - `source-assets/eleven-oasis-homepage-demo.mp4`: latest clean recording of the redesigned storefront. The existing derived MP4, poster, screen geometry and playback component are unchanged.
 - `source-assets/eleven-oasis-macbook.png`: original hardware artwork; its existing derived frame remains unchanged.
+- `source-assets/eleven-oasis-mobile-browsing.png`: served as an unchanged PNG at `/projects/eleven-oasis/mobile-browsing.png`, preserving the complete 1600 × 1148 canvas and both rows of phones. The outermost phones are already trimmed at the original canvas edges; no additional crop is applied. This composite appears only below the MacBook caption in the Problem right column, sharing its outer width.
 - `source-assets/eleven-oasis-homepage-ux.png`: displayed in full, preserving the original 1600 × 954 composition. The public copy is byte-for-byte identical.
 - `source-assets/HOMEPAGE - PC.png` and `source-assets/PDP - pc.png`: original storefront captures, explicitly labelled as pre-redesign context in the existing expandable viewer.
 - `0813 Eleven Oasis Guideline V1.pdf`: source of the existing five optimized brand-guideline images. Logo, clear-space, palette and Roboto brand typography references remain unedited.
@@ -17,11 +18,10 @@ The strategy artwork already numbers its themes consistently: 01 Navigation Stra
 The repository currently has no dedicated authentic exports for:
 
 1. Homepage UX breakdown with a central iPhone and navigation/trust/category close-ups.
-2. Mobile Browsing composite showing homepage, collection, filtering, product detail and cart screens.
-3. Final redesigned Collection and Product Detail screens across desktop and mobile.
-4. Interface typography scales, vector icon library and sizing specifications, or reusable component/state sheets.
+2. Final redesigned Collection and Product Detail screens across desktop and mobile.
+3. Interface typography scales, vector icon library and sizing specifications, or reusable component/state sheets.
 
-The page uses concise editorial copy and conditional gallery slots for these sections. It renders no empty artwork frames, stock images or fabricated UI. Add genuine `ProjectImage` entries to the page-specific arrays in `src/data/eleven-oasis-case-study.ts` when exports become available; preserve each asset's intrinsic aspect ratio.
+The page uses concise editorial copy and conditional gallery slots for these sections. It renders no empty artwork frames, stock images or fabricated UI. Add genuine `ProjectImage` entries to the page-specific arrays in `src/data/eleven-oasis-case-study.ts` when exports become available; preserve each asset's intrinsic aspect ratio. The supplied mobile composite already has a dedicated Problem presentation; do not also populate the Decisions mobile gallery with it.
 
 ## Typography and specifications
 
@@ -32,3 +32,7 @@ No numeric interface type sizes, icon dimensions, spacing tokens or undocumented
 ## Outcomes
 
 Results use the project owner's three supplied design-deliverable statements and reflection. No conversion, revenue, SEO or other business-performance metric is rendered as a result of this redesign. The page explicitly distinguishes deliverables from verified business impact.
+
+## Mobile-image reveal
+
+The composite animates as one image from opacity 0 / translateY(24px) to opacity 1 / translateY(0), over 700ms with cubic-bezier(0.22, 1, 0.36, 1). An IntersectionObserver on its stable outer figure triggers at 15% visibility and disconnects after its first reveal. Native animation effects are removed on completion. Reduced-motion users, missing animation APIs, failed initialization and pages without JavaScript retain the visible static image.
