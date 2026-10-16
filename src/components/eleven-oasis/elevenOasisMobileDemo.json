@@ -1,0 +1,28 @@
+{
+  "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+  "mask": "/projects/eleven-oasis/strategy/mobile/screen-mask.svg",
+  "source": "source-assets/eleven-oasis-homepage-demo-mobile.mp4",
+  "sourceSha256": "3e6af5254b4ebb49faac1c2958b60d8daa368e68c6f69bb57f01fac640b1d1f9",
+  "sourceWidth": 592,
+  "sourceHeight": 1280,
+  "sourceCodec": "hevc",
+  "width": 592,
+  "height": 1206,
+  "duration": 18.1,
+  "encodedCrop": {
+    "x": 0,
+    "y": 74,
+    "width": 592,
+    "height": 1206
+  },
+  "artwork": {
+    "width": 1600,
+    "height": 958
+  },
+  "screen": {
+    "x": 617,
+    "y": 126,
+    "width": 366,
+    "height": 746
+  }
+}

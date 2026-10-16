@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import type { ProjectImage } from "@/data/projects";
 import { elevenStrategies } from "@/data/eleven-oasis-strategy";
 import { ImageGallery } from "@/components/ImageGallery";
+import { Strategy01PhoneVideo } from "./Strategy01PhoneVideo";
 import "./ElevenOasisStrategyShowcase.css";
 
 export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
@@ -26,7 +27,7 @@ export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
           return (
             <div key={strategy.number} className={`eleven-strategy-panel ${images.length > 1 ? "eleven-strategy-branding" : ""}`}
               data-selected={selected === index} aria-hidden={selected !== index} inert={selected !== index}>
-              {visited.includes(index) && (images.length ? (
+              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : visited.includes(index) && (images.length ? (
                 <ImageGallery images={images} layout={images.length > 1 ? "grid" : "full"} />
               ) : (
                 <div className="eleven-strategy-unavailable">
