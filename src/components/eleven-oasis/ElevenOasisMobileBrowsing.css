@@ -1,0 +1,36 @@
+.eleven-journey-stages { display: flex; flex-wrap: wrap; gap: 4px; }
+.eleven-journey-stages button { min-height: 44px; padding: 8px 9px; border: 1px solid transparent; border-radius: 2px; background: #f6f6f6; color: #555; font: 400 10px/1.4 var(--sans); letter-spacing: .025em; white-space: nowrap; cursor: pointer; transition: color 200ms ease, background-color 200ms ease; }
+.eleven-journey-stages button[aria-pressed="true"] { background: #252525; color: #fff; }
+.eleven-journey-stages button:hover { border-color: #777; }
+.eleven-journey-caption { min-height: 3em; margin: 12px 0 16px; color: #666; font: 400 12px/1.5 var(--sans); }
+.eleven-phone-gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px 2px; margin: 0; padding: 0; list-style: none; }
+.eleven-phone-reveal { min-width: 0; }
+.eleven-phone-trigger { display: block; width: 100%; padding: 0; border: 0; border-radius: 2px; background: #fff; cursor: zoom-in; opacity: 1; transition: opacity 300ms ease-out, box-shadow 300ms ease-out; }
+.eleven-phone-trigger[data-emphasis="dim"] { opacity: .25; }
+.eleven-phone-trigger[data-emphasis="match"] { box-shadow: 0 0 0 1px #aaa; }
+.eleven-phone-trigger img { display: block; width: 100%; height: auto; }
+.eleven-journey-stages button:focus-visible, .eleven-phone-trigger:focus-visible, .eleven-phone-dialog button:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.eleven-phone-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; height: 100dvh; max-height: none; margin: 0; padding: 20px; border: 0; background: transparent; color: #333; }
+.eleven-phone-dialog::backdrop { background: rgb(245 245 245 / .92); }
+.eleven-phone-dialog[open] { display: flex; align-items: center; justify-content: center; }
+.eleven-phone-preview-panel { display: flex; flex-direction: column; width: min(100%, 760px); height: 100%; max-height: 1100px; min-height: 0; padding: 12px 20px; background: #fff; box-shadow: 0 4px 40px #0000000a; }
+.eleven-phone-preview-toolbar, .eleven-phone-preview-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-shrink: 0; }
+.eleven-phone-preview-toolbar p { margin: 0; font: 400 12px/1.5 var(--sans); }
+.eleven-phone-dialog button { flex-shrink: 0; min-height: 44px; min-width: 44px; padding: 8px; border: 0; background: transparent; color: #333; font: 400 12px/1.5 var(--sans); cursor: pointer; }
+.eleven-phone-dialog button:hover { color: #000; text-decoration: underline; text-underline-offset: 4px; }
+.eleven-phone-preview-image { display: flex; flex: 1; align-items: center; justify-content: center; min-height: 0; padding-block: 8px; }
+.eleven-phone-preview-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+@media (min-width: 601px) and (max-width: 1000px) {
+  .eleven-phone-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 4px; }
+}
+@media (max-width: 600px) {
+  .eleven-phone-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 4px; }
+  .eleven-journey-stages { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; padding-bottom: 4px; }
+  .eleven-journey-stages button { flex-shrink: 0; }
+  .eleven-journey-caption { min-height: 4.5em; }
+  .eleven-phone-dialog { padding: 8px; }
+  .eleven-phone-preview-panel { padding: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eleven-phone-trigger, .eleven-journey-stages button { transition: none; }
+}

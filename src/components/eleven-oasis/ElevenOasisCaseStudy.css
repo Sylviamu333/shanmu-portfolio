@@ -22,9 +22,6 @@
 .eleven-desktop-journey > .eleven-journey-eyebrow { margin-bottom: 16px; }
 .eleven-mobile-journey { margin-top: clamp(40px, 4vw, 64px); }
 .eleven-mobile-journey h3 { margin: 12px 0 24px; color: #222; font: 600 clamp(24px, 2.2vw, 34px)/1.2 var(--sans); }
-.eleven-mobile-browsing { width: 100%; margin: 0; }
-.eleven-mobile-browsing-reveal { width: 100%; }
-.eleven-mobile-browsing-image { display: block; width: 100%; height: auto; }
 .eleven-problem .eleven-problem-headline { max-width: 390px; margin-top: 24px; font: 400 18px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0; }
 .eleven-problem-statements { margin: 28px 0 0; padding: 0; list-style: none; }
 .eleven-problem-statements li + li { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--folio-rule); }
