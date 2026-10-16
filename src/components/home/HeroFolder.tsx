@@ -4,10 +4,12 @@ import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import gsap from "gsap";
 import { useHomepageMotion } from "./HomeMotion";
+import { folderContentsPath, folderDecorations } from "./heroFolderLayers";
 import "./HeroFolder.css";
 
 const original = "/hero/hero-foreground.webp";
 const resting = "/hero/hero-resting-foreground.webp";
+const contents = "/hero/hero-contents.webp";
 const layers = ["memoji-rest", "memoji-blink", "memoji-notice"].map(
   (name) => `/hero/${name}.webp`,
 );
@@ -22,10 +24,6 @@ const bulbOutline =
 const foreground =
   "M810 402L948 409L957 516L805 510Z M967 423L1110 434L1100 538L955 515Z M1086 310L1245 325L1239 445L1068 433Z";
 
-// Only this card has a complete visible boundary in the flattened artwork.
-// Its revealed backing reuses a neighboring strip of the same pink paper.
-// Occluded tool bases are not invented; the other icons and folder stay intact.
-const toolCard = "M731 164L820 160Q858 161 860 198L863 276Q863 302 835 309L746 314Q712 316 706 284L701 203Q698 175 731 164Z";
 
 export function HeroFolder() {
   const id = useId().replaceAll(":", "");
@@ -45,7 +43,7 @@ export function HeroFolder() {
     let cancelled = false;
     // Decode transparent foregrounds and facial states before changing poses.
     void Promise.all(
-      [original, resting, ...layers].map(async (src) => {
+      [original, resting, contents, ...layers].map(async (src) => {
         const image = new window.Image();
         image.src = src;
         await image.decode();
@@ -76,7 +74,10 @@ export function HeroFolder() {
     const glow = find(".folder-bulb-glow");
     const rays = find(".folder-bulb-rays");
     const sparks = [...element.querySelectorAll<SVGElement>(".folder-idea-spark")];
-    const card = find(".folder-content-card");
+    const bank = find(".folder-content-bank");
+    const decorations = [...element.querySelectorAll<SVGElement>(".folder-pop-decoration")];
+    const compact = matchMedia("(max-width: 700px)");
+    const motionScale = () => compact.matches ? .67 : 1;
     const parallax = element.querySelector<HTMLElement>(".folder-depth")!;
     const button = element.querySelector<HTMLButtonElement>(".folder-character-trigger")!;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
@@ -113,15 +114,26 @@ export function HeroFolder() {
       },
     });
     reaction
-      .to(card, { y: -82, rotation: -3, svgOrigin: "780 310", duration: .56, ease: "back.out(1.25)" }, 0)
-      .to(head, { y: -52, rotation: -1, scale: 1.01, duration: .56, ease: "back.out(1.2)" }, .08)
+      .to(bank, { y: () => -92 * motionScale(), duration: .6, ease: "back.out(1.2)" }, 0)
+      .to(head, { y: () => -8 * motionScale(), rotation: -1, scale: 1.01, duration: .56, ease: "back.out(1.2)" }, .08)
       .to(notice, { opacity: 1, duration: .14 }, .08)
       .to(happy, { opacity: 1, duration: .18 }, .22)
       .to(hand, { opacity: 1, y: -30, rotation: 0, scale: 1, duration: .5, ease: "back.out(1.3)" }, .22)
-      .to(bulb, { opacity: 1, y: -62, scale: 1, duration: .4, ease: "back.out(1.4)" }, .3)
-      .to(glow, { opacity: .75, y: -62, duration: .4, ease: "sine.inOut" }, .38)
-      .to(rays, { opacity: .8, y: -62, scale: 1.06, duration: .35, ease: "sine.out" }, .45)
-      .to(sparks, { opacity: .85, y: -62, scale: 1, duration: .22, stagger: .045, ease: "power2.out" }, .46);
+      .to(bulb, { opacity: 1, y: () => -100 * motionScale(), scale: 1, duration: .4, ease: "back.out(1.4)" }, .3)
+      .to(glow, { opacity: .75, y: () => -100 * motionScale(), duration: .4, ease: "sine.inOut" }, .38)
+      .to(rays, { opacity: .8, y: () => -100 * motionScale(), scale: 1.06, duration: .35, ease: "sine.out" }, .45)
+      .to(sparks, { opacity: .85, y: () => -100 * motionScale(), scale: 1, duration: .22, stagger: .045, ease: "power2.out" }, .46);
+
+    decorations.forEach((element, index) => {
+      const item = folderDecorations[index];
+      reaction.to(element, {
+        y: () => -item.rise * motionScale(),
+        rotation: item.rotation,
+        svgOrigin: item.origin,
+        duration: .56,
+        ease: "back.out(1.2)",
+      }, .04 + index * .04);
+    });
 
     function scheduleBlink() {
       clearTimeout(idleTimer);
@@ -187,8 +199,15 @@ export function HeroFolder() {
       if (pausedRef.current) return;
       gsap.to(parallax, { x: 0, y: 0, duration: .65, ease: "sine.out", overwrite: true });
     };
+    const resize = () => {
+      // Rebase from the true rest pose before recalculating the compact lift;
+      // invalidating a .to() tween at its peak would cache that peak as "rest".
+      const progress = reaction.progress();
+      reaction.progress(0, true).invalidate().progress(progress, true);
+      availability();
+    };
     const availability = () => {
-      hovering = fine.matches && button.matches(":hover");
+      hovering = fine.matches && element.matches(":hover");
       focused = button.matches(":focus-visible");
       update();
     };
@@ -197,14 +216,15 @@ export function HeroFolder() {
       availability();
     });
     observer.observe(element);
-    button.addEventListener("pointerenter", enter);
-    button.addEventListener("pointerleave", leave);
+    element.addEventListener("pointerenter", enter);
+    element.addEventListener("pointerleave", leave);
     button.addEventListener("focus", focus);
     button.addEventListener("blur", blur);
     element.addEventListener("pointermove", pointer, { passive: true });
     element.addEventListener("pointerleave", resetParallax);
     reduced.addEventListener("change", availability);
     fine.addEventListener("change", availability);
+    compact.addEventListener("change", resize);
     document.addEventListener("visibilitychange", availability);
     availability();
     return () => {
@@ -214,14 +234,15 @@ export function HeroFolder() {
       reaction.kill();
       gsap.killTweensOf(parallax);
       observer.disconnect();
-      button.removeEventListener("pointerenter", enter);
-      button.removeEventListener("pointerleave", leave);
+      element.removeEventListener("pointerenter", enter);
+      element.removeEventListener("pointerleave", leave);
       button.removeEventListener("focus", focus);
       button.removeEventListener("blur", blur);
       element.removeEventListener("pointermove", pointer);
       element.removeEventListener("pointerleave", resetParallax);
       reduced.removeEventListener("change", availability);
       fine.removeEventListener("change", availability);
+      compact.removeEventListener("change", resize);
       document.removeEventListener("visibilitychange", availability);
       playRef.current = () => {};
       availabilityRef.current = () => {};
@@ -275,7 +296,19 @@ export function HeroFolder() {
                 >
                   {frame(original)}
                 </mask>
-                <clipPath id={`${id}-tool-card`}><path d={toolCard} /></clipPath>
+                <clipPath id={`${id}-contents`}><path d={folderContentsPath} /></clipPath>
+                <mask id={`${id}-stationary`} maskUnits="userSpaceOnUse" x="0" y="0" width="1785" height="881" style={{ maskType: "luminance" }}>
+                  <rect width="1785" height="881" fill="white" />
+                  <path d={folderContentsPath} fill="black" />
+                  {folderDecorations.map(item => (
+                    <path key={item.id} d={item.path} fill="black" stroke="black" strokeWidth="4" strokeLinejoin="round" />
+                  ))}
+                </mask>
+                {folderDecorations.map(item => (
+                  <mask key={item.id} id={`${id}-${item.id}`} maskUnits="userSpaceOnUse" x="0" y="0" width="1785" height="881" style={{ maskType: "alpha" }}>
+                    <path d={item.path} fill="white" stroke="white" strokeWidth="4" strokeLinejoin="round" />
+                  </mask>
+                ))}
                 <clipPath id={`${id}-head`}>
                   <path d={headOutline} />
                 </clipPath>
@@ -293,28 +326,33 @@ export function HeroFolder() {
                   <stop offset="1" stopColor="#FFD45C" stopOpacity="0" />
                 </radialGradient>
               </defs>
-              <g clipPath={clip("tool-card")}>
-                <svg x="698" y="158" width="170" height="160" viewBox="866 185 41 122" preserveAspectRatio="none">
-                  {frame(resting)}
-                </svg>
-              </g>
-              <g className="folder-content-card" clipPath={clip("tool-card")}>{frame(resting)}</g>
-              <g className="folder-character-breathe">
-                <g
-                  className="folder-character-head"
-                  clipPath={clip("head")}
-                  mask={clip("alpha")}
-                >
-                  {frame(layers[0], "folder-face-rest")}
-                  {frame(layers[1], "folder-face-blink")}
-                  {frame(layers[2], "folder-face-notice")}
-                  {frame(original, "folder-face-happy")}
+              <g className="folder-content-bank">
+                {frame(contents, "folder-content-image")}
+                <g className="folder-character-breathe">
+                  <g
+                    className="folder-character-head"
+                    clipPath={clip("head")}
+                    mask={clip("alpha")}
+                  >
+                    {frame(layers[0], "folder-face-rest")}
+                    {frame(layers[1], "folder-face-blink")}
+                    {frame(layers[2], "folder-face-notice")}
+                    {frame(original, "folder-face-happy")}
+                  </g>
+                </g>
+                <g className="folder-character-hand" clipPath={clip("hand")}>
+                  {frame(original)}
+                </g>
+                <g clipPath={clip("contents")}>
+                  <g clipPath={clip("foreground")}>{frame(original)}</g>
                 </g>
               </g>
-              <g className="folder-character-hand" clipPath={clip("hand")}>
-                {frame(original)}
-              </g>
-              <g clipPath={clip("foreground")}>{frame(original)}</g>
+              {folderDecorations.map(item => (
+                <g key={item.id} className="folder-pop-decoration" data-folder-item={item.id} mask={clip(item.id)}>
+                  {frame(resting)}
+                </g>
+              ))}
+              <g className="folder-stationary" mask={clip("stationary")}>{frame(resting)}</g>
               <circle
                 className="folder-bulb-glow"
                 cx="1038"

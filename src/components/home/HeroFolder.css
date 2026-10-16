@@ -31,6 +31,11 @@
 .hero-folder[data-ready="true"] .folder-layers {
   opacity: 1;
 }
+.hero-folder[data-ready="true"] .folder-original {
+  /* The SVG partitions this same image into moving contents and fixed pocket.
+     Keep the fallback's intrinsic dimensions and accessible description. */
+  opacity: 0;
+}
 .folder-face-blink,
 .folder-face-notice,
 .folder-face-happy,

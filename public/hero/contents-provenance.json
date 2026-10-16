@@ -1,0 +1,9 @@
+{
+  "source": "public/hero/hero-resting-foreground.webp",
+  "sourceSHA256": "109d2266d0740d1bb64a422c2172d93d698a4075904e47bd7a42eeedcb3459c8",
+  "width": 1785,
+  "height": 881,
+  "visiblePixels": 289917,
+  "extraction": "Original visible RGB pixels; shared content matte; original blank material sampled for occluded-edge padding. No generated/replacement icons, illustrations or character states.",
+  "limitation": "The source does not contain hidden lower artwork. All visible tool cards/papers move as one shared bank; hidden logos and individual full card shapes are not reconstructed."
+}

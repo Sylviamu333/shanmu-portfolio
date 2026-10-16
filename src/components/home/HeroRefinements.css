@@ -31,7 +31,8 @@
   display: block;
   left: auto;
   right: calc(50% + 282px);
-  top: 50%;
+  /* Stay beside the illustration when the gap above it changes. */
+  top: calc(100% - (540px * 881 / 1785) / 2 - 24px);
   width: max-content;
   max-width: 260px;
   text-align: left;
@@ -98,13 +99,13 @@
   }
 }
 
-/* Reserve the lower edge of the desktop viewport for a glimpse of the folder.
-   A flexible gap absorbs screen height; the greeting itself stays near the top. */
+/* Content-driven height. The measured text-to-art gap is half its previous
+   size; these CSS fallbacks also keep the no-JavaScript layout compact. */
 .home-intro .hero-content {
   --hero-stage-height: 320px;
   display: flex;
   flex-direction: column;
-  min-height: calc(100svh - var(--portfolio-header-height) + var(--hero-stage-height) * .66 + 66px);
+  min-height: 0;
   padding-top: 64px;
 }
 .hero-greeting {
@@ -138,11 +139,12 @@
   margin-top: 23px;
 }
 .home-intro .hero-art-composition {
-  margin-top: auto;
-  padding-top: 40px;
+  margin-top: 0;
+  padding-top: var(--hero-folder-gap, max(24px, calc(50svh - 225px)));
 }
 .home-intro .hero-art-stage {
-  height: var(--hero-stage-height);
+  height: auto;
+  aspect-ratio: 1785 / 881;
   margin: 0 auto 8px;
 }
 @media (max-width: 1100px) {
@@ -169,5 +171,7 @@
     line-height: 1.5;
     margin-top: 19px;
   }
-  .home-intro .hero-art-composition { margin-top: 0; padding-top: 24px; }
+  .home-intro .hero-art-composition {
+    padding-top: var(--hero-folder-gap, clamp(8px, calc(84px - 18.4vw), 24px));
+  }
 }
