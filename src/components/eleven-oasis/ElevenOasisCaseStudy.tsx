@@ -18,21 +18,35 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
   return (
     <div className="eleven-case-study">
       <ElevenOasisSectionNavigation />
-      <ElevenOasisMacbookVideo />
+      <div className="eleven-project-preview">
+        <p className="eleven-preview-label">PROJECT PREVIEW / FINAL DESIGN</p>
+        <ElevenOasisMacbookVideo />
+      </div>
 
-      <section id="problem" className="eleven-study-section eleven-main-section" aria-labelledby="eleven-problem-title" tabIndex={-1}>
+      <section id="problem" className="eleven-study-section eleven-main-section eleven-problem" aria-labelledby="eleven-problem-title" tabIndex={-1}>
         <header className="eleven-study-heading">
-          <p>01 / PROBLEM</p>
-          <h2 id="eleven-problem-title">A Clearer Path from Discovery to Purchase</h2>
+          <p>01 / THE CHALLENGE</p>
+          <h2 id="eleven-problem-title">PROBLEM</h2>
+          <p className="eleven-problem-headline">A visually functional storefront, but a fragmented shopping experience.</p>
         </header>
-        <div className="eleven-study-copy">
-          <p>The redesign focuses on helping American men aged 40–65 navigate two distinct collections, evaluate products with confidence and shop comfortably on mobile.</p>
-          <ul>
-            <li>Clarify product discovery across PRINT and CLASSIC GEAR.</li>
-            <li>Bring trust and fit reassurance closer to shopping decisions.</li>
-            <li>Keep the shopping journey consistent across desktop and mobile.</li>
-          </ul>
-        </div>
+        <ol className="eleven-problem-statements">
+          <li>
+            <h3>01 / FRAGMENTED WEBSITE ARCHITECTURE</h3>
+            <p>Disorganized page structures and weak SEO foundations limited usability, discoverability, and scalability.</p>
+          </li>
+          <li>
+            <h3>02 / UNDIFFERENTIATED SHOPPING JOURNEYS</h3>
+            <p>PRINT and CLASSIC GEAR lacked distinct shopping paths tailored to different product categories and customer needs.</p>
+          </li>
+          <li>
+            <h3>03 / INSUFFICIENT PURCHASE TRUST</h3>
+            <p>Limited visibility of customer reviews, social proof, and purchase guarantees made it harder to build customer confidence.</p>
+          </li>
+          <li>
+            <h3>04 / DISCONNECTED BRAND &amp; CONVERSION</h3>
+            <p>Brand-focused content lacked clear product entry points and purchase actions, creating friction between discovery and conversion.</p>
+          </li>
+        </ol>
       </section>
 
       <section id="strategy" className="eleven-study-section eleven-main-section" aria-labelledby="eleven-strategy-title" tabIndex={-1}>

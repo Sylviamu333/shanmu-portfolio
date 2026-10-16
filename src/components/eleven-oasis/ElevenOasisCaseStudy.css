@@ -12,6 +12,14 @@
 .eleven-case-study .eleven-main-section { scroll-margin-top: 0; }
 .eleven-study-heading > p,
 .eleven-study-heading > h2:only-child { font: 400 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .06em; }
+.eleven-preview-label { width: min(100%, 1200px); margin: 0 auto 12px; color: #555; font: 400 11px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .06em; }
+.eleven-problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(32px, 5vw, 80px); padding-top: 28px; }
+.eleven-problem > .eleven-study-heading { padding: 0; }
+.eleven-problem .eleven-problem-headline { max-width: 390px; margin-top: 24px; font: 400 18px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+.eleven-problem-statements { margin: 0; padding: 0; list-style: none; }
+.eleven-problem-statements li + li { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--folio-rule); }
+.eleven-problem-statements h3 { font: 400 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .03em; }
+.eleven-problem-statements p { max-width: 640px; margin-top: 10px; color: #555; font-size: 15px; line-height: 1.6; }
 .eleven-strategy-summary { margin-bottom: 24px; }
 @media (max-width: 1000px) {
   .eleven-section-navigation ul { gap: 32px; }
@@ -51,6 +59,9 @@
 .eleven-case-pagination { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--folio-rule); display: flex; justify-content: space-between; gap: 20px; font-size: 12px; }
 .eleven-case-pagination a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (max-width: 700px) {
+  .eleven-problem { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 22px; }
+  .eleven-problem .eleven-problem-headline { margin-top: 20px; }
+  .eleven-problem-statements li + li { margin-top: 20px; padding-top: 20px; }
   .eleven-section-navigation { padding-block: 24px; }
   .eleven-section-navigation ul { gap: 16px; }
   .eleven-section-navigation a { font-size: 14px; }
