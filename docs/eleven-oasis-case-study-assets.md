@@ -8,7 +8,7 @@ Scope: `/work/eleven-oasis/`. This audit accompanies the Problem → Strategy �
 - `source-assets/eleven-oasis-macbook.png`: original hardware artwork; its existing derived frame remains unchanged.
 - `source-assets/eleven-oasis-mobile-browsing.png`: updated 1600 × 1148 overview, retained byte-for-byte in public as the layout reference. Its six-phone first row and five-phone second row are now built from the 11 individual PNGs in the same order, without displaying the composite underneath them.
 - `source-assets/eleven-oasis-mobile-1.png` through `eleven-oasis-mobile-11.png`: all verified, 679 × 1148 RGBA. Byte-identical public PNGs power on-demand previews; 240 × 406 WebP thumbnails preserve the whole image, bezel and shadow without cropping. The typed manifest is `src/data/eleven-oasis-mobile-journey.ts`.
-- `source-assets/eleven-oasis-homepage-ux.png`: displayed in full, preserving the original 1600 × 954 composition. The public copy is byte-for-byte identical.
+- `source-assets/eleven-oasis-homepage-ux-decisions.png`: new 1600 × 958 central-iPhone breakdown, now the default Strategy evidence. The public PNG is byte-for-byte identical. The older 1600 × 954 `eleven-oasis-homepage-ux.png` is retained in the archive/public assets but no longer rendered redundantly.
 - `source-assets/HOMEPAGE - PC.png` and `source-assets/PDP - pc.png`: original storefront captures, explicitly labelled as pre-redesign context in the existing expandable viewer.
 - `0813 Eleven Oasis Guideline V1.pdf`: source of the existing five optimized brand-guideline images. Logo, clear-space, palette and Roboto brand typography references remain unedited.
 
@@ -18,7 +18,7 @@ The strategy artwork already numbers its themes consistently: 01 Navigation Stra
 
 The repository currently has no dedicated authentic exports for:
 
-1. Homepage UX breakdown with a central iPhone and navigation/trust/category close-ups.
+1. Dedicated reusable landing-page exports.
 2. Dedicated annotated Collection and Product Detail exports and final desktop layouts. The newly supplied mobile captures do show the redesigned listing, product detail, buy box, cart and checkout entry.
 3. Interface typography scales, vector icon library and sizing specifications, or reusable component/state sheets.
 
@@ -26,7 +26,7 @@ The page uses concise editorial copy and conditional gallery slots for these sec
 
 ## Typography and specifications
 
-The project owner's complete redesign brief identifies **Oswald / Open Sans** as the storefront interface pairing. The supplied brand-identity PDF separately specifies **Roboto Black / Roboto Regular** for brand applications. These are described separately on the page, and the original brand artwork has not been relabelled as an Oswald/Open Sans component sheet.
+The project owner's complete redesign brief identifies **Oswald / Open Sans** as the storefront interface pairing. The supplied brand-identity PDF separately specifies **Roboto Black / Roboto Regular** for brand applications. These are described separately on the page, and the original brand artwork has not been relabelled as an Oswald/Open Sans component sheet. The brand images and verified specifications now live in Strategy 05, while the interface-system rationale remains in Decisions.
 
 No numeric interface type sizes, icon dimensions, spacing tokens or undocumented interaction-state specifications have been invented. Existing navigation and reassurance icons are described as seen in the supplied storefront artwork and walkthrough, without generating an imitation icon library.
 
@@ -67,3 +67,7 @@ Reduced-motion users see all items immediately with no stage transitions. Prefer
 ## Validation of the interactive gallery
 
 Lint, TypeScript, production export and content checks pass. Chromium checks cover 320, 390, 600, 601, 768, 1000, 1001, 1024, 1440, 1920, 2560 and 3840px widths: no page overflow, consistent intrinsic proportions, exact MacBook/gallery outer alignment, original six-plus-five desktop ordering and no stage-driven reflow. Actual intermediate stagger/opacity frames, one-time scrolling behavior, repeated filtering, all preview controls, keyboard focus containment/restoration, Escape/outside close, mobile touch, reduced-motion changes, no-JavaScript content and gallery initialization fallbacks were exercised. Full-resolution requests occur only after opening previews. Desktop and mobile MacBook playback/pause/resume pass. Rendered Overview, shared header/footer, section navigation, MacBook, Problem copy and all later sections match the preceding build. All 11 public PNG originals and the updated overview match their source files byte-for-byte.
+
+## Interactive Strategy update
+
+See [the strategy implementation and asset report](eleven-oasis-strategy-showcase.md) for the six selectors, new Homepage UX Decisions evidence, authentic PDP/trust/branding media, missing-export states and removal of redundant branding.

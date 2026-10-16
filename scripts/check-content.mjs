@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
 import { homepageUX, uxDecisions } from "../src/data/eleven-oasis-case-study.ts";
+import { elevenStrategies } from "../src/data/eleven-oasis-strategy.ts";
 const root = resolve(import.meta.dirname, "..");
 const photoManifest = JSON.parse(readFileSync(resolve(root, "public/projects/visual-experiments/photography/manifest.json"), "utf8"));
 for (const series of photographySeries) {
@@ -101,14 +102,24 @@ assert(Math.abs((2.1 / 1.2 - 1) * 100 - 75) < 1e-9);
 assert(Math.abs((25 / 5 - 1) * 100 - 400) < 1e-9);
 if (process.argv.includes("--build")) {
   const elevenPage = readFileSync(resolve(root, "out/work/eleven-oasis/index.html"), "utf8");
-  const elevenAnchors = ["homepage", "ux-design-details", "collection-pdp-design-system"];
+  const elevenAnchors = ["problem", "strategy", "decisions", "results"];
   let lastAnchor = -1;
   for (const anchor of elevenAnchors) {
     const position = elevenPage.indexOf(`id="${anchor}"`);
     assert(position > lastAnchor, `Missing or out-of-order Eleven Oasis section: ${anchor}`);
     lastAnchor = position;
   }
-  assert(elevenPage.includes(homepageUX.src), "Missing authentic Homepage UX presentation");
+  assert(elevenPage.includes(elevenStrategies[0].images[0].src), "Missing initial Homepage UX Decisions evidence");
+  assert(!elevenPage.includes(`src="${homepageUX.src}"`), "Do not duplicate the superseded Homepage UX overview");
+  assert.equal(elevenStrategies.length, 6);
+  for (const strategy of elevenStrategies) {
+    assert(elevenPage.includes(`${strategy.number} / ${strategy.label}`), `Missing strategy selector: ${strategy.number}`);
+    for (const image of strategy.images) {
+      assert(existsSync(resolve(root, "public", image.src.slice(1))), `Missing strategy asset: ${image.src}`);
+      assert(image.alt && image.width > 0 && image.height > 0);
+    }
+  }
+  assert.equal(hash(resolve(root, "source-assets/eleven-oasis-homepage-ux-decisions.png")), hash(resolve(root, "public", elevenStrategies[0].images[0].src.slice(1))), "Homepage UX Decisions must remain byte-for-byte original");
   for (const decision of uxDecisions)
     assert(elevenPage.includes(`id="${decision.id}"`), `Missing UX decision: ${decision.id}`);
   assert(!elevenPage.includes('class="results-panel"'), "Do not publish unverified conversion results");

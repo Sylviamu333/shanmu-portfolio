@@ -1,0 +1,39 @@
+.eleven-strategy-showcase { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1fr); grid-template-areas: "media selectors" "media description"; grid-template-rows: auto 1fr; column-gap: clamp(32px, 3vw, 56px); row-gap: 24px; align-items: start; }
+.eleven-strategy-media { grid-area: media; position: relative; width: 100%; aspect-ratio: 1600 / 958; min-height: 340px; }
+.eleven-strategy-panel { position: absolute; inset: 0; min-width: 0; }
+.eleven-strategy-panel, .eleven-strategy-description { opacity: 0; visibility: hidden; transition: opacity 140ms ease-out, visibility 0s linear 140ms; }
+.eleven-strategy-panel[data-selected="true"], .eleven-strategy-description[data-selected="true"] { opacity: 1; visibility: visible; transition: opacity 200ms ease-out 140ms, visibility 0s; }
+.eleven-strategy-selectors { grid-area: selectors; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.eleven-strategy-selectors button { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 5px; padding: 0; border: 0; background: transparent; color: #444; text-align: left; font: 400 12px/1.4 var(--sans); cursor: pointer; }
+.eleven-strategy-number, .eleven-strategy-label { display: flex; align-items: center; min-height: 46px; background: #f1f1f1; transition: color 200ms ease, background-color 200ms ease; }
+.eleven-strategy-number { justify-content: center; }
+.eleven-strategy-label { padding: 10px 14px; }
+.eleven-strategy-selectors button:hover > span { background: #e5e5e5; color: #111; }
+.eleven-strategy-selectors button[aria-pressed="true"] > span { background: #252525; color: #fff; }
+.eleven-strategy-selectors button:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+/* All descriptions share one grid cell and reserve the longest copy's height.
+   Inactive copy is inert and excluded from the accessibility tree. */
+.eleven-strategy-descriptions { grid-area: description; display: grid; min-width: 0; }
+.eleven-strategy-description { grid-area: 1 / 1; min-width: 0; }
+.eleven-strategy-description h3, .eleven-strategy-unavailable h3 { margin: 0; font: 400 18px/1.4 var(--sans); letter-spacing: 0; }
+.eleven-strategy-description > p, .eleven-strategy-brand-notes p { margin: 12px 0 0; color: #555; font: 400 15px/1.6 var(--sans); }
+.eleven-strategy-brand-notes { margin-top: 16px; color: #555; font: 400 13px/1.5 var(--sans); }
+.eleven-strategy-brand-notes summary { width: fit-content; min-height: 44px; padding-block: 10px; cursor: pointer; }
+.eleven-strategy-brand-notes summary:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.eleven-strategy-unavailable { display: flex; flex-direction: column; justify-content: center; height: 100%; max-width: 520px; margin-inline: auto; padding: 24px; border-block: 1px solid var(--folio-rule); }
+.eleven-strategy-evidence-label { margin: 0 0 16px; color: #777; font: 400 11px/1.5 var(--sans); letter-spacing: .04em; }
+.eleven-strategy-unavailable > p:last-child { margin-top: 16px; color: #666; font: 400 14px/1.6 var(--sans); }
+.eleven-strategy-panel > .image-gallery { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: 100%; margin: 0; gap: 10px; align-items: stretch; }
+.eleven-strategy-panel > .image-gallery > figure { min-width: 0; min-height: 0; margin: 0; }
+.eleven-strategy-panel > .image-gallery .gallery-image { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 0; padding: 0; border: 0; border-radius: 0; background: #fff; }
+.eleven-strategy-panel > .image-gallery .gallery-image img { flex: 1; width: 100%; height: 0; min-height: 0; max-width: none; object-fit: contain; }
+.eleven-strategy-panel > .image-gallery .image-expand { position: static; flex-shrink: 0; align-self: flex-end; padding: 6px 0 0; color: #666; background: transparent; box-shadow: none; font: 400 11px/1.4 var(--sans); }
+.eleven-strategy-branding > .image-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: minmax(0, .55fr) repeat(2, minmax(0, 1fr)); }
+.eleven-strategy-branding > .image-gallery > figure:first-child { grid-column: 1 / -1; }
+@media (max-width: 950px) {
+  .eleven-strategy-showcase { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "selectors" "media" "description"; gap: 24px; }
+  .eleven-strategy-media { min-height: 280px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eleven-strategy-panel, .eleven-strategy-description, .eleven-strategy-selectors button > span { transition: none; }
+}

@@ -40,7 +40,6 @@
 .eleven-outcomes h3 { font: 600 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: .03em; }
 .eleven-outcomes article > p { margin-top: 14px; color: #555; font-size: 15px; line-height: 1.6; }
 .eleven-outcomes-note { margin-block: 24px; color: #555; font-size: 12px; line-height: 1.6; }
-.eleven-strategy-summary { margin-bottom: 24px; }
 @media (max-width: 1000px) {
   .eleven-problem { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .eleven-section-navigation ul { gap: 32px; }
@@ -48,11 +47,9 @@
 @media (prefers-reduced-motion: reduce) {
   .eleven-section-navigation a { transition: none; }
 }
-.eleven-homepage > .image-gallery { margin-top: 0; }
 .eleven-case-study .gallery-image { background: #fff; flex-direction: column; align-items: stretch; }
 .eleven-case-study .gallery-image img { object-fit: contain; }
 .eleven-case-study .image-expand { position: static; align-self: flex-end; padding: 10px 0 0; background: transparent; box-shadow: none; }
-.eleven-homepage .gallery-full .gallery-image img { max-width: none; }
 .eleven-study-section { margin-top: 48px; border-top: 1px solid var(--folio-rule); }
 .eleven-study-heading { padding: 28px 0; }
 .eleven-study-heading > h2:not(:only-child) { margin-top: 12px; font-size: 28px; line-height: 1.2; font-weight: 400; letter-spacing: -.02em; }
@@ -74,8 +71,6 @@
 .eleven-original-context .comparison-scroll { height: min(65svh, 560px); }
 .eleven-original-context .comparison { padding-bottom: 20px; }
 .eleven-original-context .comparison-tabs button { min-height: 44px; }
-.eleven-brand-guidelines > .image-gallery { margin-top: 0; gap: 32px; }
-.eleven-brand-guidelines .image-gallery > figure:first-child { grid-column: 1 / -1; width: min(100%, 560px); margin-inline: auto; }
 .eleven-case-pagination { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--folio-rule); display: flex; justify-content: space-between; gap: 20px; font-size: 12px; }
 .eleven-case-pagination a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (max-width: 700px) {
@@ -93,6 +88,5 @@
   .eleven-editorial-row { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 26px; }
   .eleven-editorial-row h3 { font-size: 22px; }
   .eleven-study-copy { font-size: 15px; line-height: 1.6; }
-  .eleven-brand-guidelines > .image-gallery { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .eleven-case-pagination { margin-top: 28px; }
 }

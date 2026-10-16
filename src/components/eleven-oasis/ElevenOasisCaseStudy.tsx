@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Project } from "@/data/projects";
-import { homepageUX, homepageDecisionImages, mobileBrowsingImages, designOutcomes, uxDecisions, collectionImages, productDetailImages, interfaceSystemImages } from "@/data/eleven-oasis-case-study";
+import { homepageDecisionImages, mobileBrowsingImages, designOutcomes, uxDecisions, collectionImages, productDetailImages, interfaceSystemImages } from "@/data/eleven-oasis-case-study";
 import { ImageGallery } from "@/components/ImageGallery";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Reveal } from "@/components/Motion";
 import { ElevenOasisMacbookVideo } from "./ElevenOasisMacbookVideo";
 import { ElevenOasisMobileBrowsing } from "./ElevenOasisMobileBrowsing";
+import { ElevenOasisStrategyShowcase } from "./ElevenOasisStrategyShowcase";
 import { ElevenOasisSectionNavigation } from "./ElevenOasisSectionNavigation";
 import "./ElevenOasisCaseStudy.css";
 
@@ -60,10 +61,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
           <h2 id="eleven-strategy-title">STRATEGY</h2>
           <p className="eleven-section-headline">Designing a clearer path from discovery to purchase.</p>
         </header>
-        <p className="eleven-study-copy eleven-strategy-summary">The redesign focused on connecting two distinct product collections with more intuitive shopping journeys, clearer product entry points, stronger trust communication, and a consistent experience across devices.</p>
-        <div id="homepage" className="eleven-homepage">
-          <ImageGallery images={[homepageUX]} layout="full" />
-        </div>
+        <ElevenOasisStrategyShowcase brandingImages={guidelines?.images || []} brandingNotes={guidelines?.body || []} />
       </section>
 
       <section id="decisions" className="eleven-main-section" aria-labelledby="eleven-decisions-title" tabIndex={-1}>
@@ -164,7 +162,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
               <h4>TYPOGRAPHY</h4>
               <div className="eleven-study-copy">
                 <p>Oswald and Open Sans form the storefront interface typography. The desktop and mobile hierarchy separates display headings, product information and supporting copy.</p>
-                <p>The brand identity guideline below documents a separate Roboto family for brand applications.</p>
+                <p>The brand identity guideline in Strategy 05 documents a separate Roboto family for brand applications.</p>
               </div>
             </div>
             <div className="eleven-system-part eleven-editorial-row">
@@ -180,15 +178,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
               </div>
             </div>
             {!!interfaceSystemImages.length && <ImageGallery images={interfaceSystemImages} layout="full" />}
-            <div className="eleven-system-part">
-              <div className="eleven-editorial-row">
-                <h4>BRAND GUIDELINES</h4>
-                <div className="eleven-study-copy">
-                  {guidelines?.body?.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
-                </div>
-              </div>
-              {!!guidelines?.images?.length && <div className="eleven-brand-guidelines"><ImageGallery images={guidelines.images} layout="pair" /></div>}
-            </div>
+
           </article>
         </Reveal>
       </section>

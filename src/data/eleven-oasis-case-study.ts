@@ -78,8 +78,8 @@ export const uxDecisions: UXDecision[] = [
   },
 ];
 
-// The dedicated central-iPhone UX breakdown has not been supplied. Render an
-// authentic full-width gallery here when available, without a placeholder.
+// The central-iPhone UX breakdown is used by Strategy 01. Keep this Decisions
+// gallery empty so the same artwork is not presented twice.
 export const homepageDecisionImages: ProjectImage[] = [];
 // The supplied mobile composite is presented only in the Problem media column.
 // Keep this Decisions gallery empty to avoid duplicating that presentation.
