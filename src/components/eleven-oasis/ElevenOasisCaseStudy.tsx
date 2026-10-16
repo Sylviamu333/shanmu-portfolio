@@ -4,6 +4,7 @@ import { homepageUX, uxDecisions, collectionImages, productDetailImages, interfa
 import { ImageGallery } from "@/components/ImageGallery";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Reveal } from "@/components/Motion";
+import { ElevenOasisMacbookVideo } from "./ElevenOasisMacbookVideo";
 import "./ElevenOasisCaseStudy.css";
 
 export function ElevenOasisCaseStudy({ project, previous, next }: {
@@ -15,6 +16,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
   const originals = [...(project.comparisons || [])].reverse();
   return (
     <div className="eleven-case-study">
+      <ElevenOasisMacbookVideo />
       <section id="homepage" className="eleven-homepage" aria-labelledby="eleven-homepage-title">
         <div className="eleven-section-topline">
           <h2 id="eleven-homepage-title">01 / HOMEPAGE</h2>

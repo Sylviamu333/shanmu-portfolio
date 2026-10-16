@@ -1,0 +1,27 @@
+.eleven-macbook-showcase { width: min(100%, 1200px); margin: 0 auto 28px; }
+.eleven-macbook-device { position: relative; width: 100%; aspect-ratio: 1600 / 1020; isolation: isolate; }
+/* Original 1600 × 1020 coordinates: x 208, y 137, w 1180, h 742.
+   A source-derived transparent frame above this rectangle supplies the exact
+   rounded screen edge; the 16:9 recording stays uncropped and unstretched. */
+.eleven-macbook-display { position: absolute; left: 13%; top: 13.4313725%; width: 73.75%; height: 72.745098%; background: #000 url('/projects/eleven-oasis/demo/poster.webp') center / contain no-repeat; }
+/* Black overscan stays underneath the opaque bezel and fills alpha-edge pixels. */
+.eleven-macbook-display { outline: 2px solid #000; }
+.eleven-macbook-display video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.eleven-macbook-device[data-playback="loading"] video,
+.eleven-macbook-device[data-playback="reduced"] video,
+.eleven-macbook-device[data-playback="error"] video,
+.eleven-macbook-device[data-playback="blocked"] video { visibility: hidden; }
+.eleven-macbook-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.eleven-macbook-showcase figcaption { display: flex; justify-content: space-between; align-items: center; min-height: 44px; gap: 8px 24px; font: 400 11px/1.5 Arial, Helvetica, sans-serif; color: #555; }
+.eleven-macbook-device[data-playback="loading"] + figcaption button { visibility: hidden; }
+.eleven-macbook-showcase button { flex-shrink: 0; min-height: 44px; padding: 8px 0 8px 12px; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.eleven-macbook-showcase button:disabled { text-decoration: none; cursor: default; }
+.eleven-macbook-showcase button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .eleven-macbook-display video { visibility: hidden; }
+}
+@media (max-width: 700px) {
+  .eleven-macbook-showcase { margin-bottom: 20px; }
+  .eleven-macbook-showcase figcaption { flex-wrap: wrap; gap: 0 16px; font-size: 10px; }
+  .eleven-macbook-showcase button { margin-left: auto; }
+}
