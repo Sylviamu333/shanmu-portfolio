@@ -1,10 +1,11 @@
 """Derive the case-study frame, screen video and poster from unchanged uploads.
 
 Run from the repository root with Python (Pillow) and ffmpeg installed.
-The new 1440x900 MP4 has a 50px encoded right margin. Set H.264 display cropping
-to 1390x900 without re-encoding: decoded pixels match the original active image
-exactly. Preserve all website UI, the existing watermark, and the source file.
-Remux with fast-start; omit unused audio from this muted showcase's served copy.
+Preserve the complete original 1440x900 frame, duration and aspect ratio.
+The white border, right black margin and clideo.com watermark are embedded in
+this recording. They cannot be removed under the no-crop/no-reconstruction
+requirements; a clean OBS export is required. Do not set H.264 crop metadata.
+Remux without re-encoding, with fast-start; omit unused audio in the muted copy.
 """
 from pathlib import Path
 import subprocess
@@ -18,7 +19,7 @@ subprocess.run([
     "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
     "-i", str(source / "eleven-oasis-homepage-demo1.mp4"),
     "-map", "0:v:0", "-c:v", "copy",
-    "-bsf:v", "h264_metadata=crop_right=50", "-an", "-movflags", "+faststart",
+    "-an", "-movflags", "+faststart",
     str(target / "homepage-demo1.mp4"),
 ], check=True)
 subprocess.run([

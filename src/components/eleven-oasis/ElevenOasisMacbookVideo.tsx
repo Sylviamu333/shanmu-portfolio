@@ -108,25 +108,27 @@ export function ElevenOasisMacbookVideo() {
     <figure ref={root} className="eleven-macbook-showcase" aria-describedby={description}>
       <div className="eleven-macbook-device" data-playback={playback}>
         <div className="eleven-macbook-display">
-          <video
-            ref={video}
-            autoPlay muted loop playsInline preload="metadata"
-            poster={`${assets}/poster.webp`}
-            aria-label="Eleven Oasis website browsing demonstration"
-            aria-describedby={description}
-          />
-          <button
-            className="eleven-macbook-control"
-            type="button"
-            onClick={() => toggle.current()}
-            disabled={playback === "loading" || playback === "error"}
-            aria-label={playback === "error" ? "Website demo unavailable" : playback === "playing" ? "Pause website demo" : "Resume website demo"}
-            aria-describedby={description}
-          >
-            <span className="eleven-macbook-play-circle" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M8 5L19 12L8 19Z" fill="currentColor" /></svg>
-            </span>
-          </button>
+          <div className="eleven-macbook-picture">
+            <video
+              ref={video}
+              autoPlay muted loop playsInline preload="metadata"
+              poster={`${assets}/poster.webp`}
+              aria-label="Eleven Oasis website browsing demonstration"
+              aria-describedby={description}
+            />
+            <button
+              className="eleven-macbook-control"
+              type="button"
+              onClick={() => toggle.current()}
+              disabled={playback === "loading" || playback === "error"}
+              aria-label={playback === "error" ? "Website demo unavailable" : playback === "playing" ? "Pause website demo" : "Resume website demo"}
+              aria-describedby={description}
+            >
+              <span className="eleven-macbook-play-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5L19 12L8 19Z" fill="currentColor" /></svg>
+              </span>
+            </button>
+          </div>
         </div>
         <Image
           className="eleven-macbook-overlay"
