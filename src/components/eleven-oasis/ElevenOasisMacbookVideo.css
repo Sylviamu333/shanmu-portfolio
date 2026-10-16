@@ -1,28 +1,26 @@
 .eleven-macbook-showcase { width: min(100%, 1200px); margin: 0 auto 28px; }
 .eleven-macbook-device { position: relative; width: 100%; aspect-ratio: 1600 / 1020; isolation: isolate; }
 /* Original 1600 × 1020 coordinates: x 208, y 137, w 1180, h 742.
-   A source-derived transparent frame above this rectangle supplies the exact
-   rounded screen edge. The derived recording excludes its encoded 40px bottom
-   margin; cover crops about 7.8% per side to fill this display without stretch. */
-.eleven-macbook-display { position: absolute; left: 13%; top: 13.4313725%; width: 73.75%; height: 72.745098%; overflow: hidden; background: #000 url('/projects/eleven-oasis/demo/poster.webp') center top / cover no-repeat; }
-/* Black overscan stays underneath the opaque bezel and fills alpha-edge pixels. */
-.eleven-macbook-display { outline: 2px solid #000; }
+   The unchanged source-derived frame supplies the screen edge. The new 1390 ×
+   900 active recording loses only ~2.8% at its bottom when filling this display. */
+.eleven-macbook-display { position: absolute; left: 13%; top: 13.4313725%; width: 73.75%; height: 72.745098%; overflow: hidden; border-radius: 1.3559322% 1.3559322% 0 0 / 2.1563342% 2.1563342% 0 0; background: #000 url('/projects/eleven-oasis/demo/poster.webp') center top / cover no-repeat; outline: 2px solid #000; }
 .eleven-macbook-display video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .eleven-macbook-device[data-playback="loading"] video,
-.eleven-macbook-device[data-playback="reduced"] video,
 .eleven-macbook-device[data-playback="error"] video,
 .eleven-macbook-device[data-playback="blocked"] video { visibility: hidden; }
 .eleven-macbook-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.eleven-macbook-control { position: absolute; inset: 0; display: grid; place-items: center; width: 100%; height: 100%; min-height: 44px; padding: 0; border: 0; background: transparent; color: #242424; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.eleven-macbook-control:disabled { cursor: default; }
+.eleven-macbook-control:focus-visible { outline: 3px solid #fff; outline-offset: -6px; box-shadow: inset 0 0 0 8px #242424; }
+.eleven-macbook-play-circle { display: grid; place-items: center; width: clamp(32px, 8%, 72px); aspect-ratio: 1; border-radius: 50%; background: rgb(255 255 255 / 80%); box-shadow: 0 2px 12px rgb(0 0 0 / 12%); opacity: 0; transform: scale(.95); transition: opacity 220ms ease, transform 220ms ease; pointer-events: none; }
+.eleven-macbook-play-circle svg { width: 38%; height: 38%; margin-left: 3%; }
+.eleven-macbook-device:is([data-playback="paused"], [data-playback="blocked"], [data-playback="reduced"]) .eleven-macbook-play-circle { opacity: 1; transform: scale(1); }
+.eleven-macbook-device[data-playback="loading"] .eleven-macbook-control { visibility: hidden; }
 .eleven-macbook-showcase figcaption { display: flex; justify-content: space-between; align-items: center; min-height: 44px; gap: 8px 24px; font: 400 11px/1.5 Arial, Helvetica, sans-serif; color: #555; }
-.eleven-macbook-device[data-playback="loading"] + figcaption button { visibility: hidden; }
-.eleven-macbook-showcase button { flex-shrink: 0; min-height: 44px; padding: 8px 0 8px 12px; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-.eleven-macbook-showcase button:disabled { text-decoration: none; cursor: default; }
-.eleven-macbook-showcase button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
-  .eleven-macbook-display video { visibility: hidden; }
+  .eleven-macbook-play-circle { transition: none; transform: none; }
 }
 @media (max-width: 700px) {
   .eleven-macbook-showcase { margin-bottom: 20px; }
   .eleven-macbook-showcase figcaption { flex-wrap: wrap; gap: 0 16px; font-size: 10px; }
-  .eleven-macbook-showcase button { margin-left: auto; }
 }

@@ -1,10 +1,10 @@
 """Derive the case-study frame, screen video and poster from unchanged uploads.
 
 Run from the repository root with Python (Pillow) and ffmpeg installed.
-The MP4 has a 40px encoded bottom margin (1280x720 -> 1280x680).
-Remove only that margin; preserve the browser and website UI. The source stays
-unchanged. H.264 with fast-start supports inline playback and metadata loading;
-the unused audio track is omitted from this muted showcase's derived copy.
+The new 1440x900 MP4 has a 50px encoded right margin. Set H.264 display cropping
+to 1390x900 without re-encoding: decoded pixels match the original active image
+exactly. Preserve all website UI, the existing watermark, and the source file.
+Remux with fast-start; omit unused audio from this muted showcase's served copy.
 """
 from pathlib import Path
 import subprocess
@@ -16,17 +16,18 @@ target.mkdir(parents=True, exist_ok=True)
 source = root / "source-assets"
 subprocess.run([
     "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-    "-i", str(source / "eleven-oasis-homepage-demo.mp4"),
-    "-map", "0:v:0", "-vf", "crop=1280:680:0:0", "-an",
-    "-c:v", "libx264", "-preset", "medium", "-crf", "18",
-    "-pix_fmt", "yuv420p", "-movflags", "+faststart",
-    str(target / "homepage-demo.mp4"),
+    "-i", str(source / "eleven-oasis-homepage-demo1.mp4"),
+    "-map", "0:v:0", "-c:v", "copy",
+    "-bsf:v", "h264_metadata=crop_right=50", "-an", "-movflags", "+faststart",
+    str(target / "homepage-demo1.mp4"),
 ], check=True)
 subprocess.run([
     "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", "3",
-    "-i", str(target / "homepage-demo.mp4"), "-frames:v", "1",
+    "-i", str(target / "homepage-demo1.mp4"), "-frames:v", "1",
     "-c:v", "libwebp", "-quality", "90", str(target / "poster.webp"),
 ], check=True)
+# This old served derivative is now unused; archival source files stay untouched.
+(target / "homepage-demo.mp4").unlink(missing_ok=True)
 frame = Image.open(source / "eleven-oasis-macbook.png").convert("RGBA")
 assert frame.size == (1600, 1020)
 # Measured source display, with a 1–2 source-pixel guard inside the black bezel

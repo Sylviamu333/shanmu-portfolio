@@ -20,59 +20,85 @@ export function ElevenOasisMacbookVideo() {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     let visible = false;
     let pausedByUser = false;
+    let reducedMotionOptIn = false;
     let failed = false;
     let disposed = false;
     let attempt = 0;
+    const motionAllowed = () => !reduced.matches || reducedMotionOptIn;
+    const idleState = (): Playback => failed ? "error" : !motionAllowed() ? "reduced" : "paused";
 
     const update = () => {
       const currentAttempt = ++attempt;
       if (disposed) return;
-      if (reduced.matches || !visible || document.hidden || pausedByUser || failed) {
+      if (!motionAllowed() || !visible || document.hidden || pausedByUser || failed) {
         element.pause();
-        // Releasing the source guarantees a static poster when motion is reduced.
-        if (reduced.matches && element.hasAttribute("src")) {
-          element.removeAttribute("src");
-          element.load();
-        }
-        setPlayback(reduced.matches ? "reduced" : failed ? "error" : "paused");
+        setPlayback(idleState());
         return;
       }
-      if (!element.hasAttribute("src")) element.src = `${assets}/homepage-demo.mp4`;
+      if (!element.hasAttribute("src")) element.src = `${assets}/homepage-demo1.mp4`;
       element.muted = true;
-      void element.play().then(() => {
-        if (!disposed && currentAttempt === attempt) setPlayback("playing");
-      }).catch(error => {
-        if (!disposed && currentAttempt === attempt && error.name !== "AbortError") {
+      // Playback events below own the playing/paused UI, including browser or
+      // system pauses. This promise handles only a declined autoplay attempt.
+      void element.play().catch(error => {
+        if (!disposed && currentAttempt === attempt && error.name !== "AbortError" && !failed) {
           setPlayback("blocked");
         }
       });
     };
-    const error = () => {
+    const onPlaying = () => {
+      if (disposed) return;
+      if (!motionAllowed() || !visible || document.hidden || pausedByUser || failed) {
+        element.pause();
+        return;
+      }
+      setPlayback("playing");
+    };
+    const onPause = () => {
+      if (!disposed) setPlayback(idleState());
+    };
+    const onError = () => {
       failed = true;
+      ++attempt;
+      element.pause();
+      if (!disposed) setPlayback("error");
+    };
+    const onPreferenceChange = () => {
+      reducedMotionOptIn = false;
       update();
     };
-    // Native controls stay hidden; this keyboard-accessible control also permits
-    // manual playback when the browser declines muted autoplay.
     toggle.current = () => {
-      if (failed || reduced.matches) return;
-      pausedByUser = !element.paused;
-      update();
+      if (disposed || failed) return;
+      if (!element.paused) {
+        pausedByUser = true;
+        ++attempt;
+        element.pause();
+      } else {
+        pausedByUser = false;
+        // Reduced motion defaults to a static poster without a video request.
+        // An explicit play action may opt in; later preference changes reset it.
+        reducedMotionOptIn = reduced.matches;
+        update();
+      }
     };
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       update();
     }, { rootMargin: "200px 0px" });
+    element.addEventListener("playing", onPlaying);
+    element.addEventListener("pause", onPause);
+    element.addEventListener("error", onError);
     observer.observe(root.current);
-    reduced.addEventListener("change", update);
+    reduced.addEventListener("change", onPreferenceChange);
     document.addEventListener("visibilitychange", update);
-    element.addEventListener("error", error);
     return () => {
       disposed = true;
       ++attempt;
       observer.disconnect();
-      reduced.removeEventListener("change", update);
+      reduced.removeEventListener("change", onPreferenceChange);
       document.removeEventListener("visibilitychange", update);
-      element.removeEventListener("error", error);
+      element.removeEventListener("playing", onPlaying);
+      element.removeEventListener("pause", onPause);
+      element.removeEventListener("error", onError);
       element.pause();
       toggle.current = () => {};
     };
@@ -89,6 +115,18 @@ export function ElevenOasisMacbookVideo() {
             aria-label="Eleven Oasis website browsing demonstration"
             aria-describedby={description}
           />
+          <button
+            className="eleven-macbook-control"
+            type="button"
+            onClick={() => toggle.current()}
+            disabled={playback === "loading" || playback === "error"}
+            aria-label={playback === "error" ? "Website demo unavailable" : playback === "playing" ? "Pause website demo" : "Resume website demo"}
+            aria-describedby={description}
+          >
+            <span className="eleven-macbook-play-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5L19 12L8 19Z" fill="currentColor" /></svg>
+            </span>
+          </button>
         </div>
         <Image
           className="eleven-macbook-overlay"
@@ -100,14 +138,7 @@ export function ElevenOasisMacbookVideo() {
       </div>
       <figcaption>
         <span id={description}>Eleven Oasis — a recorded walkthrough of the live storefront.</span>
-        <button
-          type="button"
-          onClick={() => toggle.current()}
-          disabled={playback === "reduced" || playback === "error"}
-          aria-label={playback === "reduced" ? "Static website preview; reduced motion enabled" : playback === "error" ? "Static website preview; video unavailable" : playback === "playing" ? "Pause website demo" : "Play website demo"}
-        >
-          {playback === "reduced" ? "Static preview · reduced motion" : playback === "error" ? "Static preview · video unavailable" : playback === "playing" ? "Pause demo" : "Play demo"}
-        </button>
+        {playback === "error" && <span role="status">Video unavailable · static preview</span>}
       </figcaption>
     </figure>
   );
