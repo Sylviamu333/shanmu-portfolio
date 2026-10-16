@@ -2,11 +2,12 @@
 .eleven-macbook-device { position: relative; width: 100%; aspect-ratio: 1600 / 1020; isolation: isolate; }
 /* Original 1600 × 1020 coordinates: x 208, y 137, w 1180, h 742.
    A source-derived transparent frame above this rectangle supplies the exact
-   rounded screen edge; the 16:9 recording stays uncropped and unstretched. */
-.eleven-macbook-display { position: absolute; left: 13%; top: 13.4313725%; width: 73.75%; height: 72.745098%; background: #000 url('/projects/eleven-oasis/demo/poster.webp') center / contain no-repeat; }
+   rounded screen edge. The derived recording excludes its encoded 40px bottom
+   margin; cover crops about 7.8% per side to fill this display without stretch. */
+.eleven-macbook-display { position: absolute; left: 13%; top: 13.4313725%; width: 73.75%; height: 72.745098%; overflow: hidden; background: #000 url('/projects/eleven-oasis/demo/poster.webp') center top / cover no-repeat; }
 /* Black overscan stays underneath the opaque bezel and fills alpha-edge pixels. */
 .eleven-macbook-display { outline: 2px solid #000; }
-.eleven-macbook-display video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.eleven-macbook-display video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .eleven-macbook-device[data-playback="loading"] video,
 .eleven-macbook-device[data-playback="reduced"] video,
 .eleven-macbook-device[data-playback="error"] video,

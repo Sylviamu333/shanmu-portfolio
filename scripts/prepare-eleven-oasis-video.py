@@ -1,10 +1,12 @@
-"""Derive the case-study frame/poster from the two unchanged uploaded assets.
+"""Derive the case-study frame, screen video and poster from unchanged uploads.
 
 Run from the repository root with Python (Pillow) and ffmpeg installed.
-The MP4 is copied byte-for-byte, including its original browser chrome.
+The MP4 has a 40px encoded bottom margin (1280x720 -> 1280x680).
+Remove only that margin; preserve the browser and website UI. The source stays
+unchanged. H.264 with fast-start supports inline playback and metadata loading;
+the unused audio track is omitted from this muted showcase's derived copy.
 """
 from pathlib import Path
-import shutil
 import subprocess
 from PIL import Image, ImageDraw
 
@@ -12,10 +14,17 @@ root = Path(__file__).resolve().parent.parent
 target = root / "public/projects/eleven-oasis/demo"
 target.mkdir(parents=True, exist_ok=True)
 source = root / "source-assets"
-shutil.copyfile(source / "eleven-oasis-homepage-demo.mp4", target / "homepage-demo.mp4")
+subprocess.run([
+    "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+    "-i", str(source / "eleven-oasis-homepage-demo.mp4"),
+    "-map", "0:v:0", "-vf", "crop=1280:680:0:0", "-an",
+    "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+    "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+    str(target / "homepage-demo.mp4"),
+], check=True)
 subprocess.run([
     "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", "3",
-    "-i", str(source / "eleven-oasis-homepage-demo.mp4"), "-frames:v", "1",
+    "-i", str(target / "homepage-demo.mp4"), "-frames:v", "1",
     "-c:v", "libwebp", "-quality", "90", str(target / "poster.webp"),
 ], check=True)
 frame = Image.open(source / "eleven-oasis-macbook.png").convert("RGBA")
