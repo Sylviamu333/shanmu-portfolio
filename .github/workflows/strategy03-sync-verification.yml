@@ -2,6 +2,9 @@ name: Strategy 03 synchronization verification
 on:
   push:
     branches: [codex/strategy03-master-progress]
+concurrency:
+  group: strategy03-sync-validation
+  cancel-in-progress: true
 permissions:
   contents: read
   statuses: write
@@ -35,7 +38,7 @@ jobs:
           cat > /tmp/strategy03-server.cjs <<'SERVER'
           const {createServer}=require('node:http'),{stat}=require('node:fs/promises'),{createReadStream}=require('node:fs'),{resolve,relative,extname}=require('node:path');
           const root=resolve('out'),mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.mp4':'video/mp4','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.json':'application/json','.txt':'text/plain'};
-          createServer(async(req,res)=>{try{let f=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(relative(root,f).startsWith('..')){res.writeHead(403);res.end();return}let s;try{s=await stat(f);if(s.isDirectory()){f=resolve(f,'index.html');s=await stat(f)}}catch{f=resolve(root,'404.html');s=await stat(f);res.statusCode=404}res.setHeader('Content-Type',mime[extname(f)]||'application/octet-stream');res.setHeader('Accept-Ranges','bytes');let start=0,end=s.size-1;if(req.headers.range){const m=/bytes=(\\d+)-(\\d*)/.exec(req.headers.range);if(m){start=+m[1];end=m[2]?Math.min(+m[2],s.size-1):end;res.statusCode=206;res.setHeader('Content-Range',`bytes ${start}-${end}/${s.size}`)}}res.setHeader('Content-Length',end-start+1);if(req.method==='HEAD')res.end();else createReadStream(f,{start,end}).pipe(res)}catch{res.writeHead(400);res.end()}}).listen(3000,'127.0.0.1');
+          createServer(async(req,res)=>{try{let f=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(relative(root,f).startsWith('..')){res.writeHead(403);res.end();return}let s;try{s=await stat(f);if(s.isDirectory()){f=resolve(f,'index.html');s=await stat(f)}}catch{f=resolve(root,'404.html');s=await stat(f);res.statusCode=404}res.setHeader('Content-Type',mime[extname(f)]||'application/octet-stream');res.setHeader('Accept-Ranges','bytes');let start=0,end=s.size-1;if(req.headers.range){const m=/bytes=(\d+)-(\d*)/.exec(req.headers.range);if(m){start=+m[1];end=m[2]?Math.min(+m[2],s.size-1):end;res.statusCode=206;res.setHeader('Content-Range',`bytes ${start}-${end}/${s.size}`)}}res.setHeader('Content-Length',end-start+1);if(req.method==='HEAD')res.end();else createReadStream(f,{start,end}).pipe(res)}catch{res.writeHead(400);res.end()}}).listen(3000,'127.0.0.1');
           SERVER
           node /tmp/strategy03-server.cjs > /tmp/strategy03-server.log 2>&1 &
           node <<'JS'
