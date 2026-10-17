@@ -1,16 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { elevenCampaigns, type ElevenCampaign } from "@/data/eleven-oasis-strategy";
 import "./Strategy03CampaignShowcase.css";
 
 const CAMPAIGN_SCROLL = {
-  hold: 1000,
-  down: 22000,
-  bottom: 1500,
-  back: 3000,
-  ease: "cubic-bezier(.45, 0, .55, 1)",
+  topHold: 1.5,
+  down: 20,
+  bottomHold: 1.5,
+  back: 3,
+  endHold: 1.5,
 } as const;
 
 type Playback = "loading" | "playing" | "paused" | "reduced" | "error";
@@ -44,6 +45,7 @@ export function Strategy03CampaignShowcase({ active }: { active: boolean }) {
   const synchronize = useRef((restart = false) => { void restart; });
   const hover = useRef((id: string, value: boolean) => { void id; void value; });
   const toggle = useRef(() => {});
+  const leave = useRef(() => {});
   const [playback, setPlayback] = useState<Playback>("loading");
 
   useEffect(() => {
@@ -53,78 +55,62 @@ export function Strategy03CampaignShowcase({ active }: { active: boolean }) {
     const pictures = [...element.querySelectorAll<HTMLImageElement>(".eleven-campaign-image")];
     if (pictures.length !== elevenCampaigns.length || frames.length !== pictures.length) return;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-    const animations: Animation[] = [];
-    const hovered = new Set<string>();
+    const progress = { value: 0 };
+    let distances = pictures.map(() => 0);
+    let master: gsap.core.Timeline | null = null;
     let disposed = false;
     let requested = false;
     let decoded = false;
     let visible = false;
     let userPaused = false;
+    let hovered = false;
     let failed = false;
-    let running = false;
-    let pausedTime = 0;
 
-    const clock = () => running ? Number(animations[0]?.currentTime ?? pausedTime) : pausedTime;
-    const pauseAt = (time: number) => {
-      animations.forEach(animation => {
-        animation.pause();
-        animation.currentTime = time;
+    const render = () => {
+      // One scalar is sampled once and applied to both images in the same frame.
+      const value = Math.max(0, Math.min(1, progress.value));
+      pictures.forEach((picture, index) => {
+        picture.style.transform = `translate3d(0, ${-distances[index] * value}px, 0)`;
       });
-      pausedTime = time;
-      running = false;
-    };
-    const playAt = (time: number) => {
-      // Both effects use the same document timeline origin, including resumes.
-      const startTime = Number(document.timeline.currentTime ?? 0) - time;
-      animations.forEach(animation => {
-        animation.play();
-        animation.startTime = startTime;
-      });
-      pausedTime = time;
-      running = true;
     };
     const update = (restart = false) => {
       if (disposed) return;
-      const time = restart ? 0 : clock();
-      if (restart) userPaused = false;
+      if (restart) {
+        userPaused = false;
+        master?.pause(0);
+        progress.value = 0;
+        render();
+      }
       if (selected.current && visible && !requested) load();
-      const allowed = decoded && selected.current && visible && !document.hidden && !hovered.size && !userPaused && !reduced.matches && !failed;
-      if (allowed) {
-        if (!running || restart) playAt(time);
-      } else if (running || restart) pauseAt(time);
+      const allowed = decoded && selected.current && visible && !document.hidden && !hovered && !userPaused && !reduced.matches && !failed;
+      if (allowed) master?.play();
+      else master?.pause();
       setPlayback(failed ? "error" : reduced.matches ? "reduced" : !decoded ? "loading" : allowed ? "playing" : "paused");
     };
     const measure = () => {
       if (!decoded || disposed) return;
-      const { hold, down, bottom, back, ease } = CAMPAIGN_SCROLL;
-      const duration = hold + down + bottom + back;
-      pictures.forEach((picture, index) => {
+      distances = pictures.map((picture, index) => {
         const distance = Math.max(0, picture.getBoundingClientRect().height - frames[index].getBoundingClientRect().height);
         frames[index].dataset.scrollDistance = String(distance);
-        const top = "translate3d(0, 0px, 0)";
-        const end = `translate3d(0, ${-distance}px, 0)`;
-        const keyframes = [
-          { transform: top, offset: 0 },
-          { transform: top, offset: hold / duration, easing: ease },
-          { transform: end, offset: (hold + down) / duration },
-          { transform: end, offset: (hold + down + bottom) / duration, easing: ease },
-          { transform: top, offset: 1 },
-        ];
-        // Only distance differs. Duration, easing and normalized progress match.
-        if (animations[index]) (animations[index].effect as KeyframeEffect).setKeyframes(keyframes);
-        else {
-          const animation = picture.animate(keyframes, { duration, iterations: Infinity });
-          animation.pause();
-          animation.currentTime = pausedTime;
-          animations.push(animation);
-        }
+        return distance;
       });
+      if (!master) {
+        const { topHold, down, bottomHold, back, endHold } = CAMPAIGN_SCROLL;
+        // Animate only the shared scalar. Neither image owns an animation.
+        master = gsap.timeline({ paused: true, repeat: -1, onUpdate: render })
+          .to(progress, { value: 0, duration: topHold, ease: "none" })
+          .to(progress, { value: 1, duration: down, ease: "none" })
+          .to(progress, { value: 1, duration: bottomHold, ease: "none" })
+          .to(progress, { value: 0, duration: back, ease: "power1.inOut" })
+          .to(progress, { value: 0, duration: endHold, ease: "none" });
+      }
+      // Resizing changes distances only; the master phase remains untouched.
+      render();
       update();
     };
     function load() {
       requested = true;
       pictures.forEach(picture => { picture.loading = "eager"; });
-      // Never allow image decoding or lazy-loading to stagger the two starts.
       void Promise.all(pictures.map(picture => picture.decode())).then(() => {
         if (disposed) return;
         decoded = true;
@@ -135,19 +121,18 @@ export function Strategy03CampaignShowcase({ active }: { active: boolean }) {
     }
 
     synchronize.current = update;
-    hover.current = (id, value) => {
-      if (value) hovered.add(id);
-      else hovered.delete(id);
-      update();
+    hover.current = (_id, value) => {
+      if (value) { hovered = true; update(); }
     };
+    // Leaving a single window does not resume: the pointer must leave the pair.
+    leave.current = () => { hovered = false; update(); };
     toggle.current = () => {
-      userPaused = running;
-      if (!userPaused) hovered.clear();
+      userPaused = master ? !master.paused() : false;
+      if (!userPaused) hovered = false;
       update();
     };
     const preference = () => update(true);
     const visibility = () => update();
-    // One visibility gate for the pair, including the stacked mobile layout.
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       update();
@@ -160,14 +145,16 @@ export function Strategy03CampaignShowcase({ active }: { active: boolean }) {
 
     return () => {
       disposed = true;
-      animations.forEach(animation => animation.cancel());
+      master?.kill();
       observer.disconnect();
       resize.disconnect();
       document.removeEventListener("visibilitychange", visibility);
       reduced.removeEventListener("change", preference);
+      pictures.forEach(picture => { picture.style.removeProperty("transform"); });
       synchronize.current = () => {};
       hover.current = () => {};
       toggle.current = () => {};
+      leave.current = () => {};
     };
   }, []);
 
@@ -176,7 +163,8 @@ export function Strategy03CampaignShowcase({ active }: { active: boolean }) {
     synchronize.current(active);
   }, [active]);
 
-  return <div ref={root} className="eleven-campaign-visual" aria-label="Two campaign experiences">
+  return <div ref={root} className="eleven-campaign-visual" aria-label="Two campaign experiences"
+    onPointerLeave={event => { if (event.pointerType === "mouse") leave.current(); }}>
     <div className="eleven-campaign-browser-grid">
       {elevenCampaigns.map(campaign => <CampaignBrowser key={campaign.id} campaign={campaign} playback={playback}
         onHover={(id, value) => hover.current(id, value)} onToggle={() => toggle.current()} />)}
