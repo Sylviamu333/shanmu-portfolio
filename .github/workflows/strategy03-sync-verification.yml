@@ -1,0 +1,178 @@
+name: Strategy 03 synchronization verification
+on:
+  push:
+    branches: [codex/strategy03-master-progress]
+permissions:
+  contents: read
+  statuses: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Mark verification pending
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createCommitStatus({owner:context.repo.owner,repo:context.repo.repo,sha:context.sha,state:'pending',context:'Strategy 03 browser verification',target_url:context.serverUrl+'/'+context.repo.owner+'/'+context.repo.repo+'/actions/runs/'+context.runId});
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run typecheck
+      - run: npm run check:content -- --build
+      - name: Install browser test tools in runner only
+        run: |
+          npm install --no-save --package-lock=false @playwright/test@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify synchronized browser motion
+        run: |
+          npm start > /tmp/strategy03-server.log 2>&1 &
+          node <<'JS'
+          const { chromium } = require('playwright');
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const output = '/tmp/strategy03-qa';
+          fs.mkdirSync(output, {recursive:true});
+          const image = '.eleven-campaign-image';
+          const controls = '.eleven-strategy-selectors button';
+          const read = async page => page.locator(image).evaluateAll(images => images.map(img => {
+            const frame = img.parentElement;
+            const distance = Number(frame.dataset.scrollDistance);
+            const y = new DOMMatrixReadOnly(getComputedStyle(img).transform).m42;
+            return {progress: distance ? -y / distance : 0, distance, y,
+              height:img.getBoundingClientRect().height, viewport:frame.getBoundingClientRect().height};
+          }));
+          const together = async page => {
+            const values = await read(page);
+            assert.equal(values.length,2);
+            assert(Math.abs(values[0].progress-values[1].progress)<0.00001,JSON.stringify(values));
+            values.forEach(v=>assert(v.progress>=-0.00001&&v.progress<=1.00001,JSON.stringify(values)));
+            return values;
+          };
+          const waitProgress = async (page,value) => page.waitForFunction(p => {
+            const e=document.querySelector('.eleven-campaign-image');
+            return e && -new DOMMatrixReadOnly(getComputedStyle(e).transform).m42 / Number(e.parentElement.dataset.scrollDistance) >= p;
+          },value,{timeout:35000});
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage({viewport:{width:1440,height:1100}});
+            const errors=[];
+            page.on('pageerror',error=>errors.push(error.message));
+            for(let i=0;i<40;i++){try{await page.goto('http://127.0.0.1:3000/work/eleven-oasis/',{waitUntil:'domcontentloaded'});break}catch(e){if(i===39)throw e;await new Promise(r=>setTimeout(r,500));}}
+            assert.equal(await page.locator(controls).first().getAttribute('aria-pressed'),'true');
+            await page.getByRole('button',{name:'03 / CAMPAIGN LANDING PAGES',exact:true}).click();
+            await page.locator('.eleven-campaign-visual').scrollIntoViewIfNeeded();
+            await page.mouse.move(0,0);
+            await page.getByRole('button',{name:'Pause Winter 2026 campaign preview',exact:true}).waitFor();
+            const checkpoints=[];
+            for(let loop=0;loop<2;loop++){
+              if(loop)await page.waitForFunction(()=>{
+                const e=document.querySelector('.eleven-campaign-image');
+                return -new DOMMatrixReadOnly(getComputedStyle(e).transform).m42 / Number(e.parentElement.dataset.scrollDistance)<.001;
+              },null,{timeout:10000});
+              for(const progress of[.25,.5,.75,.99999]){
+                await waitProgress(page,progress);
+                checkpoints.push({loop,requested:progress,values:await together(page)});
+              }
+              await page.screenshot({path:output+'/bottom-'+loop+'.png'});
+            }
+            await page.locator('.eleven-campaign-viewport').first().hover();
+            await page.getByRole('button',{name:'Resume Winter 2026 campaign preview',exact:true}).waitFor();
+            let paused=await together(page);
+            await page.waitForTimeout(250);
+            assert.deepEqual(await read(page),paused);
+            // Leaving the image for the background must keep the pair paused.
+            await page.locator('.eleven-campaign-visual').hover({position:{x:4,y:4}});
+            await page.waitForTimeout(250);
+            assert.deepEqual(await read(page),paused);
+            await page.mouse.move(0,0);
+            await page.getByRole('button',{name:'Pause Winter 2026 campaign preview',exact:true}).waitFor();
+            await page.getByRole('button',{name:'Pause Autumn Sale campaign preview',exact:true}).focus();
+            await page.keyboard.press('Enter');
+            await page.getByRole('button',{name:'Resume Winter 2026 campaign preview',exact:true}).waitFor();
+            paused=await together(page);
+            await page.waitForTimeout(200);
+            assert.deepEqual(await read(page),paused);
+            await page.getByRole('button',{name:'Resume Autumn Sale campaign preview',exact:true}).focus();
+            await page.keyboard.press('Space');
+            await page.locator(controls).nth(3).click();
+            paused=await together(page);
+            await page.waitForTimeout(200);
+            assert.deepEqual(await read(page),paused);
+            await page.locator(controls).nth(2).click();
+            await page.waitForTimeout(400);
+            assert((await together(page)).every(v=>Math.abs(v.progress)<.00001));
+            await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));
+            await page.waitForTimeout(100);
+            paused=await together(page);
+            await page.waitForTimeout(200);
+            assert.deepEqual(await read(page),paused);
+            await page.locator('.eleven-campaign-visual').scrollIntoViewIfNeeded();
+            await page.mouse.move(0,0);
+            for(const width of[320,390,600,700,701,768,950,951,1024,1440,1920]){
+              await page.setViewportSize({width,height:1100});
+              await page.locator('.eleven-campaign-visual').scrollIntoViewIfNeeded();
+              await page.waitForTimeout(120);
+              await together(page);
+              assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+            }
+            await page.setViewportSize({width:1440,height:1100});
+            for(let i=0;i<5;i++){await page.locator(controls).nth(3).click();await page.locator(controls).nth(2).click();}
+            assert.equal(await page.locator(image).count(),2);
+            assert((await together(page)).every(v=>Math.abs(v.progress)<.00001));
+            for(let i=0;i<6;i++){await page.locator(controls).nth(i).click();assert.equal(await page.locator(controls).nth(i).getAttribute('aria-pressed'),'true');}
+            await page.locator(controls).nth(1).click();
+            await page.locator('.eleven-pdp-hover').scrollIntoViewIfNeeded();
+            await page.mouse.move(0,0);
+            await page.waitForFunction(()=>document.querySelector('.eleven-pdp-entrance').dataset.walkthroughReady==='true');
+            await page.locator('.eleven-strategy-pdp .gallery-image').click();
+            await page.keyboard.press('Escape');
+            await page.locator(controls).first().click();
+            await page.locator('.eleven-strategy01').scrollIntoViewIfNeeded();
+            await page.getByRole('button',{name:'Pause mobile homepage walkthrough',exact:true}).waitFor();
+            const reduced=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});
+            await reduced.goto('http://127.0.0.1:3000/work/eleven-oasis/',{waitUntil:'domcontentloaded'});
+            await reduced.locator(controls).nth(2).click();
+            await reduced.locator('.eleven-campaign-visual').scrollIntoViewIfNeeded();
+            await reduced.locator(image).evaluateAll(async imgs=>{for(const img of imgs){img.loading='eager';await img.decode();}});
+            await reduced.waitForFunction(()=>document.querySelector('.eleven-campaign-viewport').dataset.scrollDistance);
+            assert((await together(reduced)).every(v=>Math.abs(v.progress)<.00001));
+            assert.equal(await reduced.getByRole('button',{name:/scrolling disabled by reduced motion/}).count(),2);
+            await reduced.screenshot({path:output+'/reduced-mobile.png'});
+            const touch=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+            touch.on('pageerror',error=>errors.push(error.message));
+            await touch.goto('http://127.0.0.1:3000/work/eleven-oasis/',{waitUntil:'domcontentloaded'});
+            await touch.locator(controls).nth(2).tap();
+            await touch.locator('.eleven-campaign-visual').scrollIntoViewIfNeeded();
+            await touch.getByRole('button',{name:'Pause Winter 2026 campaign preview',exact:true}).waitFor();
+            await touch.getByRole('button',{name:'Pause Winter 2026 campaign preview',exact:true}).tap();
+            paused=await together(touch);await touch.waitForTimeout(200);assert.deepEqual(await read(touch),paused);
+            await touch.getByRole('button',{name:'Resume Winter 2026 campaign preview',exact:true}).tap();
+            await together(touch);
+            await touch.screenshot({path:output+'/touch-mobile.png'});
+            assert.deepEqual(errors,[]);
+            fs.writeFileSync(output+'/results.json',JSON.stringify({pass:true,checkpoints,widths:11,hoverPairAndShowcaseExit:true,keyboardAndTouch:true,inactiveAndOffscreen:true,restarts:true,reducedMotion:true,strategy01And02:true,errors},null,2));
+            console.log('PASS: two real browser loops with matching 25/50/75/100% checkpoints; paired hover/manual pauses; showcase exit; strategy reset; 11 widths; reduced motion; touch; Strategy 01/02.');
+            await browser.close();
+          })().catch(error=>{console.error(error);process.exit(1)});
+          
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: strategy03-browser-evidence
+          path: /tmp/strategy03-qa
+          if-no-files-found: ignore
+      - name: Record verification result
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          RESULT: ${{ job.status }}
+        with:
+          script: |
+            await github.rest.repos.createCommitStatus({owner:context.repo.owner,repo:context.repo.repo,sha:context.sha,state:process.env.RESULT==='success'?'success':'failure',context:'Strategy 03 browser verification',target_url:context.serverUrl+'/'+context.repo.owner+'/'+context.repo.repo+'/actions/runs/'+context.runId});
