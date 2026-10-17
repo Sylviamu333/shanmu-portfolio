@@ -1,6 +1,6 @@
 /* Strategy 02 owns its entrance instead of stacking it with the panel fade. */
 .eleven-strategy-panel.eleven-strategy-pdp[data-selected="true"] { transition: none; }
-.eleven-pdp-entrance { height: 100%; opacity: 0; transform: translateY(12px) scale(.98); transition: opacity 140ms ease-out, transform 140ms ease-out; }
+.eleven-pdp-entrance { position: relative; height: 100%; opacity: 0; transform: translateY(12px) scale(.98); transition: opacity 140ms ease-out, transform 140ms ease-out; }
 .eleven-pdp-entrance[data-active="true"] { transition: none; }
 .eleven-pdp-entrance[data-active="true"][data-entered="true"] { opacity: 1; transform: translateY(0) scale(1); transition: opacity 600ms cubic-bezier(.22, 1, .36, 1), transform 600ms cubic-bezier(.22, 1, .36, 1); }
 .eleven-pdp-entrance > .image-gallery { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: 100%; margin: 0; }
@@ -8,10 +8,18 @@
 .eleven-pdp-entrance .gallery-image { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 0; padding: 0; border: 0; border-radius: 0; background: #fff; cursor: zoom-in; overflow: visible; }
 /* A 1% inset on every side reserves more than the 1.5% hover growth. */
 .eleven-pdp-image-frame { display: flex; flex: 1; width: 100%; min-height: 0; padding: 1%; }
-.eleven-pdp-hover { display: flex; width: 100%; height: 100%; min-height: 0; transform: scale(1); transition: transform 300ms ease-out; }
+.eleven-pdp-hover { position: relative; display: flex; width: 100%; height: 100%; min-height: 0; transform: scale(1); transition: transform 300ms ease-out; }
 .eleven-pdp-hover img { width: 100%; height: 100%; min-height: 0; max-width: none; object-fit: contain; }
 .eleven-pdp-entrance .image-expand { position: static; flex-shrink: 0; align-self: flex-end; padding: 6px 0 0; color: #666; background: transparent; box-shadow: none; font: 400 11px/1.4 var(--sans); }
 .eleven-pdp-entrance .gallery-image:focus-visible { outline: 2px solid #333; outline-offset: 3px; }
+.eleven-pdp-walkthrough { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+.eleven-pdp-page { opacity: 0; }
+.eleven-pdp-entrance[data-walkthrough-ready="true"] .eleven-pdp-page { opacity: 1; }
+.eleven-pdp-hit { pointer-events: all; cursor: zoom-in; }
+.eleven-pdp-playback { position: absolute; bottom: 0; left: 0; max-width: 55%; min-height: 44px; padding: 15px 4px 0; border: 0; background: transparent; color: #666; text-align: left; font: 400 11px/1.4 var(--sans); cursor: pointer; }
+.eleven-pdp-playback:focus-visible { outline: 2px solid #333; outline-offset: 2px; }
+.eleven-pdp-playback:disabled { cursor: default; }
+.eleven-pdp-entrance .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (hover: hover) and (pointer: fine) {
   .eleven-pdp-entrance .gallery-image:hover .eleven-pdp-hover { transform: scale(1.015); }
 }

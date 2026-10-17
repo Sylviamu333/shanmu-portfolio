@@ -1,12 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useId } from "react";
 import type { ProjectImage } from "@/data/projects";
 import { ImageGallery } from "@/components/ImageGallery";
+import { usePdpWalkthrough } from "./usePdpWalkthrough";
+import demo from "./elevenOasisPdpWalkthrough.json";
 import "./Strategy02PdpArtwork.css";
 
 export function Strategy02PdpArtwork({ active, images }: { active: boolean; images: ProjectImage[] }) {
-  const entrance = useRef<HTMLDivElement>(null);
+  const { root: entrance, screenshot, playback, toggle, hover } = usePdpWalkthrough(active);
+  const id = useId().replace(/:/g, "");
   useEffect(() => {
     const element = entrance.current;
     if (!element || !active) return;
@@ -37,9 +40,25 @@ export function Strategy02PdpArtwork({ active, images }: { active: boolean; imag
       observer?.disconnect();
       delete element.dataset.entered;
     };
-  }, [active, images]);
+  }, [active, images, entrance]);
 
   return <div ref={entrance} className="eleven-pdp-entrance" data-active={active}>
-    <ImageGallery images={images} layout="full" presentation="pdp" />
+    <ImageGallery images={images} layout="full" presentation="pdp" pdpOverlay={
+      <svg className="eleven-pdp-walkthrough" viewBox={`0 0 ${demo.artwork.width} ${demo.artwork.height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs><clipPath id={`${id}-screen`}><path d={demo.screenPath} /></clipPath></defs>
+        <g clipPath={`url(#${id}-screen)`} className="eleven-pdp-page">
+          <image ref={screenshot} x={demo.screen.x} y={demo.screen.y} width={demo.screen.width} height={demo.height * demo.screen.width / demo.width} />
+        </g>
+        <rect x="1130" y="47" width="400" height="872" rx="62" fill="transparent" className="eleven-pdp-hit"
+          onPointerEnter={event => { if (event.pointerType === "mouse") hover.current(true); }}
+          onPointerLeave={event => { if (event.pointerType === "mouse") hover.current(false); }} />
+      </svg>
+    } />
+    <button type="button" className="eleven-pdp-playback" disabled={playback === "loading" || playback === "error"}
+      aria-label={playback === "error" ? "PDP walkthrough unavailable; static artwork shown" : playback === "playing" ? "Pause PDP walkthrough" : "Play PDP walkthrough"}
+      aria-describedby={`${id}-help`} onClick={() => toggle.current()}>
+      {playback === "error" ? "Static preview" : playback === "playing" ? "Pause walkthrough" : "Play walkthrough"}
+    </button>
+    <span className="sr-only" id={`${id}-help`}>The complete product page scrolls inside the phone. Hover over the phone to pause. Enlarge opens the original still composition.</span>
   </div>;
 }

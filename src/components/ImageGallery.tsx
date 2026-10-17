@@ -1,16 +1,18 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { ProjectImage } from "@/data/projects";
 import { Arrow } from "./Arrow";
 export function ImageGallery({
   images,
   layout = "pair",
   presentation,
+  pdpOverlay,
 }: {
   images: ProjectImage[];
   layout?: "full" | "pair" | "grid";
   presentation?: "pdp";
+  pdpOverlay?: ReactNode;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -54,6 +56,7 @@ export function ImageGallery({
             >
               {presentation === "pdp" ? <span className="eleven-pdp-image-frame"><span className="eleven-pdp-hover">
                 <Image src={image.src} alt={image.alt} width={image.width} height={image.height} sizes="(max-width:950px) 92vw, 65vw" />
+                {pdpOverlay}
               </span></span> : <Image
                 src={image.src}
                 alt={image.alt}

@@ -1,0 +1,24 @@
+{
+  "src": "/projects/eleven-oasis/strategy/mobile/pdp-mobile-full.webp",
+  "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+  "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+  "width": 1179,
+  "height": 16382,
+  "artwork": {
+    "width": 1617,
+    "height": 973
+  },
+  "screen": {
+    "x": 1132,
+    "y": 128.5,
+    "width": 397,
+    "height": 786
+  },
+  "screenPath": "M1132 128.5 H1529 L1529 850 C1529 891 1509 914.5 1466 914.5 H1196 C1155 914.5 1133 890 1133 850 Z",
+  "timing": {
+    "down": 16000,
+    "bottomHold": 1400,
+    "return": 3200,
+    "topHold": 1200
+  }
+}
