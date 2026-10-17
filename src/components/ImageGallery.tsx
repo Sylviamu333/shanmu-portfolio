@@ -8,15 +8,18 @@ export function ImageGallery({
   layout = "pair",
   presentation,
   pdpOverlay,
+  renderPreview,
 }: {
   images: ProjectImage[];
   layout?: "full" | "pair" | "grid";
   presentation?: "pdp";
   pdpOverlay?: ReactNode;
+  /** An alternate media presentation can reuse this gallery's existing dialog. */
+  renderPreview?: (open: (index: number, trigger: HTMLButtonElement) => void) => ReactNode;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<HTMLButtonElement | null>(null);
+  const [trigger, setTrigger] = useState<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (selected !== null && dialog.current && !dialog.current.open)
       dialog.current.showModal();
@@ -31,9 +34,9 @@ export function ImageGallery({
     return () => {
       document.body.style.overflow = previousOverflow;
       document.body.style.paddingRight = previousPadding;
-      trigger.current?.focus({ preventScroll: true });
+      trigger?.focus({ preventScroll: true });
     };
-  }, [presentation, selected]);
+  }, [presentation, selected, trigger]);
   const active = selected !== null ? images[selected] : null;
   const navigate = (direction: number) =>
     setSelected((current) =>
@@ -43,13 +46,16 @@ export function ImageGallery({
     );
   return (
     <>
-      <div className={`image-gallery gallery-${layout}`}>
+      {renderPreview ? renderPreview((index, button) => {
+        setTrigger(button);
+        setSelected(index);
+      }) : <div className={`image-gallery gallery-${layout}`}>
         {images.map((image, index) => (
           <figure key={image.src}>
             <button
               className={`gallery-image ${image.height / image.width > 3 ? "screenshot-image" : ""}`}
               onClick={(event) => {
-                trigger.current = event.currentTarget;
+                setTrigger(event.currentTarget);
                 setSelected(index);
               }}
               aria-label={`Enlarge: ${image.alt}`}
@@ -73,7 +79,7 @@ export function ImageGallery({
             {image.caption && <figcaption>{image.caption}</figcaption>}
           </figure>
         ))}
-      </div>
+      </div>}
       <dialog
         ref={dialog}
         className={`lightbox${presentation === "pdp" ? " eleven-pdp-lightbox" : ""}`}

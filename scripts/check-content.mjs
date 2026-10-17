@@ -5,7 +5,8 @@ import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
 import { homepageUX, uxDecisions } from "../src/data/eleven-oasis-case-study.ts";
-import { elevenStrategies } from "../src/data/eleven-oasis-strategy.ts";
+import { elevenStrategies, pdpUxSlides } from "../src/data/eleven-oasis-strategy.ts";
+import { journeyPhones } from "../src/data/eleven-oasis-mobile-journey.ts";
 const root = resolve(import.meta.dirname, "..");
 const photoManifest = JSON.parse(readFileSync(resolve(root, "public/projects/visual-experiments/photography/manifest.json"), "utf8"));
 for (const series of photographySeries) {
@@ -22,6 +23,21 @@ for (const series of photographySeries) {
 }
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
+assert.equal(journeyPhones.length, 11, "The mobile journey must retain all eleven screens");
+for (const [index, phone] of journeyPhones.entries()) {
+  assert.equal(phone.id, index + 1, "Mobile screen order changed");
+  assert.equal(hash(resolve(root, "source-assets", `eleven-oasis-mobile-${phone.id}.png`)), hash(resolve(root, "public", phone.src.slice(1))), `Stale mobile screen: ${phone.id}`);
+  assert(existsSync(resolve(root, "public", phone.thumbnail.slice(1))), `Missing mobile thumbnail: ${phone.id}`);
+}
+assert.equal(pdpUxSlides.length, 7, "Strategy 02 must contain seven slides");
+assert.equal(elevenStrategies[1].images, pdpUxSlides);
+for (const [index, slide] of pdpUxSlides.entries()) {
+  const number = String(index + 1).padStart(2, "0");
+  const fingerprint = hash(resolve(root, "source-assets", `eleven-oasis-pdp-strategy02-${number}.png`)).slice(0, 12);
+  assert(slide.src.endsWith(`/${number}-${fingerprint}.webp`), `Incorrect PDP asset order or revision: ${number}`);
+  assert(existsSync(resolve(root, "public", slide.src.slice(1))), `Missing PDP slide: ${number}`);
+  assert(slide.alt && slide.width > 0 && slide.height > 0);
+}
 assert.equal(
   hash(resolve(root, "source-assets/eleven-oasis-homepage-ux.png")),
   hash(resolve(root, "public", homepageUX.src.slice(1))),

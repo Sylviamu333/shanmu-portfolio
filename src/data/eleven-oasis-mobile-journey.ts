@@ -24,8 +24,8 @@ export interface JourneyPhone {
 }
 const phone = (id: number, label: string, detail: string, stages: JourneyStage[]): JourneyPhone => ({
   id, label, stages, width: 679, height: 1148, thumbnailWidth: 240, thumbnailHeight: 406,
-  src: `/projects/eleven-oasis/mobile/eleven-oasis-mobile-${id}.png`,
-  thumbnail: `/projects/eleven-oasis/mobile/phone-${id}-thumb.webp`,
+  src: `/projects/eleven-oasis/mobile/eleven-oasis-mobile-${id}${id === 9 ? "-a5a538692de4" : ""}.png`,
+  thumbnail: `/projects/eleven-oasis/mobile/phone-${id}-thumb${id === 9 ? "-a5a538692de4" : ""}.webp`,
   alt: `${label} — ${detail}, inside the original iPhone frame`,
 });
 export const journeyPhones: JourneyPhone[] = [

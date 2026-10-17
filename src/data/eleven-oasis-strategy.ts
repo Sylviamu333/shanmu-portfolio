@@ -1,5 +1,52 @@
 import type { ProjectImage } from "./projects";
 
+/** Verified originals, numeric order; lossless WebP copies retain every artwork pixel. */
+export const pdpUxSlides: ProjectImage[] = [
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/01-3595ab55daf3.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Product Information Hierarchy — Clarity at the Point of Decision; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/02-7cb89a323108.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Product Display — More Detail Shots; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/03-8f36f4c5dba9.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Intuitive Size Selection — Making Product Choices Effortless; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/04-54c686a2fb33.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Contextual Bundle Upselling — Discover More Without Leaving the PDP; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/05-d74b08a46fa7.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Product Detail Transparency — Helping Shoppers Understand What They Buy; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/06-c328e481de65.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Recently Viewed Products — Reducing Friction in Product Rediscovery; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/pdp/07-0122ad0f6b82.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "Customer Reviews — Building Trust Through Social Proof; original PDP UX presentation with annotated storefront detail on a dark blurred background"
+  }
+];
+
+
 export interface ElevenCampaign {
   id: string;
   name: string;
@@ -46,7 +93,7 @@ export const elevenStrategies: ElevenStrategy[] = [
   {
     number: "02", label: "REDESIGNED PDP BUY BOX", title: "Supporting Confident Purchase Decisions",
     description: "I refined the product purchasing experience by bringing essential product information, variant selection, pricing, and purchase actions into a clearer and more accessible hierarchy.",
-    images: [{ src: "/projects/eleven-oasis/strategy/pdp-ux-decisions.png", width: 1617, height: 973, alt: "Eleven Oasis PDP UX Decisions: a two-by-two breakdown of product information hierarchy, intuitive size selection, contextual bundle upselling and product detail transparency, beside the complete redesigned product page on an iPhone" }],
+    images: pdpUxSlides,
   },
   {
     number: "03", label: "CAMPAIGN LANDING PAGES", title: "One Framework. Two Shopping Intentions.",

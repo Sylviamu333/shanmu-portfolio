@@ -1,0 +1,35 @@
+/* Scoped to Strategy 02; the shared strategy viewport and column widths stay intact. */
+.eleven-pdp-carousel { height: 100%; min-width: 0; display: grid; grid-template-rows: minmax(0, 1fr) 32px; gap: 8px; }
+.eleven-pdp-carousel-viewport { position: relative; min-width: 0; min-height: 0; }
+.eleven-pdp-carousel-image { position: relative; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #fff; cursor: zoom-in; touch-action: pan-y pinch-zoom; }
+.eleven-pdp-carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: contain; opacity: 0; transition: opacity 400ms ease-in-out; pointer-events: none; }
+/* Latest selection wins immediately; CSS interrupts fades instead of queuing timers. */
+.eleven-pdp-carousel-slide[data-current="true"] { opacity: 1; z-index: 1; }
+.eleven-pdp-carousel-arrow { position: absolute; z-index: 2; top: 50%; translate: 0 -50%; display: grid; place-items: center; width: 36px; height: 44px; padding: 0; border: 1px solid #ffffff55; border-radius: 3px; background: #ffffffb8; color: #252525; font: 400 18px/1 Arial, sans-serif; cursor: pointer; transition: opacity 180ms ease, background-color 180ms ease; }
+.eleven-pdp-carousel-arrow[data-direction="previous"] { left: 10px; }
+.eleven-pdp-carousel-arrow[data-direction="next"] { right: 10px; }
+.eleven-pdp-carousel-arrow:hover { background: #fffffff0; }
+.eleven-pdp-carousel-dots { display: flex; justify-content: center; align-items: center; gap: 0; }
+.eleven-pdp-carousel-dots button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.eleven-pdp-carousel-dots span { width: 6px; height: 6px; border-radius: 50%; background: #d1d1d1; transition: background-color 180ms ease; }
+.eleven-pdp-carousel-dots button:hover span { background: #888; }
+.eleven-pdp-carousel-dots button[aria-current="true"] span { width: 8px; height: 8px; background: #252525; }
+.eleven-pdp-carousel :is(button):focus-visible { outline: 2px solid #333; outline-offset: 2px; }
+.eleven-pdp-carousel-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (hover: hover) and (pointer: fine) {
+  .eleven-pdp-carousel-arrow { opacity: 0; pointer-events: none; }
+  .eleven-pdp-carousel-viewport:is(:hover, :focus-within) .eleven-pdp-carousel-arrow { opacity: 1; pointer-events: auto; }
+}
+/* Reuse ImageGallery's existing native PDP dialog, including focus restoration and scroll lock. */
+.eleven-pdp-lightbox { width: 92vw; max-width: 92vw; height: 90dvh; max-height: 90dvh; padding: 16px; background: #fff; box-shadow: 0 12px 60px #0001; }
+.eleven-pdp-lightbox::backdrop { background: rgb(245 245 245 / .92); backdrop-filter: blur(3px); }
+.eleven-pdp-lightbox .lightbox-toolbar { padding: 0 0 8px; }
+.eleven-pdp-lightbox .lightbox-toolbar > button { min-width: 44px; min-height: 44px; }
+.eleven-pdp-lightbox .lightbox-toolbar > button:focus-visible { outline: 2px solid #333; outline-offset: 2px; }
+.eleven-pdp-lightbox .lightbox-scroll { display: flex; background: #fff; overflow: hidden; }
+.eleven-pdp-lightbox .lightbox-scroll img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; }
+.eleven-pdp-lightbox .lightbox-footer { display: none; }
+@media (max-width: 700px) { .eleven-pdp-lightbox { padding: 10px; } }
+@media (prefers-reduced-motion: reduce) {
+  .eleven-pdp-carousel-slide, .eleven-pdp-carousel-arrow, .eleven-pdp-carousel-dots span { transition: none; }
+}
