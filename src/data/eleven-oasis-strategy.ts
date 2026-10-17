@@ -1,5 +1,36 @@
 import type { ProjectImage } from "./projects";
 
+export interface ElevenCampaign {
+  id: string;
+  name: string;
+  label: string;
+  support: string;
+  image: ProjectImage;
+  timing: { hold: number; down: number; bottom: number; back: number };
+}
+
+export const elevenCampaigns: ElevenCampaign[] = [
+  {
+    id: "editorial", name: "Winter 2026", label: "Editorial-Led Discovery",
+    support: "From inspiration to curated products.",
+    image: {
+      src: "/projects/eleven-oasis/strategy/campaigns/editorial-full.webp", width: 1280, height: 4766,
+      alt: "Winter 2026 editorial campaign: seasonal hero, curated looks, festive edit, bundles, products, customer reviews and storefront footer",
+    },
+    timing: { hold: 1000, down: 22000, bottom: 1500, back: 3000 },
+  },
+  {
+    id: "promotion", name: "Autumn Sale", label: "Promotion-Led Discovery",
+    support: "From offers to shoppable deals.",
+    image: {
+      src: "/projects/eleven-oasis/strategy/campaigns/promotion-full.webp", width: 1280, height: 3487,
+      alt: "Autumn Sale promotional campaign: sale hero, offer categories, discounted products, PRINT and CLASSIC GEAR discovery, customer reviews and storefront footer",
+    },
+    timing: { hold: 2000, down: 20000, bottom: 1500, back: 3000 },
+  },
+];
+
+
 export interface ElevenStrategy {
   number: string;
   label: string;
@@ -7,6 +38,7 @@ export interface ElevenStrategy {
   description: string;
   images: ProjectImage[];
   unavailable?: string;
+  closing?: string;
 }
 export const elevenStrategies: ElevenStrategy[] = [
   {
@@ -20,9 +52,10 @@ export const elevenStrategies: ElevenStrategy[] = [
     images: [{ src: "/projects/eleven-oasis/strategy/pdp-ux-decisions.png", width: 1617, height: 973, alt: "Eleven Oasis PDP UX Decisions: a two-by-two breakdown of product information hierarchy, intuitive size selection, contextual bundle upselling and product detail transparency, beside the complete redesigned product page on an iPhone" }],
   },
   {
-    number: "03", label: "REUSABLE LANDING PAGES", title: "Flexible Experiences for Different Campaigns",
-    description: "Reusable landing-page patterns were designed to support different collections and promotional campaigns while maintaining consistency across the storefront.",
-    images: [], unavailable: "Dedicated landing-page exports are not available in this case study. The supplied campaign homepage captures do not establish a separate reusable landing-page layout.",
+    number: "03", label: "CAMPAIGN LANDING PAGES", title: "One Framework. Two Shopping Intentions.",
+    description: "Two campaign experiences shaped around different shopping motivations — seasonal inspiration and promotional discovery.",
+    closing: "A consistent design language, adapted to different campaign goals.",
+    images: elevenCampaigns.map(campaign => campaign.image),
   },
   {
     number: "04", label: "TRUST SIGNALS", title: "Building Confidence Throughout the Journey",

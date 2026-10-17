@@ -1,0 +1,36 @@
+/* All presentation and layout exceptions belong to Strategy 03 only. */
+.eleven-strategy-campaign-panel { overflow: hidden; }
+.eleven-campaign-visual { display: grid; align-items: center; width: 100%; height: 100%; padding: 24px 4.6%; background: radial-gradient(ellipse at 57% 29%, #5b4233 0, transparent 38%), radial-gradient(ellipse at 12% 100%, #40342b 0, transparent 50%), linear-gradient(125deg, #101514, #14110f 60%, #090d0e); }
+.eleven-campaign-browser-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.2%; }
+.eleven-campaign-browser { position: relative; min-width: 0; margin: 0; }
+.eleven-campaign-browser figcaption { margin: 0 0 12px; color: #fff; font: 600 clamp(12px, 1.15vw, 18px)/1.25 var(--sans); text-align: center; }
+.eleven-campaign-viewport { position: relative; width: 100%; aspect-ratio: 711 / 452; overflow: hidden; background: #fff; box-shadow: 0 8px 24px #0003; cursor: default; }
+.eleven-campaign-image { position: absolute; inset: 0 auto auto 0; display: block; width: 100%; max-width: none; height: auto; }
+.eleven-campaign-browser[data-playback="playing"] .eleven-campaign-image { will-change: transform; }
+.eleven-campaign-playback { position: absolute; top: 100%; right: 0; min-height: 44px; padding: 4px 0 4px 10px; border: 0; background: transparent; color: #d5d0cb; font: 400 10px/1.4 var(--sans); cursor: pointer; }
+.eleven-campaign-playback:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.eleven-campaign-playback:disabled { cursor: default; }
+.eleven-strategy-campaign-copy { display: none; }
+.eleven-strategy-campaign-copy[data-selected="true"] { display: block; }
+.eleven-campaign-copy-body > p { margin: 12px 0 0; color: var(--eleven-type-body-color); font: 400 var(--eleven-type-body-size)/var(--eleven-type-body-line) var(--eleven-type-sans); }
+.eleven-campaign-notes { display: grid; gap: 12px; margin-top: 16px; }
+.eleven-campaign-notes h4 { margin: 0; color: var(--eleven-type-ink); font: 400 12px/1.5 var(--eleven-type-serif); }
+.eleven-campaign-notes p { margin: 3px 0 0; color: var(--eleven-type-body-color); font: 400 14px/1.5 var(--eleven-type-sans); }
+.eleven-campaign-copy-body > .eleven-campaign-closing { margin-top: 16px; font: 400 var(--eleven-type-editorial-size)/var(--eleven-type-editorial-line) var(--eleven-type-serif); }
+@media (max-width: 950px) {
+  .eleven-strategy-showcase[data-campaign-selected="true"] { grid-template-areas: "selectors" "campaign-title" "media" "description"; }
+  .eleven-strategy-showcase[data-campaign-selected="true"] .eleven-strategy-descriptions,
+  .eleven-strategy-showcase[data-campaign-selected="true"] .eleven-strategy-campaign-copy { display: contents; }
+  .eleven-strategy-showcase[data-campaign-selected="true"] .eleven-strategy-description:not(.eleven-strategy-campaign-copy) { display: none; }
+  .eleven-strategy-campaign-copy > h3 { grid-area: campaign-title; }
+  .eleven-campaign-copy-body { grid-area: description; min-width: 0; }
+  .eleven-campaign-copy-body > p:first-child { margin-top: 0; }
+}
+@media (max-width: 700px) {
+  .eleven-strategy-showcase[data-campaign-selected="true"] .eleven-strategy-media { aspect-ratio: auto; min-height: 0; }
+  .eleven-strategy-campaign-panel[data-selected="true"] { position: relative; }
+  .eleven-campaign-visual { height: auto; padding: 24px 6%; }
+  .eleven-campaign-browser-grid { grid-template-columns: minmax(0, 1fr); row-gap: 24px; }
+  .eleven-campaign-browser figcaption { font-size: 14px; }
+  .eleven-campaign-playback { position: static; display: block; margin-left: auto; }
+}

@@ -2,10 +2,11 @@
 
 import { useRef, useState } from "react";
 import type { ProjectImage } from "@/data/projects";
-import { elevenStrategies } from "@/data/eleven-oasis-strategy";
+import { elevenStrategies, elevenCampaigns } from "@/data/eleven-oasis-strategy";
 import { ImageGallery } from "@/components/ImageGallery";
 import { Strategy01PhoneVideo } from "./Strategy01PhoneVideo";
 import { Strategy02PdpArtwork } from "./Strategy02PdpArtwork";
+import { Strategy03CampaignShowcase } from "./Strategy03CampaignShowcase";
 import "./ElevenOasisStrategyShowcase.css";
 
 export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
@@ -21,14 +22,14 @@ export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
     setVisited(current => current.includes(index) ? current : [...current, index]);
   };
   return (
-    <div className="eleven-strategy-showcase">
+    <div className="eleven-strategy-showcase" data-campaign-selected={selected === 2}>
       <div id="eleven-strategy-media" className="eleven-strategy-media" aria-label="Selected strategy evidence">
         {elevenStrategies.map((strategy, index) => {
           const images = index === 4 ? brandingImages : strategy.images;
           return (
-            <div key={strategy.number} className={`eleven-strategy-panel ${index === 1 ? "eleven-strategy-pdp" : ""} ${images.length > 1 ? "eleven-strategy-branding" : ""}`}
+            <div key={strategy.number} className={`eleven-strategy-panel ${index === 1 ? "eleven-strategy-pdp" : ""} ${index === 2 ? "eleven-strategy-campaign-panel" : images.length > 1 ? "eleven-strategy-branding" : ""}`}
               data-selected={selected === index} aria-hidden={selected !== index} inert={selected !== index}>
-              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : index === 1 && visited.includes(index) ? <Strategy02PdpArtwork active={selected === 1} images={images} /> : visited.includes(index) && (images.length ? (
+              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : index === 1 && visited.includes(index) ? <Strategy02PdpArtwork active={selected === 1} images={images} /> : index === 2 && visited.includes(index) ? <Strategy03CampaignShowcase active={selected === 2} /> : visited.includes(index) && (images.length ? (
                 <ImageGallery images={images} layout={images.length > 1 ? "grid" : "full"} />
               ) : (
                 <div className="eleven-strategy-unavailable">
@@ -52,10 +53,16 @@ export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
       </div>
       <div id="eleven-strategy-description" className="eleven-strategy-descriptions" aria-live="polite" aria-atomic="true">
         {elevenStrategies.map((strategy, index) => (
-          <div key={strategy.number} className="eleven-strategy-description" data-selected={selected === index}
+          <div key={strategy.number} className={`eleven-strategy-description${index === 2 ? " eleven-strategy-campaign-copy" : ""}`} data-selected={selected === index}
             aria-hidden={selected !== index} inert={selected !== index}>
             <h3>{strategy.title}</h3>
-            <p>{strategy.description}</p>
+            {index === 2 ? <div className="eleven-campaign-copy-body">
+              <p>{strategy.description}</p>
+              <div className="eleven-campaign-notes">
+                {elevenCampaigns.map(campaign => <div key={campaign.id}><h4>{campaign.label}</h4><p>{campaign.support}</p></div>)}
+              </div>
+              <p className="eleven-campaign-closing">{strategy.closing}</p>
+            </div> : <p>{strategy.description}</p>}
             {index === 4 && <details ref={notes} className="eleven-strategy-brand-notes">
               <summary>Brand specifications</summary>
               {brandingNotes.map(note => <p key={note}>{note}</p>)}
