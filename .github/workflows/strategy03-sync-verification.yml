@@ -29,9 +29,15 @@ jobs:
         run: |
           npm install --no-save --package-lock=false @playwright/test@1.56.1
           npx playwright install --with-deps chromium
+          npx playwright install chrome
       - name: Verify synchronized browser motion
         run: |
-          npm start > /tmp/strategy03-server.log 2>&1 &
+          cat > /tmp/strategy03-server.cjs <<'SERVER'
+          const {createServer}=require('node:http'),{stat}=require('node:fs/promises'),{createReadStream}=require('node:fs'),{resolve,relative,extname}=require('node:path');
+          const root=resolve('out'),mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.mp4':'video/mp4','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.json':'application/json','.txt':'text/plain'};
+          createServer(async(req,res)=>{try{let f=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(relative(root,f).startsWith('..')){res.writeHead(403);res.end();return}let s;try{s=await stat(f);if(s.isDirectory()){f=resolve(f,'index.html');s=await stat(f)}}catch{f=resolve(root,'404.html');s=await stat(f);res.statusCode=404}res.setHeader('Content-Type',mime[extname(f)]||'application/octet-stream');res.setHeader('Accept-Ranges','bytes');let start=0,end=s.size-1;if(req.headers.range){const m=/bytes=(\\d+)-(\\d*)/.exec(req.headers.range);if(m){start=+m[1];end=m[2]?Math.min(+m[2],s.size-1):end;res.statusCode=206;res.setHeader('Content-Range',`bytes ${start}-${end}/${s.size}`)}}res.setHeader('Content-Length',end-start+1);if(req.method==='HEAD')res.end();else createReadStream(f,{start,end}).pipe(res)}catch{res.writeHead(400);res.end()}}).listen(3000,'127.0.0.1');
+          SERVER
+          node /tmp/strategy03-server.cjs > /tmp/strategy03-server.log 2>&1 &
           node <<'JS'
           const { chromium } = require('playwright');
           const assert = require('node:assert/strict');
@@ -59,7 +65,7 @@ jobs:
             return e && -new DOMMatrixReadOnly(getComputedStyle(e).transform).m42 / Number(e.parentElement.dataset.scrollDistance) >= p;
           },value,{timeout:35000});
           (async()=>{
-            const browser=await chromium.launch({headless:true});
+            const browser=await chromium.launch({channel:'chrome',headless:true});
             const page=await browser.newPage({viewport:{width:1440,height:1100}});
             const errors=[];
             page.on('pageerror',error=>errors.push(error.message));
@@ -134,7 +140,9 @@ jobs:
             await page.keyboard.press('Escape');
             await page.locator(controls).first().click();
             await page.locator('.eleven-strategy01').scrollIntoViewIfNeeded();
-            await page.getByRole('button',{name:'Pause mobile homepage walkthrough',exact:true}).waitFor();
+            await page.getByRole('button',{name:'Pause mobile homepage walkthrough',exact:true}).waitFor().catch(async error=>{
+              console.error('Video diagnostic',await page.locator('.eleven-strategy01 video').evaluate(v=>({src:v.currentSrc,error:v.error?{code:v.error.code,message:v.error.message}:null,paused:v.paused,readyState:v.readyState,networkState:v.networkState,wrapper:v.closest('.eleven-strategy01').dataset})));throw error;
+            });
             const reduced=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});
             await reduced.goto('http://127.0.0.1:3000/work/eleven-oasis/',{waitUntil:'domcontentloaded'});
             await reduced.locator(controls).nth(2).click();
