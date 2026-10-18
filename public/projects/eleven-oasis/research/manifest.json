@@ -1,0 +1,562 @@
+{
+  "hotjar1": {
+    "src": "/projects/eleven-oasis/research/hotjar1.webp",
+    "width": 1439,
+    "height": 960,
+    "alt": "Original Hotjar research board: FlexComfort PDP, including captured heatmaps and researcher notes",
+    "caption": "hotjar1.png \u00b7 FlexComfort PDP \u00b7 Original research board",
+    "source": "source-assets/hotjar1.png",
+    "sourceSha256": "81e6f5f2626a7c614026f3f0c416eec66c2e8313e7a0ae5dcba56f9ef54a6f72",
+    "crop": [
+      0,
+      0,
+      1439,
+      960
+    ],
+    "sha256": "669981f326100342eb090976c5f652e6a03c5a04cb6c7bc63a027ed1fa58fc7e"
+  },
+  "hotjar2": {
+    "src": "/projects/eleven-oasis/research/hotjar2.webp",
+    "width": 1439,
+    "height": 960,
+    "alt": "Original Hotjar research board: Homepage mobile study, including captured heatmaps and researcher notes",
+    "caption": "hotjar2.png \u00b7 Homepage mobile study \u00b7 Original research board",
+    "source": "source-assets/hotjar2.png",
+    "sourceSha256": "83e8cb06e85032a65675fbe7bc4173158d54d44e96401230175da66aece4580b",
+    "crop": [
+      0,
+      0,
+      1439,
+      960
+    ],
+    "sha256": "3019321975c0d32a6754725d7020f8bda2a0b225db00ed0dfa1bf77e996c173c"
+  },
+  "hotjar3": {
+    "src": "/projects/eleven-oasis/research/hotjar3.webp",
+    "width": 1439,
+    "height": 960,
+    "alt": "Original Hotjar research board: Homepage desktop study, including captured heatmaps and researcher notes",
+    "caption": "hotjar3.png \u00b7 Homepage desktop study \u00b7 Original research board",
+    "source": "source-assets/hotjar3.png",
+    "sourceSha256": "6c66057bd8a7f4fabaaa0d700211ba50692b791a4f62040c41b8c7e6942e7c40",
+    "crop": [
+      0,
+      0,
+      1439,
+      960
+    ],
+    "sha256": "0c3aab8efd6758aa4a577e40794824ba357c1f1f6b756e9b29f54b90fdcc3fea"
+  },
+  "hotjar4": {
+    "src": "/projects/eleven-oasis/research/hotjar4.webp",
+    "width": 1439,
+    "height": 1229,
+    "alt": "Original Hotjar research board: Linen-cotton PDP, including captured heatmaps and researcher notes",
+    "caption": "hotjar4.png \u00b7 Linen-cotton PDP \u00b7 Original research board",
+    "source": "source-assets/hotjar4.png",
+    "sourceSha256": "48d1c8b7ad7841cd2bb93287626c2bd95099b449b937ab44acb15269ae342c0b",
+    "crop": [
+      0,
+      0,
+      1439,
+      1229
+    ],
+    "sha256": "584dcd994441334b96eac0084d35ab901d21482d3cccc6d5173f1298ef879fa7"
+  },
+  "hotjar5": {
+    "src": "/projects/eleven-oasis/research/hotjar5.webp",
+    "width": 1439,
+    "height": 960,
+    "alt": "Original Hotjar research board: Seasonal campaign, including captured heatmaps and researcher notes",
+    "caption": "hotjar5.png \u00b7 Seasonal campaign \u00b7 Original research board",
+    "source": "source-assets/hotjar5.png",
+    "sourceSha256": "e7c4aa0a268b5a87723b61e47f4813bd0c2511a4775ee707ca49a93f28b6acfc",
+    "crop": [
+      0,
+      0,
+      1439,
+      960
+    ],
+    "sha256": "5f0564282bb97273ee00c845cbd32575585f32fef279ad72507f8aa1a53e484a"
+  },
+  "hotjar6": {
+    "src": "/projects/eleven-oasis/research/hotjar6.webp",
+    "width": 914,
+    "height": 875,
+    "alt": "Original Hotjar research board: Sale collection, including captured heatmaps and researcher notes",
+    "caption": "hotjar6.png \u00b7 Sale collection \u00b7 Original research board",
+    "source": "source-assets/hotjar6.png",
+    "sourceSha256": "a11575bce049505acd31b83a794714a9f597d47413158b8c1c8509e91ac6a706",
+    "crop": [
+      0,
+      0,
+      914,
+      875
+    ],
+    "sha256": "a18590ae4e6e3904cfa3aab6dae34675a9d4317a752bdd1e48a8f091ab7b9884"
+  },
+  "hotjar7": {
+    "src": "/projects/eleven-oasis/research/hotjar7.webp",
+    "width": 914,
+    "height": 1107,
+    "alt": "Original Hotjar research board: Best sellers collection, including captured heatmaps and researcher notes",
+    "caption": "hotjar7.jpg \u00b7 Best sellers collection \u00b7 Original research board",
+    "source": "source-assets/hotjar7.jpg",
+    "sourceSha256": "ea310afd19c692a28ee613c97be75a7dc17da6bc7b7a39f8557c15859bd1a86c",
+    "crop": [
+      0,
+      0,
+      914,
+      1107
+    ],
+    "sha256": "fd1c7f0b83df36474bd35582111b4c2ad18c575ca342d4186e08a0f93d00ed26"
+  },
+  "hotjar8": {
+    "src": "/projects/eleven-oasis/research/hotjar8.webp",
+    "width": 914,
+    "height": 850,
+    "alt": "Original Hotjar research board: Big & Tall collection, including captured heatmaps and researcher notes",
+    "caption": "hotjar8.jpg \u00b7 Big & Tall collection \u00b7 Original research board",
+    "source": "source-assets/hotjar8.jpg",
+    "sourceSha256": "e1b9357637e3562ffdd1cfca29e3f09627e4c87534cd07fb6108a8d1317315cf",
+    "crop": [
+      0,
+      0,
+      914,
+      850
+    ],
+    "sha256": "ccbac9b75321462a5d683fddcf6b7e0602f49fdf9599dc1cf27005cababdf10d"
+  },
+  "hotjar9": {
+    "src": "/projects/eleven-oasis/research/hotjar9.webp",
+    "width": 914,
+    "height": 812,
+    "alt": "Original Hotjar research board: Big & Tall PDP, including captured heatmaps and researcher notes",
+    "caption": "hotjar9.jpg \u00b7 Big & Tall PDP \u00b7 Original research board",
+    "source": "source-assets/hotjar9.jpg",
+    "sourceSha256": "b394a7c2779478ec5aaaca6595b2d330ac9cb38653b00bcab7df884e5a74e540",
+    "crop": [
+      0,
+      0,
+      914,
+      812
+    ],
+    "sha256": "2fa207b76223b65c13507496ca6b1a3008ee5447a9653ac409537c71a40619c6"
+  },
+  "homeDesktopClick": {
+    "src": "/projects/eleven-oasis/research/homeDesktopClick.webp",
+    "width": 686,
+    "height": 350,
+    "alt": "Desktop homepage: navigation, search and hero click marks",
+    "caption": "hotjar3.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar3.png",
+    "sourceSha256": "6c66057bd8a7f4fabaaa0d700211ba50692b791a4f62040c41b8c7e6942e7c40",
+    "crop": [
+      294,
+      40,
+      980,
+      390
+    ],
+    "sha256": "1f0e4b08a42a6d038b5915d31db247d8484d0a6ae63b15ea0cd9f67da0a27436"
+  },
+  "homeDesktopScroll": {
+    "src": "/projects/eleven-oasis/research/homeDesktopScroll.webp",
+    "width": 686,
+    "height": 525,
+    "alt": "Desktop homepage scroll captures with 53.3% and 24.7% depth markers",
+    "caption": "hotjar3.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar3.png",
+    "sourceSha256": "6c66057bd8a7f4fabaaa0d700211ba50692b791a4f62040c41b8c7e6942e7c40",
+    "crop": [
+      294,
+      415,
+      980,
+      940
+    ],
+    "sha256": "c2b98829416515cb7d0ee144277583a5515f974fd61ebfb60225f7cbfcb17014"
+  },
+  "homeMobileClick": {
+    "src": "/projects/eleven-oasis/research/homeMobileClick.webp",
+    "width": 185,
+    "height": 332,
+    "alt": "Mobile homepage click map highlighting logo, search, cart and navigation",
+    "caption": "hotjar2.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar2.png",
+    "sourceSha256": "83e8cb06e85032a65675fbe7bc4173158d54d44e96401230175da66aece4580b",
+    "crop": [
+      24,
+      11,
+      209,
+      343
+    ],
+    "sha256": "d6e2872eaa048a982dbabc7d9bb52e56c07276b1bfccbb992ae495285471b263"
+  },
+  "homeMobileScroll": {
+    "src": "/projects/eleven-oasis/research/homeMobileScroll.webp",
+    "width": 185,
+    "height": 436,
+    "alt": "Mobile homepage scroll capture with a 34% marker at Gifting for Him",
+    "caption": "hotjar2.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar2.png",
+    "sourceSha256": "83e8cb06e85032a65675fbe7bc4173158d54d44e96401230175da66aece4580b",
+    "crop": [
+      24,
+      474,
+      209,
+      910
+    ],
+    "sha256": "30bf63721e58629b11fbe44c6bd470ad3363637d3d32ddf369fb56231b1a89f0"
+  },
+  "pdpFlexDesktop": {
+    "src": "/projects/eleven-oasis/research/pdpFlexDesktop.webp",
+    "width": 533,
+    "height": 330,
+    "alt": "FlexComfort desktop PDP click map: image, colors, size and fit controls",
+    "caption": "hotjar1.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar1.png",
+    "sourceSha256": "81e6f5f2626a7c614026f3f0c416eec66c2e8313e7a0ae5dcba56f9ef54a6f72",
+    "crop": [
+      223,
+      42,
+      756,
+      372
+    ],
+    "sha256": "0cba1821cdc5ad4a11d1b7588b75109867a694f7e924e6121a0342efcee6ad4d"
+  },
+  "pdpLinenDesktop": {
+    "src": "/projects/eleven-oasis/research/pdpLinenDesktop.webp",
+    "width": 679,
+    "height": 351,
+    "alt": "Linen-cotton desktop PDP click map concentrating on color, size and fit controls",
+    "caption": "hotjar4.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar4.png",
+    "sourceSha256": "48d1c8b7ad7841cd2bb93287626c2bd95099b449b937ab44acb15269ae342c0b",
+    "crop": [
+      190,
+      22,
+      869,
+      373
+    ],
+    "sha256": "4be891d93b2f42193c1033f5b9184d4fdaf0575d9fac91863876ffcaeb73f637"
+  },
+  "pdpLinenDesktopScroll": {
+    "src": "/projects/eleven-oasis/research/pdpLinenDesktopScroll.webp",
+    "width": 682,
+    "height": 309,
+    "alt": "Desktop PDP scroll map with the 41.6% depth marker near Add to Cart",
+    "caption": "hotjar4.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar4.png",
+    "sourceSha256": "48d1c8b7ad7841cd2bb93287626c2bd95099b449b937ab44acb15269ae342c0b",
+    "crop": [
+      196,
+      418,
+      878,
+      727
+    ],
+    "sha256": "3ba389740e8c8bdcb1a98642e0183395b802b8bb331391b1c5bfa5a95182f908"
+  },
+  "pdpLinenMobile": {
+    "src": "/projects/eleven-oasis/research/pdpLinenMobile.webp",
+    "width": 142,
+    "height": 351,
+    "alt": "Mobile PDP click capture: product imagery, selections and purchase controls",
+    "caption": "hotjar4.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar4.png",
+    "sourceSha256": "48d1c8b7ad7841cd2bb93287626c2bd95099b449b937ab44acb15269ae342c0b",
+    "crop": [
+      36,
+      22,
+      178,
+      373
+    ],
+    "sha256": "79ffa63c64cec7c98c29a0da1ee81c48db5b13adcc464dbd4f63fd8b0ac14de6"
+  },
+  "pdpLinenMobileScroll": {
+    "src": "/projects/eleven-oasis/research/pdpLinenMobileScroll.webp",
+    "width": 144,
+    "height": 510,
+    "alt": "Mobile PDP scroll map with 27.2% at Complete the Look and 10.8% farther below",
+    "caption": "hotjar4.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar4.png",
+    "sourceSha256": "48d1c8b7ad7841cd2bb93287626c2bd95099b449b937ab44acb15269ae342c0b",
+    "crop": [
+      36,
+      410,
+      180,
+      920
+    ],
+    "sha256": "85d47ea5246457d812283789610c7f5d081ace080940281d30b6258161349acd"
+  },
+  "pdpBigDesktop": {
+    "src": "/projects/eleven-oasis/research/pdpBigDesktop.webp",
+    "width": 373,
+    "height": 236,
+    "alt": "Big & Tall desktop PDP: click marks on imagery, colors, size and fit",
+    "caption": "hotjar9.jpg \u00b7 Focused original capture",
+    "source": "source-assets/hotjar9.jpg",
+    "sourceSha256": "b394a7c2779478ec5aaaca6595b2d330ac9cb38653b00bcab7df884e5a74e540",
+    "crop": [
+      48,
+      334,
+      421,
+      570
+    ],
+    "sha256": "fcb980424c2e9236d88bdd6d830cc0ede4039c58116a97531b339c9a43166d7f"
+  },
+  "pdpBigMobile": {
+    "src": "/projects/eleven-oasis/research/pdpBigMobile.webp",
+    "width": 155,
+    "height": 236,
+    "alt": "Big & Tall mobile PDP: click marks on product imagery and header controls",
+    "caption": "hotjar9.jpg \u00b7 Focused original capture",
+    "source": "source-assets/hotjar9.jpg",
+    "sourceSha256": "b394a7c2779478ec5aaaca6595b2d330ac9cb38653b00bcab7df884e5a74e540",
+    "crop": [
+      477,
+      334,
+      632,
+      570
+    ],
+    "sha256": "2a0eb5b39a98b79dd4d3b9794c9d58cc1f0f06270ec2e90ef1ae9de268c661cf"
+  },
+  "saleDesktop": {
+    "src": "/projects/eleven-oasis/research/saleDesktop.webp",
+    "width": 473,
+    "height": 247,
+    "alt": "Sale collection desktop click map around category entries, navigation and collection controls",
+    "caption": "hotjar6.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar6.png",
+    "sourceSha256": "a11575bce049505acd31b83a794714a9f597d47413158b8c1c8509e91ac6a706",
+    "crop": [
+      47,
+      345,
+      520,
+      592
+    ],
+    "sha256": "08ff150ebc035cf90a6a5b25f6fd9293d65449846e645bab65291ec54b5641c8"
+  },
+  "saleMobile": {
+    "src": "/projects/eleven-oasis/research/saleMobile.webp",
+    "width": 214,
+    "height": 247,
+    "alt": "Sale collection mobile click map highlighting cart, search and navigation",
+    "caption": "hotjar6.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar6.png",
+    "sourceSha256": "a11575bce049505acd31b83a794714a9f597d47413158b8c1c8509e91ac6a706",
+    "crop": [
+      540,
+      345,
+      754,
+      592
+    ],
+    "sha256": "53049f245c3aed9f6691b379ad28f58fef6abcfac2a493c3d6f98bd985f347b5"
+  },
+  "bestDesktop": {
+    "src": "/projects/eleven-oasis/research/bestDesktop.webp",
+    "width": 470,
+    "height": 198,
+    "alt": "Best sellers desktop collection: category/navigation click marks",
+    "caption": "hotjar7.jpg \u00b7 Focused original capture",
+    "source": "source-assets/hotjar7.jpg",
+    "sourceSha256": "ea310afd19c692a28ee613c97be75a7dc17da6bc7b7a39f8557c15859bd1a86c",
+    "crop": [
+      404,
+      340,
+      874,
+      538
+    ],
+    "sha256": "e4c901dfbb6c81d70180c39c9cf907b8e854b606d067857d37686fa4e5b00592"
+  },
+  "bestMobile": {
+    "src": "/projects/eleven-oasis/research/bestMobile.webp",
+    "width": 254,
+    "height": 308,
+    "alt": "Best sellers mobile collection: numbered click concentrations at pagination",
+    "caption": "hotjar7.jpg \u00b7 Focused original capture",
+    "source": "source-assets/hotjar7.jpg",
+    "sourceSha256": "ea310afd19c692a28ee613c97be75a7dc17da6bc7b7a39f8557c15859bd1a86c",
+    "crop": [
+      48,
+      590,
+      302,
+      898
+    ],
+    "sha256": "cba66c7fd58b78f6dbfc76d143fd176fe0de9b6be9d407a64f0d949f0bde85b1"
+  },
+  "bigDesktop": {
+    "src": "/projects/eleven-oasis/research/bigDesktop.webp",
+    "width": 180,
+    "height": 242,
+    "alt": "Big & Tall desktop collection filters: click marks on sizes and filter choices",
+    "caption": "hotjar8.jpg \u00b7 Focused original capture",
+    "source": "source-assets/hotjar8.jpg",
+    "sourceSha256": "e1b9357637e3562ffdd1cfca29e3f09627e4c87534cd07fb6108a8d1317315cf",
+    "crop": [
+      400,
+      351,
+      580,
+      593
+    ],
+    "sha256": "13b1651b2e4452a3b481e6d7907ff7bd1fef42c1e83ebed8ad2c569590d376e9"
+  },
+  "bigMobile": {
+    "src": "/projects/eleven-oasis/research/bigMobile.webp",
+    "width": 235,
+    "height": 178,
+    "alt": "Big & Tall mobile collection: numbered click concentrations at pagination",
+    "caption": "hotjar8.jpg \u00b7 Focused original capture",
+    "source": "source-assets/hotjar8.jpg",
+    "sourceSha256": "e1b9357637e3562ffdd1cfca29e3f09627e4c87534cd07fb6108a8d1317315cf",
+    "crop": [
+      611,
+      351,
+      846,
+      529
+    ],
+    "sha256": "eb0f7271ecdead202034abbc3e21fdf5d30e5c401089bd43880ea43d4d429edb"
+  },
+  "campaignDesktop": {
+    "src": "/projects/eleven-oasis/research/campaignDesktop.webp",
+    "width": 406,
+    "height": 343,
+    "alt": "Desktop seasonal campaign: scene tiles and product-grid click marks",
+    "caption": "hotjar5.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar5.png",
+    "sourceSha256": "e7c4aa0a268b5a87723b61e47f4813bd0c2511a4775ee707ca49a93f28b6acfc",
+    "crop": [
+      376,
+      54,
+      782,
+      397
+    ],
+    "sha256": "142ab871dd3e18c3cb235004e2939f12973bdc884968ea1d553cef808ad7c1cd"
+  },
+  "campaignMobile": {
+    "src": "/projects/eleven-oasis/research/campaignMobile.webp",
+    "width": 301,
+    "height": 306,
+    "alt": "Mobile seasonal campaign: hero, navigation and curated-look captures",
+    "caption": "hotjar5.png \u00b7 Focused original capture",
+    "source": "source-assets/hotjar5.png",
+    "sourceSha256": "e7c4aa0a268b5a87723b61e47f4813bd0c2511a4775ee707ca49a93f28b6acfc",
+    "crop": [
+      46,
+      54,
+      347,
+      360
+    ],
+    "sha256": "b4d4121172cec91e081275bcd45478dc8a61178ce97d960c6f6dd8624eda4bed"
+  },
+  "abtest1": {
+    "src": "/projects/eleven-oasis/research/abtest1.webp",
+    "width": 1135,
+    "height": 305,
+    "alt": "Separate test table: conversion, add-to-cart and average order value for control and New Group 1",
+    "caption": "abtest1.png \u00b7 Metrics excerpt \u00b7 Control Group above New Group 1; test name/device not shown",
+    "source": "source-assets/abtest1.png",
+    "sourceSha256": "3d858e52d1da44aa8880743e4c032f7694c59dab08d71ab6b39386de737dc6b9",
+    "crop": [
+      1570,
+      155,
+      2705,
+      460
+    ],
+    "sha256": "2d3dca7c29b149400d27e1564a2f6247b8c4972c8300924bbdb5c2ccfb920e5c"
+  },
+  "abtest2": {
+    "src": "/projects/eleven-oasis/research/abtest2.webp",
+    "width": 1930,
+    "height": 170,
+    "alt": "Matching separate-test dashboard: reported relative changes and ranges for conversion, add-to-cart and order value",
+    "caption": "abtest2.png \u00b7 Reported-change excerpt \u00b7 No test name or device shown",
+    "source": "source-assets/abtest2.png",
+    "sourceSha256": "784fb5609b1cf3be3a765bbba32ed839a11fb3d588dbf67ee17a57f7f83865dd",
+    "crop": [
+      0,
+      45,
+      1930,
+      215
+    ],
+    "sha256": "b199c5a0e5442598c11258115e46e66a605927eeccc31bc48e3619d8bcd9f290"
+  },
+  "abtest3": {
+    "src": "/projects/eleven-oasis/research/abtest3.webp",
+    "width": 805,
+    "height": 215,
+    "alt": "Desktop Shop the Look experiment table: conversion, add-to-cart and product-page-view rates",
+    "caption": "abtest3.jpg \u00b7 Desktop Shop the Look \u00b7 Control Group above New Group 1",
+    "source": "source-assets/abtest3.jpg",
+    "sourceSha256": "0f7686d60985805f54cdde75a1642318a5bab8fa3dcdaa345d7a756da93e54c4",
+    "crop": [
+      1205,
+      970,
+      2010,
+      1185
+    ],
+    "sha256": "15101d7fa17f0c4d1031adb52444d885bcb120cbc0369abf80f809b0c1dfe17b"
+  },
+  "abtest4": {
+    "src": "/projects/eleven-oasis/research/abtest4.webp",
+    "width": 800,
+    "height": 480,
+    "alt": "Mobile Shop the Look audience results: new visitors first, returning visitors second, control then variant in each pair",
+    "caption": "abtest4.jpg \u00b7 Mobile audience breakdown \u00b7 New visitors then returning visitors; control above variant in each pair",
+    "source": "source-assets/abtest4.jpg",
+    "sourceSha256": "1dbceb75129b7882c46a22cadcdbec7996ce90b34ddc4e1a29a82de32f868ba5",
+    "crop": [
+      1180,
+      660,
+      1980,
+      1140
+    ],
+    "sha256": "fdcaf627a47857a39d21cc2f20e1fb03f0eb51abac52c837a7a0e650a21dfb20"
+  },
+  "abtest5": {
+    "src": "/projects/eleven-oasis/research/abtest5.webp",
+    "width": 1520,
+    "height": 635,
+    "alt": "Mobile Shop the Look dashboard: conversion 5.82 to 7.24 percent, add-to-cart 18.4 to 19.0 percent and product views 53.2 to 54.0 percent",
+    "caption": "abtest5.jpg \u00b7 Mobile Shop the Look \u00b7 Original metric charts; tool estimates are not adopted as findings",
+    "source": "source-assets/abtest5.jpg",
+    "sourceSha256": "77af68fcfbb4d894b41720b60b01ddbced59f079d653798017eb0aae73310a8b",
+    "crop": [
+      35,
+      635,
+      1555,
+      1270
+    ],
+    "sha256": "2bb195888e1347f4c862cfde92cee9e786ca6fe62efa3880e5b135a3a9d36d2e"
+  },
+  "desktopTestTitle": {
+    "src": "/projects/eleven-oasis/research/desktopTestTitle.webp",
+    "width": 665,
+    "height": 73,
+    "alt": "Original experiment title: Test PC homepage shop the look",
+    "caption": "abtest3.jpg \u00b7 Title excerpt, browser bookmarks excluded",
+    "source": "source-assets/abtest3.jpg",
+    "sourceSha256": "0f7686d60985805f54cdde75a1642318a5bab8fa3dcdaa345d7a756da93e54c4",
+    "crop": [
+      35,
+      37,
+      700,
+      110
+    ],
+    "sha256": "9dce9c813ffe5856a9eedc33af0271563b60edce99d40830bd3be530eb2e4ff2"
+  },
+  "mobileTestTitle": {
+    "src": "/projects/eleven-oasis/research/mobileTestTitle.webp",
+    "width": 735,
+    "height": 70,
+    "alt": "Original experiment title: Test Mobile homepage shop the look",
+    "caption": "abtest4.jpg \u00b7 Title excerpt",
+    "source": "source-assets/abtest4.jpg",
+    "sourceSha256": "1dbceb75129b7882c46a22cadcdbec7996ce90b34ddc4e1a29a82de32f868ba5",
+    "crop": [
+      25,
+      15,
+      760,
+      85
+    ],
+    "sha256": "3b7252f4a474f5a6954ed73cd434a8789cc8af5505106efc11c56a997e1237b3"
+  }
+}

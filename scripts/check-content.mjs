@@ -4,7 +4,7 @@ import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
-import { homepageUX, uxDecisions } from "../src/data/eleven-oasis-case-study.ts";
+import { homepageUX } from "../src/data/eleven-oasis-case-study.ts";
 import { elevenStrategies, pdpUxSlides, trustSignalSlides } from "../src/data/eleven-oasis-strategy.ts";
 import { journeyPhones } from "../src/data/eleven-oasis-mobile-journey.ts";
 const root = resolve(import.meta.dirname, "..");
@@ -159,8 +159,9 @@ if (process.argv.includes("--build")) {
     }
   }
   assert.equal(hash(resolve(root, "source-assets/eleven-oasis-homepage-ux-decisions.png")), hash(resolve(root, "public", elevenStrategies[0].images[0].src.slice(1))), "Homepage UX Decisions must remain byte-for-byte original");
-  for (const decision of uxDecisions)
-    assert(elevenPage.includes(`id="${decision.id}"`), `Missing UX decision: ${decision.id}`);
+  for (const anchor of ["behavioral-analysis", "insight-to-action", "research-experiments", "research-outcomes", "research-takeaways"])
+    assert(elevenPage.includes(`id="${anchor}"`), `Missing research module: ${anchor}`);
+  assert(elevenPage.includes("DATA-DRIVEN DESIGN"), "Missing research section heading");
   assert(!elevenPage.includes('class="results-panel"'), "Do not publish unverified conversion results");
   assert(!elevenPage.includes('class="missing-screenshot"'), "Do not publish empty after-screen placeholders");
   for (const project of projects)
