@@ -1,9 +1,10 @@
 # Eleven Oasis — Research & Validation
 
-The former Decisions content is replaced in place with **DATA-DRIVEN DESIGN**.
-The existing `#decisions` anchor and case-study navigation still work. Problem,
-Strategy 01–06, Results, project navigation and the shared header/footer remain
-unchanged. No new route or dependency is added.
+The existing combined **03 / RESEARCH & VALIDATION — DATA-DRIVEN DESIGN**
+section is redesigned in place. Its `#decisions` anchor and case-study navigation
+are unchanged. Problem, Strategy 01–06, Results, project navigation and the shared
+header/footer are unchanged. No separate Decisions section, route or dependency
+is added.
 
 ## Verified uploads
 
@@ -93,25 +94,71 @@ estimates without comparable visible numeric markers are not turned into KPIs.
 The three insight-to-action cards distinguish observations from design responses;
 they do not claim experiments caused individual redesign changes.
 
+## Reference analysis
+
+Primary reference: `source-assets/2026-10-18 18-43-12.mp4`, pulled with commit
+`bd16ed3`. The recording is 9.13 seconds, 800 × 500, at 30fps. Full frames and
+10fps samples around the first transition were inspected before this redesign.
+
+The visible pattern is a left accordion with one expanded item, understated
+rules and chevrons, and a large corresponding composition on the right. Around
+4.4s the first item closes while the second opens; subsequent selections show
+the third, first and second items. The right image fades nearly to the pale
+canvas before the incoming composition becomes fully visible. The switch takes
+roughly 400ms. The image area remains beside the accordion as its text reflows.
+
+The recording starts with an item already expanded. It does not establish an
+initial entrance, autoplay, scroll-driven selection, mobile behavior, hover
+styling, or exact source easing. Those effects are not attributed to the video.
+The implementation adapts the demonstrated selection/collapse/image pattern to
+the existing evidence, white canvas and Georgia/Arial portfolio typography.
+
 ## Interaction and implementation
 
-The new scoped `ElevenOasisResearch` component supplies page/device/capture
-controls, a stable-height heatmap stage with 300ms crossfades, three editorial
-insight cards, Mobile/Desktop comparison tables, the expandable mobile audience
-detail, a separate three-metric KPI composition and a fourteen-source index.
+Four manual accordion groups replace the long stack of modules:
 
-Existing Motion and GSAP dependencies provide one-time 600ms section reveals,
-restrained card hover movement and deterministic one-time KPI count-ups to the
-exact source-derived target. Screen readers receive the final KPI value without
-per-frame announcements. Reduced motion displays final static values and removes
-motion. A section-local media-query subscription also responds to live system
-preference changes; the installed Motion hook only snapshots that preference at
-mount. No heatmap or experiment autoplay is introduced.
+1. **Behavioral analysis** — all 19 existing page/device/capture selections,
+   each with its original observation, implication, depth markers and source.
+   The right viewer keeps Homepage, Product Page, Collection and Campaign tabs,
+   Desktop/Mobile controls, and the capture selector. All nine Hotjar sources
+   remain available.
+2. **From insight to action** — Homepage, PDP and Product Discovery tabs switch
+   the three existing insights and matching evidence. Their original observed
+   findings and design responses are preserved verbatim, including PRINT /
+   CLASSIC GEAR. Mappings remain hotjar3, hotjar4 and hotjar8.
+3. **A/B testing & validation** — Mobile/Desktop tabs retain the distinct Shop
+   the Look experiments. A mobile audience selector shows aggregate, new and
+   returning visitors separately. Tables, chart excerpts and the original test
+   title excerpts remain available. The sources are abtest3.jpg, abtest4.jpg
+   and abtest5.jpg; no cohort is substituted for the aggregate report.
+4. **Measured outcomes** — the independent unnamed snapshot, with unchanged
+   conversion, add-to-cart and AOV calculations. Source Table/Dashboard tabs
+   show abtest1.png and abtest2.png. It is not combined with Shop the Look.
 
-The existing ImageGallery dialog is reused without changing its shared code.
-Scoped white reader styles allow full-resolution panning, with native modal
-focus containment, keyboard image navigation, Escape/Close, body scroll lock and
-focus return. All original screenshot colors are preserved.
+The original takeaway and expandable 14-source index remain below the workspace.
+Large evidence previews open the existing full-resolution source reader. Related
+content is selected in the same viewer instead of repeated down the page.
+
+The first group is open by default and cannot be collapsed to an empty state.
+Only one group is expanded. Arrow Up/Down and Home/End move accordion focus;
+Enter/Space select. Evidence tabs retain their existing roving keyboard behavior.
+Inactive panels are inert and hidden from assistive technology. Desktop and
+mobile instances have distinct control/panel IDs and share a single state.
+Below 950px the viewer sits directly beneath the expanded explanation.
+
+A 400ms grid expansion coordinates the text and chevron. Images use a restrained
+fade through white: outgoing opacity takes 180ms; incoming opacity takes 240ms
+after a 160ms delay, completing at 400ms. These are approximations of the sampled
+recording, not claims about Apple's source CSS. There are no animation timers,
+scroll selection, autoplay, decorative transforms or KPI count-up loops.
+CSS transitions handle interruption; initial and live reduced-motion preferences
+remove the transitions. No animation dependency is added.
+
+Preview assets are prewarmed/decoded and retained as image layers to prevent
+replacement flashes. The latest selection revision wins if loading is slow;
+text and its selected evidence commit together. Failed loads keep the previous
+selection and announce a retry message. Source-reader focus return, native modal
+keyboard containment, Escape/Close, image navigation and body scroll lock remain.
 
 ## Validation
 
@@ -120,23 +167,44 @@ focus return. All original screenshot colors are preserved.
 - `npm run typecheck`
 - `npm run check:content -- --build`
 - `node --experimental-strip-types scripts/check-eleven-oasis-research.mjs --build`
-- `node --experimental-strip-types scripts/test-eleven-oasis-research.mjs` (four tests)
-- Existing strategy playback and source-asset checks.
+- `node --experimental-strip-types scripts/test-eleven-oasis-research.mjs`
 
-Chromium checks passed for all 19 heatmap selections, repeated Mobile/Desktop
-switching, both mobile cohorts, all 14 source images, modal keyboard navigation,
-Escape/Close, body-scroll restoration and trigger-focus return. KPI count-ups
-were sampled in motion and reached +25.3%, +10.3% and +5.2% once, without replay.
-Initial and live reduced-motion preferences, real mobile touch controls and
-full-resolution source panning passed.
+The source-integrity check still validates all 14 originals and all 35 derived
+assets by SHA-256, the nine Hotjar mappings and the distinct experiment identities.
+The existing metric tests verify rounded versus reported mobile changes, mixed
+desktop results, the independent snapshot and both separate mobile cohorts.
 
-At widths 320, 390, 600, 768, 850, 950, 951, 1024, 1440 and 1920px, the page had
-no horizontal overflow, table values stayed within their cells and the research
-controls retained at least 44px height. No browser errors or failed local asset
-requests were recorded. Desktop/mobile screenshots were visually inspected.
-The existing Strategy 01–06 regression checks also passed, including video,
-carousel timing, synchronized campaign scrolls, 2× branding playback and
-foundations pause/resume, visibility gates, keyboard and touch interaction.
+Chromium checks passed for all 19 Hotjar selections, three insight selections,
+Mobile/Desktop experiments, both mobile cohorts, the two independent snapshot
+views and all 14 full-resolution sources. Source-reader keyboard navigation,
+Escape, focus return and body-scroll restoration passed. Intermediate frames
+confirmed coordinated text expansion and fade-through timing. Repeated rapid
+clicks and artificially delayed image decoding retained the latest selection.
+Scrolling did not change the active group.
 
-The rendered content before and after the replaced Decisions section was also
-compared byte-for-byte with the base commit and is unchanged.
+Keyboard accordion/tab operation, existing and module deep links, initial/live
+reduced motion and real mobile touch passed. At 320, 390, 600, 768, 950, 951,
+1024, 1440 and 1920px, all controls remained at least 44px high, the active image
+remained inspectable, table cells did not overflow and there was no horizontal
+page overflow. The desktop evidence box stayed the same size across all groups.
+No browser errors or failed local asset requests were recorded.
+
+Initial section height, with Behavioral Analysis selected and source index
+closed (1000px viewport height):
+
+| Viewport width | Before | After | Reduction |
+| --- | ---: | ---: | ---: |
+| 1440px | 3940px | 1033px | 73.8% |
+| 1024px | 3953px | 1074px | 72.8% |
+| 768px | 4412px | 1719px | 61.0% |
+| 390px | 6196px | 1952px | 68.5% |
+
+Expanded source indexes and longer selected explanations can naturally take more
+space. The reduction comes from showing one evidence group in a shared viewer,
+consolidating three insight cards into tabs, selecting experiments/cohorts in one
+table, and removing repeated inline proof stacks. No screenshots are discarded
+or covered, and full-size reading remains available.
+
+The existing Strategy 01–06 browser regression also passed: videos, carousel
+timing, synchronized campaign scrolling, branding speed, foundations controls,
+visibility pauses, reduced motion, keyboard and touch interactions are unchanged.

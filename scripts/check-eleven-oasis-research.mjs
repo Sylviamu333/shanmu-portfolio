@@ -35,7 +35,7 @@ assert(assets.abtest4.crop[0] >= 1180);
 assert(assets.desktopTestTitle.crop[1] >= 37);
 if (process.argv.includes("--build")) {
   const page = read("out/work/eleven-oasis/index.html").toString();
-  for (const text of ["DATA-DRIVEN DESIGN", "BEHAVIORAL ANALYSIS", "Testing Design Hypotheses", "What the Experiments Revealed", "abtest4.jpg"]) assert(page.includes(text));
+  for (const text of ["DATA-DRIVEN DESIGN", "Behavioral analysis", "Testing Design Hypotheses", "What the Experiments Revealed", "abtest4.jpg"]) assert(page.includes(text), `Missing research content: ${text}`);
   assert(!page.includes("03 / DESIGN RATIONALE"));
   assert(page.includes("statistical significance and long-term impact are not established"));
 }

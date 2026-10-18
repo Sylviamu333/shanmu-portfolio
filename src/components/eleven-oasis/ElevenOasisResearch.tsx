@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
-import { AnimatePresence, motion, useInView } from "motion/react";
-import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 import { ImageGallery } from "@/components/ImageGallery";
-import { heatPages, heatViews, shopLookExperiments, mobileAudienceResults, separateTestMetrics, relativeChange, formatMetric, formatChange, type HeatPage, type EvidenceDevice, type ResearchMetric } from "@/data/eleven-oasis-research";
+import { Arrow } from "@/components/Arrow";
+import { heatPages, heatViews, shopLookExperiments, mobileAudienceResults, separateTestMetrics, relativeChange, formatMetric, formatChange, type ResearchMetric } from "@/data/eleven-oasis-research";
 import manifest from "../../../public/projects/eleven-oasis/research/manifest.json";
 import "./ElevenOasisResearch.css";
 
@@ -13,28 +12,6 @@ const assets: Record<string, typeof manifest[keyof typeof manifest]> = manifest;
 const sourceKeys = [...Array.from({ length: 9 }, (_, index) => `hotjar${index + 1}`), ...Array.from({ length: 5 }, (_, index) => `abtest${index + 1}`)];
 const sources = sourceKeys.map(key => assets[key]);
 type OpenEvidence = (index: number, trigger: HTMLButtonElement) => void;
-
-// The installed Motion hook snapshots this preference at mount. Subscribe here
-// so changing the system setting also cancels this section's in-flight motion.
-const reducedQuery = "(prefers-reduced-motion: reduce)";
-function subscribeReducedMotion(update: () => void) {
-  const query = matchMedia(reducedQuery);
-  query.addEventListener("change", update);
-  return () => query.removeEventListener("change", update);
-}
-const reducedSnapshot = () => matchMedia(reducedQuery).matches;
-const reducedServerSnapshot = () => true;
-const useResearchReducedMotion = () => useSyncExternalStore(subscribeReducedMotion, reducedSnapshot, reducedServerSnapshot);
-
-function EvidenceImage({ name, className = "" }: { name: string; className?: string }) {
-  const image = assets[name];
-  return <Image className={className} src={image.src} width={image.width} height={image.height} alt={image.alt} sizes="(max-width:850px) 90vw, 55vw" />;
-}
-
-function ResearchReveal({ children, className = "" }: { children: ReactNode; className?: string }) {
-  const reduced = useResearchReducedMotion();
-  return <motion.div className={className} initial={false} animate={reduced ? { opacity: 1, y: 0 } : undefined} whileInView={reduced ? undefined : { opacity: [.6, 1], y: [10, 0] }} viewport={{ once: true, amount: .12 }} transition={{ duration: reduced ? 0 : .6, ease: [.22, 1, .36, 1] }}>{children}</motion.div>;
-}
 
 function ResearchTabs<T extends string>({ options, value, onChange, label, controls, prefix }: {
   options: { id: T; label: string }[]; value: T; onChange: (value: T) => void; label: string; controls: string; prefix: string;
@@ -50,43 +27,6 @@ function ResearchTabs<T extends string>({ options, value, onChange, label, contr
         if (next !== undefined) { event.preventDefault(); onChange(options[next].id); event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>("button")[next].focus(); }
       }}>{option.label}</button>)}
   </div>;
-}
-
-function ModuleHeading({ number, label, title, children }: { number: string; label: string; title: string; children?: ReactNode }) {
-  return <header className="eo-research-module-heading"><p className="eo-research-eyebrow">{number} / {label}</p><h3>{title}</h3>{children && <p className="eo-research-lead">{children}</p>}</header>;
-}
-
-function HeatmapViewer({ open }: { open: OpenEvidence }) {
-  const [page, setPage] = useState<HeatPage>("homepage");
-  const [device, setDevice] = useState<EvidenceDevice>("Desktop");
-  const [viewId, setViewId] = useState(heatViews[0].id);
-  const reduced = useResearchReducedMotion();
-  const available = heatViews.filter(view => view.page === page && view.device === device);
-  const view = available.find(item => item.id === viewId) || available[0];
-  return <>
-    <ResearchTabs options={heatPages} value={page} onChange={setPage} label="Behavioral evidence page type" controls="eo-heatmap-panel" prefix="eo-heatmap-tab" />
-    <div id="eo-heatmap-panel" className="eo-research-heatmap-layout" role="tabpanel" aria-labelledby={`eo-heatmap-tab-${page}`} data-view={view.id}>
-      <figure className="eo-research-heatmap">
-        <div className="eo-research-viewer-controls">
-          <div role="group" aria-label="Evidence device" className="eo-research-device-controls">{(["Desktop", "Mobile"] as const).map(item => <button type="button" key={item} aria-pressed={device === item} onClick={() => setDevice(item)}>{item.toUpperCase()}</button>)}</div>
-          <label><span className="eo-research-sr">Evidence capture</span><select aria-label="Evidence capture" value={view.id} onChange={event => setViewId(event.target.value)}>{available.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
-        </div>
-        <button type="button" className="eo-research-heatmap-stage" aria-haspopup="dialog" aria-label={`Open source research board: ${view.label}, ${device}`} onClick={event => open(view.source - 1, event.currentTarget)}>
-          {reduced ? <span className="eo-research-heatmap-layer"><EvidenceImage name={view.asset} /></span> : <AnimatePresence initial={false}><motion.span key={view.asset} className="eo-research-heatmap-layer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: .3, ease: "easeInOut" }}><EvidenceImage name={view.asset} /></motion.span></AnimatePresence>}
-          <span className="eo-research-enlarge">EXPAND EVIDENCE ↗</span>
-        </button>
-        <figcaption>{device} · {view.label} <span>Source: {assets[`hotjar${view.source}`].source.split("/").at(-1)}</span></figcaption>
-      </figure>
-      <div className="eo-research-insight" aria-live="polite" aria-atomic="true">
-        <p className="eo-research-eyebrow">CAPTURE / {String(view.source).padStart(2, "0")}</p>
-        <h4>{view.label}</h4>
-        <dl><div><dt>OBSERVATION</dt><dd>{view.observation}</dd></div><div><dt>DESIGN IMPLICATION</dt><dd>{view.implication}</dd></div></dl>
-        {view.marker && <div className="eo-research-markers">{view.marker.map(marker => <p key={marker.value}><strong>{marker.value}</strong><span>{marker.label}</span></p>)}</div>}
-        <button className="eo-research-source-link" type="button" onClick={event => open(view.source - 1, event.currentTarget)}>Read the original research board ↗</button>
-      </div>
-    </div>
-    <p className="eo-research-note">Click maps record interactions; scroll markers describe exposure at a page depth. Capture periods and populations are not consistently shown, so these views are not treated as a controlled device comparison.</p>
-  </>;
 }
 
 const insightCards = [
@@ -110,54 +50,68 @@ function MetricComparison({ metrics, caption }: { metrics: ResearchMetric[]; cap
   </tbody></table></div>;
 }
 
-function SourceProof({ keys, open, label, titleAsset }: { keys: string[]; open: OpenEvidence; label: string; titleAsset?: string }) {
-  return <details className="eo-research-proof"><summary>{label}<span aria-hidden="true">＋</span></summary><div className="eo-research-proof-content">
-    {titleAsset && <EvidenceImage name={titleAsset} className="eo-research-test-title-image" />}
-    {keys.map(key => <figure key={key}><button type="button" aria-label={`Expand ${assets[key].source.split("/").at(-1)} evidence`} aria-haspopup="dialog" onClick={event => open(sourceKeys.indexOf(key), event.currentTarget)}><EvidenceImage name={key} /></button><figcaption>{assets[key].caption}</figcaption></figure>)}
-  </div></details>;
+const groups = [
+  { id: "behavioral-analysis", title: "Behavioral analysis", heading: "Understanding Where Shoppers Focus" },
+  { id: "insight-to-action", title: "From insight to action", heading: "Turning Evidence into Design Decisions" },
+  { id: "research-experiments", title: "A/B testing & validation", heading: "Testing Design Hypotheses" },
+  { id: "research-outcomes", title: "Measured outcomes", heading: "What the Experiments Revealed" },
+];
+const heatAssets = [...new Set(heatViews.map(view => view.asset))];
+const insightAssets = insightCards.map(card => card.asset);
+const experimentAssets = ["abtest3", "abtest4", "abtest5"];
+const previewAssets = [...new Set([...heatAssets, ...insightAssets, ...experimentAssets, "abtest1", "abtest2", "mobileTestTitle", "desktopTestTitle"])];
+const decodedImages = new Map<string, Promise<void>>();
+function prepareImage(key: string) {
+  let promise = decodedImages.get(key);
+  if (!promise) {
+    const image = new window.Image();
+    image.src = assets[key].src;
+    promise = image.decode().catch(error => { decodedImages.delete(key); throw error; });
+    decodedImages.set(key, promise);
+  }
+  return promise;
 }
 
-function Experiments({ open }: { open: OpenEvidence }) {
-  const [selected, setSelected] = useState<"mobile" | "desktop">("mobile");
-  const experiment = shopLookExperiments[selected];
-  const reduced = useResearchReducedMotion();
-  return <>
-    <ResearchTabs options={[{ id: "mobile", label: "MOBILE" }, { id: "desktop", label: "DESKTOP" }]} value={selected} onChange={setSelected} label="Shop the Look experiment device" controls="eo-experiment-panel" prefix="eo-experiment-tab" />
-    <motion.div key={selected} id="eo-experiment-panel" role="tabpanel" aria-labelledby={`eo-experiment-tab-${selected}`} className="eo-research-experiment-panel" data-experiment={selected} initial={false} animate={reduced ? { opacity: 1 } : { opacity: [.5, 1] }} transition={{ duration: reduced ? 0 : .3 }}>
-      <div className="eo-research-experiment-intro"><h4>{experiment.name}</h4><p>{experiment.summary}</p></div>
-      <MetricComparison metrics={experiment.metrics} caption={`${experiment.name}: Control Group versus New Group 1`} />
-      <p className="eo-research-note">Variant refers to “New Group 1” in the captured report. Exact layout modifications are not shown. Changes here are calculated from the displayed source rates.</p>
-      {selected === "mobile" && <p className="eo-research-note">The dashboard reports +24.53%, +3.33% and +1.49%. Its more precise underlying rates account for the small differences from calculations using the rounded chart labels.</p>}
-      <SourceProof keys={[experiment.source]} titleAsset={experiment.titleAsset} open={open} label="View the original experiment evidence" />
-      <div className="eo-research-audience-slot">{selected === "mobile" ? <details className="eo-research-proof"><summary>Explore the mobile audience breakdown<span aria-hidden="true">＋</span></summary><div className="eo-research-proof-content eo-research-audiences">
-        <p>New and returning visitors are separate cohorts within the mobile experiment. Their relative changes are not added together.</p>
-        {mobileAudienceResults.map(audience => <div key={audience.name}><h5>{audience.name}</h5><MetricComparison metrics={audience.metrics} caption={`Mobile Shop the Look, ${audience.name}`} /></div>)}
-        <button className="eo-research-source-link" type="button" onClick={event => open(12, event.currentTarget)}>Open abtest4.jpg audience evidence ↗</button>
-      </div></details> : <p className="eo-research-note">This desktop screenshot shows aggregate results; a desktop audience breakdown is not supplied.</p>}</div>
-    </motion.div>
-  </>;
-}
-
-function CountedChange({ value }: { value: number }) {
-  const root = useRef<HTMLSpanElement>(null);
-  const visual = useRef<HTMLSpanElement>(null);
-  const seen = useRef(false);
-  const inView = useInView(root, { once: true, amount: .4 });
-  const reduced = useResearchReducedMotion();
-  useEffect(() => {
-    const element = visual.current;
-    if (!element || !inView) return;
-    if (reduced || seen.current) { element.textContent = formatChange(value); seen.current = true; return; }
-    seen.current = true;
-    const counter = { value: 0 };
-    const tween = gsap.to(counter, { value, duration: 1, ease: "power2.out", onUpdate: () => { element.textContent = formatChange(counter.value); }, onComplete: () => { element.textContent = formatChange(value); } });
-    return () => { tween.kill(); element.textContent = formatChange(value); };
-  }, [inView, reduced, value]);
-  return <span ref={root} data-final-value={formatChange(value)}><span ref={visual} aria-hidden="true">{formatChange(value)}</span><span className="eo-research-sr">{formatChange(value)} relative change</span></span>;
+/** Mounted layers fade through white within the accordion's 400ms transition. */
+function EvidenceFrame({ entries, selected, source, open }: { entries: string[]; selected: string; source: string; open: OpenEvidence }) {
+  return <button type="button" className="eo-research-image-frame" aria-haspopup="dialog" aria-label={`Expand ${assets[source].caption}`} onClick={event => open(sourceKeys.indexOf(source), event.currentTarget)}>
+    {entries.map(key => <span key={key} className="eo-research-image-layer" data-active={selected === key} aria-hidden={selected !== key}>
+      <Image src={assets[key].src} width={assets[key].width} height={assets[key].height} alt={assets[key].alt} loading="eager" sizes="(max-width:950px) 90vw, 58vw" />
+    </span>)}<span className="eo-research-enlarge">EXPAND EVIDENCE <Arrow diagonal /></span>
+  </button>;
 }
 
 export function ElevenOasisResearch() {
+  const root = useRef<HTMLElement>(null);
+  const request = useRef({ revision: 0 });
+  const [active, setActive] = useState(0);
+  const [heatId, setHeatId] = useState(heatViews[0].id);
+  const [insight, setInsight] = useState(0);
+  const [device, setDevice] = useState<"mobile" | "desktop">("mobile");
+  const [audience, setAudience] = useState("all");
+  const [snapshot, setSnapshot] = useState("abtest1");
+  const [status, setStatus] = useState("");
   const [readerOpen, setReaderOpen] = useState(false);
+  const view = heatViews.find(item => item.id === heatId)!;
+  const card = insightCards[insight];
+  const experiment = shopLookExperiments[device];
+  const cohort = device === "mobile" && audience !== "all" ? mobileAudienceResults[Number(audience)] : null;
+  const experimentSource = cohort ? "abtest4" : experiment.source;
+  const currentAssets = [view.asset, card.asset, experimentSource, snapshot];
+
+  useEffect(() => {
+    const lifecycle = request.current;
+    previewAssets.forEach(key => { void prepareImage(key).catch(() => { /* Selection can retry a failed image. */ }); });
+    return () => { lifecycle.revision++; };
+  }, []);
+  useEffect(() => {
+    const followHash = () => {
+      const index = groups.findIndex(group => `#${group.id}` === location.hash);
+      if (index >= 0) { request.current.revision++; setActive(index); setStatus(""); }
+    };
+    followHash(); window.addEventListener("hashchange", followHash);
+    return () => window.removeEventListener("hashchange", followHash);
+  }, []);
   useEffect(() => {
     if (!readerOpen) return;
     const overflow = document.body.style.overflow, padding = document.body.style.paddingRight;
@@ -166,25 +120,108 @@ export function ElevenOasisResearch() {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = overflow; document.body.style.paddingRight = padding; };
   }, [readerOpen]);
-  return <section id="decisions" className="eleven-main-section eo-research" aria-labelledby="eleven-decisions-title" tabIndex={-1}>
+
+  async function selectImage(key: string, update: () => void) {
+    const ticket = ++request.current.revision;
+    setStatus("Loading research evidence.");
+    try { await prepareImage(key); }
+    catch {
+      if (ticket === request.current.revision) setStatus("This evidence could not load. Please try again.");
+      return;
+    }
+    if (ticket !== request.current.revision) return;
+    update(); setStatus("");
+  }
+
+  function explanation(index: number) {
+    if (index === 0) return <>
+      <p>Hotjar click and scroll analysis helped reveal how visitors interacted with key shopping pages, where attention concentrated, and which areas needed closer UX review.</p>
+      <dl className="eo-research-observation"><div><dt>OBSERVATION / {view.label}</dt><dd>{view.observation}</dd></div><div><dt>DESIGN IMPLICATION</dt><dd>{view.implication}</dd></div></dl>
+      {view.marker && <div className="eo-research-markers">{view.marker.map(marker => <p key={marker.value}><strong>{marker.value}</strong><span>{marker.label}</span></p>)}</div>}
+      <p className="eo-research-note">Click maps record interactions; scroll markers describe exposure at a page depth. Capture periods and populations are not consistently shown, so these views are not treated as a controlled device comparison.</p>
+    </>;
+    if (index === 1) return <>
+      <h4>{card.title}</h4><dl className="eo-research-observation"><div><dt>OBSERVED</dt><dd>{card.observed}</dd></div><div><dt>DESIGN RESPONSE</dt><dd>{card.response}</dd></div></dl>
+      <p className="eo-research-note">These responses connect research observations to design hypotheses. The screenshots do not establish that a particular experiment caused a specific redesign decision.</p>
+    </>;
+    if (index === 2) return <>
+      <h4>{experiment.name}{cohort ? ` / ${cohort.name}` : ""}</h4><p>{experiment.summary}</p>
+      <p className="eo-research-note">Variant refers to “New Group 1” in the captured report. Exact layout modifications are not shown. Changes here are calculated from the displayed source rates.</p>
+      {device === "mobile" ? <>
+        <p className="eo-research-note">The dashboard reports +24.53%, +3.33% and +1.49%. Its more precise underlying rates account for the small differences from calculations using the rounded chart labels.</p>
+        <p className="eo-research-note">New and returning visitors are separate cohorts within the mobile experiment. Their relative changes are not added together.</p>
+      </> : <p className="eo-research-note">This desktop screenshot shows aggregate results; a desktop audience breakdown is not supplied.</p>}
+    </>;
+    return <>
+      <p>A separate report snapshot records higher conversion, add-to-cart and average order value for New Group 1. Its test name, device and date are not shown, so these figures stand on their own.</p>
+      <p className="eo-research-note">Observed test results; statistical significance and long-term impact are not established by the available screenshots.</p>
+      <p className="eo-research-note">This unnamed snapshot remains separate from the Mobile and Desktop Shop the Look experiments.</p>
+    </>;
+  }
+
+  function evidence(index: number, instance: string, open: OpenEvidence) {
+    const prefix = `eo-${instance}-${index}`;
+    if (index === 0) return <div className="eo-research-evidence" data-view={view.id}>
+      <ResearchTabs options={heatPages} value={view.page} onChange={page => { const next = heatViews.find(item => item.page === page && item.device === view.device)!; void selectImage(next.asset, () => setHeatId(next.id)); }} label="Behavioral evidence page type" controls={`${prefix}-panel`} prefix={`${prefix}-page`} />
+      <div id={`${prefix}-panel`} role="tabpanel" aria-labelledby={`${prefix}-page-${view.page}`} className="eo-research-evidence-content">
+        <div className="eo-research-viewer-controls"><div role="group" aria-label="Evidence device" className="eo-research-device-controls">{(["Desktop", "Mobile"] as const).map(item => <button type="button" key={item} aria-pressed={view.device === item} onClick={() => { const next = heatViews.find(entry => entry.page === view.page && entry.device === item)!; void selectImage(next.asset, () => setHeatId(next.id)); }}>{item.toUpperCase()}</button>)}</div>
+          <label><span className="eo-research-sr">Evidence capture</span><select aria-label="Evidence capture" value={view.id} onChange={event => { const next = heatViews.find(item => item.id === event.target.value)!; void selectImage(next.asset, () => setHeatId(next.id)); }}>{heatViews.filter(item => item.page === view.page && item.device === view.device).map(item => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
+        </div>
+        <EvidenceFrame entries={heatAssets} selected={view.asset} source={`hotjar${view.source}`} open={open} />
+        <p className="eo-research-caption">{view.device} · {view.label}<span>Source: {assets[`hotjar${view.source}`].source.split("/").at(-1)}</span></p>
+      </div>
+    </div>;
+    if (index === 1) return <div className="eo-research-evidence">
+      <ResearchTabs options={insightCards.map((item, i) => ({ id: String(i), label: item.category }))} value={String(insight)} onChange={value => { const next = Number(value); void selectImage(insightCards[next].asset, () => setInsight(next)); }} label="Design insight" controls={`${prefix}-panel`} prefix={`${prefix}-insight`} />
+      <div id={`${prefix}-panel`} role="tabpanel" aria-labelledby={`${prefix}-insight-${insight}`} className="eo-research-evidence-content">
+        <p className="eo-research-evidence-heading">{card.category} / OBSERVATION → DESIGN RESPONSE</p>
+        <EvidenceFrame entries={insightAssets} selected={card.asset} source={`hotjar${card.source}`} open={open} />
+        <p className="eo-research-caption">{card.title}<span>Source: hotjar{card.source}.{card.source < 7 ? "png" : "jpg"}</span></p>
+      </div>
+    </div>;
+    if (index === 2) return <div className="eo-research-evidence" data-experiment={device} data-audience={audience}>
+      <ResearchTabs options={[{ id: "mobile", label: "MOBILE" }, { id: "desktop", label: "DESKTOP" }]} value={device} onChange={value => { void selectImage(shopLookExperiments[value].source, () => { setDevice(value); setAudience("all"); }); }} label="Shop the Look experiment device" controls={`${prefix}-panel`} prefix={`${prefix}-device`} />
+      <div id={`${prefix}-panel`} role="tabpanel" aria-labelledby={`${prefix}-device-${device}`} className="eo-research-evidence-content">
+        <div className="eo-research-experiment-context"><p>CONTROL GROUP → NEW GROUP 1</p>{device === "mobile" && <label><span className="eo-research-sr">Mobile audience</span><select aria-label="Mobile audience" value={audience} onChange={event => { const value = event.target.value; void selectImage(value === "all" ? experiment.source : "abtest4", () => setAudience(value)); }}><option value="all">All visitors</option><option value="0">New visitors</option><option value="1">Returning visitors</option></select></label>}</div>
+        <MetricComparison metrics={cohort?.metrics || experiment.metrics} caption={`${experiment.name}${cohort ? `, ${cohort.name}` : ""}: Control Group versus New Group 1`} />
+        <p className="eo-research-evidence-heading">{cohort ? `${cohort.name} / separate mobile cohort` : experiment.name} · ORIGINAL EVIDENCE</p>
+        <Image className="eo-research-test-title" src={assets[experiment.titleAsset].src} width={assets[experiment.titleAsset].width} height={assets[experiment.titleAsset].height} alt={assets[experiment.titleAsset].alt} loading="eager" sizes="(max-width:950px) 90vw, 58vw" />
+        <EvidenceFrame entries={experimentAssets} selected={experimentSource} source={experimentSource} open={open} />
+        <p className="eo-research-caption">Source: {assets[experimentSource].source.split("/").at(-1)}<span>Relative change = (variant / control − 1) × 100</span></p>
+      </div>
+    </div>;
+    return <div className="eo-research-evidence">
+      <ResearchTabs options={[{ id: "abtest1", label: "SOURCE TABLE" }, { id: "abtest2", label: "DASHBOARD" }]} value={snapshot} onChange={value => { void selectImage(value, () => setSnapshot(value)); }} label="Separate test evidence" controls={`${prefix}-panel`} prefix={`${prefix}-snapshot`} />
+      <div id={`${prefix}-panel`} role="tabpanel" aria-labelledby={`${prefix}-snapshot-${snapshot}`} className="eo-research-evidence-content">
+        <p className="eo-research-evidence-heading">SEPARATE TEST SNAPSHOT / CONTROL → VARIANT</p>
+        <div className="eo-research-kpis">{separateTestMetrics.map(metric => <article key={metric.id} data-kpi={metric.id}><p>{metric.name}</p><strong>{formatChange(relativeChange(metric.control, metric.variant))}</strong><p className="eo-research-kpi-values"><span>{formatMetric(metric, metric.control)}</span><span aria-hidden="true">→</span><span>{formatMetric(metric, metric.variant)}</span></p><span className="eo-research-kpi-label">RELATIVE CHANGE</span></article>)}</div>
+        <EvidenceFrame entries={["abtest1", "abtest2"]} selected={snapshot} source={snapshot} open={open} />
+        <p className="eo-research-caption">Source: {snapshot}.png<span>Test identity, significance and long-term impact are not supplied.</span></p>
+      </div>
+    </div>;
+  }
+
+  return <section ref={root} id="decisions" className="eleven-main-section eo-research" aria-labelledby="eleven-decisions-title" tabIndex={-1} data-research-group={groups[active].id}>
+    <header className="eo-research-intro"><div><p className="eo-research-eyebrow">03 / RESEARCH &amp; VALIDATION</p><h2 id="eleven-decisions-title">DATA-DRIVEN DESIGN</h2><p className="eo-research-subtitle">Turning behavioral insights into better shopping experiences.</p></div><div><p className="eo-research-intro-copy">By combining behavioral analysis, UX observations, and controlled experiments, I used evidence to identify friction points, guide design decisions, and evaluate opportunities to improve the shopping experience.</p><ol className="eo-research-process"><li>01 / OBSERVE <span>Behavioral insights</span></li><li>02 / OPTIMIZE <span>Design hypotheses</span></li><li>03 / VALIDATE <span>A/B testing</span></li></ol></div></header>
     <ImageGallery images={sources} onOpenChange={setReaderOpen} renderPreview={open => <>
-      <ResearchReveal><header className="eo-research-intro"><div><p className="eo-research-eyebrow">03 / RESEARCH &amp; VALIDATION</p><h2 id="eleven-decisions-title">DATA-DRIVEN DESIGN</h2><p className="eo-research-subtitle">Turning behavioral insights into better shopping experiences.</p></div><p className="eo-research-intro-copy">By combining behavioral analysis, UX observations, and controlled experiments, I used evidence to identify friction points, guide design decisions, and evaluate opportunities to improve the shopping experience.</p></header>
-        <ol className="eo-research-process">{[["01 / OBSERVE", "Behavioral insights"], ["02 / OPTIMIZE", "Design hypotheses"], ["03 / VALIDATE", "A/B testing"]].map(([label, text]) => <li key={label}><span>{label}</span><p>{text}</p></li>)}</ol>
-      </ResearchReveal>
-      <article id="behavioral-analysis" className="eo-research-module"><ResearchReveal><ModuleHeading number="01" label="BEHAVIORAL ANALYSIS" title="Understanding Where Shoppers Focus">Hotjar click and scroll analysis helped reveal how visitors interacted with key shopping pages, where attention concentrated, and which areas needed closer UX review.</ModuleHeading></ResearchReveal><HeatmapViewer open={open} /></article>
-      <article id="insight-to-action" className="eo-research-module"><ResearchReveal><ModuleHeading number="02" label="FROM INSIGHT TO ACTION" title="Turning Evidence into Design Decisions" /></ResearchReveal>
-        <div className="eo-research-cards">{insightCards.map(card => <ResearchReveal key={card.number} className="eo-research-card-wrap"><article className="eo-research-card"><p className="eo-research-eyebrow">{card.number} / {card.category}</p><h4>{card.title}</h4><button type="button" className="eo-research-card-image" aria-haspopup="dialog" aria-label={`Expand ${card.category.toLowerCase()} behavioral evidence`} onClick={event => open(card.source - 1, event.currentTarget)}><EvidenceImage name={card.asset} /></button><dl><div><dt>OBSERVED</dt><dd>{card.observed}</dd></div><div><dt>DESIGN RESPONSE</dt><dd>{card.response}</dd></div></dl><button type="button" className="eo-research-source-link" onClick={event => open(card.source - 1, event.currentTarget)}>Explore evidence ↗</button></article></ResearchReveal>)}</div>
-        <p className="eo-research-note">These responses connect research observations to design hypotheses. The screenshots do not establish that a particular experiment caused a specific redesign decision.</p>
-      </article>
-      <article id="research-experiments" className="eo-research-module"><ResearchReveal><ModuleHeading number="03" label="EXPERIMENTATION" title="Testing Design Hypotheses">Controlled experiments provided another layer of evidence, helping compare shopping experiences and identify opportunities for further iteration.</ModuleHeading></ResearchReveal><Experiments open={open} /></article>
-      <article id="research-outcomes" className="eo-research-module"><ResearchReveal><ModuleHeading number="04" label="MEASURED OUTCOMES" title="What the Experiments Revealed">A separate report snapshot records higher conversion, add-to-cart and average order value for New Group 1. Its test name, device and date are not shown, so these figures stand on their own.</ModuleHeading></ResearchReveal>
-        <p className="eo-research-eyebrow">SEPARATE TEST SNAPSHOT / CONTROL GROUP → NEW GROUP 1</p>
-        <div className="eo-research-kpis">{separateTestMetrics.map(metric => <article key={metric.id} data-kpi={metric.id}><p>{metric.name}</p><strong className="eo-research-kpi-change"><CountedChange value={relativeChange(metric.control, metric.variant)} /></strong><p className="eo-research-kpi-values"><span>{formatMetric(metric, metric.control)}</span><span aria-hidden="true">→</span><span>{formatMetric(metric, metric.variant)}</span></p><span className="eo-research-kpi-label">CONTROL → VARIANT · RELATIVE CHANGE ABOVE</span></article>)}</div>
-        <p className="eo-research-note">Observed test results; statistical significance and long-term impact are not established by the available screenshots.</p>
-        <button className="eo-research-kpi-source" type="button" aria-haspopup="dialog" onClick={event => open(9, event.currentTarget)}><EvidenceImage name="abtest1" /><span>EXPAND SOURCE TABLE / ABTEST1.PNG ↗</span></button>
-        <SourceProof keys={["abtest2"]} open={open} label="View the matching dashboard excerpt" />
-      </article>
-      <ResearchReveal><article id="research-takeaways" className="eo-research-takeaway"><p className="eo-research-eyebrow">05 / KEY TAKEAWAYS</p><h3>Designing with Evidence, Not Assumptions</h3><p>Behavioral analysis helped identify where shoppers focused their attention and where friction appeared. Experimentation added another layer of evidence, highlighting promising improvements as well as opportunities for continued iteration.</p></article></ResearchReveal>
+      <div className="eo-research-workspace">
+        <div className="eo-research-accordion">
+          {groups.map((group, index) => <div className="eo-research-item" key={group.id} data-expanded={active === index}>
+            <h3 id={group.id}><button type="button" className="eo-research-trigger" id={`eo-research-trigger-${index}`} aria-expanded={active === index} aria-disabled={active === index || undefined} aria-controls={`eo-research-copy-${index}`} onClick={() => { void selectImage(currentAssets[index], () => setActive(index)); }} onKeyDown={event => {
+              let next: number | undefined;
+              if (event.key === "ArrowDown") next = (index + 1) % groups.length;
+              if (event.key === "ArrowUp") next = (index + groups.length - 1) % groups.length;
+              if (event.key === "Home") next = 0;
+              if (event.key === "End") next = groups.length - 1;
+              if (next !== undefined) { event.preventDefault(); root.current?.querySelectorAll<HTMLButtonElement>(".eo-research-trigger")[next].focus(); }
+            }}><span className="eo-research-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span>{group.title}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg></button></h3>
+            <div className="eo-research-copy-panel" id={`eo-research-copy-${index}`} role="region" aria-labelledby={`eo-research-trigger-${index}`} aria-hidden={active !== index} inert={active !== index}><div className="eo-research-clip"><div className="eo-research-copy"><p className="eo-research-panel-heading">{group.heading}</p>{explanation(index)}<div className="eo-research-mobile-visual">{evidence(index, "mobile", open)}</div></div></div></div>
+          </div>)}
+        </div>
+        <div className="eo-research-desktop-visual" role="region" aria-labelledby={`eo-research-trigger-${active}`}>{groups.map((group, index) => <div key={group.id} className="eo-research-visual-layer" data-active={active === index} aria-hidden={active !== index} inert={active !== index}>{evidence(index, "desktop", open)}</div>)}</div>
+      </div>
+      <p className="eo-research-sr" role="status">{status}</p>
+      <article id="research-takeaways" className="eo-research-takeaway"><div><p className="eo-research-eyebrow">KEY TAKEAWAYS</p><h3>Designing with Evidence, Not Assumptions</h3></div><p>Behavioral analysis helped identify where shoppers focused their attention and where friction appeared. Experimentation added another layer of evidence, highlighting promising improvements as well as opportunities for continued iteration.</p></article>
       <details className="eo-research-proof eo-research-source-index"><summary>Research sources / 14 uploaded screenshots<span aria-hidden="true">＋</span></summary><ol>{sources.map((source, index) => <li key={source.src}><button type="button" onClick={event => open(index, event.currentTarget)}>{source.source.split("/").at(-1)}<span>{source.caption.split(" · ").slice(1).join(" · ")}</span></button></li>)}</ol></details>
     </>} />
   </section>;
