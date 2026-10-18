@@ -9,6 +9,7 @@ export function ImageGallery({
   presentation,
   pdpOverlay,
   renderPreview,
+  onOpenChange,
 }: {
   images: ProjectImage[];
   layout?: "full" | "pair" | "grid";
@@ -16,6 +17,7 @@ export function ImageGallery({
   pdpOverlay?: ReactNode;
   /** An alternate media presentation can reuse this gallery's existing dialog. */
   renderPreview?: (open: (index: number, trigger: HTMLButtonElement) => void) => ReactNode;
+  onOpenChange?: (open: boolean) => void;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -47,6 +49,7 @@ export function ImageGallery({
   return (
     <>
       {renderPreview ? renderPreview((index, button) => {
+        onOpenChange?.(true);
         setTrigger(button);
         setSelected(index);
       }) : <div className={`image-gallery gallery-${layout}`}>
@@ -84,7 +87,10 @@ export function ImageGallery({
         ref={dialog}
         className={`lightbox${presentation === "pdp" ? " eleven-pdp-lightbox" : ""}`}
         aria-label={active?.alt || "Project artwork"}
-        onClose={() => setSelected(null)}
+        onClose={() => {
+          onOpenChange?.(false);
+          setSelected(null);
+        }}
         onClick={(event) => {
           if (event.target === event.currentTarget) dialog.current?.close();
         }}

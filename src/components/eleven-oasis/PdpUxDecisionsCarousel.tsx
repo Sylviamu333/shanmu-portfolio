@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ImageGallery } from "@/components/ImageGallery";
 import { pdpUxSlides } from "@/data/eleven-oasis-strategy";
+import { createPdpPlaybackController, PDP_SLIDE_DURATION, type PdpPlaybackSnapshot } from "./pdpCarouselPlayback";
 import "./PdpUxDecisionsCarousel.css";
 
 const count = pdpUxSlides.length;
@@ -15,39 +16,84 @@ export function PdpUxDecisionsCarousel({ active }: { active: boolean }) {
 }
 
 function CarouselSession({ active }: { active: boolean }) {
-  const [selected, setSelected] = useState(0);
+  const root = useRef<HTMLDivElement>(null);
+  const controller = useRef<ReturnType<typeof createPdpPlaybackController> | null>(null);
+  const [playback, setPlayback] = useState<PdpPlaybackSnapshot>({ index: 0, playing: false, paused: false, reduced: false });
+  const selected = playback.index;
   const [displayed, setDisplayed] = useState(0);
   const [failed, setFailed] = useState<number | null>(null);
   const [visited, setVisited] = useState([0]);
   const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
   const suppressClick = useRef(false);
+  const helpId = useId();
   const select = (index: number) => {
-    const next = wrap(index);
     setFailed(null);
-    setSelected(next);
-    setVisited(previous => previous.includes(next) ? previous : [...previous, next]);
+    controller.current?.select(index);
   };
   const slide = pdpUxSlides[selected];
   const visibleSlide = pdpUxSlides[displayed];
+
+  useEffect(() => {
+    const element = root.current;
+    if (!element) return;
+    const clock = createPdpPlaybackController(count, {
+      now: () => performance.now(),
+      request: callback => requestAnimationFrame(callback),
+      cancel: id => cancelAnimationFrame(id),
+      onChange: setPlayback,
+      onProgress: elapsed => {
+        element.style.setProperty("--pdp-progress", String(elapsed / PDP_SLIDE_DURATION));
+        element.dataset.elapsed = String(elapsed);
+      },
+    });
+    controller.current = clock;
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const onPreference = () => clock.setConditions({ reduced: reduced.matches });
+    const onVisibility = () => clock.setConditions({ hidden: document.hidden });
+    clock.setConditions({ active, reduced: reduced.matches, hidden: document.hidden });
+    const observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver(entries => {
+      clock.setConditions({ visible: entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .15) });
+    }, { threshold: .15 });
+    if (observer) observer.observe(element);
+    else clock.setConditions({ visible: true });
+    reduced.addEventListener("change", onPreference);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      observer?.disconnect();
+      reduced.removeEventListener("change", onPreference);
+      document.removeEventListener("visibilitychange", onVisibility);
+      clock.dispose();
+      controller.current = null;
+    };
+  }, [active]);
 
   useEffect(() => {
     let cancelled = false;
     const image = new window.Image();
     image.src = pdpUxSlides[selected].src;
     void image.decode().then(() => {
-      if (!cancelled) setDisplayed(selected);
+      if (!cancelled) {
+        setDisplayed(selected);
+        setVisited(previous => previous.includes(selected) ? previous : [...previous, selected]);
+        controller.current?.decoded(selected);
+      }
     }).catch(() => {
-      if (!cancelled) setFailed(selected);
+      if (!cancelled) {
+        setFailed(selected);
+        controller.current?.decoded(selected, false);
+      }
     });
     return () => { cancelled = true; };
   }, [selected]);
 
-  return <ImageGallery images={pdpUxSlides} presentation="pdp" renderPreview={open => (
+  return <div ref={root} className="eleven-pdp-carousel-session" data-playback={playback.playing ? "playing" : "paused"}>
+    <ImageGallery images={pdpUxSlides} presentation="pdp" onOpenChange={open => controller.current?.setConditions({ modal: open })} renderPreview={open => (
     <div className="eleven-pdp-carousel" role="region" aria-roledescription="carousel" aria-label="PDP UX decisions"
       data-slide={selected + 1} data-rendered-slide={displayed + 1} onKeyDown={event => {
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
           event.preventDefault();
-          select(selected + (event.key === "ArrowRight" ? 1 : -1));
+          setFailed(null);
+          controller.current?.step(event.key === "ArrowRight" ? 1 : -1);
         }
       }}>
       <div className="eleven-pdp-carousel-viewport">
@@ -85,17 +131,24 @@ function CarouselSession({ active }: { active: boolean }) {
               className="eleven-pdp-carousel-slide" data-current={index === displayed} aria-hidden={index !== displayed} />;
           })}
         </button>
-        <button type="button" className="eleven-pdp-carousel-arrow" data-direction="previous" aria-label="Previous PDP slide"
-          onClick={() => select(selected - 1)}>←</button>
-        <button type="button" className="eleven-pdp-carousel-arrow" data-direction="next" aria-label="Next PDP slide"
-          onClick={() => select(selected + 1)}>→</button>
       </div>
-      <div className="eleven-pdp-carousel-dots" role="group" aria-label="Choose a PDP UX slide">
-        {pdpUxSlides.map((image, index) => <button type="button" key={image.src}
-          aria-label={`Go to slide ${index + 1} of ${count}: ${image.alt.split(" — ")[0]}`}
-          aria-current={selected === index ? "true" : undefined} onClick={() => select(index)}><span /></button>)}
+      <div className="eleven-pdp-carousel-controls">
+        <div className="eleven-pdp-carousel-dots" role="group" aria-label="Choose a PDP UX slide">
+          {pdpUxSlides.map((image, index) => <button type="button" key={image.src}
+            aria-label={`Go to slide ${index + 1} of ${count}: ${image.alt.split(" — ")[0]}`}
+            aria-current={selected === index ? "true" : undefined} onClick={() => select(index)}>
+            <span className="eleven-pdp-indicator" aria-hidden="true"><span className="eleven-pdp-progress-fill" /></span>
+          </button>)}
+        </div>
+        <button type="button" className="eleven-pdp-carousel-toggle" aria-label={playback.playing ? "Pause slideshow" : "Play slideshow"}
+          aria-describedby={playback.reduced ? helpId : undefined} disabled={playback.reduced} onClick={() => controller.current?.toggle()}>
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="currentColor">
+            {playback.playing ? <><rect x="4" y="3" width="2.5" height="10" rx=".6" /><rect x="9.5" y="3" width="2.5" height="10" rx=".6" /></> : <path d="M5 2.5 13 8 5 13.5Z" />}
+          </svg>
+        </button>
       </div>
       <span className="eleven-pdp-carousel-status" aria-live="polite" aria-atomic="true">{failed === selected ? "This slide could not load. The previous artwork remains visible." : `Slide ${selected + 1} of ${count}: ${slide.alt.split(" — ")[0]}`}</span>
+      {playback.reduced && <span className="eleven-pdp-carousel-status" id={helpId}>Automatic playback is disabled by your reduced motion preference. Use the seven slide controls to browse.</span>}
     </div>
-  )} />;
+  )} /></div>;
 }
