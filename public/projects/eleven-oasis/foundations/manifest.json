@@ -1,0 +1,392 @@
+{
+  "linen": {
+    "src": "/projects/eleven-oasis/foundations/linen.webp",
+    "width": 87,
+    "height": 88,
+    "alt": "Smooth Linen",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      330,
+      130,
+      417,
+      218
+    ],
+    "sha256": "2d5d2b279e73fd1cad7c564c7c6d12de123a7135363555989b483efd9a889d49"
+  },
+  "breathable": {
+    "src": "/projects/eleven-oasis/foundations/breathable.webp",
+    "width": 106,
+    "height": 87,
+    "alt": "Lightweight & Breathable",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      1114,
+      132,
+      1220,
+      219
+    ],
+    "sha256": "fe32a81967cfc433d668caf47fc3b28c92a42bfccff0f68df2c2e8e0a6987b6b"
+  },
+  "wrinkle": {
+    "src": "/projects/eleven-oasis/foundations/wrinkle.webp",
+    "width": 94,
+    "height": 89,
+    "alt": "Wrinkle Resistant",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      544,
+      298,
+      638,
+      387
+    ],
+    "sha256": "4f632af37aaaf58b0197fa6ece4630f9ef7259901186772e2bdcd0b361f86d12"
+  },
+  "stripe": {
+    "src": "/projects/eleven-oasis/foundations/stripe.webp",
+    "width": 85,
+    "height": 85,
+    "alt": "Contrast Stripe Detail",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      115,
+      856,
+      200,
+      941
+    ],
+    "sha256": "8d3b9608bac74c358551e1ce8b84ddf220e6badb50bac2611a137274798858ff"
+  },
+  "cocktail": {
+    "src": "/projects/eleven-oasis/foundations/cocktail.webp",
+    "width": 82,
+    "height": 87,
+    "alt": "Tropical Cocktail Print",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      684,
+      855,
+      766,
+      942
+    ],
+    "sha256": "c4e8d8887a353d2a98c725b9285ae7d861dd252beade0e68adf693bbefb3f8bd"
+  },
+  "shortSleeve": {
+    "src": "/projects/eleven-oasis/foundations/shortSleeve.webp",
+    "width": 91,
+    "height": 85,
+    "alt": "Relaxed Short Sleeve",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      1744,
+      856,
+      1835,
+      941
+    ],
+    "sha256": "8f3048416b2231bbd4f1fc45f222062f7ee3b3a00dd745c779e8fcf52cfad9cd"
+  },
+  "wash": {
+    "src": "/projects/eleven-oasis/foundations/wash.webp",
+    "width": 96,
+    "height": 87,
+    "alt": "Machine Wash Cold",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      117,
+      1429,
+      213,
+      1516
+    ],
+    "sha256": "795eb188d3d7b5a9e15c5cdc3acad0ab9e542d5d2b0fe4352f1bdfccec2b3450"
+  },
+  "bleach": {
+    "src": "/projects/eleven-oasis/foundations/bleach.webp",
+    "width": 85,
+    "height": 84,
+    "alt": "Do Not Bleach",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      355,
+      1429,
+      440,
+      1513
+    ],
+    "sha256": "8807b855e9f1cc6593e6fedc99a3db8d1e5771303de7fe4d3f77d4196ffc4555"
+  },
+  "iron": {
+    "src": "/projects/eleven-oasis/foundations/iron.webp",
+    "width": 120,
+    "height": 80,
+    "alt": "Cool Iron If Needed",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      1052,
+      1419,
+      1172,
+      1499
+    ],
+    "sha256": "8ed6c17ec341fc5a1ef7bfafd02009dc6d4571ff68f5e98936404d62d519f33f"
+  },
+  "guarantee": {
+    "src": "/projects/eleven-oasis/foundations/guarantee.webp",
+    "width": 43,
+    "height": 50,
+    "alt": "30-Day Guarantee",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      1491,
+      562,
+      1534,
+      612
+    ],
+    "sha256": "bb28b6c231b9f65e875a3291be6e9a27ab96785041dae0ff75e2f090fea1d77c"
+  },
+  "payLater": {
+    "src": "/projects/eleven-oasis/foundations/payLater.webp",
+    "width": 49,
+    "height": 47,
+    "alt": "Pay Later",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      1905,
+      564,
+      1954,
+      611
+    ],
+    "sha256": "40f39de0867ad5a69b9a1c7dc2b4385ac44078b0f68bee71fb3dfdfa7f8b547d"
+  },
+  "shipping": {
+    "src": "/projects/eleven-oasis/foundations/shipping.webp",
+    "width": 55,
+    "height": 47,
+    "alt": "Free Shipping",
+    "source": "source-assets/eleven-oasis-icon system.png",
+    "sourceSha256": "247799d932a4ce300ff16a495f62386f560c4c62c09952e95eeb711e4e4b32de",
+    "crop": [
+      2101,
+      564,
+      2156,
+      611
+    ],
+    "sha256": "b1644178023ba43898fb530c3bc5d97252ffd984687d7796214c65dcf18da4e6"
+  },
+  "productCard": {
+    "src": "/projects/eleven-oasis/foundations/productCard.webp",
+    "width": 395,
+    "height": 675,
+    "alt": "Actual storefront product card with image, sale badge, color swatches and price",
+    "source": "source-assets/HOMEPAGE - PC.png",
+    "sourceSha256": "27d8a98d562ef9aac9fe0834b9eec1c24641d53d4cd811026676d171093be4db",
+    "crop": [
+      25,
+      1515,
+      420,
+      2190
+    ],
+    "sha256": "aeaf0dc35edab281d94e6556f0d618fec9ed311a82b041ac6d711039ea810d1f"
+  },
+  "heroCta": {
+    "src": "/projects/eleven-oasis/foundations/heroCta.webp",
+    "width": 385,
+    "height": 134,
+    "alt": "Original SHOP NOW primary campaign call to action",
+    "source": "source-assets/HOMEPAGE - PC.png",
+    "sourceSha256": "27d8a98d562ef9aac9fe0834b9eec1c24641d53d4cd811026676d171093be4db",
+    "crop": [
+      890,
+      634,
+      1275,
+      768
+    ],
+    "sha256": "bf360b898bae704746c1df70c980e1d67f03ee479f8b143ea503264d26999794"
+  },
+  "secondaryCta": {
+    "src": "/projects/eleven-oasis/foundations/secondaryCta.webp",
+    "width": 225,
+    "height": 60,
+    "alt": "Original underlined View All secondary storefront action",
+    "source": "source-assets/HOMEPAGE - PC.png",
+    "sourceSha256": "27d8a98d562ef9aac9fe0834b9eec1c24641d53d4cd811026676d171093be4db",
+    "crop": [
+      965,
+      1434,
+      1190,
+      1494
+    ],
+    "sha256": "cea6bdc81e7e492a8e12aec80a39a08a09e53416f1a6d2697d7a49d66e137099"
+  },
+  "price": {
+    "src": "/projects/eleven-oasis/foundations/price.webp",
+    "width": 695,
+    "height": 93,
+    "alt": "PDP original price, sale price and promotional label",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      25,
+      355,
+      720,
+      448
+    ],
+    "sha256": "262a95504578dea7300d945c86fd1d02a8c99b84c2f876a918c981f177f3cc29"
+  },
+  "selectors": {
+    "src": "/projects/eleven-oasis/foundations/selectors.webp",
+    "width": 1125,
+    "height": 390,
+    "alt": "Actual PDP color swatches and size selector",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      25,
+      1995,
+      1150,
+      2385
+    ],
+    "sha256": "dc96c1dfe6bc4feda9476353b948e28db643f938ea86cdf5f4902b4d6dc12a00"
+  },
+  "colorSwatches": {
+    "src": "/projects/eleven-oasis/foundations/colorSwatches.webp",
+    "width": 655,
+    "height": 140,
+    "alt": "Original PDP color swatches, enlarged in the compact composition",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      25,
+      1995,
+      680,
+      2135
+    ],
+    "sha256": "e35efdcac7f92926fc24ca01459707c25b4a18b57e62a09f59d561eb37d0094a"
+  },
+  "sizeOptions": {
+    "src": "/projects/eleven-oasis/foundations/sizeOptions.webp",
+    "width": 435,
+    "height": 180,
+    "alt": "Original PDP size label and first three size options, enlarged in the compact composition",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      25,
+      2140,
+      460,
+      2320
+    ],
+    "sha256": "3a820738c0f2792f95c781eb0e60019ae5ce25b37fd051a1995dfdf381e62b98"
+  },
+  "rating": {
+    "src": "/projects/eleven-oasis/foundations/rating.webp",
+    "width": 600,
+    "height": 88,
+    "alt": "Original customer star rating and review link",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      20,
+      1882,
+      620,
+      1970
+    ],
+    "sha256": "b21aae6009261a1a44e32f137a064c831de1e82700b995927bb21fa058853125"
+  },
+  "cartCta": {
+    "src": "/projects/eleven-oasis/foundations/cartCta.webp",
+    "width": 1125,
+    "height": 125,
+    "alt": "Original ADD TO CART primary purchase action",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      25,
+      2815,
+      1150,
+      2940
+    ],
+    "sha256": "a64bba7d133437da2edb0defd581e5070b0c59cf04599bcc2b6ef7e6c152eb7b"
+  },
+  "reassurance": {
+    "src": "/projects/eleven-oasis/foundations/reassurance.webp",
+    "width": 1075,
+    "height": 180,
+    "alt": "Actual purchase reassurance badges for returns, pay later and shipping",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      50,
+      5355,
+      1125,
+      5535
+    ],
+    "sha256": "2befe3df1c0b74144fbb8fd6293e64c8a6398904659eab7b0e9aca55f5f18463"
+  },
+  "desktop": {
+    "src": "/projects/eleven-oasis/foundations/desktop.webp",
+    "width": 2160,
+    "height": 1490,
+    "alt": "Desktop homepage with campaign hero, collection navigation and Trending Now section",
+    "source": "source-assets/HOMEPAGE - PC.png",
+    "sourceSha256": "27d8a98d562ef9aac9fe0834b9eec1c24641d53d4cd811026676d171093be4db",
+    "crop": [
+      0,
+      0,
+      2160,
+      1490
+    ],
+    "sha256": "edc6d8c3ff53be024ffdac92953214bf4f80c055a31c68d36afbdcc0172cc49d"
+  },
+  "mobile": {
+    "src": "/projects/eleven-oasis/foundations/mobile.webp",
+    "width": 679,
+    "height": 1148,
+    "alt": "Original mobile storefront homepage",
+    "source": "source-assets/eleven-oasis-mobile-1.png",
+    "sourceSha256": "25b3082027d07c59c7ab10a735217ca6f29630c21444d7a82f5df1256bccf9ca",
+    "crop": [
+      0,
+      0,
+      679,
+      1148
+    ],
+    "sha256": "f5aa933bcc6e1d33f6ea86fa89ecc1edb8efc30ecca2cb6619645bc46913091c"
+  },
+  "pdp": {
+    "src": "/projects/eleven-oasis/foundations/pdp.webp",
+    "width": 1179,
+    "height": 1990,
+    "alt": "Original mobile PDP product image, price and reviews",
+    "source": "source-assets/eleven-oasis-pdp-mobile-full.png",
+    "sourceSha256": "949ec643ec2ae058b64733fb8171bcca5e06aaf73b136d1796ee71cb7decb061",
+    "crop": [
+      0,
+      0,
+      1179,
+      1990
+    ],
+    "sha256": "e1dc43b4aa7267a1446705fed9dd2fef482380fda669fae7f36d1bedb39e2b60"
+  },
+  "campaign": {
+    "src": "/projects/eleven-oasis/foundations/campaign.webp",
+    "width": 1280,
+    "height": 950,
+    "alt": "Original Winter 2026 campaign landing page hero and shopping content",
+    "source": "source-assets/eleven-oasis-strategy-03-editorial-full.png",
+    "sourceSha256": "4e4b95625d6d05d82f9dbc237fa5078b17b461f23dbd0864f3feb6babe8afbca",
+    "crop": [
+      0,
+      0,
+      1280,
+      950
+    ],
+    "sha256": "e0464e608fcb5c1ea8e0c36995c5cae637e528211b54a1c013c9b3d6af11ef0a"
+  }
+}

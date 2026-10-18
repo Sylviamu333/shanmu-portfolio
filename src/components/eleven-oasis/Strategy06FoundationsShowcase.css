@@ -1,0 +1,100 @@
+@font-face { font-family: "EO Foundations Oswald"; src: url("/fonts/eleven-oasis-foundations/oswald-latin-wght-normal.woff2") format("woff2"); font-weight: 200 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "EO Foundations Open Sans"; src: url("/fonts/eleven-oasis-foundations/open-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 300 800; font-style: normal; font-display: swap; }
+.eo-foundations { height: 100%; min-width: 0; display: grid; grid-template-rows: minmax(0, 1fr) 32px; gap: 8px; container-type: inline-size; font: 400 14px/1.4 "EO Foundations Open Sans", sans-serif; color: #252525; }
+.eo-foundations-stage { min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; padding: 22px; border: 1px solid #e4e4e4; background: #fafafa; touch-action: pan-y pinch-zoom; }
+.eo-foundations-header { flex: none; padding-bottom: 16px; border-bottom: 1px solid #ddd; margin-bottom: 18px; }
+.eo-foundations .eo-foundations-header h4 { margin: 0; color: #252525; font: 600 12px/1.35 "EO Foundations Open Sans", sans-serif; letter-spacing: .045em; }
+.eo-foundations .eo-foundations-header p { margin: 5px 0 0; color: #656565; font: 400 12px/1.4 "EO Foundations Open Sans", sans-serif; }
+.eo-foundations-canvas { min-height: 0; flex: 1; position: relative; }
+.eo-foundations-scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; }
+.eo-foundations-scene:first-child { opacity: 1; visibility: visible; }
+.eo-foundations :is(p,figure) { margin: 0; }
+.eo-foundations img { display: block; max-width: 100%; height: auto; object-fit: contain; }
+.eo-foundations figcaption, .eo-foundations .eo-foundations-spec { color: #666; font: 400 10px/1.5 "EO Foundations Open Sans", sans-serif; }
+.eo-foundations .eo-foundations-spec b { font-weight: 600; color: #333; }
+.eo-foundations-eyebrow { display: block; color: #666; font: 600 10px/1.4 "EO Foundations Open Sans", sans-serif; }
+.eo-foundations-type { display: grid; grid-template-columns: 1fr 1.1fr; gap: 24px; align-items: center; }
+.eo-foundations-type-display { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 20px; background: #fff; border: 1px solid #e7e7e7; }
+.eo-foundations .eo-foundations-heading { margin: 12px 0 16px; font: 600 32px/1.1 "EO Foundations Oswald", sans-serif; }
+.eo-foundations-cta { display: inline-block; padding: 6px 20px; color: #fff; background: #252525; font: 600 24px/1.2 "EO Foundations Oswald", sans-serif; }
+.eo-foundations .eo-foundations-type-display .eo-foundations-spec { margin-top: 16px; }
+.eo-foundations-type-body { min-width: 0; display: grid; gap: 14px; }
+.eo-foundations .eo-foundations-product { margin-top: 8px; font-size: 14px; line-height: 1.45; font-weight: 400; }
+.eo-foundations-price { font: 600 24px/1.2 "EO Foundations Open Sans", sans-serif; white-space: nowrap; }
+.eo-foundations-price s { color: #888; font-weight: 400; }
+.eo-foundations-price > span { color: #8b3212; }
+.eo-foundations .eo-foundations-body { font: 400 14px/1.5 "EO Foundations Open Sans", sans-serif; }
+.eo-foundations-spec > span:not(.eo-foundations-extra-spec) { display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .04em; }
+.eo-foundations-icons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.eo-foundations-icon-group { min-width: 0; min-height: 0; background: #fff; border: 1px solid #e7e7e7; padding: 12px 10px 8px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.eo-foundations-icon-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.eo-foundations-icon-row figure { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.eo-foundations-icon-row img { width: 42px; height: 42px; }
+.eo-foundations-icon-row figcaption { text-align: center; font-size: 9px; line-height: 1.3; }
+.eo-foundations-icon-group > p { text-align: center; color: #555; font-size: 10px; font-weight: 600; }
+.eo-foundations-patterns { display: grid; grid-template-columns: .8fr 1.2fr 1.25fr; gap: 14px; }
+.eo-foundations-patterns figure { min-height: 0; min-width: 0; padding: 10px; background: #fff; border: 1px solid #e7e7e7; box-shadow: 0 3px 10px #00000004; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.eo-foundations-patterns img { min-height: 0; max-height: 100%; width: 100%; flex: 0 1 auto; }
+.eo-foundations-patterns figcaption { flex: none; }
+.eo-foundations-pattern-card { align-self: stretch; }
+.eo-foundations-pattern-stack { min-height: 0; display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+.eo-foundations-cta-pair { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; align-items: center; }
+.eo-foundations-selection-compact { display: none; }
+.eo-foundations-devices { display: grid; grid-template-columns: 1fr .31fr; grid-template-rows: minmax(0, 1fr) minmax(0, .38fr); gap: 12px 18px; }
+.eo-foundations-desktop { grid-column: 1; grid-row: 1; min-height: 0; display: flex; flex-direction: column; }
+.eo-foundations-browser { height: 15px; flex: none; display: flex; align-items: center; gap: 3px; padding-left: 8px; background: #eee; border-radius: 4px 4px 0 0; border: 1px solid #ddd; }
+.eo-foundations-browser span { width: 3px; height: 3px; border-radius: 50%; background: #bbb; }
+.eo-foundations-desktop img { height: 0; min-height: 0; width: 100%; flex: 1; object-fit: cover; object-position: center top; border: 1px solid #ddd; border-top: 0; }
+.eo-foundations-devices figcaption { padding-top: 4px; }
+.eo-foundations-mobile { grid-column: 2; grid-row: 1 / 3; min-width: 0; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.eo-foundations-mobile img { height: 0; min-height: 0; flex: 1; width: 100%; object-fit: contain; }
+.eo-foundations-touchpoints { grid-column: 1; grid-row: 2; min-height: 0; display: grid; grid-template-columns: 1fr 1.4fr; gap: 12px; }
+.eo-foundations-touchpoints figure { min-height: 0; display: flex; flex-direction: column; }
+.eo-foundations-touchpoints img { height: 0; min-height: 0; width: 100%; flex: 1; object-fit: cover; object-position: center top; border: 1px solid #e2e2e2; }
+.eo-foundations :is(button):focus-visible { outline: 2px solid #333; outline-offset: 2px; }
+.eo-foundations-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@container (max-width: 700px) {
+  .eo-foundations-stage { padding: 12px; }
+  .eo-foundations-header { margin-bottom: 10px; padding-bottom: 9px; }
+  .eo-foundations .eo-foundations-header h4 { font-size: 10px; }
+  .eo-foundations .eo-foundations-header p { font-size: 10px; margin-top: 3px; }
+  .eo-foundations-type { gap: 8px; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .eo-foundations-type-display { padding: 7px 10px; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr auto; gap: 2px 8px; align-items: center; }
+  .eo-foundations-type-display > .eo-foundations-eyebrow { grid-column: 1; grid-row: 1; }
+  .eo-foundations-eyebrow { font-size: 9px; }
+  .eo-foundations .eo-foundations-heading { grid-column: 1; grid-row: 2; font-size: 26px; margin: 0; white-space: nowrap; }
+  .eo-foundations-display-second, .eo-foundations-extra-spec { display: none; }
+  .eo-foundations-cta { grid-column: 2; grid-row: 1 / 4; font-size: 18px; padding: 5px 10px; }
+  .eo-foundations .eo-foundations-type-display .eo-foundations-spec { grid-column: 1; grid-row: 3; margin-top: 0; }
+  .eo-foundations-type-body { display: grid; grid-template-columns: 1fr 1.2fr; grid-template-rows: auto 1fr; gap: 3px 12px; align-items: center; }
+  .eo-foundations-type-body > div:first-child { grid-column: 1; grid-row: 1; }
+  .eo-foundations .eo-foundations-product { display: none; }
+  .eo-foundations-type-body > .eo-foundations-spec { grid-column: 2; grid-row: 1 / 3; }
+  .eo-foundations .eo-foundations-body { display: none; }
+  .eo-foundations-price { grid-column: 1; grid-row: 2; font-size: 24px; }
+  .eo-foundations-price s { display: none; }
+  .eo-foundations .eo-foundations-spec { font-size: 9px; line-height: 1.45; }
+  .eo-foundations-icons { gap: 8px; }
+  .eo-foundations-icon-group { padding: 6px 5px; gap: 5px; }
+  .eo-foundations-icon-row { gap: 4px; }
+  .eo-foundations-icon-row img { width: 30px; height: 30px; }
+  .eo-foundations-icon-row figcaption { display: none; }
+  .eo-foundations-icon-group > p { font-size: 9px; }
+  .eo-foundations-patterns { gap: 7px; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .eo-foundations-patterns figure { padding: 6px; gap: 5px; }
+  .eo-foundations-patterns .eo-foundations-pattern-card { display: none; }
+  .eo-foundations-pattern-stack { display: contents; }
+  .eo-foundations-pattern-stack:last-child > figure:first-child { grid-column: 1 / -1; }
+  .eo-foundations-pattern-stack:last-child > figure:last-child { display: none; }
+  .eo-foundations-pattern-stack:last-child > figure:first-child > img { display: none; }
+  .eo-foundations-selection-compact { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10px; align-items: center; }
+  .eo-foundations-selection-compact img { max-height: 55px; }
+  .eo-foundations-patterns figcaption { font-size: 8px; line-height: 1.35; }
+  .eo-foundations-actions > img { display: none; }
+  .eo-foundations-cta-pair { min-height: 0; flex: 1; grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) 12px; gap: 3px; }
+  .eo-foundations-cta-pair img:first-child { height: 100%; width: 100%; object-fit: contain; }
+  .eo-foundations-cta-pair img:last-child { height: 12px; width: 100%; object-fit: contain; }
+  .eo-foundations-devices { gap: 8px 10px; grid-template-columns: 1fr .4fr; }
+  .eo-foundations-touchpoints { gap: 7px; }
+  .eo-foundations-devices figcaption { font-size: 8px; padding-top: 3px; }
+}

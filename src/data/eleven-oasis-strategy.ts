@@ -187,8 +187,8 @@ export const elevenStrategies: ElevenStrategy[] = [
     images: [],
   },
   {
-    number: "06", label: "BUILT FOR GROWTH", title: "A More Scalable Design Foundation",
-    description: "Reusable components, consistent typography, and responsive interface patterns were organized to support future storefront updates and new shopping experiences.",
-    images: [], unavailable: "A dedicated component sheet is not available. The case study documents recurring storefront patterns; no technical architecture or measured business growth is claimed.",
+    number: "06", label: "BUILT FOR GROWTH", title: "A Consistent Foundation for Every Experience.",
+    description: "A unified typography and iconography system, supported by reusable UI patterns, brings consistency across product pages, campaigns, and mobile experiences.",
+    images: [],
   },
 ];

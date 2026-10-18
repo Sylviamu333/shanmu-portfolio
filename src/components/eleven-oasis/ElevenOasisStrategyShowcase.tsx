@@ -8,6 +8,7 @@ import { Strategy01PhoneVideo } from "./Strategy01PhoneVideo";
 import { PdpUxDecisionsCarousel } from "./PdpUxDecisionsCarousel";
 import { Strategy03CampaignShowcase } from "./Strategy03CampaignShowcase";
 import { ElevenOasisBrandGuidelinesShowcase } from "./ElevenOasisBrandGuidelinesShowcase";
+import { Strategy06FoundationsShowcase } from "./Strategy06FoundationsShowcase";
 import "./ElevenOasisStrategyShowcase.css";
 import "./Strategy04TrustSignals.css";
 
@@ -31,7 +32,7 @@ export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
           return (
             <div key={strategy.number} className={`eleven-strategy-panel ${index === 1 ? "eleven-strategy-pdp" : index === 3 ? "eleven-strategy-trust" : ""} ${index === 2 ? "eleven-strategy-campaign-panel" : images.length > 1 ? "eleven-strategy-branding" : ""}`}
               data-selected={selected === index} aria-hidden={selected !== index} inert={selected !== index}>
-              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : index === 1 && visited.includes(index) ? <PdpUxDecisionsCarousel active={selected === 1} /> : index === 2 && visited.includes(index) ? <Strategy03CampaignShowcase active={selected === 2} /> : index === 3 && visited.includes(index) ? <PdpUxDecisionsCarousel active={selected === 3} slides={trustSignalSlides} label="Trust signals" paginationLabel="Choose a trust signal" showArrows /> : index === 4 && visited.includes(index) ? <ElevenOasisBrandGuidelinesShowcase active={selected === 4} /> : visited.includes(index) && (images.length ? (
+              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : index === 1 && visited.includes(index) ? <PdpUxDecisionsCarousel active={selected === 1} /> : index === 2 && visited.includes(index) ? <Strategy03CampaignShowcase active={selected === 2} /> : index === 3 && visited.includes(index) ? <PdpUxDecisionsCarousel active={selected === 3} slides={trustSignalSlides} label="Trust signals" paginationLabel="Choose a trust signal" showArrows /> : index === 4 && visited.includes(index) ? <ElevenOasisBrandGuidelinesShowcase active={selected === 4} /> : index === 5 && visited.includes(index) ? <Strategy06FoundationsShowcase active={selected === 5} /> : visited.includes(index) && (images.length ? (
                 <ImageGallery images={images} layout={images.length > 1 ? "grid" : "full"} />
               ) : (
                 <div className="eleven-strategy-unavailable">
