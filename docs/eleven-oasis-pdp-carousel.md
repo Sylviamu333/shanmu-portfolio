@@ -27,18 +27,21 @@ are unchanged. The panel remains inert when inactive.
 
 A single `requestAnimationFrame` controller in `pdpCarouselPlayback.ts` owns the
 current slide, elapsed milliseconds, pause state and automatic advancement. The
-five-second clock supplies the progress fill directly; the fill has no separate
+two-second clock supplies the progress fill directly; the fill has no separate
 CSS animation or timer. Images use the existing 400ms opacity crossfade. A cycle
 starts only after the current image is decoded, preventing blank frames and
 avoiding charging loading time against the reading interval.
 
 Seven clickable indicators sit inside a rounded light-neutral pill. The active
-indicator expands to a 40 × 6px capsule; its dark fill reflects elapsed / 5000.
+indicator expands to a 32 × 6px capsule; its dark fill reflects elapsed / 2000.
 Inactive dots are 6px. A separate 32px circular pause/play button resumes the
-exact elapsed position. All pagination and playback targets remain at least
-32px, including at a 320px viewport. Side arrows are removed; keyboard arrows
+exact elapsed position. Pagination targets are non-overlapping 28 × 32px (32 × 32px when active);
+the play/pause target remains 32 × 32px. All exceed the 24px accessibility
+minimum, including at a 320px viewport. Side arrows are removed; keyboard arrows
 and touch swipe remain available. No extra image text or decorative backgrounds
-are added.
+are added. The compact pill measures 208px instead of 248px on
+desktop and at 390px mobile width, and 204px instead of 236px at 320px.
+The media viewport and surrounding column geometry are unchanged.
 
 Manual selection resets progress for a different slide and preserves explicit
 pause. Selecting the active indicator leaves its elapsed time unchanged. The
@@ -76,7 +79,7 @@ Required checks:
 
 Content checks verify all eleven mobile source/copy hashes and the seven ordered,
 fingerprinted slide assets. Deterministic controller tests cover all seven exact
-five-second cycles, one pending animation frame, precise pause/resume, manual
+two-second cycles, one pending animation frame, precise pause/resume, manual
 selection, stale decodes, active-dot clicks, all visibility/modal gates, reduced
 motion and disposal. Browser QA checks a complete real autoplay loop against the
 rendered progress fill, then pause/resume, manual controls, lightbox/keyboard/focus,

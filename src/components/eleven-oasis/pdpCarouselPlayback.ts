@@ -1,5 +1,5 @@
 /** One clock drives both the slide index and progress; no CSS animation or interval. */
-export const PDP_SLIDE_DURATION = 5000;
+export const PDP_SLIDE_DURATION = 2000;
 
 export type PdpPlaybackSnapshot = {
   index: number;

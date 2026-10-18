@@ -23,16 +23,16 @@ function harness(conditions = {}) {
   return { clock, advance, frames, get state() { return snapshot; }, get elapsed() { return elapsed; }, get notifications() { return notifications; } };
 }
 
-test('five-second cycles share the same elapsed value as progress and wrap all seven slides', () => {
+test('two-second cycles share the same elapsed value as progress and wrap all seven slides', () => {
   const h = harness();
-  assert.equal(PDP_SLIDE_DURATION, 5000);
+  assert.equal(PDP_SLIDE_DURATION, 2000);
   for (let index = 0; index < 7; index++) {
     assert.equal(h.state.index, index);
     assert.equal(h.frames.size, 0, 'Wait for image decode before timing');
     h.clock.decoded(index);
-    h.advance(4999);
+    h.advance(1999);
     assert.equal(h.state.index, index);
-    assert.equal(h.elapsed, 4999);
+    assert.equal(h.elapsed, 1999);
     h.advance(1);
     assert.equal(h.state.index, (index + 1) % 7);
     assert.equal(h.elapsed, 0);
@@ -40,11 +40,11 @@ test('five-second cycles share the same elapsed value as progress and wrap all s
 });
 
 test('pause/resume freezes exact progress; manual selection preserves explicit pause', () => {
-  const h = harness(); h.clock.decoded(0); h.advance(1250);
+  const h = harness(); h.clock.decoded(0); h.advance(500);
   assert.equal(h.elapsed / PDP_SLIDE_DURATION, .25);
   h.clock.toggle(); h.advance(100000);
-  assert.equal(h.elapsed, 1250); assert.equal(h.state.paused, true); assert.equal(h.frames.size, 0);
-  h.clock.toggle(); h.advance(1000); assert.equal(h.elapsed, 2250);
+  assert.equal(h.elapsed, 500); assert.equal(h.state.paused, true); assert.equal(h.frames.size, 0);
+  h.clock.toggle(); h.advance(400); assert.equal(h.elapsed, 900);
   h.clock.select(3); assert.equal(h.elapsed, 0); assert.equal(h.state.index, 3);
   h.clock.decoded(0); assert.equal(h.frames.size, 0, 'Ignore stale image decode');
   h.clock.decoded(3); h.advance(500); h.clock.select(3);
@@ -56,11 +56,11 @@ test('pause/resume freezes exact progress; manual selection preserves explicit p
 
 test('offscreen, hidden-tab, inactive and modal gates freeze and resume one clock without catch-up', () => {
   for (const [flag, blocked, allowed] of [['visible', false, true], ['hidden', true, false], ['active', false, true], ['modal', true, false]]) {
-    const h = harness(); h.clock.decoded(0); h.advance(1800);
+    const h = harness(); h.clock.decoded(0); h.advance(800);
     h.clock.setConditions({ [flag]: blocked }); h.advance(1000000);
-    assert.equal(h.elapsed, 1800, flag); assert.equal(h.state.index, 0); assert.equal(h.frames.size, 0);
-    h.clock.setConditions({ [flag]: allowed }); h.advance(700);
-    assert.equal(h.elapsed, 2500, flag); assert.equal(h.state.index, 0);
+    assert.equal(h.elapsed, 800, flag); assert.equal(h.state.index, 0); assert.equal(h.frames.size, 0);
+    h.clock.setConditions({ [flag]: allowed }); h.advance(400);
+    assert.equal(h.elapsed, 1200, flag); assert.equal(h.state.index, 0);
   }
 });
 
