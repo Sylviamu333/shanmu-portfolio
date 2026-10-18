@@ -241,8 +241,10 @@
 }
 .home-work {
   border-bottom: 1px solid var(--folio-rule);
-  scroll-margin-top: 66px;
 }
+/* Native/no-JS fallback: do not add the global section margin to html's
+   scroll padding. WORK navigation uses the measured header height. */
+.home-work[id] { scroll-margin-top: 0; }
 .home-work-heading {
   padding-block: 40px;
   display: flex;
@@ -839,9 +841,6 @@
   .home-motion-control {
     font-size: 9px;
     padding: 7px 9px;
-  }
-  .home-work {
-    scroll-margin-top: 58px;
   }
   .home-work-heading {
     padding-block: 22px;

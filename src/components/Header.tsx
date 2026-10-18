@@ -2,10 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
+import { useWorkNavigation } from "./useWorkNavigation";
 export function Header() {
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
+  const scrollToWork = useWorkNavigation(pathname);
   const links = [
     { label: "Work", href: "/#work" },
     { label: "About", href: "/about/" },
@@ -59,7 +61,11 @@ export function Header() {
           <Link
             key={link.label}
             href={link.href}
+            scroll={link.label === "Work" ? false : undefined}
             onClick={() => setOpen(false)}
+            onNavigate={() => {
+              if (link.label === "Work" && pathname === "/") scrollToWork();
+            }}
             aria-current={
               (link.label === "Work" && pathname.startsWith("/work")) ||
               (link.label === "About" && pathname.startsWith("/about"))
