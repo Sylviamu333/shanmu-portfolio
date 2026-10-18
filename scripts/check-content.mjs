@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
 import { homepageUX, uxDecisions } from "../src/data/eleven-oasis-case-study.ts";
-import { elevenStrategies, pdpUxSlides } from "../src/data/eleven-oasis-strategy.ts";
+import { elevenStrategies, pdpUxSlides, trustSignalSlides } from "../src/data/eleven-oasis-strategy.ts";
 import { journeyPhones } from "../src/data/eleven-oasis-mobile-journey.ts";
 const root = resolve(import.meta.dirname, "..");
 const photoManifest = JSON.parse(readFileSync(resolve(root, "public/projects/visual-experiments/photography/manifest.json"), "utf8"));
@@ -31,6 +31,29 @@ for (const [index, phone] of journeyPhones.entries()) {
 }
 assert.equal(pdpUxSlides.length, 7, "Strategy 02 must contain seven slides");
 assert.equal(elevenStrategies[1].images, pdpUxSlides);
+assert.equal(elevenStrategies[3].images, trustSignalSlides);
+const trustGroups = [
+  ["SOCIAL PROOF", "social-proof", 3, "Building Credibility at First Glance"],
+  ["Purchase Reassurance", "purchase-reassurance", 2, "Reducing Perceived Purchase Risk"],
+  ["PRODUCT TRANSPARENCY", "product-transparency", 3, "Removing Uncertainty Around Fit & Quality"],
+  ["CUSTOMER VALIDATION", "customer-validation", 2, "Building Confidence Through Authentic Reviews"],
+];
+assert.equal(trustSignalSlides.length, 10, "Trust Signals must include all ten uploaded images");
+let trustIndex = 0;
+for (const [category, slug, count, caption] of trustGroups) {
+  for (let sequence = 1; sequence <= count; sequence++) {
+    const number = String(sequence).padStart(2, "0");
+    const source = resolve(root, "source-assets", `eleven-oasis-strategy05-trust-${category}${number}.png`);
+    const slide = trustSignalSlides[trustIndex++];
+    assert(slide.src.endsWith(`/${slug}-${number}-${hash(source).slice(0, 12)}.webp`), "Trust asset order or revision changed");
+    assert.equal(slide.caption, caption);
+    assert.equal(slide.width, 1600);
+    assert.equal(slide.height, 958);
+    assert(slide.alt.includes(category.toUpperCase()));
+    assert(existsSync(resolve(root, "public", slide.src.slice(1))));
+    if (process.argv.includes("--build")) assert.equal(hash(resolve(root, "public", slide.src.slice(1))), hash(resolve(root, "out", slide.src.slice(1))));
+  }
+}
 for (const [index, slide] of pdpUxSlides.entries()) {
   const number = String(index + 1).padStart(2, "0");
   const fingerprint = hash(resolve(root, "source-assets", `eleven-oasis-pdp-strategy02-${number}.png`)).slice(0, 12);

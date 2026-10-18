@@ -1,5 +1,79 @@
 import type { ProjectImage } from "./projects";
 
+/** All ten uploads, grouped in shopping-journey order; lossless copies preserve the original pixels. */
+export const trustSignalSlides: ProjectImage[] = [
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/social-proof-01-757d93cdb792.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "01 / SOCIAL PROOF — Homepage customer rating, verified reviews and order-volume reassurance beneath the seasonal hero",
+    "caption": "Building Credibility at First Glance"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/social-proof-02-56f9b8775c9d.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "01 / SOCIAL PROOF — Homepage star rating, customer review count and trust indicators beneath the Halloween campaign",
+    "caption": "Building Credibility at First Glance"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/social-proof-03-3d9529ace100.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "01 / SOCIAL PROOF — Brand story, delivery, guarantee, privacy and support reassurance in the homepage",
+    "caption": "Building Credibility at First Glance"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/purchase-reassurance-01-451cf463a0c7.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "02 / PURCHASE REASSURANCE — PDP price, 30-day guarantee, bundle offer and customer rating near the Buy Box",
+    "caption": "Reducing Perceived Purchase Risk"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/purchase-reassurance-02-eecab6238122.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "02 / PURCHASE REASSURANCE — PDP size and quantity selection, Add to Cart, Shop Pay and accepted payment methods",
+    "caption": "Reducing Perceived Purchase Risk"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/product-transparency-01-4528af70268d.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "03 / PRODUCT TRANSPARENCY — Product video and image gallery alongside customer questions and answers",
+    "caption": "Removing Uncertainty Around Fit & Quality"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/product-transparency-02-a2926036c987.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "03 / PRODUCT TRANSPARENCY — Fit and Details diagram explaining the cotton shirt collar, shoulder, pleat, hem and signature details",
+    "caption": "Removing Uncertainty Around Fit & Quality"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/product-transparency-03-2a5548005a9b.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "03 / PRODUCT TRANSPARENCY — Fabric and Care information, cotton fabric close-ups and shirts styled by real people",
+    "caption": "Removing Uncertainty Around Fit & Quality"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/customer-validation-01-75c4950c87b3.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "04 / CUSTOMER VALIDATION — Verified customer reviews, rating distribution and customer photo thumbnails",
+    "caption": "Building Confidence Through Authentic Reviews"
+  },
+  {
+    "src": "/projects/eleven-oasis/strategy/trust/customer-validation-02-99265b4f031d.webp",
+    "width": 1600,
+    "height": 958,
+    "alt": "04 / CUSTOMER VALIDATION — Customer testimonials and portrait reviews in About Eleven Oasis Classic",
+    "caption": "Building Confidence Through Authentic Reviews"
+  }
+];
+
 /** Verified originals, numeric order; lossless WebP copies retain every artwork pixel. */
 export const pdpUxSlides: ProjectImage[] = [
   {
@@ -104,7 +178,7 @@ export const elevenStrategies: ElevenStrategy[] = [
   {
     number: "04", label: "TRUST SIGNALS", title: "Building Confidence Throughout the Journey",
     description: "Customer reviews, social proof, and purchase assurances were surfaced at relevant touchpoints to help address shopper concerns during browsing and product evaluation.",
-    images: [{ src: "/projects/eleven-oasis/strategy/trust-signals.webp", width: 480, height: 355, alt: "Unaltered purchase-confidence detail from the uploaded UX Decisions artwork: review reassurance, orders shipped and 30-day guarantee alongside the shopping action" }],
+    images: trustSignalSlides,
   },
   {
     number: "05", label: "BRANDING", title: "One Brand, Two Distinct Expressions",

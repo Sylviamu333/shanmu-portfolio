@@ -1,0 +1,17 @@
+/* Strategy 04 uses the existing PDP stage, fitting, clock, crossfade and controls. */
+.eleven-strategy-trust .eleven-pdp-carousel-viewport { container-type: size; }
+.eleven-strategy-trust .eleven-trust-caption { position: absolute; z-index: 2; top: max(14px, calc(50cqh - 29.9375cqw + 14px)); left: 48px; right: 48px; display: grid; gap: 3px; text-align: center; color: #fff; font: 400 11px/1.35 var(--sans); text-shadow: 0 1px 3px #0005; pointer-events: none; }
+.eleven-strategy-trust .eleven-trust-caption > span:first-child { font-size: 12px; font-weight: 500; }
+.eleven-strategy-trust .eleven-trust-arrow { position: absolute; z-index: 2; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; background: #f1f1f1; color: #252525; cursor: pointer; }
+.eleven-strategy-trust .eleven-trust-arrow[data-direction="previous"] { left: 8px; }
+.eleven-strategy-trust .eleven-trust-arrow[data-direction="next"] { right: 8px; }
+.eleven-strategy-trust .eleven-trust-arrow:hover { background: #e6e6e6; }
+/* Ten source images retain the same touch targets. Narrow screens can scroll the
+   pill; selecting a slide brings its indicator into view without page overflow. */
+.eleven-strategy-trust .eleven-pdp-carousel-dots { min-width: 0; max-width: calc(100% - 38px); overflow-x: auto; scrollbar-width: none; }
+.eleven-strategy-trust .eleven-pdp-carousel-dots::-webkit-scrollbar { display: none; }
+.eleven-strategy-trust .eleven-pdp-carousel-dots button:focus-visible { outline-offset: -3px; }
+@container (max-width: 400px) {
+  .eleven-strategy-trust .eleven-trust-caption { top: max(2px, calc(50cqh - 29.9375cqw + 2px)); left: 8px; right: 8px; gap: 1px; font-size: 9px; line-height: 1.1; }
+  .eleven-strategy-trust .eleven-trust-caption > span:first-child { font-size: 10px; }
+}
