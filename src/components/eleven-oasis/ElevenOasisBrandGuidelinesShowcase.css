@@ -1,0 +1,34 @@
+/* Strategy 05 only. The parent media size and right-hand column are never changed. */
+.eleven-brand-showcase { position: relative; display: grid; grid-template-rows: minmax(0, 1fr) 32px; gap: 8px; height: 100%; min-width: 0; }
+.eleven-brand-stage { position: relative; display: block; width: 100%; height: 100%; min-height: 0; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: #f8f8f8; color: #252525; cursor: zoom-in; }
+.eleven-brand-artboard { display: block; width: 100%; height: 100%; overflow: hidden; }
+.eleven-brand-scene { opacity: 0; visibility: hidden; }
+.eleven-brand-scene.eleven-brand-first { opacity: 1; visibility: visible; }
+.eleven-brand-artboard text { font-family: Arial, Helvetica, sans-serif; }
+.eleven-brand-kicker { font-size: 25px; font-weight: 400; letter-spacing: 3px; fill: #252525; }
+.eleven-brand-caption { font-size: 24px; font-weight: 400; fill: #252525; }
+.eleven-brand-type-label { font-size: 45px; font-weight: 400; fill: #252525; letter-spacing: 1px; }
+.eleven-brand-color-name { font-weight: 400; }
+.eleven-brand-color-value { font-size: 26px; letter-spacing: 1px; }
+.eleven-brand-color-role { font-size: 19px; }
+/* Paper shadows belong to page cards, never to the official logo itself. */
+.eleven-brand-paper { filter: drop-shadow(0 7px 12px #0000000c); }
+.eleven-brand-reader-hint { position: absolute; right: 10px; bottom: 8px; padding: 4px 6px; background: #fffffff0; color: #555; font: 400 10px/1.3 var(--sans); opacity: 0; transition: opacity 180ms ease; }
+.eleven-brand-stage:is(:hover, :focus-visible) .eleven-brand-reader-hint { opacity: 1; }
+.eleven-brand-controls { display: flex; justify-content: center; align-items: center; gap: 8px; min-width: 0; }
+.eleven-brand-toggle, .eleven-brand-open { display: grid; place-items: center; flex: none; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; color: #444; background: #f3f3f3; cursor: pointer; }
+.eleven-brand-toggle:disabled { cursor: default; color: #999; }
+.eleven-brand-open { text-decoration: none; }
+.eleven-brand-chapters { display: flex; align-items: center; gap: 2px; min-width: 0; }
+.eleven-brand-chapters button { display: flex; justify-content: center; align-items: center; gap: 5px; flex: none; min-width: 32px; min-height: 32px; padding: 0 6px; border: 0; background: transparent; color: #777; font: 400 9px/1.2 var(--sans); letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+.eleven-brand-chapters button[aria-current="true"] { color: #252525; box-shadow: inset 0 -1px #252525; }
+.eleven-brand-showcase :is(button, a):focus-visible { outline: 2px solid #333; outline-offset: 2px; }
+.eleven-brand-showcase > .lightbox { background: #fff; }
+.eleven-brand-showcase .lightbox-scroll { display: flex; background: #fff; overflow: hidden; }
+.eleven-brand-showcase .lightbox-scroll img { width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
+.eleven-brand-showcase .lightbox-footer button, .eleven-brand-showcase .lightbox-toolbar button { min-height: 44px; }
+.eleven-brand-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.eleven-brand-showcase[data-compact="true"] .eleven-brand-chapter-name { display: none; }
+.eleven-brand-showcase[data-compact="true"] .eleven-brand-chapters { gap: 3px; }
+.eleven-brand-showcase[data-compact="true"] .eleven-brand-controls { gap: 8px; }
+@media (prefers-reduced-motion: reduce) { .eleven-brand-reader-hint { transition: none; } }

@@ -1,0 +1,378 @@
+{
+  "source": "source-assets/0813 Eleven Oasis Guideline V1.pdf",
+  "sourceSha256": "a9dfe79cc0cab792bdc15d1b9c4523545ede5d58f8b203a6efa430328b16af52",
+  "physicalPages": 20,
+  "revision": "a9dfe79cc0ca",
+  "assets": {
+    "page1": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 1,
+      "sha256": "dcdc1d5cee486dd9f22d2d26ff3358d39313e6b408170a49fb6518db59dd32d5",
+      "kind": "page"
+    },
+    "page2": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-02.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 2,
+      "sha256": "1d7eee2eeaeabb5d76e837bbb7bcb9d313facbf8fddd61cc3ca655537a046b05",
+      "kind": "page"
+    },
+    "page3": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-03.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 3,
+      "sha256": "c8c9987cee0e895f895122fe66a6f937d88e49b5342813d2315b5e8c4096b780",
+      "kind": "page"
+    },
+    "page4": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-04.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 4,
+      "sha256": "f018232c06b9a27c7b637dfcc4f958fc5c5e8f4b4324d01e11d1a243e051009f",
+      "kind": "page"
+    },
+    "page5": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-05.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 5,
+      "sha256": "a79ace7211f2d5dfbbc90eabf2c4005c4d50389096424d13542f3544eda670f2",
+      "kind": "page"
+    },
+    "page6": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-06.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 6,
+      "sha256": "644766847af1b4a1f7f2a90a3ef4c2418663d03e2bbf8213ea94b83028065a06",
+      "kind": "page"
+    },
+    "page7": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-07.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 7,
+      "sha256": "216e88a0a9c952a05b2a35dea19e5c31cf09f5a9b1bd78b5306ec03290fcfd66",
+      "kind": "page"
+    },
+    "page8": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-08.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 8,
+      "sha256": "c82e144928e2605d0ca52cd29ba8b55a91402d00a6d69b2c2c1e5bc167622b94",
+      "kind": "page"
+    },
+    "page9": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-09.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 9,
+      "sha256": "9eacf642c7041d8008e124449f690b6cc9a208790bcc9492540ba4c9f36f649f",
+      "kind": "page"
+    },
+    "page10": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-10.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 10,
+      "sha256": "37b629123789ff4a1b41fa50d7aa06e4aeeef600c0bc6c8605efa836b93fa625",
+      "kind": "page"
+    },
+    "page11": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-11.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 11,
+      "sha256": "6c8476a3176ded6096e00732c43c31f8d44f9cee322cb449ac64991760891bd4",
+      "kind": "page"
+    },
+    "page12": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-12.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 12,
+      "sha256": "59cbdb4f08bc70c93d024ca48c598f8850c306b5628602c7f141a0babfc97e22",
+      "kind": "page"
+    },
+    "page13": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-13.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 13,
+      "sha256": "d63b931cd81193061b6bbcfd300a9b12ebfee08b11b52b8bab4f8bf7474ac0a5",
+      "kind": "page"
+    },
+    "page14": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-14.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 14,
+      "sha256": "61cf3002c0afbf9a553e485ede278ac1e546701de59f022321c69fcb46620b5b",
+      "kind": "page"
+    },
+    "page15": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-15.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 15,
+      "sha256": "0f908b55ad1bf85004430420531447be37fae92feabf4fd00799d35281be3cc3",
+      "kind": "page"
+    },
+    "page16": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-16.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 16,
+      "sha256": "049f52161e8b0776c8c8acfe23aa056e4293693ffe90c3cb628200983f896d8c",
+      "kind": "page"
+    },
+    "page17": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-17.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 17,
+      "sha256": "1beb5b13f483732c01169c484aa327c873953a3027020ce5acd32c75ce5ee264",
+      "kind": "page"
+    },
+    "page18": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-18.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 18,
+      "sha256": "cb16e55d8bf50ed140bd9ec2e567072584228a7d4a4210e1b76bf3a81bd6791b",
+      "kind": "page"
+    },
+    "page19": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-19.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 19,
+      "sha256": "1c590e7ea7c74f7de7255fabb6fd82be6f074bb4a3816dfc852713999d18da7a",
+      "kind": "page"
+    },
+    "page20": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/page-20.webp",
+      "width": 1600,
+      "height": 1200,
+      "page": 20,
+      "sha256": "0aef15f263050b39711c2ed43d2dc6cb4ad6c48e053f6f466c64098e075130b4",
+      "kind": "page"
+    },
+    "preview14": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-14.webp",
+      "width": 800,
+      "height": 600,
+      "page": 14,
+      "sha256": "9047d7d7168bd125f589662c58319760e9f25ad23bca32f9ceefeeaf7141d467",
+      "kind": "page-preview"
+    },
+    "preview15": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-15.webp",
+      "width": 800,
+      "height": 600,
+      "page": 15,
+      "sha256": "42b4173390be6c4019bf761e9ce9ea432e2c04ae5b3e5477064d96fa82e075d3",
+      "kind": "page-preview"
+    },
+    "preview16": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-16.webp",
+      "width": 800,
+      "height": 600,
+      "page": 16,
+      "sha256": "748f152dff83b4bf0c9e04805b83f752bde26f94f1b42c5c10884b89e42d121b",
+      "kind": "page-preview"
+    },
+    "preview17": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-17.webp",
+      "width": 800,
+      "height": 600,
+      "page": 17,
+      "sha256": "a05dace80abcb3acdd6d7c19501a230745ba55ea27a2384f756df988adb61d45",
+      "kind": "page-preview"
+    },
+    "preview18": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-18.webp",
+      "width": 800,
+      "height": 600,
+      "page": 18,
+      "sha256": "cba70e7abf0eae8336f89ccefee329abd8c87064f28172e3f322384b70dd231a",
+      "kind": "page-preview"
+    },
+    "logo": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/logo.svg",
+      "width": 410,
+      "height": 116,
+      "page": 20,
+      "sha256": "cd86511c9c4f7c1757cf36fda9fc7d014b39a9f4d9cd3af6db8c0a4fdbafea2e",
+      "kind": "vector-crop",
+      "clip": [
+        195,
+        222,
+        605,
+        338
+      ]
+    },
+    "alphabet": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/alphabet.svg",
+      "width": 248,
+      "height": 62,
+      "page": 11,
+      "sha256": "718795c1df06b619514936c1978ea018e874b93feeb1d9a854a7d50f4e9d7040",
+      "kind": "vector-crop",
+      "clip": [
+        384,
+        126,
+        632,
+        188
+      ]
+    },
+    "robotoBlack": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/robotoBlack.svg",
+      "width": 383,
+      "height": 116,
+      "page": 11,
+      "sha256": "c30f50c2a84253d005af8e04bed8380e57df6fab5922aa3c375d3614ab5c9daf",
+      "kind": "vector-crop",
+      "clip": [
+        382,
+        100,
+        765,
+        216
+      ]
+    },
+    "robotoRegular": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/robotoRegular.svg",
+      "width": 383,
+      "height": 112,
+      "page": 11,
+      "sha256": "5dbd6afd9db829aac1d7e6a2de532306a35782fbbae2dcf8519ef79166870340",
+      "kind": "vector-crop",
+      "clip": [
+        382,
+        231,
+        765,
+        343
+      ]
+    },
+    "impact": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/impact.svg",
+      "width": 383,
+      "height": 112,
+      "page": 12,
+      "sha256": "ec02febe87667c7bf3a2146045927ec00356f82f2158dd45e3a0d4c09fd25bcd",
+      "kind": "vector-crop",
+      "clip": [
+        382,
+        100,
+        765,
+        212
+      ]
+    },
+    "gillSans": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/gillSans.svg",
+      "width": 383,
+      "height": 111,
+      "page": 12,
+      "sha256": "cd87a0bdce43116b531a59f066ac9db893d37c0f15b951d0846f34702b4195eb",
+      "kind": "vector-crop",
+      "clip": [
+        382,
+        246,
+        765,
+        357
+      ]
+    },
+    "closingHeadline": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/closingHeadline.svg",
+      "width": 535,
+      "height": 131,
+      "page": 19,
+      "sha256": "7f2ad9a7525a6e7ae8884d64d93e3238e02dfed4112672202a21630384281158",
+      "kind": "vector-crop",
+      "clip": [
+        30,
+        88,
+        565,
+        219
+      ]
+    },
+    "closingLine": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/closingLine.svg",
+      "width": 245,
+      "height": 32,
+      "page": 19,
+      "sha256": "ed7ef82e2f2157c2f187a0441fcfff3ec0f3ae8b70801903f8cc5237acf85f50",
+      "kind": "vector-crop",
+      "clip": [
+        33,
+        370,
+        278,
+        402
+      ]
+    },
+    "desert": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/desert.webp",
+      "width": 1042,
+      "height": 648,
+      "page": 15,
+      "sha256": "f25f326dcdb8956a82269a86ea9cb6a31167e7afbc65bc493594fb0fdaf80525",
+      "kind": "embedded-photograph",
+      "xref": 97
+    },
+    "coast": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/coast.webp",
+      "width": 1500,
+      "height": 927,
+      "page": 15,
+      "sha256": "37a1fd4f28733b1d286783e988299c229e153787bc5e00a76b5bd6c582aaf5fb",
+      "kind": "embedded-photograph",
+      "xref": 103
+    },
+    "car": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/car.webp",
+      "width": 1536,
+      "height": 952,
+      "page": 15,
+      "sha256": "1cdbfcede6e5fe2ffc336ce8dab8f00ccfa43061b07e3428962f71b8d976ed92",
+      "kind": "embedded-photograph",
+      "xref": 98
+    },
+    "friends": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/friends.webp",
+      "width": 1047,
+      "height": 604,
+      "page": 15,
+      "sha256": "ae28bdf91b2cdd0dc13218311b7c9e66875a262f60f406fe4f2378d2204bca00",
+      "kind": "embedded-photograph",
+      "xref": 108
+    },
+    "model": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/model.webp",
+      "width": 686,
+      "height": 947,
+      "page": 17,
+      "sha256": "32dfd4370ff70483dd673ac1185c544b171e2042b98255d3bd8d4bbcf7962a5b",
+      "kind": "embedded-photograph",
+      "xref": 135
+    },
+    "community": {
+      "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/community.webp",
+      "width": 948,
+      "height": 668,
+      "page": 14,
+      "sha256": "0b90e54aeeabc90e89602106733bc4e7927373bf5ed6b9e2dd4aa5879e79d8d4",
+      "kind": "embedded-photograph",
+      "xref": 82
+    }
+  },
+  "document": {
+    "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/guideline.pdf",
+    "sha256": "a9dfe79cc0cab792bdc15d1b9c4523545ede5d58f8b203a6efa430328b16af52"
+  }
+}

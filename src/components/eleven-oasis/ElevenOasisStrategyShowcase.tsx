@@ -7,6 +7,7 @@ import { ImageGallery } from "@/components/ImageGallery";
 import { Strategy01PhoneVideo } from "./Strategy01PhoneVideo";
 import { PdpUxDecisionsCarousel } from "./PdpUxDecisionsCarousel";
 import { Strategy03CampaignShowcase } from "./Strategy03CampaignShowcase";
+import { ElevenOasisBrandGuidelinesShowcase } from "./ElevenOasisBrandGuidelinesShowcase";
 import "./ElevenOasisStrategyShowcase.css";
 
 export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
@@ -29,7 +30,7 @@ export function ElevenOasisStrategyShowcase({ brandingImages, brandingNotes }: {
           return (
             <div key={strategy.number} className={`eleven-strategy-panel ${index === 1 ? "eleven-strategy-pdp" : ""} ${index === 2 ? "eleven-strategy-campaign-panel" : images.length > 1 ? "eleven-strategy-branding" : ""}`}
               data-selected={selected === index} aria-hidden={selected !== index} inert={selected !== index}>
-              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : index === 1 && visited.includes(index) ? <PdpUxDecisionsCarousel active={selected === 1} /> : index === 2 && visited.includes(index) ? <Strategy03CampaignShowcase active={selected === 2} /> : visited.includes(index) && (images.length ? (
+              {index === 0 ? <Strategy01PhoneVideo active={selected === 0} artwork={images[0]} /> : index === 1 && visited.includes(index) ? <PdpUxDecisionsCarousel active={selected === 1} /> : index === 2 && visited.includes(index) ? <Strategy03CampaignShowcase active={selected === 2} /> : index === 4 && visited.includes(index) ? <ElevenOasisBrandGuidelinesShowcase active={selected === 4} /> : visited.includes(index) && (images.length ? (
                 <ImageGallery images={images} layout={images.length > 1 ? "grid" : "full"} />
               ) : (
                 <div className="eleven-strategy-unavailable">
