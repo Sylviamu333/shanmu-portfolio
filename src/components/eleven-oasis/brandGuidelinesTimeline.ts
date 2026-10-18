@@ -55,5 +55,5 @@ export function buildBrandGuidelinesTimeline(svg: SVGSVGElement, compact: boolea
     .to(scene("identity"), { autoAlpha: 1, duration: 1 }, 34)
     .to(scene("story"), { autoAlpha: 0, duration: .8 }, 34.1);
   if (Math.abs(master.duration() - BRAND_DURATION) > .001) throw new Error("Unexpected brand timeline duration");
-  return master;
+  return master.timeScale(2);
 }
