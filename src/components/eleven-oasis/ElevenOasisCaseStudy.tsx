@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { Project } from "@/data/projects";
-import { designOutcomes } from "@/data/eleven-oasis-case-study";
 import { ElevenOasisMacbookVideo } from "./ElevenOasisMacbookVideo";
 import { ElevenOasisMobileBrowsing } from "./ElevenOasisMobileBrowsing";
 import { ElevenOasisStrategyShowcase } from "./ElevenOasisStrategyShowcase";
 import { ElevenOasisResearch } from "./ElevenOasisResearch";
+import { ElevenOasisResults } from "./ElevenOasisResults";
 import { ElevenOasisSectionNavigation } from "./ElevenOasisSectionNavigation";
 import "./ElevenOasisCaseStudy.css";
 import "./ElevenOasisTypography.css";
@@ -64,26 +64,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
 
       <ElevenOasisResearch />
 
-      <section id="results" className="eleven-study-section eleven-main-section" aria-labelledby="eleven-results-title" tabIndex={-1}>
-        <header className="eleven-study-heading">
-          <p>04 / DESIGN DELIVERABLES</p>
-          <h2 id="eleven-results-title">RESULTS</h2>
-          <p className="eleven-section-headline">A more cohesive foundation for the Eleven Oasis shopping experience.</p>
-        </header>
-        <div className="eleven-outcomes">
-          {designOutcomes.map(outcome => (
-            <article key={outcome.number}>
-              <h3><span className="eleven-outcome-number">{outcome.number} / </span>{outcome.title}</h3>
-              <p>{outcome.body}</p>
-            </article>
-          ))}
-        </div>
-        <p className="eleven-outcomes-note">These outcomes describe design deliverables. Verified post-launch business performance data is not presented.</p>
-        <div className="eleven-reflection eleven-editorial-row">
-          <h3>REFLECTION</h3>
-          <p className="eleven-study-copy">This project reinforced the importance of connecting brand expression with practical shopping behavior. A successful DTC experience needs more than strong visuals—it needs clear pathways, useful product information, and consistent interactions that help customers move forward with confidence.</p>
-        </div>
-      </section>
+      <ElevenOasisResults />
       <nav className="eleven-case-pagination" aria-label="More projects">
         <Link href={`/work/${previous.slug}/`}>← Previous project</Link>
         <Link href={`/work/${next.slug}/`}>Next project →</Link>

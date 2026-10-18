@@ -1,0 +1,15 @@
+{
+  "src": "/projects/eleven-oasis/results/homepage-detail.webp",
+  "width": 1200,
+  "height": 1312,
+  "source": "source-assets/Eleven Oasis -Now-classic.png",
+  "sourceSha256": "8d2be79a6be338657e01c9cf13ad33adb343f631f05305c9c06c43fbe31af87d",
+  "crop": [
+    0,
+    0,
+    1921,
+    2100
+  ],
+  "sha256": "6ab6777d0862d6c4f84f721ac21393dd6a7e6abe12497422bb3c194c6d2d0863",
+  "alt": "Existing Eleven Oasis Classic homepage: collection navigation, seasonal shopping hero and purchase reassurance"
+}
