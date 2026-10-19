@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
+import { earlyBirdsSections } from "../src/components/early-birds-club/sections.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
 import { homepageUX } from "../src/data/eleven-oasis-case-study.ts";
 import { elevenStrategies, pdpUxSlides, trustSignalSlides } from "../src/data/eleven-oasis-strategy.ts";
@@ -174,6 +175,22 @@ if (process.argv.includes("--build")) {
       existsSync(resolve(root, "out/work", project.slug, "index.html")),
       `Missing exported route: ${project.slug}`,
     );
+  const earlyBirdsPage = readFileSync(resolve(root, "out/work/early-birds-club/index.html"), "utf8");
+  const earlyBirdsNav = earlyBirdsPage.match(/<nav[^>]*class="ebc-section-navigation"[\s\S]*?<\/nav>/)?.[0];
+  assert(earlyBirdsNav, "Missing Early Birds Club section navigation");
+  assert.equal((earlyBirdsNav.match(/<a /g) || []).length, 5, "EBC must have exactly five section links");
+  let lastEarlyBirdsSection = -1;
+  for (const section of earlyBirdsSections) {
+    assert(earlyBirdsNav.includes(`href="#${section.id}"`), `Missing EBC section link: ${section.id}`);
+    assert(earlyBirdsNav.includes(section.label), `Missing EBC section label: ${section.label}`);
+    const position = earlyBirdsPage.indexOf(`id="${section.id}"`);
+    assert(position > lastEarlyBirdsSection, `Missing or out-of-order EBC section: ${section.id}`);
+    lastEarlyBirdsSection = position;
+  }
+  for (const image of projects.find(project => project.slug === "early-birds-club").gallery)
+    assert(earlyBirdsPage.includes(`src="${image.src}"`), `Missing existing EBC artwork: ${image.src}`);
+  for (const photo of photographySeries[2].photos)
+    assert(earlyBirdsPage.includes(`src="${photo.src}"`), `Missing EBC lookbook photography: ${photo.src}`);
   const photographyPage = readFileSync(resolve(root, "out/work/visual-experiments/index.html"), "utf8");
   for (const series of photographySeries) {
     assert(photographyPage.includes(`id="${series.id}"`), `Missing photography series: ${series.id}`);

@@ -1,0 +1,57 @@
+.ebc-case-study {
+  --ebc-scroll-margin: 0px;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  width: calc(100% - 2 * var(--gutter));
+  max-width: 1700px;
+  margin-inline: auto;
+  align-items: start;
+}
+.ebc-section-navigation {
+  position: sticky;
+  top: calc(var(--portfolio-header-height) + 24px);
+  align-self: start;
+  display: grid;
+  padding-block: 26px;
+  font: 400 11px/1.5 var(--sans);
+  letter-spacing: .045em;
+  background: #fff;
+  z-index: 10;
+}
+.ebc-section-navigation a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted);
+  transition: color 200ms ease;
+}
+.ebc-section-navigation a:hover,
+.ebc-section-navigation a[aria-current="location"],
+.ebc-section-navigation a:focus-visible { color: var(--ink); }
+.ebc-section-navigation a:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.ebc-project-content { min-width: 0; }
+.ebc-chapter { padding: 52px 0 64px; border-top: 1px solid var(--folio-rule); }
+.ebc-chapter[id], .ebc-subsection[id] { scroll-margin-top: var(--ebc-scroll-margin); }
+.ebc-chapter h2 { margin: 0 0 32px; font: 400 28px/1.2 var(--sans); letter-spacing: -.025em; }
+.ebc-subsection + .ebc-subsection { margin-top: 44px; }
+.ebc-subsection h3 { margin: 0 0 24px; font: 400 22px/1.3 var(--sans); letter-spacing: -.02em; }
+.ebc-story-copy { max-width: 850px; font: 400 15px/1.8 var(--sans); }
+.ebc-story-copy p + p { margin-top: 18px; }
+.ebc-chapter .image-gallery { margin-top: 24px; }
+@media (max-width: 1100px) and (min-width: 701px) {
+  .ebc-case-study { grid-template-columns: 142px minmax(0, 1fr); gap: 24px; }
+  .ebc-section-navigation { font-size: 10px; letter-spacing: .025em; }
+}
+@media (max-width: 700px) {
+  .ebc-case-study { --ebc-scroll-margin: max(0px, calc(var(--portfolio-header-height) + 80px - 75px)); display: block; }
+  .ebc-section-navigation { top: var(--portfolio-header-height); display: flex; gap: 22px; padding: 8px 0; overflow-x: auto; overscroll-behavior-x: contain; border-block: 1px solid var(--folio-rule); scrollbar-width: thin; font-size: 10px; }
+  .ebc-section-navigation a { flex: none; white-space: nowrap; }
+  .ebc-chapter { padding-block: 36px 44px; }
+  .ebc-chapter h2 { font-size: 24px; margin-bottom: 26px; }
+  .ebc-subsection h3 { font-size: 20px; }
+  .ebc-story-copy { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ebc-section-navigation a { transition: none; }
+}

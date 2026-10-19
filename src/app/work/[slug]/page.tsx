@@ -7,6 +7,7 @@ import { RelatedProjects } from "@/components/RelatedProjects";
 import { PhotographyExperience } from "@/components/photography/PhotographyExperience";
 import { ProjectHero } from "@/components/ProjectHero";
 import { ElevenOasisCaseStudy } from "@/components/eleven-oasis/ElevenOasisCaseStudy";
+import { EarlyBirdsCaseStudy } from "@/components/early-birds-club/EarlyBirdsCaseStudy";
 import "./castle.css";
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -85,6 +86,7 @@ export default async function ProjectPage({
         </>}
       </section>
       {slug !== "eleven-oasis" && <>
+        {slug === "early-birds-club" ? <EarlyBirdsCaseStudy project={project} /> : <>
         <nav className="case-index" aria-label="Case study sections">
           {project.sections.map((section) => (
             <a key={section.id} href={`#${section.id}`}>
@@ -102,6 +104,7 @@ export default async function ProjectPage({
             />
           ))}
         </div>
+        </>}
         <ProjectNavigation next={next} previous={previous} />
         <RelatedProjects current={project} projects={orderedProjects} />
       </>}
