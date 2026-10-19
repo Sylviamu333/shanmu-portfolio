@@ -162,7 +162,12 @@ if (process.argv.includes("--build")) {
   for (const anchor of ["behavioral-analysis", "insight-to-action", "research-experiments", "research-outcomes", "research-takeaways"])
     assert(elevenPage.includes(`id="${anchor}"`), `Missing research module: ${anchor}`);
   assert(elevenPage.includes("DATA-DRIVEN DESIGN"), "Missing research section heading");
-  assert(!elevenPage.includes('class="results-panel"'), "Do not publish unverified conversion results");
+  const resultsStart = elevenPage.indexOf('id="results"');
+  const resultsSection = elevenPage.slice(resultsStart, elevenPage.indexOf("</section>", resultsStart));
+  for (const text of ["04 / RESULTS", "Design That Drives Results.", "5% → 25%", "5×", "≈200%", "Core CTA click-through rate", "CTA engagement vs. baseline", "Business GMV growth", "not independently verified", "not a separate outcome", "not attributed exclusively to the redesign"])
+    assert(resultsSection.includes(text), `Missing Results figure, label or provenance: ${text}`);
+  assert(!resultsSection.includes("<img"), "Keep research screenshots in Research & Validation");
+  assert(!resultsSection.includes("eo-results-row"), "Keep Results a single compact metrics panel");
   assert(!elevenPage.includes('class="missing-screenshot"'), "Do not publish empty after-screen placeholders");
   for (const project of projects)
     assert(

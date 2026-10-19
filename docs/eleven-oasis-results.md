@@ -1,116 +1,73 @@
-# Eleven Oasis — Editorial Results
+# Eleven Oasis — compact impact summary
 
-Only the final `#results` section is replaced. The existing Results anchor,
-case-study navigation and previous/next project links are retained. All rendered
-content before Results is unchanged, including Research & Validation, Strategy
-01–06 and the mobile shopping journey. Shared Navigation, Footer, other projects,
-the homepage and About are untouched.
+Only `04 / RESULTS` at `#results` is redesigned. It now contains one near-full-width
+electric-blue panel headed **Design That Drives Results.**, with three white
+metrics, restrained dividers and a low-contrast CSS dot texture.
 
-## Composition
+| Figure | Caption | Basis |
+| --- | --- | --- |
+| 5% → 25% | Core CTA click-through rate | Supplied by the project owner |
+| 5× | CTA engagement vs. baseline | 25% ÷ 5%; a derived restatement, not an independent outcome |
+| ≈200% | Business GMV growth | Supplied by the project owner |
 
-- A bold sans-serif **The Results** opening with `04 / RESULTS`.
-- An image-right behavioral-evidence composition, pale-gray exposure figures and
-  a thin dashed explanatory box.
-- An image-left A/B comparison, with Mobile, Desktop and Separate Test tabs.
-- A final design-outcome composition with existing homepage, mobile PDP and
-  brand guideline imagery, layered without introducing new artwork.
+These figures are not independently verified. The existing owner-reported notes
+in `src/data/projects.ts` document that the measurement period, traffic volume and
+testing method were not supplied. No period, revenue amount, significance,
+additional conversion rate or exclusive redesign attribution is added.
+A brief visible provenance note keeps these distinctions explicit.
 
-The canvas remains pure white. All styles are scoped beneath `.eo-results`.
-The two Osnova reference screenshots and generated concept mentioned in the
-brief were not available in the supplied attachments or repository. The written
-layout, typography and motion specification therefore guided implementation;
-no exact screenshot-to-screenshot fidelity is claimed.
+The blue2purple screenshot mentioned in the brief was not present in the
+available attachments or repository. The detailed written composition guided
+this implementation; exact screenshot fidelity is not claimed. No logo,
+navigation, promotional banner or proprietary artwork is copied.
 
-## Source integrity
+## Layout
 
-The existing fourteen-source research audit is reused. Exact filenames are
-`hotjar1.png`–`hotjar6.png`, `hotjar7.jpg`–`hotjar9.jpg`, `abtest1.png`,
-`abtest2.png`, and `abtest3.jpg`–`abtest5.jpg`. Original uploads and previously
-prepared evidence assets are not changed.
+Desktop and tablet widths above 760px use a single horizontal metric row, with
+more room for the longer CTA figure and thin vertical separators. Mobile uses
+three stacked metrics with horizontal separators. Typography uses the existing
+case-study Arial/Helvetica sans-serif and Georgia eyebrow language.
 
-The main Hotjar visual is the source-faithful `homeDesktopScroll.webp` excerpt
-from `hotjar3.png`. It visibly records **53.3%** at the Best Sellers boundary and
-**24.7%** at the deeper Shop the Look boundary. These are exposure observations,
-not conversion rates or an explanation of visitor intent. All nine original
-research boards are accessible in the Results source reader.
+The values render as semantic description-list text in the server component.
+They are visible immediately, with no count-ups, autoplay, hidden reveals or
+client-side animation controller. This also provides a static reduced-motion
+experience. The original Results anchor and shared navigation remain intact.
 
-The comparison uses the same verified data and relative-change calculation as
-the preceding Research & Validation section:
-
-| Experiment | Conversion | Add to cart | Third metric |
-| --- | --- | --- | --- |
-| Mobile Shop the Look / abtest5 | 5.82% → 7.24%, +24.4% | 18.4% → 19.0%, +3.3% | Product views 53.2% → 54.0%, +1.5% |
-| Desktop Shop the Look / abtest3 | 6.357% → 6.806%, +7.1% | 15.65% → 13.61%, −13.0% | Product views 35.70% → 35.60%, −0.3% |
-| Separate unnamed test / abtest1 | 8.051% → 10.088%, +25.3% | 19.49% → 21.49%, +10.3% | Average order value $69.56 → $73.15, +5.2% |
-
-`abtest4.jpg` supplies the mobile new/returning audience evidence.
-`abtest2.png` supplies the matching unnamed-test dashboard and reported ranges.
-All five A/B excerpts can be opened from the appropriate test view. The mobile
-dashboard's reported +24.53% conversion change uses more precise underlying rates;
-the UI explains why the displayed rounded rates calculate to +24.4%.
-
-Exact variant layouts are not supplied. The unnamed snapshot has no visible
-test name, device or date. No statistical significance, winning variant, tool
-forecast, long-term uplift or overall revenue growth is claimed. Desktop declines
-remain visible. Unrelated experiments are never combined.
-
-The collage uses the existing `Eleven Oasis -Now-classic.png`, the existing
-mobile PDP excerpt/full screenshot, and original brand guideline PDF page 10.
-`scripts/prepare-eleven-oasis-results.py` generates a single optimized homepage
-crop. Its source hash, crop coordinates, dimensions and output hash are recorded
-in `public/projects/eleven-oasis/results/manifest.json`. Original source pixels
-are preserved in the repository. Collage images represent design outcomes,
-not experimentally verified business performance.
-
-## Motion and interaction
-
-Existing GSAP supplies once-only, viewport-triggered reveals. Headings fade and
-move up 24px over 750ms on desktop; mobile uses 12px and 600ms. Images reveal at
-scale 1.03 and settle at 1. Metrics fade from opacity 0.18 to their intended
-pale-gray appearance. Dashed notes have a subtle 140ms delay. Each element and
-row responds to its own visibility, with no sticky obstruction or scroll hijack.
-
-All data values stay exact; no additional count-up is necessary. SSR leaves the
-content readable. Initial and runtime reduced-motion preferences disable/cancel
-the reveals, restoring static content. Scoped cleanup never touches other GSAP
-timelines. Tabs support arrows, Home/End and visible keyboard focus. The reused
-native dialog supports source-image panning, keyboard navigation, Escape/Close,
-body-scroll lock and focus restoration.
-
-## Files
-
-- `src/components/eleven-oasis/ElevenOasisCaseStudy.tsx` — Results integration only.
-- `src/components/eleven-oasis/ElevenOasisResults.tsx` — editorial composition,
-  original evidence, experiment selection and scoped animation/reader behavior.
-- `src/components/eleven-oasis/ElevenOasisResults.css` — scoped responsive styling.
-- `public/projects/eleven-oasis/results/` — one optimized image and provenance.
-- `scripts/prepare-eleven-oasis-results.py` — reproducible preview extraction.
-- This document — sources, limitations, implementation and validation.
+The former editorial compositions, duplicate Hotjar/A/B viewers, collage and
+Results-only GSAP reveal code are removed from this section. Research evidence
+continues to live in the unchanged Research & Validation section. All source
+assets and existing derived images remain in the repository, including the old
+Results preview and its preparation script.
 
 ## Validation
 
-Passed lint, TypeScript, production build, exported-content checks, the
-fourteen-source integrity check and all four existing research metric tests.
-The homepage extraction script reproduced the exact preview hash. Source,
-derived and exported image hashes match.
+- Lint, TypeScript, production build and exported-content checks.
+- Results checks assert the three exact values/captions, owner provenance,
+  derived-metric relationship and absence of inline research screenshots.
+- Responsive browser inspection checks number/caption bounds, row/stack order,
+  separators, readable contrast, the Results anchor and reduced motion.
+- Comparison of exported markup verifies the surrounding case-study content is
+  unchanged. Research source hashes and existing authentic metric tests remain
+  valid.
 
-Chromium checks passed for all three experiment views and all five A/B source
-links, the seventeen-image reader, keyboard tabs, native modal navigation,
-Escape/Close, body-scroll restoration and trigger-focus return. Real-time
-scroll samples confirmed intermediate heading opacity/translation and image
-scale values, their exact final states, independent row triggers and no replay.
-Enabling reduced motion during a reveal immediately restored static content;
-initial reduced motion and mobile touch controls also passed.
+Browser checks passed at 320, 375, 393, 430, 600, 760, 761, 768, 1000, 1024,
+1440 and 1920px. All three values remained within their columns/panel; captions
+followed the values, desktop vertical dividers changed to mobile horizontal
+separators, and there was no horizontal overflow. The Results anchor cleared
+the shared header and the existing active navigation indicator still worked.
+The static panel remained readable with reduced motion. No browser errors or
+failed local requests were recorded. Desktop, tablet and mobile screenshots
+were visually reviewed.
 
-At 320, 390, 600, 768, 800, 801, 950, 951, 1024, 1440 and 1920px, all experiment
-views remained free of horizontal overflow and overlapping statistics. Desktop
-alternation and mobile reading order were checked, with screenshots visually
-reviewed at desktop, tablet and mobile sizes. The Results anchor clears the
-shared header; the canvas is `#FFFFFF` and the existing footer stays `#FFF5FB`.
-No browser errors or failed local image requests were recorded.
+| Viewport | Previous section height | New panel height |
+| --- | ---: | ---: |
+| 1440px desktop | 3021px | 459px |
+| 1024px tablet/desktop | 2442px | 386px |
+| 768px tablet | 4506px | 357px |
+| 393px mobile | 3867px | 636px |
 
-Existing Strategy 01–06 browser regressions passed, including video playback,
-carousel timing, campaign synchronization, 2× branding playback and foundations
-pause/resume, keyboard/touch, visibility and reduced-motion behavior. A
-byte-for-byte comparison confirmed all rendered case-study content outside the
-Results replacement is unchanged.
+Exported markup for Problem (including Mobile Shopping Journey), Strategy,
+Research & Validation, case-study navigation, project pagination, shared Header
+and Footer was compared before/after and is identical. All source and derived
+assets remain unchanged. Only the Results component/styles and their checks and
+documentation were edited.
