@@ -87,6 +87,7 @@ export function ElevenOasisResearch() {
   const root = useRef<HTMLElement>(null);
   const request = useRef({ revision: 0 });
   const [active, setActive] = useState(0);
+  const [expanded, setExpanded] = useState(true);
   const [heatId, setHeatId] = useState(heatViews[0].id);
   const [insight, setInsight] = useState(0);
   const [device, setDevice] = useState<"mobile" | "desktop">("mobile");
@@ -109,7 +110,7 @@ export function ElevenOasisResearch() {
   useEffect(() => {
     const followHash = () => {
       const index = groups.findIndex(group => `#${group.id}` === location.hash);
-      if (index >= 0) { request.current.revision++; setActive(index); setStatus(""); }
+      if (index >= 0) { request.current.revision++; setActive(index); setExpanded(true); setStatus(""); }
     };
     followHash(); window.addEventListener("hashchange", followHash);
     return () => window.removeEventListener("hashchange", followHash);
@@ -133,6 +134,17 @@ export function ElevenOasisResearch() {
     }
     if (ticket !== request.current.revision) return;
     update(); setStatus("");
+  }
+
+  function toggleGroup(index: number) {
+    if (index === active) {
+      // Cancel pending selections without discarding this module's filters.
+      request.current.revision++;
+      setExpanded(value => !value);
+      setStatus("");
+      return;
+    }
+    void selectImage(currentAssets[index], () => { setActive(index); setExpanded(true); });
   }
 
   function explanation(index: number) {
@@ -206,10 +218,10 @@ export function ElevenOasisResearch() {
   return <section ref={root} id="decisions" className="eleven-main-section eo-research" aria-labelledby="eleven-decisions-title" tabIndex={-1} data-research-group={groups[active].id}>
     <header className="eo-research-intro"><div><ElevenOasisSectionHeading id="eleven-decisions-title" eyebrow="03 / RESEARCH & VALIDATION" title="DATA-DRIVEN DESIGN" /><p className="eo-research-subtitle">Turning behavioral insights into better shopping experiences.</p></div><div><p className="eo-research-intro-copy">By combining behavioral analysis, UX observations, and controlled experiments, I used evidence to identify friction points, guide design decisions, and evaluate opportunities to improve the shopping experience.</p><ol className="eo-research-process"><li>01 / OBSERVE <span>Behavioral insights</span></li><li>02 / OPTIMIZE <span>Design hypotheses</span></li><li>03 / VALIDATE <span>A/B testing</span></li></ol></div></header>
     <ImageGallery images={sources} onOpenChange={setReaderOpen} renderPreview={open => <>
-      <div className="eo-research-workspace">
+      <div className="eo-research-workspace" data-expanded={expanded}>
         <div className="eo-research-accordion">
-          {groups.map((group, index) => <div className="eo-research-item" key={group.id} data-expanded={active === index}>
-            <h3 id={group.id}><button type="button" className="eo-research-trigger" id={`eo-research-trigger-${index}`} aria-expanded={active === index} aria-disabled={active === index || undefined} aria-controls={`eo-research-copy-${index}`} onClick={() => { void selectImage(currentAssets[index], () => setActive(index)); }} onKeyDown={event => {
+          {groups.map((group, index) => <div className="eo-research-item" key={group.id} data-expanded={expanded && active === index}>
+            <h3 id={group.id}><button type="button" className="eo-research-trigger" id={`eo-research-trigger-${index}`} aria-expanded={expanded && active === index} aria-controls={`eo-research-copy-${index} eo-research-desktop-evidence`} onClick={() => toggleGroup(index)} onKeyDown={event => {
               let next: number | undefined;
               if (event.key === "ArrowDown") next = (index + 1) % groups.length;
               if (event.key === "ArrowUp") next = (index + groups.length - 1) % groups.length;
@@ -217,10 +229,10 @@ export function ElevenOasisResearch() {
               if (event.key === "End") next = groups.length - 1;
               if (next !== undefined) { event.preventDefault(); root.current?.querySelectorAll<HTMLButtonElement>(".eo-research-trigger")[next].focus(); }
             }}><span className="eo-research-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span>{group.title}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg></button></h3>
-            <div className="eo-research-copy-panel" id={`eo-research-copy-${index}`} role="region" aria-labelledby={`eo-research-trigger-${index}`} aria-hidden={active !== index} inert={active !== index}><div className="eo-research-clip"><div className="eo-research-copy"><p className="eo-research-panel-heading">{group.heading}</p>{explanation(index)}<div className="eo-research-mobile-visual">{evidence(index, "mobile", open)}</div></div></div></div>
+            <div className="eo-research-copy-panel" id={`eo-research-copy-${index}`} role="region" aria-labelledby={`eo-research-trigger-${index}`} aria-hidden={!expanded || active !== index} inert={!expanded || active !== index}><div className="eo-research-clip"><div className="eo-research-copy"><p className="eo-research-panel-heading">{group.heading}</p>{explanation(index)}<div className="eo-research-mobile-visual">{evidence(index, "mobile", open)}</div></div></div></div>
           </div>)}
         </div>
-        <div className="eo-research-desktop-visual" role="region" aria-labelledby={`eo-research-trigger-${active}`}>{groups.map((group, index) => <div key={group.id} className="eo-research-visual-layer" data-active={active === index} aria-hidden={active !== index} inert={active !== index}>{evidence(index, "desktop", open)}</div>)}</div>
+        <div id="eo-research-desktop-evidence" className="eo-research-desktop-panel" role="region" aria-labelledby={`eo-research-trigger-${active}`} aria-hidden={!expanded} inert={!expanded}><div className="eo-research-desktop-clip"><div className="eo-research-desktop-visual">{groups.map((group, index) => <div key={group.id} className="eo-research-visual-layer" data-active={active === index} aria-hidden={!expanded || active !== index} inert={!expanded || active !== index}>{evidence(index, "desktop", open)}</div>)}</div></div></div>
       </div>
       <p className="eo-research-sr" role="status">{status}</p>
       <article id="research-takeaways" className="eo-research-takeaway"><div><p className="eo-research-eyebrow">KEY TAKEAWAYS</p><h3>Designing with Evidence, Not Assumptions</h3></div><p>Behavioral analysis helped identify where shoppers focused their attention and where friction appeared. Experimentation added another layer of evidence, highlighting promising improvements as well as opportunities for continued iteration.</p></article>
