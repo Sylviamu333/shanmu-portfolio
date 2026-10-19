@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Arrow";
+import { ProjectHero } from "@/components/ProjectHero";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,7 +12,7 @@ import "./PhotographyExperience.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function PhotographyExperience({ projectNumber }: { projectNumber: number }) {
+export function PhotographyExperience({ projectNumber, projectTotal }: { projectNumber: number; projectTotal: number }) {
   const root = useRef<HTMLDivElement>(null);
   const [stills, setStills] = useState(false);
 
@@ -70,22 +71,13 @@ export function PhotographyExperience({ projectNumber }: { projectNumber: number
   return (
     <div ref={root} className="photo-experience" data-stills={stills}>
       <noscript><style>{`.photo-experience .photo-stills-toggle{display:none}.photo-experience .photo-series{height:auto}.photo-experience .photo-series-stage{position:relative;height:auto;overflow:visible;padding:50px 6vw}.photo-experience .photo-series-title{position:static;white-space:normal;font-size:12vw;margin:40px 0}.photo-experience .photo-series-label{position:static}.photo-experience .photo-frames{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.photo-experience .photo-frame{position:relative;left:auto;top:auto;width:100%;height:auto;transform:none!important}.photo-experience .photo-frame img{width:100%;height:auto}`}</style></noscript>
-      <section className="photo-detail-intro" aria-labelledby="photo-detail-title">
-        <div className="photo-detail-topline">
-          <Link href="/#work">← Back to Work</Link>
-          <span>{String(projectNumber).padStart(2, "0")} / Selected work</span>
-        </div>
-        <p className="eyebrow">Photography &amp; Art Direction</p>
-        <h1 id="photo-detail-title">Visual<br /><span>Experiments</span></h1>
-        <div className="photo-detail-summary">
-          <p>Three photography series.<br />Color, silhouette, and life in motion.</p>
-          <div>
-            <nav aria-label="Photography series">
-              {photographySeries.map(series => <a key={series.id} href={`#${series.id}`}>{series.number} — {series.title}</a>)}
-            </nav>
-            <button className="photo-stills-toggle" type="button" aria-pressed={stills} onClick={() => setStills(value => !value)}>{stills ? "Enable scroll motion" : "View as stills"}<Arrow diagonal /></button>
-          </div>
-        </div>
+      <section className="case-hero" aria-labelledby="photo-detail-title">
+        <ProjectHero index={projectNumber} total={projectTotal} headingId="photo-detail-title" title="Visual Experiments" category="Photography & Art Direction" description="Three photography series. Color, silhouette, and life in motion.">
+          <nav className="photo-hero-series" aria-label="Photography series">
+            {photographySeries.map(series => <a key={series.id} href={`#${series.id}`}>{series.number} — {series.title}</a>)}
+          </nav>
+          <button className="photo-stills-toggle" type="button" aria-pressed={stills} onClick={() => setStills(value => !value)}>{stills ? "Enable scroll motion" : "View as stills"}<Arrow diagonal /></button>
+        </ProjectHero>
       </section>
       {photographySeries.map(series => (
         <section id={series.id} key={series.id} className={`photo-series photo-tone-${series.tone}`} aria-labelledby={`${series.id}-heading`}>

@@ -21,7 +21,6 @@
 /* Level 02: chapter headings use ElevenOasisSectionHeading. */
 /* Level 03: exact Overview Focus value typography, not the larger subtitle. */
 .project-eleven-oasis :is(
-  .eleven-introduction-facts dd,
   .eleven-problem-statements h3,
   .eleven-mobile-journey h3,
   .eleven-strategy-description h3,
@@ -39,7 +38,6 @@
 }
 /* Level 04: Overview introduction's exact color and responsive lead style. */
 .project-eleven-oasis :is(
-  .eleven-introduction-body,
   .eleven-problem-headline,
   .eleven-section-headline,
   .eleven-decisions-introduction
@@ -68,7 +66,6 @@
 }
 /* Level 06: exact Overview dt values; retain each label's existing casing. */
 .project-eleven-oasis :is(
-  .eleven-introduction-facts dt,
   .eleven-journey-eyebrow,
   .eleven-subsection-label,
   .eleven-strategy-evidence-label,

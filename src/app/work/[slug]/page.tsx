@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, orderedProjects } from "@/data/projects";
 import { CaseStudySection, ProjectNavigation } from "@/components/CaseStudy";
-import { Arrow } from "@/components/Arrow";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { PhotographyExperience } from "@/components/photography/PhotographyExperience";
-import { ElevenOasisIntroduction } from "@/components/ElevenOasisIntroduction";
+import { ProjectHero } from "@/components/ProjectHero";
 import { ElevenOasisCaseStudy } from "@/components/eleven-oasis/ElevenOasisCaseStudy";
 import "./castle.css";
 export const dynamicParams = false;
@@ -44,8 +42,8 @@ export default async function ProjectPage({
   if (!project) notFound();
   if (slug === "visual-experiments") {
     return (
-      <main id="main" className="visual-photography-page">
-        <PhotographyExperience projectNumber={project.order} />
+      <main id="main" className="project-page visual-photography-page">
+        <PhotographyExperience projectNumber={project.order} projectTotal={orderedProjects.length} />
       </main>
     );
   }
@@ -58,53 +56,18 @@ export default async function ProjectPage({
   return (
     <main id="main" className={`project-page project-${slug}`}>
       <section className="case-hero">
-        <div className="case-topline">
-          <Link href="/#work">← Selected work</Link>
-          <span>
-            {String(project.order).padStart(2, "0")} /{" "}
-            {String(orderedProjects.length).padStart(2, "0")}
-          </span>
-        </div>
-        {slug === "eleven-oasis" ? (
-          <>
-            <ElevenOasisIntroduction project={project} />
-            <ElevenOasisCaseStudy project={project} previous={previous} next={next} />
-          </>
-        ) : (
-          <>
-            {project.overviewLabel && <p className="eyebrow">{project.overviewLabel}</p>}
-            <p className="eyebrow">
-              {project.category}
-              {project.year ? ` · ${project.year}` : ""}
-            </p>
-            <h1>
-              {project.title}
-              <span style={{ color: project.accent }}>.</span>
-            </h1>
-            <div className="case-intro">
-              <h2>{project.subtitle}</h2>
-              <p>{project.description}</p>
-            </div>
-            <dl className="project-facts">
-              {project.facts.map((fact) => (
-                <div key={fact.label}>
-                  <dt>{fact.label}</dt>
-                  <dd>{fact.value}</dd>
-                </div>
-              ))}
-            </dl>
-            {project.website && (
-              <a
-                className="text-link"
-                href={project.website}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit live website <Arrow diagonal />
-              </a>
-            )}
-          </>
-        )}
+        <ProjectHero
+          index={project.order}
+          total={orderedProjects.length}
+          title={slug === "eleven-oasis" ? project.title.toUpperCase() : <>{project.title}<span style={{ color: project.accent }}>.</span></>}
+          category={slug === "eleven-oasis" ? "UI/UX DESIGN / E-COMMERCE" : `${project.category}${project.year ? ` · ${project.year}` : ""}`}
+          description={project.description}
+          summary={project.subtitle}
+          facts={slug === "eleven-oasis" ? project.facts.map(fact => fact.label === "Role" ? { ...fact, value: "UI/UX DESIGNER" } : fact) : project.facts}
+          website={project.website}
+          overviewLabel={project.overviewLabel}
+        />
+        {slug === "eleven-oasis" && <ElevenOasisCaseStudy project={project} previous={previous} next={next} />}
         {slug !== "eleven-oasis" && <>
           <div className={`case-cover case-cover-${slug}`}>
             <Image

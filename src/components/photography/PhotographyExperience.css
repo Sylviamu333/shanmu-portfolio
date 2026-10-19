@@ -3,34 +3,8 @@
   color: #101010;
   font-family: Arial, Helvetica, sans-serif;
 }
-.photo-detail-intro { padding: 28px var(--gutter) 65px; }
-.photo-detail-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 65px;
-  font-size: 11px;
-}
-.photo-detail-intro > .eyebrow { color: #a45673; }
-.photo-detail-intro h1 {
-  font-size: clamp(64px, 12vw, 190px);
-  font-weight: 400;
-  line-height: .88;
-  letter-spacing: -.075em;
-  margin-block: 23px 45px;
-}
-.photo-detail-intro h1 > span { margin-left: 12vw; }
-.photo-detail-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 30px;
-  padding-top: 22px;
-  border-top: 1px solid #dcdcdc;
-}
-.photo-detail-summary > p { font-size: clamp(16px, 1.6vw, 23px); line-height: 1.4; }
-.photo-detail-summary nav { display: grid; gap: 11px; font-size: 10px; letter-spacing: .035em; }
-.photo-detail-summary nav a { min-height: 26px; display: flex; align-items: center; }
+.photo-hero-series { display: grid; gap: 11px; font-size: 14px; line-height: 1.5; }
+.photo-hero-series a { min-height: 26px; display: flex; align-items: center; }
 .photo-stills-toggle { font-size: 11px; margin-top: 22px; padding: 9px 0; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
 .photo-series { position: relative; height: 320svh; scroll-margin-top: 0; }
 .photo-series-stage {
@@ -119,11 +93,6 @@
 .photo-experience[data-stills="true"] .photo-frame:nth-child(3n+2) { margin-top: 70px; }
 .photo-experience[data-stills="true"] .photo-scroll-cue { display: none; }
 @media (max-width: 700px) {
-  .photo-detail-topline { margin-bottom: 45px; }
-  .photo-detail-intro { padding-bottom: 40px; }
-  .photo-detail-intro h1 { font-size: clamp(40px, 12.8vw, 90px); letter-spacing: -.07em; }
-  .photo-detail-intro h1 > span { margin-left: 0; }
-  .photo-detail-summary { align-items: start; flex-direction: column; gap: 25px; }
   .photo-series { height: 280svh; }
   .photo-series-label { top: calc(var(--portfolio-header-height) + 22px); font-size: 9px; flex-direction: column; gap: 6px; }
   .photo-series-title { bottom: 15%; font-size: 25vw; }
