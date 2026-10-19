@@ -9,6 +9,7 @@
 .eleven-phone-trigger[data-emphasis="dim"] { opacity: .25; }
 .eleven-phone-trigger[data-emphasis="match"] { box-shadow: 0 0 0 1px #aaa; }
 .eleven-phone-trigger img { display: block; width: 100%; height: auto; }
+.eleven-mobile-phone-carousel, .eleven-journey-mobile-caption { display: none; }
 .eleven-journey-stages button:focus-visible, .eleven-phone-trigger:focus-visible, .eleven-phone-dialog button:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
 .eleven-phone-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; height: 100dvh; max-height: none; margin: 0; padding: 20px; border: 0; background: transparent; color: #333; }
 .eleven-phone-dialog::backdrop { background: rgb(245 245 245 / .92); }
@@ -24,13 +25,32 @@
   .eleven-phone-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 4px; }
 }
 @media (max-width: 600px) {
-  .eleven-phone-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 4px; }
+  .eleven-phone-gallery, .eleven-journey-desktop-caption { display: none; }
+  .eleven-mobile-phone-carousel, .eleven-journey-mobile-caption { display: block; }
   .eleven-journey-stages { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; padding-bottom: 4px; }
   .eleven-journey-stages button { flex-shrink: 0; }
-  .eleven-journey-caption { min-height: 4.5em; }
+  .eleven-journey-caption { min-height: 3em; margin-bottom: 10px; }
+  .eleven-phone-carousel-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; }
+  .eleven-phone-page-arrow { display: flex; align-items: center; justify-content: center; width: 44px; min-height: 44px; padding: 0; color: #555; cursor: pointer; }
+  .eleven-phone-page-arrow svg { width: 20px; height: 20px; }
+  .eleven-phone-page-previous svg { transform: rotate(180deg); }
+  .eleven-phone-page-arrow:hover:not([aria-disabled="true"]) { color: #000; }
+  .eleven-phone-page-arrow[aria-disabled="true"] { opacity: .25; cursor: default; }
+  .eleven-phone-pair-viewport { min-width: 0; overflow: hidden; touch-action: pan-y pinch-zoom; }
+  .eleven-phone-pair-track { display: flex; transition: transform 300ms cubic-bezier(.22,1,.36,1); }
+  .eleven-phone-pair-slide { flex: 0 0 100%; min-width: 0; }
+  .eleven-phone-pair { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .eleven-phone-pair > li { flex: 0 0 calc((100% - 8px) / 2); min-width: 0; }
+  .eleven-phone-pagination { margin: 10px 0 0; color: #777; text-align: center; font: 400 10px/1.4 var(--sans); letter-spacing: .05em; }
+  .eleven-phone-page-arrow:focus-visible, .eleven-phone-pair-viewport:focus-visible { outline: 2px solid #111; outline-offset: -2px; }
+  .eleven-phone-pair-viewport:focus-visible { outline-offset: 3px; }
+  .eleven-phone-pair .eleven-phone-trigger { position: relative; }
+  .eleven-phone-pair .eleven-phone-trigger:focus-visible { outline: none; }
+  .eleven-phone-pair .eleven-phone-trigger:focus-visible::after { content: ""; position: absolute; inset: 0; border: 2px solid #111; pointer-events: none; }
+  .eleven-phone-carousel-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .eleven-phone-dialog { padding: 8px; }
   .eleven-phone-preview-panel { padding: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .eleven-phone-trigger, .eleven-journey-stages button { transition: none; }
+  .eleven-phone-trigger, .eleven-journey-stages button, .eleven-phone-pair-track { transition: none; }
 }
