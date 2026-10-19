@@ -187,8 +187,9 @@ if (process.argv.includes("--build")) {
     assert(position > lastEarlyBirdsSection, `Missing or out-of-order EBC section: ${section.id}`);
     lastEarlyBirdsSection = position;
   }
-  for (const image of projects.find(project => project.slug === "early-birds-club").gallery)
+  for (const image of projects.find(project => project.slug === "early-birds-club").gallery.filter(image => image.src !== "/projects/early-birds-club/cover.webp"))
     assert(earlyBirdsPage.includes(`src="${image.src}"`), `Missing existing EBC artwork: ${image.src}`);
+  assert(!earlyBirdsPage.includes('src="/projects/early-birds-club/cover.webp"'), "Keep both removed checkerboard occurrences off the EBC detail page");
   for (const photo of photographySeries[2].photos)
     assert(earlyBirdsPage.includes(`src="${photo.src}"`), `Missing EBC lookbook photography: ${photo.src}`);
   const photographyPage = readFileSync(resolve(root, "out/work/visual-experiments/index.html"), "utf8");

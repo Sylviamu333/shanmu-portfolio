@@ -69,7 +69,7 @@ export default async function ProjectPage({
           overviewLabel={project.overviewLabel}
         />
         {slug === "eleven-oasis" && <ElevenOasisCaseStudy project={project} previous={previous} next={next} />}
-        {slug !== "eleven-oasis" && <>
+        {slug !== "eleven-oasis" && slug !== "early-birds-club" && <>
           <div className={`case-cover case-cover-${slug}`}>
             <Image
               src={project.cover.src}

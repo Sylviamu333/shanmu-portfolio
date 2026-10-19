@@ -28,7 +28,7 @@ export function EarlyBirdsCaseStudy({ project }: { project: Project }) {
         <h3>{direction.title}</h3>
         <ImageGallery images={direction.images?.slice(0, 2) || []} layout="pair" />
       </div>)}</Chapter>
-      <Chapter index={2}><ImageGallery images={project.gallery.filter((_, index) => ![0, 1, 5, 6, 7, 11].includes(index))} layout="pair" /></Chapter>
+      <Chapter index={2}><ImageGallery images={project.gallery.filter((image, index) => ![0, 1, 5, 6, 7, 11].includes(index) && image.src !== "/projects/early-birds-club/cover.webp")} layout="pair" /></Chapter>
       <Chapter index={3}><ImageGallery images={photographySeries[2].photos} layout="pair" /></Chapter>
       <Chapter index={4}><ImageGallery images={[project.gallery[5], project.gallery[11]]} layout="pair" /></Chapter>
     </div>
