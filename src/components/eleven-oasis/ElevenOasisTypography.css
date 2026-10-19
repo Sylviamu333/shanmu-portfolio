@@ -6,9 +6,6 @@
   --eleven-type-ink: #242521;
   --eleven-type-muted: #72736b;
   --eleven-type-body-color: #555;
-  --eleven-type-section-size: 28px;
-  --eleven-type-section-line: 1.2;
-  --eleven-type-section-tracking: -.02em;
   --eleven-type-editorial-size: 14px;
   --eleven-type-editorial-line: 1.5;
   --eleven-type-lead-size: 16px;
@@ -21,13 +18,7 @@
   --eleven-type-control-line: 1.4;
 }
 /* Level 01: the project title's existing rules remain untouched. */
-/* Level 02: preserve the original PROBLEM heading, including responsive values.
-   The source strings are already uppercase; no copy transformation is added. */
-.project-eleven-oasis .eleven-study-heading > h2 {
-  font: 400 var(--eleven-type-section-size)/var(--eleven-type-section-line) var(--eleven-type-sans);
-  letter-spacing: var(--eleven-type-section-tracking);
-  text-transform: none;
-}
+/* Level 02: chapter headings use ElevenOasisSectionHeading. */
 /* Level 03: exact Overview Focus value typography, not the larger subtitle. */
 .project-eleven-oasis :is(
   .eleven-introduction-facts dd,
@@ -97,7 +88,6 @@
 }
 @media (max-width: 700px) {
   .project-eleven-oasis {
-    --eleven-type-section-size: 24px;
     --eleven-type-editorial-line: 1.45;
     --eleven-type-lead-size: 15px;
   }

@@ -1,0 +1,26 @@
+/* Results' existing family, weight, line height and tracking, at fixed sizes. */
+.project-eleven-oasis .eo-section-heading {
+  min-width: 0;
+  margin: 0 0 24px;
+  color: #242521;
+  text-align: left;
+}
+.project-eleven-oasis .eo-section-heading > .eo-section-eyebrow {
+  margin: 0;
+  color: #72736b;
+  font: 400 11px/1.5 Georgia, "Times New Roman", serif;
+  letter-spacing: .04em;
+}
+.project-eleven-oasis .eo-section-heading > .eo-section-title {
+  margin: 18px 0 0;
+  color: inherit;
+  font: 700 48px/1.12 Arial, Helvetica, sans-serif;
+  letter-spacing: -.035em;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .project-eleven-oasis .eo-section-heading > .eo-section-title {
+    font-size: 36px;
+  }
+}

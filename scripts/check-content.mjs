@@ -164,7 +164,7 @@ if (process.argv.includes("--build")) {
   assert(elevenPage.includes("DATA-DRIVEN DESIGN"), "Missing research section heading");
   const resultsStart = elevenPage.indexOf('id="results"');
   const resultsSection = elevenPage.slice(resultsStart, elevenPage.indexOf("</section>", resultsStart));
-  for (const text of ["04 / RESULTS", "Design That Drives Results.", "5% → 25%", "5×", "≈200%", "Core CTA click-through rate", "CTA engagement vs. baseline", "Business GMV growth", "not independently verified", "not a separate outcome", "not attributed exclusively to the redesign"])
+  for (const text of ["04 / RESULTS", "The Results", "5% → 25%", "5×", "≈200%", "Core CTA click-through rate", "CTA engagement vs. baseline", "Business GMV growth", "not independently verified", "not a separate outcome", "not attributed exclusively to the redesign"])
     assert(resultsSection.includes(text), `Missing Results figure, label or provenance: ${text}`);
   assert(!resultsSection.includes("<img"), "Keep research screenshots in Research & Validation");
   assert(!resultsSection.includes("eo-results-row"), "Keep Results a single compact metrics panel");

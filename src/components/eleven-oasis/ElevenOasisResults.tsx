@@ -1,3 +1,4 @@
+import { ElevenOasisSectionHeading } from "./ElevenOasisSectionHeading";
 import "./ElevenOasisResults.css";
 
 // Owner-provided outcomes. The second figure is derived from the first,
@@ -10,11 +11,8 @@ const metrics = [
 
 export function ElevenOasisResults() {
   return <section id="results" className="eleven-main-section eo-results" aria-labelledby="eleven-results-title" tabIndex={-1}>
+    <ElevenOasisSectionHeading id="eleven-results-title" eyebrow="04 / RESULTS" title="The Results" />
     <div className="eo-results-panel">
-      <header className="eo-results-heading">
-        <p className="eo-results-eyebrow">04 / RESULTS</p>
-        <h2 id="eleven-results-title">Design That Drives Results.</h2>
-      </header>
       <dl className="eo-results-metrics" aria-describedby="eo-results-provenance">
         {metrics.map(metric => <div className="eo-results-metric" key={metric.label}>
           <dt>{metric.label}</dt>

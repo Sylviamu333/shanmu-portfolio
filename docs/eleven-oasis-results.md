@@ -1,8 +1,9 @@
 # Eleven Oasis — compact impact summary
 
 Only `04 / RESULTS` at `#results` is redesigned. It now contains one near-full-width
-electric-blue panel headed **Design That Drives Results.**, with three white
-metrics, restrained dividers and a low-contrast CSS dot texture.
+electric-blue panel with three white metrics, restrained dividers and a
+low-contrast CSS dot texture. **The Results** now sits on white above the panel,
+using the shared Eleven Oasis chapter-heading component.
 
 | Figure | Caption | Basis |
 | --- | --- | --- |
@@ -71,3 +72,22 @@ Research & Validation, case-study navigation, project pagination, shared Header
 and Footer was compared before/after and is identical. All source and derived
 assets remain unchanged. Only the Results component/styles and their checks and
 documentation were edited.
+
+## Shared chapter headings
+
+All four main chapters reuse `ElevenOasisSectionHeading`: Arial/Helvetica,
+700 weight, 1.12 line height and −0.035em tracking, matching the previous Results
+heading treatment. Sizes are fixed at 48px, or 36px at the existing 700px project
+typography breakpoint. Eyebrows have an 18px gap above the heading; following
+content has a shared 24px gap. All headings are dark on white. The Results heading
+was moved above the blue panel with the project owner’s approval; the panel’s
+metrics, texture, spacing, dividers and provenance text are unchanged.
+
+The heading update was checked in Chromium at 1440, 1920, 375 and 393px, plus
+700/701px at the breakpoint. All four computed headings matched: 48px/53.76px
+font size/line height on desktop, 36px/40.32px on mobile, 700 weight, identical
+tracking and #242521 text. The research title wrapped without overflow. All four
+anchors remained visible below the shared header. Exported markup comparisons
+confirmed unchanged strategy, journey, research workspace, metrics, provenance,
+shared header/footer and project navigation. Lint, TypeScript, production build,
+exported-content checks and the four research data tests passed.

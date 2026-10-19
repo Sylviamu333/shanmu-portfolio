@@ -1,5 +1,7 @@
 "use client";
 
+import { ElevenOasisSectionHeading } from "./ElevenOasisSectionHeading";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ImageGallery } from "@/components/ImageGallery";
@@ -202,7 +204,7 @@ export function ElevenOasisResearch() {
   }
 
   return <section ref={root} id="decisions" className="eleven-main-section eo-research" aria-labelledby="eleven-decisions-title" tabIndex={-1} data-research-group={groups[active].id}>
-    <header className="eo-research-intro"><div><p className="eo-research-eyebrow">03 / RESEARCH &amp; VALIDATION</p><h2 id="eleven-decisions-title">DATA-DRIVEN DESIGN</h2><p className="eo-research-subtitle">Turning behavioral insights into better shopping experiences.</p></div><div><p className="eo-research-intro-copy">By combining behavioral analysis, UX observations, and controlled experiments, I used evidence to identify friction points, guide design decisions, and evaluate opportunities to improve the shopping experience.</p><ol className="eo-research-process"><li>01 / OBSERVE <span>Behavioral insights</span></li><li>02 / OPTIMIZE <span>Design hypotheses</span></li><li>03 / VALIDATE <span>A/B testing</span></li></ol></div></header>
+    <header className="eo-research-intro"><div><ElevenOasisSectionHeading id="eleven-decisions-title" eyebrow="03 / RESEARCH & VALIDATION" title="DATA-DRIVEN DESIGN" /><p className="eo-research-subtitle">Turning behavioral insights into better shopping experiences.</p></div><div><p className="eo-research-intro-copy">By combining behavioral analysis, UX observations, and controlled experiments, I used evidence to identify friction points, guide design decisions, and evaluate opportunities to improve the shopping experience.</p><ol className="eo-research-process"><li>01 / OBSERVE <span>Behavioral insights</span></li><li>02 / OPTIMIZE <span>Design hypotheses</span></li><li>03 / VALIDATE <span>A/B testing</span></li></ol></div></header>
     <ImageGallery images={sources} onOpenChange={setReaderOpen} renderPreview={open => <>
       <div className="eo-research-workspace">
         <div className="eo-research-accordion">

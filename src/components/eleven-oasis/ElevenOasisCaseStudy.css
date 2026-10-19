@@ -20,11 +20,11 @@
 .eleven-desktop-journey > .eleven-journey-eyebrow { margin-bottom: 16px; }
 .eleven-mobile-journey { margin-top: clamp(40px, 4vw, 64px); }
 .eleven-mobile-journey h3 { margin: 12px 0 24px; }
-.eleven-problem .eleven-problem-headline { max-width: 390px; margin-top: 24px; }
+.eleven-problem .eleven-problem-headline { max-width: 390px; margin-top: 0; }
 .eleven-problem-statements { margin: 28px 0 0; padding: 0; list-style: none; }
 .eleven-problem-statements li + li { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--folio-rule); }
 .eleven-problem-statements p { max-width: 640px; margin-top: 10px; }
-.eleven-study-heading > .eleven-section-headline { max-width: 680px; margin-top: 20px; }
+.eleven-study-heading > .eleven-section-headline { max-width: 680px; margin-top: 0; }
 .eleven-decisions-introduction { margin-bottom: 28px; }
 .eleven-decision-note { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 5vw; padding-block: 22px; border-top: 1px solid var(--folio-rule); }
 .eleven-decision-note > p { max-width: 760px; }
@@ -46,7 +46,6 @@
 .eleven-case-study .image-expand { position: static; align-self: flex-end; padding: 10px 0 0; background: transparent; box-shadow: none; }
 .eleven-study-section { margin-top: 48px; border-top: 1px solid var(--folio-rule); }
 .eleven-study-heading { padding: 28px 0; }
-.eleven-study-heading > h2:not(:only-child) { margin-top: 12px; }
 .eleven-editorial-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 5vw; padding-block: 32px; border-top: 1px solid var(--folio-rule); scroll-margin-top: 90px; }
 .eleven-editorial-row h3 { margin-top: 14px; max-width: 400px; }
 .eleven-study-copy { max-width: 760px; min-width: 0; }
@@ -69,7 +68,6 @@
 @media (max-width: 700px) {
   .eleven-problem { padding-top: 22px; }
   .eleven-outcomes { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-  .eleven-problem .eleven-problem-headline { margin-top: 20px; }
   .eleven-decision-note { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .eleven-problem-statements li + li { margin-top: 20px; padding-top: 20px; }
   .eleven-section-navigation { padding-block: 24px 12px; }

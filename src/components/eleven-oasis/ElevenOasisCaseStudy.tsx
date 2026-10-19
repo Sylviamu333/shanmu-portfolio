@@ -6,6 +6,7 @@ import { ElevenOasisStrategyShowcase } from "./ElevenOasisStrategyShowcase";
 import { ElevenOasisResearch } from "./ElevenOasisResearch";
 import { ElevenOasisResults } from "./ElevenOasisResults";
 import { ElevenOasisSectionNavigation } from "./ElevenOasisSectionNavigation";
+import { ElevenOasisSectionHeading } from "./ElevenOasisSectionHeading";
 import "./ElevenOasisCaseStudy.css";
 import "./ElevenOasisTypography.css";
 
@@ -21,8 +22,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
       <section id="problem" className="eleven-study-section eleven-main-section eleven-problem" aria-labelledby="eleven-problem-title" tabIndex={-1}>
         <div className="eleven-problem-content">
           <header className="eleven-study-heading">
-            <p>01 / THE CHALLENGE</p>
-            <h2 id="eleven-problem-title">PROBLEM</h2>
+            <ElevenOasisSectionHeading id="eleven-problem-title" eyebrow="01 / THE CHALLENGE" title="PROBLEM" />
             <p className="eleven-problem-headline">A recognizable brand, but a fragmented shopping experience.</p>
           </header>
           <ol className="eleven-problem-statements">
@@ -55,8 +55,7 @@ export function ElevenOasisCaseStudy({ project, previous, next }: {
 
       <section id="strategy" className="eleven-study-section eleven-main-section" aria-labelledby="eleven-strategy-title" tabIndex={-1}>
         <header className="eleven-study-heading">
-          <p>02 / STRATEGY</p>
-          <h2 id="eleven-strategy-title">STRATEGY</h2>
+          <ElevenOasisSectionHeading id="eleven-strategy-title" eyebrow="02 / STRATEGY" title="STRATEGY" />
           <p className="eleven-section-headline">Designing a clearer path from discovery to purchase.</p>
         </header>
         <ElevenOasisStrategyShowcase brandingImages={guidelines?.images || []} brandingNotes={guidelines?.body || []} />
