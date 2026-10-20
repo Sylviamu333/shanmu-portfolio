@@ -1,0 +1,786 @@
+[
+  {
+    "route": "/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 14,
+        "sum_of_unique_file_bytes": 13286398,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 17,
+        "sum_of_unique_file_bytes": 14042469,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/about/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 11,
+        "sum_of_unique_file_bytes": 3310208,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 11,
+        "sum_of_unique_file_bytes": 3310208,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/eleven-oasis/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 43,
+        "sum_of_unique_file_bytes": 8774311,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": false,
+            "top": 588.1875,
+            "bottom": 940.421875,
+            "readyState": 4
+          },
+          {
+            "src": null,
+            "currentSrc": "",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 2026.234375,
+            "bottom": 2412.0625,
+            "readyState": 0
+          }
+        ]
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 47,
+        "sum_of_unique_file_bytes": 14039129,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -3134.8125,
+            "bottom": -2782.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": -1696.765625,
+            "bottom": -1310.9375,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-1",
+        "unique_media_files_requested": 47,
+        "sum_of_unique_file_bytes": 14039129,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -990.8125,
+            "bottom": -638.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": false,
+            "top": 447.234375,
+            "bottom": 833.0625,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-2",
+        "unique_media_files_requested": 54,
+        "sum_of_unique_file_bytes": 16855717,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1601.8125,
+            "bottom": -1249.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": -163.765625,
+            "bottom": 222.0625,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-3",
+        "unique_media_files_requested": 56,
+        "sum_of_unique_file_bytes": 20539555,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -999.8125,
+            "bottom": -647.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 438.234375,
+            "bottom": 824.0625,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-4",
+        "unique_media_files_requested": 66,
+        "sum_of_unique_file_bytes": 24510641,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -990.8125,
+            "bottom": -638.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 447.234375,
+            "bottom": 833.0625,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-5",
+        "unique_media_files_requested": 90,
+        "sum_of_unique_file_bytes": 27378237,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -990.8125,
+            "bottom": -638.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 447.234375,
+            "bottom": 833.0625,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-6",
+        "unique_media_files_requested": 116,
+        "sum_of_unique_file_bytes": 31779331,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -990.8125,
+            "bottom": -638.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 447.234375,
+            "bottom": 833.0625,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "research-originals-requested",
+        "unique_media_files_requested": 125,
+        "sum_of_unique_file_bytes": 34006161,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -2913.8125,
+            "bottom": -2561.578125,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": -1475.765625,
+            "bottom": -1089.9375,
+            "readyState": 4
+          }
+        ]
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/early-birds-club/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 7,
+        "sum_of_unique_file_bytes": 557729,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 32,
+        "sum_of_unique_file_bytes": 3743866,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/team-wang-under-the-castle/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 4,
+        "sum_of_unique_file_bytes": 2578850,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 22,
+        "sum_of_unique_file_bytes": 7198786,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/covers/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 4,
+        "sum_of_unique_file_bytes": 209013,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 16,
+        "sum_of_unique_file_bytes": 1261766,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/visual-experiments/",
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "device_pixel_ratio": 1,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 7,
+        "sum_of_unique_file_bytes": 244073,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 22,
+        "sum_of_unique_file_bytes": 2243972,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 16,
+        "sum_of_unique_file_bytes": 13504116,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 17,
+        "sum_of_unique_file_bytes": 14042469,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/about/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 8,
+        "sum_of_unique_file_bytes": 2554137,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 11,
+        "sum_of_unique_file_bytes": 3310208,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/eleven-oasis/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 42,
+        "sum_of_unique_file_bytes": 7851632,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": false,
+            "top": 724.953125,
+            "bottom": 885.53125,
+            "readyState": 4
+          },
+          {
+            "src": null,
+            "currentSrc": "",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 2644.21875,
+            "bottom": 2806.921875,
+            "readyState": 0
+          }
+        ]
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 47,
+        "sum_of_unique_file_bytes": 14039129,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -4712.046875,
+            "bottom": -4551.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": -2792.78125,
+            "bottom": -2630.078125,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-1",
+        "unique_media_files_requested": 47,
+        "sum_of_unique_file_bytes": 14039129,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1247.046875,
+            "bottom": -1086.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": false,
+            "top": 672.21875,
+            "bottom": 834.921875,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-2",
+        "unique_media_files_requested": 54,
+        "sum_of_unique_file_bytes": 16855717,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1476.046875,
+            "bottom": -1315.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 443.21875,
+            "bottom": 605.921875,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-3",
+        "unique_media_files_requested": 56,
+        "sum_of_unique_file_bytes": 20539555,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1621.046875,
+            "bottom": -1460.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 507.25,
+            "bottom": 669.953125,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-4",
+        "unique_media_files_requested": 66,
+        "sum_of_unique_file_bytes": 24510641,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1873.046875,
+            "bottom": -1712.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 46.21875,
+            "bottom": 208.921875,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-5",
+        "unique_media_files_requested": 90,
+        "sum_of_unique_file_bytes": 27378237,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1281.046875,
+            "bottom": -1120.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 638.21875,
+            "bottom": 800.921875,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "strategy-6",
+        "unique_media_files_requested": 116,
+        "sum_of_unique_file_bytes": 31779331,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -1281.046875,
+            "bottom": -1120.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": 638.21875,
+            "bottom": 800.921875,
+            "readyState": 4
+          }
+        ]
+      },
+      {
+        "phase": "research-originals-requested",
+        "unique_media_files_requested": 125,
+        "sum_of_unique_file_bytes": 34006161,
+        "video_elements": [
+          {
+            "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+            "preload": "metadata",
+            "poster": "http://127.0.0.1:3000/projects/eleven-oasis/demo/poster-cc253649880f.webp",
+            "paused": true,
+            "top": -4826.046875,
+            "bottom": -4665.46875,
+            "readyState": 4
+          },
+          {
+            "src": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "currentSrc": "http://127.0.0.1:3000/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+            "preload": "metadata",
+            "poster": "",
+            "paused": true,
+            "top": -2906.78125,
+            "bottom": -2744.078125,
+            "readyState": 4
+          }
+        ]
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/early-birds-club/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 5,
+        "sum_of_unique_file_bytes": 258327,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 32,
+        "sum_of_unique_file_bytes": 3743866,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/team-wang-under-the-castle/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 4,
+        "sum_of_unique_file_bytes": 2578850,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 22,
+        "sum_of_unique_file_bytes": 7198786,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/covers/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 4,
+        "sum_of_unique_file_bytes": 209013,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 16,
+        "sum_of_unique_file_bytes": 1261766,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  },
+  {
+    "route": "/work/visual-experiments/",
+    "viewport_width": 393,
+    "viewport_height": 900,
+    "device_pixel_ratio": 3,
+    "snapshots": [
+      {
+        "phase": "initial-no-scroll-2s",
+        "unique_media_files_requested": 7,
+        "sum_of_unique_file_bytes": 244073,
+        "video_elements": []
+      },
+      {
+        "phase": "after-scroll",
+        "unique_media_files_requested": 22,
+        "sum_of_unique_file_bytes": 2243972,
+        "video_elements": []
+      }
+    ],
+    "javascript_errors": [],
+    "external_request_hosts": [],
+    "note": "File-byte sums are potential payload, not measured transferred bytes or mainland load time. Byte-range videos may not fully transfer; cache-disabled local profiles."
+  }
+]
