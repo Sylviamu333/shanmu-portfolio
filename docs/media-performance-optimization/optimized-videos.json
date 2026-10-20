@@ -1,0 +1,14 @@
+[
+  {
+    "original": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+    "optimized": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f-web-3652ad5e1af1.mp4",
+    "originalBytes": 5783712,
+    "optimizedBytes": 2548114
+  },
+  {
+    "original": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780.mp4",
+    "optimized": "/projects/eleven-oasis/strategy/mobile/homepage-mobile-d9ec1b3c8780-web-9ad80c7a57bb.mp4",
+    "originalBytes": 4508747,
+    "optimizedBytes": 2548605
+  }
+]

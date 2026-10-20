@@ -1,3 +1,4 @@
+import { mediaSource } from "@/lib/media/image-loader";
 import { brandAssets, brandColors, type BrandAssetKey } from "@/data/eleven-oasis-branding";
 
 function Artwork({ asset, x, y, width, height, piece, paper = false }: {
@@ -7,7 +8,7 @@ function Artwork({ asset, x, y, width, height, piece, paper = false }: {
   const h = height ?? width * image.height / image.width;
   return <g data-piece={piece}>
     {paper && <rect x={x} y={y} width={width} height={h} fill="#fff" className="eleven-brand-paper" />}
-    <image href={image.src} x={x} y={y} width={width} height={h} preserveAspectRatio="xMidYMid meet" />
+    <image href={mediaSource(image.src)} x={x} y={y} width={width} height={h} preserveAspectRatio="xMidYMid meet" />
   </g>;
 }
 

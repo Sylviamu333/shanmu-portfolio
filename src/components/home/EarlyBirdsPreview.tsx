@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { mediaSource } from "@/lib/media/image-loader";
 import { useEffect, useId, useRef, useState } from "react";
 import gsap from "gsap";
 import { useHomepageMotion } from "./HomeMotion";
@@ -84,14 +85,15 @@ export function EarlyBirdsPreview() {
       <div className="ebc-canvas">
         <Image
           className="ebc-cover"
-          src="/previews/early-birds-club/cover.png"
+          src={mediaSource("/previews/early-birds-club/cover.png")}
+          unoptimized
           alt="Early Birds Club editorial cover: EBC logo, golf cart photography, DROP 1 and 2024"
           width={1600}
           height={1200}
           sizes="(max-width: 900px) 78vw, 39vw"
           onLoad={() => setReady(true)}
         />
-        <div className="ebc-paper-repair" aria-hidden="true" />
+        <div className="ebc-paper-repair" aria-hidden="true" style={{ backgroundImage: `url("${mediaSource("/previews/early-birds-club/cover.png")}")` }} />
         <div className="ebc-labels" aria-hidden="true">
           {labels.map(({ text, x, y, width, origin }, index) => (
             <span
@@ -116,7 +118,7 @@ export function EarlyBirdsPreview() {
                     </feComponentTransfer>
                   </filter>
                 </defs>
-                <image href="/previews/early-birds-club/cover.png" width="1600" height="1200" filter={`url(#${id}-${index})`} />
+                <image href={mediaSource("/previews/early-birds-club/cover.png")} width="1600" height="1200" filter={`url(#${id}-${index})`} />
               </svg>
             </span>
           ))}

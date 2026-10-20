@@ -1,0 +1,102 @@
+original,original_bytes,native_served_asset,native_bytes,native_reduction_percent,variant_widths,lossless
+/about/about-life-01.jpg,1717297,/media-optimized/about-life-01-fc823892a6a5-1536-q94.webp,1146196,33.26,240 480 800 1200 1536,False
+/about/about-life-02.jpg,5507689,/media-optimized/about-life-02-19e73778025c-2304-q94.webp,1729016,68.61,240 480 800 1200 1600 2304,False
+/about/about-life-03.jpg,856372,/about/about-life-03.jpg,856372,0.0,240 480 800 1200 1600 1920,False
+/about/about-life-04.jpg,297092,/media-optimized/about-life-04-d80f947ceecd-1620-q94.webp,264624,10.93,240 480 800 1200 1600 1620,False
+/about/about-life-05.jpg,330738,/media-optimized/about-life-05-897ebbc690bb-1290-q94.webp,305002,7.78,240 480 800 1200 1290,False
+/about/about-portrait.jpg,161341,/media-optimized/about-portrait-e9be501f1124-1080-q94.webp,127842,20.76,240 480 800 1080,False
+/about/about-shan-illustration.png,1590662,/media-optimized/about-shan-illustration-9863161577ca-1467-q94.webp,185260,88.35,240 480 800 1200 1467,False
+/brand/s-monogram.png,167545,/media-optimized/s-monogram-a3ee80b460bb-1254-lossless.webp,69614,58.45,1254,True
+/footer-folder/glass-pocket.png,538353,/media-optimized/glass-pocket-eb4cc234fd66-1126-lossless.webp,372358,30.83,1126,True
+/footer-folder/portrait.png,103474,/media-optimized/portrait-392bcb29c041-225-q94.webp,20706,79.99,225,False
+/footer-folder/whiteboarding-ink.png,114244,/media-optimized/whiteboarding-ink-57279538f83d-312-q94.webp,15858,86.12,240 312,False
+/previews/early-birds-club/cover.png,1830742,/media-optimized/cover-48bfcf484d5d-1600-lossless.webp,1140894,37.68,1600,True
+/previews/eleven-oasis/cover-classic.png,780018,/media-optimized/cover-classic-b0ea93ebd23c-1600-q94.webp,128964,83.47,240 480 800 1200 1600,False
+/previews/eleven-oasis/website-classic.png,8304639,/media-optimized/website-classic-8d2be79a6be3-1921-q94.webp,1303096,84.31,240 480 800 1200 1600 1921,False
+/projects/early-birds-club/accessories-02.webp,162270,/projects/early-birds-club/accessories-02.webp,162270,0.0,240 480 800 1200 1600 1800,False
+/projects/early-birds-club/activations/dongjiang-merchandise.webp,144324,/projects/early-birds-club/activations/dongjiang-merchandise.webp,144324,0.0,240 480 575,False
+/projects/early-birds-club/activations/dongjiang-signage.webp,117556,/projects/early-birds-club/activations/dongjiang-signage.webp,117556,0.0,240 480 721,False
+/projects/early-birds-club/applications-01.webp,150382,/projects/early-birds-club/applications-01.webp,150382,0.0,240 480 800 1200 1600 1800,False
+/projects/early-birds-club/flag-02.webp,191936,/projects/early-birds-club/flag-02.webp,191936,0.0,240 480 800 1200 1600 1800,False
+/projects/early-birds-club/merchandise-01.webp,210194,/projects/early-birds-club/merchandise-01.webp,210194,0.0,240 480 800 1200 1600 1800,False
+/projects/eleven-oasis/brand-colors.webp,111992,/projects/eleven-oasis/brand-colors.webp,111992,0.0,240 480 800 1200 1600 1800,False
+/projects/eleven-oasis/branding/a9dfe79cc0ca/car.webp,396592,/projects/eleven-oasis/branding/a9dfe79cc0ca/car.webp,396592,0.0,240 480 800 1200 1536,False
+/projects/eleven-oasis/branding/a9dfe79cc0ca/coast.webp,334646,/projects/eleven-oasis/branding/a9dfe79cc0ca/coast.webp,334646,0.0,240 480 800 1200 1500,False
+/projects/eleven-oasis/branding/a9dfe79cc0ca/desert.webp,205188,/projects/eleven-oasis/branding/a9dfe79cc0ca/desert.webp,205188,0.0,240 480 800 1042,False
+/projects/eleven-oasis/branding/a9dfe79cc0ca/model.webp,128074,/projects/eleven-oasis/branding/a9dfe79cc0ca/model.webp,128074,0.0,240 480 686,False
+/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-14.webp,103660,/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-14.webp,103660,0.0,240 480 800,False
+/projects/eleven-oasis/foundations/campaign.webp,373754,/media-optimized/campaign-e0464e608fcb-1280-q94.webp,114734,69.3,240 480 800 1200 1280,False
+/projects/eleven-oasis/foundations/desktop.webp,2807182,/media-optimized/desktop-edc6d8c3ff53-2160-q94.webp,805454,71.31,240 480 800 1200 1600 2160,False
+/projects/eleven-oasis/foundations/mobile.webp,243344,/media-optimized/mobile-f5aa933bcc6e-679-q94.webp,87832,63.91,240 480 679,False
+/projects/eleven-oasis/foundations/pdp.webp,757064,/media-optimized/pdp-e1dc43b4aa72-1179-q94.webp,246298,67.47,240 480 800 1179,False
+/projects/eleven-oasis/foundations/productCard.webp,105738,/media-optimized/productCard-aeaf0dc35eda-395-q94.webp,44458,57.95,240 395,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-1.png,421188,/media-optimized/eleven-oasis-mobile-1-25b3082027d0-679-q94.webp,91002,78.39,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-10.png,233920,/media-optimized/eleven-oasis-mobile-10-513aad9ed4a1-679-q94.webp,65034,72.2,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-11.png,164859,/media-optimized/eleven-oasis-mobile-11-de789e706e4a-679-q94.webp,43076,73.87,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-2.png,481129,/media-optimized/eleven-oasis-mobile-2-23ba21303dd5-679-q94.webp,90676,81.15,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-3.png,644909,/media-optimized/eleven-oasis-mobile-3-1c4806f771fa-679-q94.webp,134414,79.16,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-4.png,672772,/media-optimized/eleven-oasis-mobile-4-6d3aaa6fea9a-679-q94.webp,132714,80.27,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-5.png,557354,/media-optimized/eleven-oasis-mobile-5-aa7aeff5a304-679-q94.webp,95232,82.91,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-6.png,239011,/media-optimized/eleven-oasis-mobile-6-344049ea93d1-679-q94.webp,49298,79.37,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-7.png,408960,/media-optimized/eleven-oasis-mobile-7-ddd3906f6c75-679-q94.webp,94824,76.81,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-8.png,366094,/media-optimized/eleven-oasis-mobile-8-8eb98e0e87c9-679-q94.webp,89518,75.55,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-9-a5a538692de4.png,187586,/media-optimized/eleven-oasis-mobile-9-a5a538692de4-a5a538692de4-679-q94.webp,53192,71.64,240 480 679,False
+/projects/eleven-oasis/mobile/eleven-oasis-mobile-9.png,187586,/media-optimized/eleven-oasis-mobile-9-a5a538692de4-679-q94.webp,53192,71.64,240 480 679,False
+/projects/eleven-oasis/research/abtest5.webp,140834,/media-optimized/abtest5-2bb195888e13-1520-q94.webp,59656,57.64,240 480 800 1200 1520,False
+/projects/eleven-oasis/research/homeDesktopClick.webp,191090,/media-optimized/homeDesktopClick-1f0e4b08a42a-686-q94.webp,55874,70.76,240 480 686,False
+/projects/eleven-oasis/research/homeDesktopScroll.webp,169884,/media-optimized/homeDesktopScroll-c2b988294165-686-q94.webp,41886,75.34,240 480 686,False
+/projects/eleven-oasis/research/hotjar1.webp,183924,/media-optimized/hotjar1-669981f32610-1439-q94.webp,99512,45.9,240 480 800 1200 1439,False
+/projects/eleven-oasis/research/hotjar2.webp,270088,/media-optimized/hotjar2-3019321975c0-1439-q94.webp,137338,49.15,240 480 800 1200 1439,False
+/projects/eleven-oasis/research/hotjar3.webp,601102,/media-optimized/hotjar3-0c3aab8efd67-1439-q94.webp,222198,63.03,240 480 800 1200 1439,False
+/projects/eleven-oasis/research/hotjar4.webp,350224,/media-optimized/hotjar4-584dcd994441-1439-q94.webp,184868,47.21,240 480 800 1200 1439,False
+/projects/eleven-oasis/research/hotjar5.webp,257796,/media-optimized/hotjar5-5f0564282bb9-1439-q94.webp,143022,44.52,240 480 800 1200 1439,False
+/projects/eleven-oasis/research/hotjar6.webp,167516,/media-optimized/hotjar6-a18590ae4e6e-914-q94.webp,101420,39.46,240 480 800 914,False
+/projects/eleven-oasis/research/hotjar7.webp,171900,/media-optimized/hotjar7-fd1c7f0b83df-914-q94.webp,114082,33.63,240 480 800 914,False
+/projects/eleven-oasis/research/hotjar8.webp,116354,/media-optimized/hotjar8-ccbac9b75321-914-q94.webp,73706,36.65,240 480 800 914,False
+/projects/eleven-oasis/research/hotjar9.webp,107926,/media-optimized/hotjar9-2fa207b76223-914-q94.webp,75374,30.16,240 480 800 914,False
+/projects/eleven-oasis/research/pdpLinenDesktop.webp,118278,/media-optimized/pdpLinenDesktop-4be891d93b2f-679-q94.webp,37730,68.1,240 480 679,False
+/projects/eleven-oasis/results/homepage-detail.webp,163566,/projects/eleven-oasis/results/homepage-detail.webp,163566,0.0,240 480 800 1200,False
+/projects/eleven-oasis/strategy/campaigns/editorial-full.webp,2273422,/media-optimized/editorial-full-0e2e3c755ad8-1280-q94.webp,783046,65.56,240 480 800 1200 1280,False
+/projects/eleven-oasis/strategy/campaigns/promotion-full.webp,1410416,/media-optimized/promotion-full-62f703fb5017-1280-q94.webp,481688,65.85,240 480 800 1200 1280,False
+/projects/eleven-oasis/strategy/homepage-ux-decisions.png,922679,/media-optimized/homepage-ux-decisions-e893944cf926-1600-q94.webp,193458,79.03,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/01-3595ab55daf3.webp,427678,/media-optimized/01-3595ab55daf3-a9a9b120df0b-1600-q94.webp,78352,81.68,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/02-7cb89a323108.webp,495500,/media-optimized/02-7cb89a323108-52e7cf40b0e3-1600-q94.webp,91266,81.58,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/03-8f36f4c5dba9.webp,309056,/media-optimized/03-8f36f4c5dba9-a73c5c36c84a-1600-q94.webp,55492,82.04,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/04-54c686a2fb33.webp,329222,/media-optimized/04-54c686a2fb33-eb51d5659bad-1600-q94.webp,61954,81.18,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/05-d74b08a46fa7.webp,502192,/media-optimized/05-d74b08a46fa7-5e4cfa6f1457-1600-q94.webp,107750,78.54,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/06-c328e481de65.webp,406318,/media-optimized/06-c328e481de65-68b547cf201f-1600-q94.webp,87926,78.36,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/pdp/07-0122ad0f6b82.webp,346622,/media-optimized/07-0122ad0f6b82-751f502d1027-1600-q94.webp,65706,81.04,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/customer-validation-01-75c4950c87b3.webp,235788,/media-optimized/customer-validation-01-75c4950c87b3-37dead763048-1600-q94.webp,76066,67.74,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/customer-validation-02-99265b4f031d.webp,297070,/media-optimized/customer-validation-02-99265b4f031d-8b6cc3eaeb1a-1600-q94.webp,80662,72.85,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/product-transparency-01-4528af70268d.webp,364054,/media-optimized/product-transparency-01-4528af70268d-912ab46ea2d3-1600-q94.webp,78750,78.37,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/product-transparency-02-a2926036c987.webp,338134,/media-optimized/product-transparency-02-a2926036c987-711552255e07-1600-q94.webp,71138,78.96,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/product-transparency-03-2a5548005a9b.webp,385274,/media-optimized/product-transparency-03-2a5548005a9b-c4a055da98c1-1600-q94.webp,71202,81.52,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/purchase-reassurance-01-451cf463a0c7.webp,240754,/media-optimized/purchase-reassurance-01-451cf463a0c7-b6c6a3cf40e5-1600-q94.webp,58196,75.83,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/purchase-reassurance-02-eecab6238122.webp,213950,/media-optimized/purchase-reassurance-02-eecab6238122-2c76171a8625-1600-q94.webp,46748,78.15,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/social-proof-01-757d93cdb792.webp,596842,/media-optimized/social-proof-01-757d93cdb792-022fa1513d04-1600-q94.webp,140462,76.47,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/social-proof-02-56f9b8775c9d.webp,777112,/media-optimized/social-proof-02-56f9b8775c9d-fa157e88cc26-1600-q94.webp,187276,75.9,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust/social-proof-03-3d9529ace100.webp,522108,/media-optimized/social-proof-03-3d9529ace100-61b207bf1e80-1600-q94.webp,111410,78.66,240 480 800 1200 1600,False
+/projects/eleven-oasis/strategy/trust-signals.webp,105258,/media-optimized/trust-signals-25903a1ce119-480-q94.webp,38388,63.53,240 480,False
+/projects/team-wang-under-the-castle/cover.png,2055304,/media-optimized/cover-6c3a9b8186b0-1600-q94.webp,326672,84.11,240 480 800 1200 1600,False
+/projects/team-wang-under-the-castle/event-crowd.png,284744,/media-optimized/event-crowd-3521326d9cea-498-q94.webp,48296,83.04,240 480 498,False
+/projects/team-wang-under-the-castle/event-display.png,283332,/media-optimized/event-display-35289d65484a-495-q94.webp,39356,86.11,240 480 495,False
+/projects/team-wang-under-the-castle/event-entrance.png,265642,/media-optimized/event-entrance-b9cf6456da70-370-q94.webp,39040,85.3,240 370,False
+/projects/team-wang-under-the-castle/event-interior.png,392183,/media-optimized/event-interior-d6ae7674d845-597-q94.webp,72994,81.39,240 480 597,False
+/projects/team-wang-under-the-castle/event-merchandise.png,338673,/media-optimized/event-merchandise-b4eeb6d91aa2-464-q94.webp,60706,82.08,240 464,False
+/projects/team-wang-under-the-castle/event-pumpkin.png,232369,/media-optimized/event-pumpkin-ccb62897a767-429-q94.webp,39790,82.88,240 429,False
+/projects/team-wang-under-the-castle/homepage-kv.png,362982,/media-optimized/homepage-kv-1e13b6466c80-1380-q94.webp,87060,76.02,240 480 800 1200 1380,False
+/projects/team-wang-under-the-castle/key-visual-castle.png,212293,/media-optimized/key-visual-castle-03cba25247e4-397-q94.webp,41332,80.53,240 397,False
+/projects/team-wang-under-the-castle/key-visual-entrance.png,143708,/media-optimized/key-visual-entrance-8049575c7045-268-q94.webp,21354,85.14,240 268,False
+/projects/team-wang-under-the-castle/merchandise.png,718964,/media-optimized/merchandise-decd1af5e52f-1594-q94.webp,109948,84.71,240 480 800 1200 1594,False
+/projects/team-wang-under-the-castle/packaging.png,218321,/media-optimized/packaging-c56488aae83a-1410-q94.webp,77324,64.58,240 480 800 1200 1410,False
+/projects/team-wang-under-the-castle/poster-vintage-01.png,218553,/media-optimized/poster-vintage-01-e8dd5048b1b1-298-q94.webp,25268,88.44,240 298,False
+/projects/team-wang-under-the-castle/poster-vintage-02.png,222639,/media-optimized/poster-vintage-02-e44a76f56757-298-q94.webp,25538,88.53,240 298,False
+/projects/team-wang-under-the-castle/poster-vintage-03.png,236077,/media-optimized/poster-vintage-03-03505420a1a7-298-q94.webp,28344,87.99,240 298,False
+/projects/team-wang-under-the-castle/poster-vintage-04.png,243431,/media-optimized/poster-vintage-04-688518d99e1f-298-q94.webp,29472,87.89,240 298,False
+/projects/visual-experiments/explorations.webp,210340,/projects/visual-experiments/explorations.webp,210340,0.0,240 480 800 1200 1600 1801,False
+/projects/visual-experiments/homepage-cover.webp,134992,/media-optimized/homepage-cover-efaf41a352e4-1606-q94.webp,129688,3.93,240 480 800 1200 1600 1606,False
+/projects/visual-experiments/photography/ebc-01.webp,169988,/projects/visual-experiments/photography/ebc-01.webp,169988,0.0,240 480 800 1200 1278,False
+/projects/visual-experiments/photography/ebc-02.webp,157202,/projects/visual-experiments/photography/ebc-02.webp,157202,0.0,240 480 800 1200 1280,False
+/projects/visual-experiments/photography/ebc-04.webp,165544,/projects/visual-experiments/photography/ebc-04.webp,165544,0.0,240 480 800 1200 1278,False
+/projects/visual-experiments/photography/ebc-05.webp,285518,/projects/visual-experiments/photography/ebc-05.webp,285518,0.0,240 480 800 1200 1280,False
+/projects/visual-experiments/photography/ebc-06.webp,222628,/projects/visual-experiments/photography/ebc-06.webp,222628,0.0,240 480 800 1200 1280,False

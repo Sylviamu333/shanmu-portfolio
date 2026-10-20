@@ -3,6 +3,7 @@
 import { ElevenOasisSectionHeading } from "./ElevenOasisSectionHeading";
 
 import Image from "next/image";
+import { decodeImage } from "@/lib/media/decode-image";
 import { useEffect, useRef, useState } from "react";
 import { ImageGallery } from "@/components/ImageGallery";
 import { Arrow } from "@/components/Arrow";
@@ -66,9 +67,7 @@ const decodedImages = new Map<string, Promise<void>>();
 function prepareImage(key: string) {
   let promise = decodedImages.get(key);
   if (!promise) {
-    const image = new window.Image();
-    image.src = assets[key].src;
-    promise = image.decode().catch(error => { decodedImages.delete(key); throw error; });
+    promise = decodeImage(assets[key], "(max-width:950px) 90vw, 58vw").catch(error => { decodedImages.delete(key); throw error; });
     decodedImages.set(key, promise);
   }
   return promise;
@@ -78,7 +77,7 @@ function prepareImage(key: string) {
 function EvidenceFrame({ entries, selected, source, open }: { entries: string[]; selected: string; source: string; open: OpenEvidence }) {
   return <button type="button" className="eo-research-image-frame" aria-haspopup="dialog" aria-label={`Expand ${assets[source].caption}`} onClick={event => open(sourceKeys.indexOf(source), event.currentTarget)}>
     {entries.map(key => <span key={key} className="eo-research-image-layer" data-active={selected === key} aria-hidden={selected !== key}>
-      <Image src={assets[key].src} width={assets[key].width} height={assets[key].height} alt={assets[key].alt} loading="eager" sizes="(max-width:950px) 90vw, 58vw" />
+      <Image src={assets[key].src} width={assets[key].width} height={assets[key].height} alt={assets[key].alt} loading="lazy" sizes="(max-width:950px) 90vw, 58vw" />
     </span>)}<span className="eo-research-enlarge">EXPAND EVIDENCE <Arrow diagonal /></span>
   </button>;
 }
@@ -104,8 +103,15 @@ export function ElevenOasisResearch() {
 
   useEffect(() => {
     const lifecycle = request.current;
-    previewAssets.forEach(key => { void prepareImage(key).catch(() => { /* Selection can retry a failed image. */ }); });
-    return () => { lifecycle.revision++; };
+    // Preserve decoded tab/filter states without downloading the entire evidence
+    // collection on initial page load, far above this section.
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      previewAssets.forEach(key => { void prepareImage(key).catch(() => { /* Selection can retry a failed image. */ }); });
+    }, { rootMargin: "400px" });
+    if (root.current) observer.observe(root.current);
+    return () => { observer.disconnect(); lifecycle.revision++; };
   }, []);
   useEffect(() => {
     const followHash = () => {
@@ -199,7 +205,7 @@ export function ElevenOasisResearch() {
         <div className="eo-research-experiment-context"><p>CONTROL GROUP → NEW GROUP 1</p>{device === "mobile" && <label><span className="eo-research-sr">Mobile audience</span><select aria-label="Mobile audience" value={audience} onChange={event => { const value = event.target.value; void selectImage(value === "all" ? experiment.source : "abtest4", () => setAudience(value)); }}><option value="all">All visitors</option><option value="0">New visitors</option><option value="1">Returning visitors</option></select></label>}</div>
         <MetricComparison metrics={cohort?.metrics || experiment.metrics} caption={`${experiment.name}${cohort ? `, ${cohort.name}` : ""}: Control Group versus New Group 1`} />
         <p className="eo-research-evidence-heading">{cohort ? `${cohort.name} / separate mobile cohort` : experiment.name} · ORIGINAL EVIDENCE</p>
-        <Image className="eo-research-test-title" src={assets[experiment.titleAsset].src} width={assets[experiment.titleAsset].width} height={assets[experiment.titleAsset].height} alt={assets[experiment.titleAsset].alt} loading="eager" sizes="(max-width:950px) 90vw, 58vw" />
+        <Image className="eo-research-test-title" src={assets[experiment.titleAsset].src} width={assets[experiment.titleAsset].width} height={assets[experiment.titleAsset].height} alt={assets[experiment.titleAsset].alt} loading="lazy" sizes="(max-width:950px) 90vw, 58vw" />
         <EvidenceFrame entries={experimentAssets} selected={experimentSource} source={experimentSource} open={open} />
         <p className="eo-research-caption">Source: {assets[experimentSource].source.split("/").at(-1)}<span>Relative change = (variant / control − 1) × 100</span></p>
       </div>

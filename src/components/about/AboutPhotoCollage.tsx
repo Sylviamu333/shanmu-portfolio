@@ -23,7 +23,10 @@ const slots = [
   { left: "0%", top: "79.5%", width: "46%", height: "20.5%" },
   { left: "49%", top: "79.5%", width: "51%", height: "20.5%" },
 ];
-const sizes = "(max-width: 1100px) calc(100vw - 100px), (max-width: 1920px) 44vw, 744px";
+function photoSizes(slot: number) {
+  const ratio = parseFloat(slots[slot].width) / 100;
+  return `(max-width: 1100px) calc((100vw - 100px) * ${ratio}), (max-width: 1920px) ${44 * ratio}vw, ${744 * ratio}px`;
+}
 
 export function AboutPhotoCollage() {
   const [order, setOrder] = useState(photos.map(photo => photo.id));
@@ -48,7 +51,6 @@ export function AboutPhotoCollage() {
       <div className="about-photo-stage">
         {photos.map(photo => {
           const slot = order.indexOf(photo.id);
-          const widths = [480, 960, Math.min(1600, photo.width)];
           return (
             <motion.button key={photo.id} type="button" initial={false}
               animate={slots[slot]}
@@ -59,8 +61,7 @@ export function AboutPhotoCollage() {
               aria-describedby={hint} onClick={() => feature(photo.id)}>
               <span className="about-photo-image">
                 <picture>
-                  <source type="image/webp" srcSet={widths.map(width => `/about/${photo.id}-${width}.webp ${width}w`).join(", ")} sizes={sizes} />
-                  <Image src={`/about/${photo.id}.jpg`} alt={photo.alt} width={photo.width} height={photo.height} sizes={sizes} loading="eager" style={{ objectPosition: photo.position }} />
+                  <Image src={`/about/${photo.id}.jpg`} alt={photo.alt} width={photo.width} height={photo.height} sizes={photoSizes(slot)} loading="lazy" style={{ objectPosition: photo.position }} />
                 </picture>
               </span>
             </motion.button>

@@ -68,9 +68,9 @@ export function Strategy06FoundationsShowcase({ active }: { active: boolean }) {
     observer.observe(element);
     document.addEventListener("visibilitychange", sync);
     preference.addEventListener("change", onPreference);
-    const images = [...new Set([...element.querySelectorAll("img")].map(image => image.getAttribute("src")!))];
+    const images = [...element.querySelectorAll("img")];
     void Promise.all([
-      ...images.map(src => { const image = new window.Image(); image.src = src; return image.decode(); }),
+      ...images.map(image => image.decode()),
       document.fonts.load('600 32px "EO Foundations Oswald"'),
       document.fonts.load('400 14px "EO Foundations Open Sans"'),
       document.fonts.load('600 24px "EO Foundations Open Sans"'),

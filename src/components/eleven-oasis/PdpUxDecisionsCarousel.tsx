@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { decodeImage } from "@/lib/media/decode-image";
 import { useEffect, useId, useRef, useState } from "react";
 import { ImageGallery } from "@/components/ImageGallery";
 import { pdpUxSlides } from "@/data/eleven-oasis-strategy";
@@ -94,9 +95,7 @@ function CarouselSession({ active, slides = pdpUxSlides, label = "PDP UX decisio
 
   useEffect(() => {
     let cancelled = false;
-    const image = new window.Image();
-    image.src = slides[selected].src;
-    void image.decode().then(() => {
+    void decodeImage(slides[selected], "(max-width:950px) 92vw, 65vw").then(() => {
       if (!cancelled) {
         setDisplayed(selected);
         setVisited(previous => previous.includes(selected) ? previous : [...previous, selected]);

@@ -1,0 +1,330 @@
+{
+  "baselineCommit": "0eb1670c6ecbb60d7984a5697f8bcc17baf82048",
+  "method": "Fresh Chromium contexts, localhost static export, cold cache via CDP, reduced motion, 900px viewport height, 2.5 seconds after load; then scroll 650px every 100ms and wait 1 second. Image/SVG/media HTTP bytes incl. response headers from CDP loadingFinished (partial dataReceived for pending). Videos intentionally excluded by reduced-motion. Not a mainland-China network test. Initial mobile offscreen lazy slides remain undownloaded until selected; separately verified all eleven.",
+  "profiles": [
+    {
+      "route": "/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 13289289,
+      "afterInitialBytes": 3491419,
+      "initialReductionPercent": 73.73,
+      "beforeScrollBytes": 14045882,
+      "afterScrollBytes": 3900580,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 3312572,
+      "afterInitialBytes": 1155716,
+      "initialReductionPercent": 65.11,
+      "beforeScrollBytes": 3312572,
+      "afterScrollBytes": 1155716,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/eleven-oasis/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 2998355,
+      "afterInitialBytes": 531808,
+      "initialReductionPercent": 82.26,
+      "beforeScrollBytes": 3754948,
+      "afterScrollBytes": 2136373,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/early-birds-club/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 559393,
+      "afterInitialBytes": 319603,
+      "initialReductionPercent": 42.87,
+      "beforeScrollBytes": 3749890,
+      "afterScrollBytes": 2600717,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/team-wang-under-the-castle/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 2579992,
+      "afterInitialBytes": 460114,
+      "initialReductionPercent": 82.17,
+      "beforeScrollBytes": 7203058,
+      "afterScrollBytes": 1676897,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/covers/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 210154,
+      "afterInitialBytes": 112223,
+      "initialReductionPercent": 46.6,
+      "beforeScrollBytes": 1264992,
+      "afterScrollBytes": 819629,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/visual-experiments/",
+      "width": 1440,
+      "dpr": 1,
+      "beforeInitialBytes": 245735,
+      "afterInitialBytes": 147804,
+      "initialReductionPercent": 39.85,
+      "beforeScrollBytes": 2248249,
+      "afterScrollBytes": 1582672,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 13507355,
+      "afterInitialBytes": 3919841,
+      "initialReductionPercent": 70.98,
+      "beforeScrollBytes": 14045882,
+      "afterScrollBytes": 4292374,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/about/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 2555979,
+      "afterInitialBytes": 1199798,
+      "initialReductionPercent": 53.06,
+      "beforeScrollBytes": 3312572,
+      "afterScrollBytes": 1609243,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/eleven-oasis/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 2075502,
+      "afterInitialBytes": 298258,
+      "initialReductionPercent": 85.63,
+      "beforeScrollBytes": 3754948,
+      "afterScrollBytes": 2033138,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/early-birds-club/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 259642,
+      "afterInitialBytes": 161711,
+      "initialReductionPercent": 37.72,
+      "beforeScrollBytes": 3749890,
+      "afterScrollBytes": 3370508,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/team-wang-under-the-castle/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 2579992,
+      "afterInitialBytes": 336924,
+      "initialReductionPercent": 86.94,
+      "beforeScrollBytes": 7203058,
+      "afterScrollBytes": 1501104,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/covers/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 210154,
+      "afterInitialBytes": 112223,
+      "initialReductionPercent": 46.6,
+      "beforeScrollBytes": 1264992,
+      "afterScrollBytes": 819913,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "route": "/work/visual-experiments/",
+      "width": 393,
+      "dpr": 3,
+      "beforeInitialBytes": 295345,
+      "afterInitialBytes": 197414,
+      "initialReductionPercent": 33.16,
+      "beforeScrollBytes": 2248249,
+      "afterScrollBytes": 1582956,
+      "pageHeightChangePx": 0,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "httpErrors": []
+    }
+  ],
+  "interactions": [
+    {
+      "width": 1440,
+      "video": {
+        "time": 1.415919,
+        "w": 760,
+        "h": 490,
+        "muted": true,
+        "loop": true,
+        "src": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f-web-3652ad5e1af1.mp4"
+      },
+      "strategies": [
+        {
+          "strategy": 2,
+          "playback": "paused",
+          "slides": 7
+        },
+        {
+          "strategy": 3,
+          "playing": true
+        },
+        {
+          "strategy": 4,
+          "playback": "paused",
+          "slides": 10
+        },
+        {
+          "strategy": 5,
+          "playback": "playing"
+        },
+        {
+          "strategy": 6,
+          "playback": "playing"
+        }
+      ],
+      "errors": [],
+      "bad": [],
+      "researchDeferred": true,
+      "strategyVideoDeferred": true
+    },
+    {
+      "width": 393,
+      "video": {
+        "time": 1.377638,
+        "w": 760,
+        "h": 490,
+        "muted": true,
+        "loop": true,
+        "src": "http://127.0.0.1:3000/projects/eleven-oasis/demo/homepage-demo-cc253649880f-web-3652ad5e1af1.mp4"
+      },
+      "strategies": [
+        {
+          "strategy": 2,
+          "playback": "paused",
+          "slides": 7
+        },
+        {
+          "strategy": 3,
+          "playing": true
+        },
+        {
+          "strategy": 4,
+          "playback": "paused",
+          "slides": 10
+        },
+        {
+          "strategy": 5,
+          "playback": "playing"
+        },
+        {
+          "strategy": 6,
+          "playback": "playing"
+        }
+      ],
+      "errors": [],
+      "bad": [],
+      "researchDeferred": true,
+      "strategyVideoDeferred": true
+    }
+  ],
+  "responsive": [
+    {
+      "width": 375,
+      "all11LazyScreensDecoded": true,
+      "pairs": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "reducedVideoDeferred": true
+    },
+    {
+      "width": 393,
+      "all11LazyScreensDecoded": true,
+      "pairs": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "reducedVideoDeferred": true
+    },
+    {
+      "width": 430,
+      "all11LazyScreensDecoded": true,
+      "pairs": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "reducedVideoDeferred": true
+    },
+    {
+      "width": 768,
+      "reducedVideoDeferred": true
+    },
+    {
+      "aboutFeatureSwap": true
+    }
+  ]
+}

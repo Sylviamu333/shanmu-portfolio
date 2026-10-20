@@ -1,5 +1,7 @@
 "use client";
 
+import { mediaSource } from "@/lib/media/image-loader";
+
 import { useEffect, useId, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import { useHomepageMotion } from "./HomeMotion";
@@ -47,7 +49,7 @@ export function CastlePreview() {
             <feGaussianBlur stdDeviation="11" />
           </filter>
         </defs>
-        <image href="/projects/team-wang-under-the-castle/homepage-kv.png" width="1380" height="650" />
+        <image href={mediaSource("/projects/team-wang-under-the-castle/homepage-kv.png")} width="1380" height="650" />
         <g className="castle-eye-flicker" fill="#39ff14">
           <use href={`#${id}-shape`} opacity=".42" filter={`url(#${id}-bloom)`} />
           <use href={`#${id}-shape`} opacity=".78" filter={`url(#${id}-halo)`} />

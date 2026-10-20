@@ -197,7 +197,7 @@ export function ElevenOasisMobileBrowsing() {
               {pages.map((pair, index) => <div key={pair[0].id} className="eleven-phone-pair-slide" role="group" aria-roledescription="slide" aria-label={`Page ${index + 1} of ${pages.length}`} aria-hidden={index !== page} inert={index !== page}>
                 <ul className="eleven-phone-pair" aria-label="Screenshots in reading order">{pair.map(phone => <li key={phone.id} data-phone={phone.id}>
                   <button type="button" className="eleven-phone-trigger" aria-label={`Enlarge screen ${String(phone.id).padStart(2, "0")}: ${phone.label}`} aria-haspopup="dialog" onClick={() => setSelected(journeyPhones.findIndex(item => item.id === phone.id))}>
-                    <Image src={phone.thumbnail} width={phone.thumbnailWidth} height={phone.thumbnailHeight} alt={phone.alt} loading="eager" sizes="(max-width:600px) calc((100vw - 140px) / 2), 1px" />
+                    <Image src={phone.thumbnail} width={phone.thumbnailWidth} height={phone.thumbnailHeight} alt={phone.alt} loading="lazy" sizes="(max-width:600px) calc((100vw - 140px) / 2), 1px" />
                   </button>
                 </li>)}</ul>
               </div>)}

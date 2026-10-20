@@ -10,6 +10,11 @@ import { homepageUX } from "../src/data/eleven-oasis-case-study.ts";
 import { elevenStrategies, pdpUxSlides, trustSignalSlides } from "../src/data/eleven-oasis-strategy.ts";
 import { journeyPhones } from "../src/data/eleven-oasis-mobile-journey.ts";
 const root = resolve(import.meta.dirname, "..");
+const mediaVariants = JSON.parse(readFileSync(resolve(root, "src/lib/media/images.json"), "utf8"));
+function hasRenderedImage(html, src) {
+  const urls = [src, ...(mediaVariants[src]?.variants.map(variant => variant.src) || [])];
+  return (html.match(/<img\b[^>]*>/g) || []).some(tag => urls.some(url => tag.includes(`src="${url}"`) || tag.includes(`${url} `)));
+}
 const photoManifest = JSON.parse(readFileSync(resolve(root, "public/projects/visual-experiments/photography/manifest.json"), "utf8"));
 for (const series of photographySeries) {
   for (const photo of series.photos) {
@@ -174,7 +179,7 @@ if (process.argv.includes("--build")) {
     assert(position > lastAnchor, `Missing or out-of-order Eleven Oasis section: ${anchor}`);
     lastAnchor = position;
   }
-  assert(elevenPage.includes(elevenStrategies[0].images[0].src), "Missing initial Homepage UX Decisions evidence");
+  assert(hasRenderedImage(elevenPage, elevenStrategies[0].images[0].src), "Missing initial Homepage UX Decisions evidence");
   assert(!elevenPage.includes(`src="${homepageUX.src}"`), "Do not duplicate the superseded Homepage UX overview");
   assert.equal(elevenStrategies.length, 6);
   for (const strategy of elevenStrategies) {
@@ -213,20 +218,20 @@ if (process.argv.includes("--build")) {
     lastEarlyBirdsSection = position;
   }
   for (const image of projects.find(project => project.slug === "early-birds-club").gallery.filter(image => image.src !== "/projects/early-birds-club/cover.webp"))
-    assert(earlyBirdsPage.includes(`src="${image.src}"`), `Missing existing EBC artwork: ${image.src}`);
+    assert(hasRenderedImage(earlyBirdsPage, image.src), `Missing existing EBC artwork: ${image.src}`);
   assert(!earlyBirdsPage.includes('src="/projects/early-birds-club/cover.webp"'), "Keep both removed checkerboard occurrences off the EBC detail page");
   for (const photo of photographySeries[2].photos)
-    assert(earlyBirdsPage.includes(`src="${photo.src}"`), `Missing EBC lookbook photography: ${photo.src}`);
+    assert(hasRenderedImage(earlyBirdsPage, photo.src), `Missing EBC lookbook photography: ${photo.src}`);
   for (const activation of earlyBirdsActivations) {
     assert(earlyBirdsPage.includes(`id="activation-${activation.id}"`), `Missing EBC activation: ${activation.id}`);
     for (const photo of activation.photos)
-      assert(earlyBirdsPage.includes(`src="${photo.src}"`), `Missing EBC activation photograph: ${photo.src}`);
+      assert(hasRenderedImage(earlyBirdsPage, photo.src), `Missing EBC activation photograph: ${photo.src}`);
   }
   const photographyPage = readFileSync(resolve(root, "out/work/visual-experiments/index.html"), "utf8");
   for (const series of photographySeries) {
     assert(photographyPage.includes(`id="${series.id}"`), `Missing photography series: ${series.id}`);
     for (const photo of series.photos)
-      assert(photographyPage.includes(photo.src), `Missing rendered photograph: ${photo.src}`);
+      assert(hasRenderedImage(photographyPage, photo.src), `Missing rendered photograph: ${photo.src}`);
   }
   const homepage = readFileSync(resolve(root, "out/index.html"), "utf8");
   for (const project of projects)

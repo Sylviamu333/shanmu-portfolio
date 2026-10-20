@@ -1,4 +1,6 @@
 "use client";
+
+import { mediaSource } from "@/lib/media/image-loader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
@@ -28,7 +30,7 @@ export function Header() {
           focusable="false"
         >
           {/* Crop only the transparent padding; retain the uploaded pixels. */}
-          <image href="/brand/s-monogram.png" width="1254" height="1254" />
+          <image href={mediaSource("/brand/s-monogram.png")} width="1254" height="1254" />
         </svg>
       </Link>
       <button

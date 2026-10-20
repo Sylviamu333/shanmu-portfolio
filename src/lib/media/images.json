@@ -1,0 +1,3377 @@
+{
+  "/about/about-life-01.jpg": {
+    "width": 1536,
+    "height": 2048,
+    "originalBytes": 1717297,
+    "sha256": "fc823892a6a50ff34dc750ee1de0186b7443aa54206452b4b0786fa6575a38e7",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-life-01-fc823892a6a5-240-q94.webp",
+        "width": 240,
+        "height": 320,
+        "bytes": 32162
+      },
+      {
+        "src": "/media-optimized/about-life-01-fc823892a6a5-480-q94.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 131490
+      },
+      {
+        "src": "/media-optimized/about-life-01-fc823892a6a5-800-q94.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 359600
+      },
+      {
+        "src": "/media-optimized/about-life-01-fc823892a6a5-1200-q94.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 751900
+      },
+      {
+        "src": "/media-optimized/about-life-01-fc823892a6a5-1536-q94.webp",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 1146196
+      }
+    ]
+  },
+  "/about/about-life-02.jpg": {
+    "width": 2304,
+    "height": 4096,
+    "originalBytes": 5507689,
+    "sha256": "19e73778025c651773f35f592dde0f4f341b4b50ae7092769d255b8c9e032db5",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-life-02-19e73778025c-240-q94.webp",
+        "width": 240,
+        "height": 427,
+        "bytes": 49360
+      },
+      {
+        "src": "/media-optimized/about-life-02-19e73778025c-480-q94.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 172540
+      },
+      {
+        "src": "/media-optimized/about-life-02-19e73778025c-800-q94.webp",
+        "width": 800,
+        "height": 1422,
+        "bytes": 406760
+      },
+      {
+        "src": "/media-optimized/about-life-02-19e73778025c-1200-q94.webp",
+        "width": 1200,
+        "height": 2133,
+        "bytes": 760248
+      },
+      {
+        "src": "/media-optimized/about-life-02-19e73778025c-1600-q94.webp",
+        "width": 1600,
+        "height": 2844,
+        "bytes": 1128926
+      },
+      {
+        "src": "/media-optimized/about-life-02-19e73778025c-2304-q94.webp",
+        "width": 2304,
+        "height": 4096,
+        "bytes": 1729016
+      }
+    ]
+  },
+  "/about/about-life-03.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 856372,
+    "sha256": "0941c025e3827f9f9ab4a6b73484644356933ab59c2b61d36942698f9e3f17b1",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-life-03-0941c025e382-240-q94.webp",
+        "width": 240,
+        "height": 135,
+        "bytes": 20430
+      },
+      {
+        "src": "/media-optimized/about-life-03-0941c025e382-480-q94.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 84116
+      },
+      {
+        "src": "/media-optimized/about-life-03-0941c025e382-800-q94.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 226870
+      },
+      {
+        "src": "/media-optimized/about-life-03-0941c025e382-1200-q94.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 474128
+      },
+      {
+        "src": "/media-optimized/about-life-03-0941c025e382-1600-q94.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 758974
+      },
+      {
+        "src": "/about/about-life-03.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 856372
+      }
+    ]
+  },
+  "/about/about-life-04.jpg": {
+    "width": 1620,
+    "height": 1080,
+    "originalBytes": 297092,
+    "sha256": "d80f947ceecd3d2e1c64cd35aa77104a727f4a92b2a4ccada291b8fd6c9f95ce",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-life-04-d80f947ceecd-240-q94.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 14898
+      },
+      {
+        "src": "/media-optimized/about-life-04-d80f947ceecd-480-q94.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 44432
+      },
+      {
+        "src": "/media-optimized/about-life-04-d80f947ceecd-800-q94.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 98388
+      },
+      {
+        "src": "/media-optimized/about-life-04-d80f947ceecd-1200-q94.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 182028
+      },
+      {
+        "src": "/media-optimized/about-life-04-d80f947ceecd-1600-q94.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 275522
+      },
+      {
+        "src": "/media-optimized/about-life-04-d80f947ceecd-1620-q94.webp",
+        "width": 1620,
+        "height": 1080,
+        "bytes": 264624
+      }
+    ]
+  },
+  "/about/about-life-05.jpg": {
+    "width": 1290,
+    "height": 834,
+    "originalBytes": 330738,
+    "sha256": "897ebbc690bb70493d2c797a3a814aa57bb4abbba69512b3a47d7af97eb52593",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-life-05-897ebbc690bb-240-q94.webp",
+        "width": 240,
+        "height": 155,
+        "bytes": 18616
+      },
+      {
+        "src": "/media-optimized/about-life-05-897ebbc690bb-480-q94.webp",
+        "width": 480,
+        "height": 310,
+        "bytes": 61828
+      },
+      {
+        "src": "/media-optimized/about-life-05-897ebbc690bb-800-q94.webp",
+        "width": 800,
+        "height": 517,
+        "bytes": 142356
+      },
+      {
+        "src": "/media-optimized/about-life-05-897ebbc690bb-1200-q94.webp",
+        "width": 1200,
+        "height": 776,
+        "bytes": 271016
+      },
+      {
+        "src": "/media-optimized/about-life-05-897ebbc690bb-1290-q94.webp",
+        "width": 1290,
+        "height": 834,
+        "bytes": 305002
+      }
+    ]
+  },
+  "/about/about-portrait.jpg": {
+    "width": 1080,
+    "height": 1440,
+    "originalBytes": 161341,
+    "sha256": "e9be501f11240d877b1bb6cf0fd47b1b4fe0455f413906a147777aba725470d4",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-portrait-e9be501f1124-240-q94.webp",
+        "width": 240,
+        "height": 320,
+        "bytes": 19040
+      },
+      {
+        "src": "/media-optimized/about-portrait-e9be501f1124-480-q94.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 48604
+      },
+      {
+        "src": "/media-optimized/about-portrait-e9be501f1124-800-q94.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 91094
+      },
+      {
+        "src": "/media-optimized/about-portrait-e9be501f1124-1080-q94.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 127842
+      }
+    ]
+  },
+  "/about/about-shan-illustration.png": {
+    "width": 1467,
+    "height": 1072,
+    "originalBytes": 1590662,
+    "sha256": "9863161577ca0bfb711ca4b77414d0e84f9f2c846eb4abe3bc5cdb204dacb69e",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/about-shan-illustration-9863161577ca-240-q94.webp",
+        "width": 240,
+        "height": 175,
+        "bytes": 12534
+      },
+      {
+        "src": "/media-optimized/about-shan-illustration-9863161577ca-480-q94.webp",
+        "width": 480,
+        "height": 351,
+        "bytes": 35646
+      },
+      {
+        "src": "/media-optimized/about-shan-illustration-9863161577ca-800-q94.webp",
+        "width": 800,
+        "height": 585,
+        "bytes": 78990
+      },
+      {
+        "src": "/media-optimized/about-shan-illustration-9863161577ca-1200-q94.webp",
+        "width": 1200,
+        "height": 877,
+        "bytes": 140388
+      },
+      {
+        "src": "/media-optimized/about-shan-illustration-9863161577ca-1467-q94.webp",
+        "width": 1467,
+        "height": 1072,
+        "bytes": 185260
+      }
+    ]
+  },
+  "/brand/s-monogram.png": {
+    "width": 1254,
+    "height": 1254,
+    "originalBytes": 167545,
+    "sha256": "a3ee80b460bb1428a5838f89ce2f92dccb41c63cab5044b327665d6c4325c490",
+    "lossless": true,
+    "variants": [
+      {
+        "src": "/media-optimized/s-monogram-a3ee80b460bb-1254-lossless.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 69614
+      }
+    ]
+  },
+  "/footer-folder/glass-pocket.png": {
+    "width": 1126,
+    "height": 389,
+    "originalBytes": 538353,
+    "sha256": "eb4cc234fd66c5aa68909841cdefe8362dfe82afdd21e784697eacaf8ca2a486",
+    "lossless": true,
+    "variants": [
+      {
+        "src": "/media-optimized/glass-pocket-eb4cc234fd66-1126-lossless.webp",
+        "width": 1126,
+        "height": 389,
+        "bytes": 372358
+      }
+    ]
+  },
+  "/footer-folder/portrait.png": {
+    "width": 225,
+    "height": 230,
+    "originalBytes": 103474,
+    "sha256": "392bcb29c04108d46299ed545e3ce5753648c958f7e12fa1b5f1a8002ef81213",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/portrait-392bcb29c041-225-q94.webp",
+        "width": 225,
+        "height": 230,
+        "bytes": 20706
+      }
+    ]
+  },
+  "/footer-folder/whiteboarding-ink.png": {
+    "width": 312,
+    "height": 260,
+    "originalBytes": 114244,
+    "sha256": "57279538f83d5fa1bd333ed4821890634aef6b58ecc91d0c481e1f5800c67475",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/whiteboarding-ink-57279538f83d-240-q94.webp",
+        "width": 240,
+        "height": 200,
+        "bytes": 15574
+      },
+      {
+        "src": "/media-optimized/whiteboarding-ink-57279538f83d-312-q94.webp",
+        "width": 312,
+        "height": 260,
+        "bytes": 15858
+      }
+    ]
+  },
+  "/previews/early-birds-club/cover.png": {
+    "width": 1600,
+    "height": 1200,
+    "originalBytes": 1830742,
+    "sha256": "48bfcf484d5d0ca53239af0c0ee13ce358eca6c6a6185f5b53b68c28f03cd8a3",
+    "lossless": true,
+    "variants": [
+      {
+        "src": "/media-optimized/cover-48bfcf484d5d-1600-lossless.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 1140894
+      }
+    ]
+  },
+  "/previews/eleven-oasis/cover-classic.png": {
+    "width": 1600,
+    "height": 1200,
+    "originalBytes": 780018,
+    "sha256": "b0ea93ebd23c29b6865d6c7c1649c135fe36182c750a8e53aad2bced4b453b40",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/cover-classic-b0ea93ebd23c-240-q94.webp",
+        "width": 240,
+        "height": 180,
+        "bytes": 11206
+      },
+      {
+        "src": "/media-optimized/cover-classic-b0ea93ebd23c-480-q94.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24426
+      },
+      {
+        "src": "/media-optimized/cover-classic-b0ea93ebd23c-800-q94.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 48722
+      },
+      {
+        "src": "/media-optimized/cover-classic-b0ea93ebd23c-1200-q94.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 87976
+      },
+      {
+        "src": "/media-optimized/cover-classic-b0ea93ebd23c-1600-q94.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 128964
+      }
+    ]
+  },
+  "/previews/eleven-oasis/website-classic.png": {
+    "width": 1921,
+    "height": 6767,
+    "originalBytes": 8304639,
+    "sha256": "8d2be79a6be338657e01c9cf13ad33adb343f631f05305c9c06c43fbe31af87d",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/website-classic-8d2be79a6be3-240-q94.webp",
+        "width": 240,
+        "height": 845,
+        "bytes": 55342
+      },
+      {
+        "src": "/media-optimized/website-classic-8d2be79a6be3-480-q94.webp",
+        "width": 480,
+        "height": 1691,
+        "bytes": 168424
+      },
+      {
+        "src": "/media-optimized/website-classic-8d2be79a6be3-800-q94.webp",
+        "width": 800,
+        "height": 2818,
+        "bytes": 384810
+      },
+      {
+        "src": "/media-optimized/website-classic-8d2be79a6be3-1200-q94.webp",
+        "width": 1200,
+        "height": 4227,
+        "bytes": 700406
+      },
+      {
+        "src": "/media-optimized/website-classic-8d2be79a6be3-1600-q94.webp",
+        "width": 1600,
+        "height": 5636,
+        "bytes": 1017638
+      },
+      {
+        "src": "/media-optimized/website-classic-8d2be79a6be3-1921-q94.webp",
+        "width": 1921,
+        "height": 6767,
+        "bytes": 1303096
+      }
+    ]
+  },
+  "/projects/early-birds-club/accessories-02.webp": {
+    "width": 1800,
+    "height": 957,
+    "originalBytes": 162270,
+    "sha256": "bb1397a20d515305db79a02a9420af3eee73d32faf4872d78a5fd2c3ac90857b",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/accessories-02-bb1397a20d51-240-q94.webp",
+        "width": 240,
+        "height": 128,
+        "bytes": 6314
+      },
+      {
+        "src": "/media-optimized/accessories-02-bb1397a20d51-480-q94.webp",
+        "width": 480,
+        "height": 255,
+        "bytes": 22408
+      },
+      {
+        "src": "/media-optimized/accessories-02-bb1397a20d51-800-q94.webp",
+        "width": 800,
+        "height": 425,
+        "bytes": 60570
+      },
+      {
+        "src": "/media-optimized/accessories-02-bb1397a20d51-1200-q94.webp",
+        "width": 1200,
+        "height": 638,
+        "bytes": 116428
+      },
+      {
+        "src": "/media-optimized/accessories-02-bb1397a20d51-1600-q94.webp",
+        "width": 1600,
+        "height": 851,
+        "bytes": 173118
+      },
+      {
+        "src": "/projects/early-birds-club/accessories-02.webp",
+        "width": 1800,
+        "height": 957,
+        "bytes": 162270
+      }
+    ]
+  },
+  "/projects/early-birds-club/activations/dongjiang-merchandise.webp": {
+    "width": 575,
+    "height": 970,
+    "originalBytes": 144324,
+    "sha256": "6d10979b8e2daa1d1f5edb83f9518414d366ee55361fd3566790ed356ff3eabf",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/dongjiang-merchandise-6d10979b8e2d-240-q94.webp",
+        "width": 240,
+        "height": 405,
+        "bytes": 34188
+      },
+      {
+        "src": "/media-optimized/dongjiang-merchandise-6d10979b8e2d-480-q94.webp",
+        "width": 480,
+        "height": 810,
+        "bytes": 122282
+      },
+      {
+        "src": "/projects/early-birds-club/activations/dongjiang-merchandise.webp",
+        "width": 575,
+        "height": 970,
+        "bytes": 144324
+      }
+    ]
+  },
+  "/projects/early-birds-club/activations/dongjiang-signage.webp": {
+    "width": 721,
+    "height": 961,
+    "originalBytes": 117556,
+    "sha256": "ef6d93b4a6cad4c88eb6812654c042861e225835e21201b8d0effb0f29c86674",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/dongjiang-signage-ef6d93b4a6ca-240-q94.webp",
+        "width": 240,
+        "height": 320,
+        "bytes": 28726
+      },
+      {
+        "src": "/media-optimized/dongjiang-signage-ef6d93b4a6ca-480-q94.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 76238
+      },
+      {
+        "src": "/projects/early-birds-club/activations/dongjiang-signage.webp",
+        "width": 721,
+        "height": 961,
+        "bytes": 117556
+      }
+    ]
+  },
+  "/projects/early-birds-club/applications-01.webp": {
+    "width": 1800,
+    "height": 957,
+    "originalBytes": 150382,
+    "sha256": "dd8ac79e9431cb8d977e08aa9745e686628de35e4a72063a41d536dad92c4359",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/applications-01-dd8ac79e9431-240-q94.webp",
+        "width": 240,
+        "height": 128,
+        "bytes": 9168
+      },
+      {
+        "src": "/media-optimized/applications-01-dd8ac79e9431-480-q94.webp",
+        "width": 480,
+        "height": 255,
+        "bytes": 28930
+      },
+      {
+        "src": "/media-optimized/applications-01-dd8ac79e9431-800-q94.webp",
+        "width": 800,
+        "height": 425,
+        "bytes": 63456
+      },
+      {
+        "src": "/media-optimized/applications-01-dd8ac79e9431-1200-q94.webp",
+        "width": 1200,
+        "height": 638,
+        "bytes": 104728
+      },
+      {
+        "src": "/media-optimized/applications-01-dd8ac79e9431-1600-q94.webp",
+        "width": 1600,
+        "height": 851,
+        "bytes": 151254
+      },
+      {
+        "src": "/projects/early-birds-club/applications-01.webp",
+        "width": 1800,
+        "height": 957,
+        "bytes": 150382
+      }
+    ]
+  },
+  "/projects/early-birds-club/flag-02.webp": {
+    "width": 1800,
+    "height": 957,
+    "originalBytes": 191936,
+    "sha256": "87093cfb3d14927b57230dc90c09ef78a5eedf305fc673305c65d95f0c7e65c4",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/flag-02-87093cfb3d14-240-q94.webp",
+        "width": 240,
+        "height": 128,
+        "bytes": 2944
+      },
+      {
+        "src": "/media-optimized/flag-02-87093cfb3d14-480-q94.webp",
+        "width": 480,
+        "height": 255,
+        "bytes": 11700
+      },
+      {
+        "src": "/media-optimized/flag-02-87093cfb3d14-800-q94.webp",
+        "width": 800,
+        "height": 425,
+        "bytes": 38828
+      },
+      {
+        "src": "/media-optimized/flag-02-87093cfb3d14-1200-q94.webp",
+        "width": 1200,
+        "height": 638,
+        "bytes": 96828
+      },
+      {
+        "src": "/media-optimized/flag-02-87093cfb3d14-1600-q94.webp",
+        "width": 1600,
+        "height": 851,
+        "bytes": 172080
+      },
+      {
+        "src": "/projects/early-birds-club/flag-02.webp",
+        "width": 1800,
+        "height": 957,
+        "bytes": 191936
+      }
+    ]
+  },
+  "/projects/early-birds-club/merchandise-01.webp": {
+    "width": 1800,
+    "height": 957,
+    "originalBytes": 210194,
+    "sha256": "efb8b9d3efd296eba9baafd7e908299d4a198884af61aec34ddb56859c60a4d1",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/merchandise-01-efb8b9d3efd2-240-q94.webp",
+        "width": 240,
+        "height": 128,
+        "bytes": 8158
+      },
+      {
+        "src": "/media-optimized/merchandise-01-efb8b9d3efd2-480-q94.webp",
+        "width": 480,
+        "height": 255,
+        "bytes": 27748
+      },
+      {
+        "src": "/media-optimized/merchandise-01-efb8b9d3efd2-800-q94.webp",
+        "width": 800,
+        "height": 425,
+        "bytes": 68336
+      },
+      {
+        "src": "/media-optimized/merchandise-01-efb8b9d3efd2-1200-q94.webp",
+        "width": 1200,
+        "height": 638,
+        "bytes": 132306
+      },
+      {
+        "src": "/media-optimized/merchandise-01-efb8b9d3efd2-1600-q94.webp",
+        "width": 1600,
+        "height": 851,
+        "bytes": 208308
+      },
+      {
+        "src": "/projects/early-birds-club/merchandise-01.webp",
+        "width": 1800,
+        "height": 957,
+        "bytes": 210194
+      }
+    ]
+  },
+  "/projects/eleven-oasis/brand-colors.webp": {
+    "width": 1800,
+    "height": 1350,
+    "originalBytes": 111992,
+    "sha256": "ec13c6de72eb0c27a036a6525ab8ccf20e28816e8cbb7a9a60ce2741ea748dd5",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/brand-colors-ec13c6de72eb-240-q94.webp",
+        "width": 240,
+        "height": 180,
+        "bytes": 7286
+      },
+      {
+        "src": "/media-optimized/brand-colors-ec13c6de72eb-480-q94.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 22482
+      },
+      {
+        "src": "/media-optimized/brand-colors-ec13c6de72eb-800-q94.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 45996
+      },
+      {
+        "src": "/media-optimized/brand-colors-ec13c6de72eb-1200-q94.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 76516
+      },
+      {
+        "src": "/media-optimized/brand-colors-ec13c6de72eb-1600-q94.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 111298
+      },
+      {
+        "src": "/projects/eleven-oasis/brand-colors.webp",
+        "width": 1800,
+        "height": 1350,
+        "bytes": 111992
+      }
+    ]
+  },
+  "/projects/eleven-oasis/branding/a9dfe79cc0ca/car.webp": {
+    "width": 1536,
+    "height": 952,
+    "originalBytes": 396592,
+    "sha256": "1cdbfcede6e5fe2ffc336ce8dab8f00ccfa43061b07e3428962f71b8d976ed92",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/car-1cdbfcede6e5-240-q94.webp",
+        "width": 240,
+        "height": 149,
+        "bytes": 12326
+      },
+      {
+        "src": "/media-optimized/car-1cdbfcede6e5-480-q94.webp",
+        "width": 480,
+        "height": 298,
+        "bytes": 47050
+      },
+      {
+        "src": "/media-optimized/car-1cdbfcede6e5-800-q94.webp",
+        "width": 800,
+        "height": 496,
+        "bytes": 135156
+      },
+      {
+        "src": "/media-optimized/car-1cdbfcede6e5-1200-q94.webp",
+        "width": 1200,
+        "height": 744,
+        "bytes": 298540
+      },
+      {
+        "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/car.webp",
+        "width": 1536,
+        "height": 952,
+        "bytes": 396592
+      }
+    ]
+  },
+  "/projects/eleven-oasis/branding/a9dfe79cc0ca/coast.webp": {
+    "width": 1500,
+    "height": 927,
+    "originalBytes": 334646,
+    "sha256": "37a1fd4f28733b1d286783e988299c229e153787bc5e00a76b5bd6c582aaf5fb",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/coast-37a1fd4f2873-240-q94.webp",
+        "width": 240,
+        "height": 148,
+        "bytes": 19332
+      },
+      {
+        "src": "/media-optimized/coast-37a1fd4f2873-480-q94.webp",
+        "width": 480,
+        "height": 297,
+        "bytes": 67272
+      },
+      {
+        "src": "/media-optimized/coast-37a1fd4f2873-800-q94.webp",
+        "width": 800,
+        "height": 494,
+        "bytes": 163724
+      },
+      {
+        "src": "/media-optimized/coast-37a1fd4f2873-1200-q94.webp",
+        "width": 1200,
+        "height": 742,
+        "bytes": 320680
+      },
+      {
+        "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/coast.webp",
+        "width": 1500,
+        "height": 927,
+        "bytes": 334646
+      }
+    ]
+  },
+  "/projects/eleven-oasis/branding/a9dfe79cc0ca/desert.webp": {
+    "width": 1042,
+    "height": 648,
+    "originalBytes": 205188,
+    "sha256": "f25f326dcdb8956a82269a86ea9cb6a31167e7afbc65bc493594fb0fdaf80525",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/desert-f25f326dcdb8-240-q94.webp",
+        "width": 240,
+        "height": 149,
+        "bytes": 14386
+      },
+      {
+        "src": "/media-optimized/desert-f25f326dcdb8-480-q94.webp",
+        "width": 480,
+        "height": 299,
+        "bytes": 52134
+      },
+      {
+        "src": "/media-optimized/desert-f25f326dcdb8-800-q94.webp",
+        "width": 800,
+        "height": 498,
+        "bytes": 140170
+      },
+      {
+        "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/desert.webp",
+        "width": 1042,
+        "height": 648,
+        "bytes": 205188
+      }
+    ]
+  },
+  "/projects/eleven-oasis/branding/a9dfe79cc0ca/model.webp": {
+    "width": 686,
+    "height": 947,
+    "originalBytes": 128074,
+    "sha256": "32dfd4370ff70483dd673ac1185c544b171e2042b98255d3bd8d4bbcf7962a5b",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/model-32dfd4370ff7-240-q94.webp",
+        "width": 240,
+        "height": 331,
+        "bytes": 25378
+      },
+      {
+        "src": "/media-optimized/model-32dfd4370ff7-480-q94.webp",
+        "width": 480,
+        "height": 663,
+        "bytes": 79532
+      },
+      {
+        "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/model.webp",
+        "width": 686,
+        "height": 947,
+        "bytes": 128074
+      }
+    ]
+  },
+  "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-14.webp": {
+    "width": 800,
+    "height": 600,
+    "originalBytes": 103660,
+    "sha256": "9047d7d7168bd125f589662c58319760e9f25ad23bca32f9ceefeeaf7141d467",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/preview-14-9047d7d7168b-240-q94.webp",
+        "width": 240,
+        "height": 180,
+        "bytes": 14946
+      },
+      {
+        "src": "/media-optimized/preview-14-9047d7d7168b-480-q94.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 48792
+      },
+      {
+        "src": "/projects/eleven-oasis/branding/a9dfe79cc0ca/preview-14.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 103660
+      }
+    ]
+  },
+  "/projects/eleven-oasis/foundations/campaign.webp": {
+    "width": 1280,
+    "height": 950,
+    "originalBytes": 373754,
+    "sha256": "e0464e608fcb5c1ea8e0c36995c5cae637e528211b54a1c013c9b3d6af11ef0a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/campaign-e0464e608fcb-240-q94.webp",
+        "width": 240,
+        "height": 178,
+        "bytes": 10002
+      },
+      {
+        "src": "/media-optimized/campaign-e0464e608fcb-480-q94.webp",
+        "width": 480,
+        "height": 356,
+        "bytes": 27880
+      },
+      {
+        "src": "/media-optimized/campaign-e0464e608fcb-800-q94.webp",
+        "width": 800,
+        "height": 594,
+        "bytes": 56888
+      },
+      {
+        "src": "/media-optimized/campaign-e0464e608fcb-1200-q94.webp",
+        "width": 1200,
+        "height": 891,
+        "bytes": 104224
+      },
+      {
+        "src": "/media-optimized/campaign-e0464e608fcb-1280-q94.webp",
+        "width": 1280,
+        "height": 950,
+        "bytes": 114734
+      }
+    ]
+  },
+  "/projects/eleven-oasis/foundations/desktop.webp": {
+    "width": 2160,
+    "height": 1490,
+    "originalBytes": 2807182,
+    "sha256": "edc6d8c3ff53be024ffdac92953214bf4f80c055a31c68d36afbdcc0172cc49d",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/desktop-edc6d8c3ff53-240-q94.webp",
+        "width": 240,
+        "height": 166,
+        "bytes": 17082
+      },
+      {
+        "src": "/media-optimized/desktop-edc6d8c3ff53-480-q94.webp",
+        "width": 480,
+        "height": 331,
+        "bytes": 54664
+      },
+      {
+        "src": "/media-optimized/desktop-edc6d8c3ff53-800-q94.webp",
+        "width": 800,
+        "height": 552,
+        "bytes": 131822
+      },
+      {
+        "src": "/media-optimized/desktop-edc6d8c3ff53-1200-q94.webp",
+        "width": 1200,
+        "height": 828,
+        "bytes": 280574
+      },
+      {
+        "src": "/media-optimized/desktop-edc6d8c3ff53-1600-q94.webp",
+        "width": 1600,
+        "height": 1104,
+        "bytes": 468222
+      },
+      {
+        "src": "/media-optimized/desktop-edc6d8c3ff53-2160-q94.webp",
+        "width": 2160,
+        "height": 1490,
+        "bytes": 805454
+      }
+    ]
+  },
+  "/projects/eleven-oasis/foundations/mobile.webp": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 243344,
+    "sha256": "f5aa933bcc6e1d33f6ea86fa89ecc1edb8efc30ecca2cb6619645bc46913091c",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/mobile-f5aa933bcc6e-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 19698
+      },
+      {
+        "src": "/media-optimized/mobile-f5aa933bcc6e-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 54568
+      },
+      {
+        "src": "/media-optimized/mobile-f5aa933bcc6e-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 87832
+      }
+    ]
+  },
+  "/projects/eleven-oasis/foundations/pdp.webp": {
+    "width": 1179,
+    "height": 1990,
+    "originalBytes": 757064,
+    "sha256": "e1dc43b4aa7267a1446705fed9dd2fef482380fda669fae7f36d1bedb39e2b60",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/pdp-e1dc43b4aa72-240-q94.webp",
+        "width": 240,
+        "height": 405,
+        "bytes": 20898
+      },
+      {
+        "src": "/media-optimized/pdp-e1dc43b4aa72-480-q94.webp",
+        "width": 480,
+        "height": 810,
+        "bytes": 63662
+      },
+      {
+        "src": "/media-optimized/pdp-e1dc43b4aa72-800-q94.webp",
+        "width": 800,
+        "height": 1350,
+        "bytes": 140946
+      },
+      {
+        "src": "/media-optimized/pdp-e1dc43b4aa72-1179-q94.webp",
+        "width": 1179,
+        "height": 1990,
+        "bytes": 246298
+      }
+    ]
+  },
+  "/projects/eleven-oasis/foundations/productCard.webp": {
+    "width": 395,
+    "height": 675,
+    "originalBytes": 105738,
+    "sha256": "aeaf0dc35edab281d94e6556f0d618fec9ed311a82b041ac6d711039ea810d1f",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/productCard-aeaf0dc35eda-240-q94.webp",
+        "width": 240,
+        "height": 410,
+        "bytes": 20056
+      },
+      {
+        "src": "/media-optimized/productCard-aeaf0dc35eda-395-q94.webp",
+        "width": 395,
+        "height": 675,
+        "bytes": 44458
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-1.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 421188,
+    "sha256": "25b3082027d07c59c7ab10a735217ca6f29630c21444d7a82f5df1256bccf9ca",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-1-25b3082027d0-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 22868
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-1-25b3082027d0-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 57738
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-1-25b3082027d0-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 91002
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-10.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 233920,
+    "sha256": "513aad9ed4a1b1975d22565b43d980fa0c3d7a5fab027bb87dd8c25bd131fa6a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-10-513aad9ed4a1-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 18436
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-10-513aad9ed4a1-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 42574
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-10-513aad9ed4a1-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 65034
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-11.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 164859,
+    "sha256": "de789e706e4a81ac91f970d3a65695f177495f583ba7d81c86557854b998c500",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-11-de789e706e4a-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 13988
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-11-de789e706e4a-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 29610
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-11-de789e706e4a-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 43076
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-2.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 481129,
+    "sha256": "23ba21303dd570194465775dbc8a21def741c75fd11cc42b54a3be06a3b67ecf",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-2-23ba21303dd5-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 24196
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-2-23ba21303dd5-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 58000
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-2-23ba21303dd5-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 90676
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-3.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 644909,
+    "sha256": "1c4806f771fa89ffc78a86a5a007bd6be4a12aaecac69e64794669072a2a99aa",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-3-1c4806f771fa-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 30936
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-3-1c4806f771fa-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 82452
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-3-1c4806f771fa-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 134414
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-4.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 672772,
+    "sha256": "6d3aaa6fea9a6bd9ab6198717f2734c3303684d43af886cc9bb65d1e186d11d3",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-4-6d3aaa6fea9a-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 29912
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-4-6d3aaa6fea9a-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 82274
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-4-6d3aaa6fea9a-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 132714
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-5.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 557354,
+    "sha256": "aa7aeff5a3043406d540ff8dcdaaca551715b53cacbe4ad056cdf71ceeb746db",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-5-aa7aeff5a304-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 24174
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-5-aa7aeff5a304-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 59712
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-5-aa7aeff5a304-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 95232
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-6.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 239011,
+    "sha256": "344049ea93d17a4a6f2c08039500c39466d0cdb27a853842bd4a608e9209ca42",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-6-344049ea93d1-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 15268
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-6-344049ea93d1-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 33304
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-6-344049ea93d1-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 49298
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-7.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 408960,
+    "sha256": "ddd3906f6c757ce07d2224c126781f868f184a5f17a62ea7d43f42a8bc342650",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-7-ddd3906f6c75-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 22932
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-7-ddd3906f6c75-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 57608
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-7-ddd3906f6c75-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 94824
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-8.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 366094,
+    "sha256": "8eb98e0e87c9f605e1bee219e3041f7c8c1ca73be6367f3ac1e7be260cb99142",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-8-8eb98e0e87c9-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 20498
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-8-8eb98e0e87c9-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 55044
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-8-8eb98e0e87c9-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 89518
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-9-a5a538692de4.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 187586,
+    "sha256": "a5a538692de4fa4293503c7f00020c861c3d4391bf047a1248843bc24f845b3a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-9-a5a538692de4-a5a538692de4-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 16058
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-9-a5a538692de4-a5a538692de4-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 34412
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-9-a5a538692de4-a5a538692de4-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 53192
+      }
+    ]
+  },
+  "/projects/eleven-oasis/mobile/eleven-oasis-mobile-9.png": {
+    "width": 679,
+    "height": 1148,
+    "originalBytes": 187586,
+    "sha256": "a5a538692de4fa4293503c7f00020c861c3d4391bf047a1248843bc24f845b3a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-9-a5a538692de4-240-q94.webp",
+        "width": 240,
+        "height": 406,
+        "bytes": 16058
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-9-a5a538692de4-480-q94.webp",
+        "width": 480,
+        "height": 812,
+        "bytes": 34412
+      },
+      {
+        "src": "/media-optimized/eleven-oasis-mobile-9-a5a538692de4-679-q94.webp",
+        "width": 679,
+        "height": 1148,
+        "bytes": 53192
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/abtest5.webp": {
+    "width": 1520,
+    "height": 635,
+    "originalBytes": 140834,
+    "sha256": "2bb195888e1347f4c862cfde92cee9e786ca6fe62efa3880e5b135a3a9d36d2e",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/abtest5-2bb195888e13-240-q94.webp",
+        "width": 240,
+        "height": 100,
+        "bytes": 4222
+      },
+      {
+        "src": "/media-optimized/abtest5-2bb195888e13-480-q94.webp",
+        "width": 480,
+        "height": 201,
+        "bytes": 10560
+      },
+      {
+        "src": "/media-optimized/abtest5-2bb195888e13-800-q94.webp",
+        "width": 800,
+        "height": 334,
+        "bytes": 21690
+      },
+      {
+        "src": "/media-optimized/abtest5-2bb195888e13-1200-q94.webp",
+        "width": 1200,
+        "height": 501,
+        "bytes": 40608
+      },
+      {
+        "src": "/media-optimized/abtest5-2bb195888e13-1520-q94.webp",
+        "width": 1520,
+        "height": 635,
+        "bytes": 59656
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/homeDesktopClick.webp": {
+    "width": 686,
+    "height": 350,
+    "originalBytes": 191090,
+    "sha256": "1f0e4b08a42a6d038b5915d31db247d8484d0a6ae63b15ea0cd9f67da0a27436",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/homeDesktopClick-1f0e4b08a42a-240-q94.webp",
+        "width": 240,
+        "height": 122,
+        "bytes": 11184
+      },
+      {
+        "src": "/media-optimized/homeDesktopClick-1f0e4b08a42a-480-q94.webp",
+        "width": 480,
+        "height": 245,
+        "bytes": 32988
+      },
+      {
+        "src": "/media-optimized/homeDesktopClick-1f0e4b08a42a-686-q94.webp",
+        "width": 686,
+        "height": 350,
+        "bytes": 55874
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/homeDesktopScroll.webp": {
+    "width": 686,
+    "height": 525,
+    "originalBytes": 169884,
+    "sha256": "c2b98829416515cb7d0ee144277583a5515f974fd61ebfb60225f7cbfcb17014",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/homeDesktopScroll-c2b988294165-240-q94.webp",
+        "width": 240,
+        "height": 184,
+        "bytes": 8196
+      },
+      {
+        "src": "/media-optimized/homeDesktopScroll-c2b988294165-480-q94.webp",
+        "width": 480,
+        "height": 367,
+        "bytes": 23168
+      },
+      {
+        "src": "/media-optimized/homeDesktopScroll-c2b988294165-686-q94.webp",
+        "width": 686,
+        "height": 525,
+        "bytes": 41886
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar1.webp": {
+    "width": 1439,
+    "height": 960,
+    "originalBytes": 183924,
+    "sha256": "669981f326100342eb090976c5f652e6a03c5a04cb6c7bc63a027ed1fa58fc7e",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar1-669981f32610-240-q94.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 6940
+      },
+      {
+        "src": "/media-optimized/hotjar1-669981f32610-480-q94.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 20330
+      },
+      {
+        "src": "/media-optimized/hotjar1-669981f32610-800-q94.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 44712
+      },
+      {
+        "src": "/media-optimized/hotjar1-669981f32610-1200-q94.webp",
+        "width": 1200,
+        "height": 801,
+        "bytes": 77414
+      },
+      {
+        "src": "/media-optimized/hotjar1-669981f32610-1439-q94.webp",
+        "width": 1439,
+        "height": 960,
+        "bytes": 99512
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar2.webp": {
+    "width": 1439,
+    "height": 960,
+    "originalBytes": 270088,
+    "sha256": "3019321975c0d32a6754725d7020f8bda2a0b225db00ed0dfa1bf77e996c173c",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar2-3019321975c0-240-q94.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 8440
+      },
+      {
+        "src": "/media-optimized/hotjar2-3019321975c0-480-q94.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 26264
+      },
+      {
+        "src": "/media-optimized/hotjar2-3019321975c0-800-q94.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 59234
+      },
+      {
+        "src": "/media-optimized/hotjar2-3019321975c0-1200-q94.webp",
+        "width": 1200,
+        "height": 801,
+        "bytes": 106100
+      },
+      {
+        "src": "/media-optimized/hotjar2-3019321975c0-1439-q94.webp",
+        "width": 1439,
+        "height": 960,
+        "bytes": 137338
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar3.webp": {
+    "width": 1439,
+    "height": 960,
+    "originalBytes": 601102,
+    "sha256": "0c3aab8efd6758aa4a577e40794824ba357c1f1f6b756e9b29f54b90fdcc3fea",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar3-0c3aab8efd67-240-q94.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 13898
+      },
+      {
+        "src": "/media-optimized/hotjar3-0c3aab8efd67-480-q94.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 42438
+      },
+      {
+        "src": "/media-optimized/hotjar3-0c3aab8efd67-800-q94.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 93992
+      },
+      {
+        "src": "/media-optimized/hotjar3-0c3aab8efd67-1200-q94.webp",
+        "width": 1200,
+        "height": 801,
+        "bytes": 170518
+      },
+      {
+        "src": "/media-optimized/hotjar3-0c3aab8efd67-1439-q94.webp",
+        "width": 1439,
+        "height": 960,
+        "bytes": 222198
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar4.webp": {
+    "width": 1439,
+    "height": 1229,
+    "originalBytes": 350224,
+    "sha256": "584dcd994441334b96eac0084d35ab901d21482d3cccc6d5173f1298ef879fa7",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar4-584dcd994441-240-q94.webp",
+        "width": 240,
+        "height": 205,
+        "bytes": 11122
+      },
+      {
+        "src": "/media-optimized/hotjar4-584dcd994441-480-q94.webp",
+        "width": 480,
+        "height": 410,
+        "bytes": 32926
+      },
+      {
+        "src": "/media-optimized/hotjar4-584dcd994441-800-q94.webp",
+        "width": 800,
+        "height": 683,
+        "bytes": 75050
+      },
+      {
+        "src": "/media-optimized/hotjar4-584dcd994441-1200-q94.webp",
+        "width": 1200,
+        "height": 1025,
+        "bytes": 139864
+      },
+      {
+        "src": "/media-optimized/hotjar4-584dcd994441-1439-q94.webp",
+        "width": 1439,
+        "height": 1229,
+        "bytes": 184868
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar5.webp": {
+    "width": 1439,
+    "height": 960,
+    "originalBytes": 257796,
+    "sha256": "5f0564282bb97273ee00c845cbd32575585f32fef279ad72507f8aa1a53e484a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar5-5f0564282bb9-240-q94.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 8490
+      },
+      {
+        "src": "/media-optimized/hotjar5-5f0564282bb9-480-q94.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 26834
+      },
+      {
+        "src": "/media-optimized/hotjar5-5f0564282bb9-800-q94.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 60328
+      },
+      {
+        "src": "/media-optimized/hotjar5-5f0564282bb9-1200-q94.webp",
+        "width": 1200,
+        "height": 801,
+        "bytes": 108724
+      },
+      {
+        "src": "/media-optimized/hotjar5-5f0564282bb9-1439-q94.webp",
+        "width": 1439,
+        "height": 960,
+        "bytes": 143022
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar6.webp": {
+    "width": 914,
+    "height": 875,
+    "originalBytes": 167516,
+    "sha256": "a18590ae4e6e3904cfa3aab6dae34675a9d4317a752bdd1e48a8f091ab7b9884",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar6-a18590ae4e6e-240-q94.webp",
+        "width": 240,
+        "height": 230,
+        "bytes": 13252
+      },
+      {
+        "src": "/media-optimized/hotjar6-a18590ae4e6e-480-q94.webp",
+        "width": 480,
+        "height": 460,
+        "bytes": 38038
+      },
+      {
+        "src": "/media-optimized/hotjar6-a18590ae4e6e-800-q94.webp",
+        "width": 800,
+        "height": 766,
+        "bytes": 85664
+      },
+      {
+        "src": "/media-optimized/hotjar6-a18590ae4e6e-914-q94.webp",
+        "width": 914,
+        "height": 875,
+        "bytes": 101420
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar7.webp": {
+    "width": 914,
+    "height": 1107,
+    "originalBytes": 171900,
+    "sha256": "fd1c7f0b83df36474bd35582111b4c2ad18c575ca342d4186e08a0f93d00ed26",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar7-fd1c7f0b83df-240-q94.webp",
+        "width": 240,
+        "height": 291,
+        "bytes": 14670
+      },
+      {
+        "src": "/media-optimized/hotjar7-fd1c7f0b83df-480-q94.webp",
+        "width": 480,
+        "height": 581,
+        "bytes": 43326
+      },
+      {
+        "src": "/media-optimized/hotjar7-fd1c7f0b83df-800-q94.webp",
+        "width": 800,
+        "height": 969,
+        "bytes": 95316
+      },
+      {
+        "src": "/media-optimized/hotjar7-fd1c7f0b83df-914-q94.webp",
+        "width": 914,
+        "height": 1107,
+        "bytes": 114082
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar8.webp": {
+    "width": 914,
+    "height": 850,
+    "originalBytes": 116354,
+    "sha256": "ccbac9b75321462a5d683fddcf6b7e0602f49fdf9599dc1cf27005cababdf10d",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar8-ccbac9b75321-240-q94.webp",
+        "width": 240,
+        "height": 223,
+        "bytes": 9980
+      },
+      {
+        "src": "/media-optimized/hotjar8-ccbac9b75321-480-q94.webp",
+        "width": 480,
+        "height": 446,
+        "bytes": 28868
+      },
+      {
+        "src": "/media-optimized/hotjar8-ccbac9b75321-800-q94.webp",
+        "width": 800,
+        "height": 744,
+        "bytes": 60428
+      },
+      {
+        "src": "/media-optimized/hotjar8-ccbac9b75321-914-q94.webp",
+        "width": 914,
+        "height": 850,
+        "bytes": 73706
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/hotjar9.webp": {
+    "width": 914,
+    "height": 812,
+    "originalBytes": 107926,
+    "sha256": "2fa207b76223b65c13507496ca6b1a3008ee5447a9653ac409537c71a40619c6",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/hotjar9-2fa207b76223-240-q94.webp",
+        "width": 240,
+        "height": 213,
+        "bytes": 10262
+      },
+      {
+        "src": "/media-optimized/hotjar9-2fa207b76223-480-q94.webp",
+        "width": 480,
+        "height": 426,
+        "bytes": 29298
+      },
+      {
+        "src": "/media-optimized/hotjar9-2fa207b76223-800-q94.webp",
+        "width": 800,
+        "height": 711,
+        "bytes": 62102
+      },
+      {
+        "src": "/media-optimized/hotjar9-2fa207b76223-914-q94.webp",
+        "width": 914,
+        "height": 812,
+        "bytes": 75374
+      }
+    ]
+  },
+  "/projects/eleven-oasis/research/pdpLinenDesktop.webp": {
+    "width": 679,
+    "height": 351,
+    "originalBytes": 118278,
+    "sha256": "4be891d93b2f42193c1033f5b9184d4fdaf0575d9fac91863876ffcaeb73f637",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/pdpLinenDesktop-4be891d93b2f-240-q94.webp",
+        "width": 240,
+        "height": 124,
+        "bytes": 6760
+      },
+      {
+        "src": "/media-optimized/pdpLinenDesktop-4be891d93b2f-480-q94.webp",
+        "width": 480,
+        "height": 248,
+        "bytes": 20122
+      },
+      {
+        "src": "/media-optimized/pdpLinenDesktop-4be891d93b2f-679-q94.webp",
+        "width": 679,
+        "height": 351,
+        "bytes": 37730
+      }
+    ]
+  },
+  "/projects/eleven-oasis/results/homepage-detail.webp": {
+    "width": 1200,
+    "height": 1312,
+    "originalBytes": 163566,
+    "sha256": "6ab6777d0862d6c4f84f721ac21393dd6a7e6abe12497422bb3c194c6d2d0863",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/homepage-detail-6ab6777d0862-240-q94.webp",
+        "width": 240,
+        "height": 262,
+        "bytes": 18886
+      },
+      {
+        "src": "/media-optimized/homepage-detail-6ab6777d0862-480-q94.webp",
+        "width": 480,
+        "height": 525,
+        "bytes": 53860
+      },
+      {
+        "src": "/media-optimized/homepage-detail-6ab6777d0862-800-q94.webp",
+        "width": 800,
+        "height": 875,
+        "bytes": 114280
+      },
+      {
+        "src": "/projects/eleven-oasis/results/homepage-detail.webp",
+        "width": 1200,
+        "height": 1312,
+        "bytes": 163566
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/campaigns/editorial-full.webp": {
+    "width": 1280,
+    "height": 4766,
+    "originalBytes": 2273422,
+    "sha256": "0e2e3c755ad8a00e031f10e7b0bb1e73bbf65bfddfaa9640d84442f3d2689f33",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/editorial-full-0e2e3c755ad8-240-q94.webp",
+        "width": 240,
+        "height": 894,
+        "bytes": 55000
+      },
+      {
+        "src": "/media-optimized/editorial-full-0e2e3c755ad8-480-q94.webp",
+        "width": 480,
+        "height": 1787,
+        "bytes": 166118
+      },
+      {
+        "src": "/media-optimized/editorial-full-0e2e3c755ad8-800-q94.webp",
+        "width": 800,
+        "height": 2979,
+        "bytes": 371704
+      },
+      {
+        "src": "/media-optimized/editorial-full-0e2e3c755ad8-1200-q94.webp",
+        "width": 1200,
+        "height": 4468,
+        "bytes": 704536
+      },
+      {
+        "src": "/media-optimized/editorial-full-0e2e3c755ad8-1280-q94.webp",
+        "width": 1280,
+        "height": 4766,
+        "bytes": 783046
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/campaigns/promotion-full.webp": {
+    "width": 1280,
+    "height": 3487,
+    "originalBytes": 1410416,
+    "sha256": "62f703fb501764fcb3f47471df239d66a49a65ce36a4ba26440dc4e1931abd7a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/promotion-full-62f703fb5017-240-q94.webp",
+        "width": 240,
+        "height": 654,
+        "bytes": 36528
+      },
+      {
+        "src": "/media-optimized/promotion-full-62f703fb5017-480-q94.webp",
+        "width": 480,
+        "height": 1308,
+        "bytes": 108476
+      },
+      {
+        "src": "/media-optimized/promotion-full-62f703fb5017-800-q94.webp",
+        "width": 800,
+        "height": 2179,
+        "bytes": 241828
+      },
+      {
+        "src": "/media-optimized/promotion-full-62f703fb5017-1200-q94.webp",
+        "width": 1200,
+        "height": 3269,
+        "bytes": 441420
+      },
+      {
+        "src": "/media-optimized/promotion-full-62f703fb5017-1280-q94.webp",
+        "width": 1280,
+        "height": 3487,
+        "bytes": 481688
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/homepage-ux-decisions.png": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 922679,
+    "sha256": "e893944cf926c0ee606a8a8eceac138fb616f864d4e47b8478c6c7d76d6698ec",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/homepage-ux-decisions-e893944cf926-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 14218
+      },
+      {
+        "src": "/media-optimized/homepage-ux-decisions-e893944cf926-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 35520
+      },
+      {
+        "src": "/media-optimized/homepage-ux-decisions-e893944cf926-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 74168
+      },
+      {
+        "src": "/media-optimized/homepage-ux-decisions-e893944cf926-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 129856
+      },
+      {
+        "src": "/media-optimized/homepage-ux-decisions-e893944cf926-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 193458
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/01-3595ab55daf3.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 427678,
+    "sha256": "a9a9b120df0b0c223511a30838cc857516fef0c62dc41fbab1da03a77e0ee712",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/01-3595ab55daf3-a9a9b120df0b-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5930
+      },
+      {
+        "src": "/media-optimized/01-3595ab55daf3-a9a9b120df0b-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 15336
+      },
+      {
+        "src": "/media-optimized/01-3595ab55daf3-a9a9b120df0b-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 31358
+      },
+      {
+        "src": "/media-optimized/01-3595ab55daf3-a9a9b120df0b-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 54044
+      },
+      {
+        "src": "/media-optimized/01-3595ab55daf3-a9a9b120df0b-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 78352
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/02-7cb89a323108.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 495500,
+    "sha256": "52e7cf40b0e394a094c09b9a9d5b07dd348db0963cd444d025cf70aa2832a4fe",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/02-7cb89a323108-52e7cf40b0e3-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5668
+      },
+      {
+        "src": "/media-optimized/02-7cb89a323108-52e7cf40b0e3-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 14876
+      },
+      {
+        "src": "/media-optimized/02-7cb89a323108-52e7cf40b0e3-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 30758
+      },
+      {
+        "src": "/media-optimized/02-7cb89a323108-52e7cf40b0e3-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 56276
+      },
+      {
+        "src": "/media-optimized/02-7cb89a323108-52e7cf40b0e3-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 91266
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/03-8f36f4c5dba9.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 309056,
+    "sha256": "a73c5c36c84a39366c5ba917dcaa7dd27070fac41c48e3c789a23bb12ad600a7",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/03-8f36f4c5dba9-a73c5c36c84a-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 4264
+      },
+      {
+        "src": "/media-optimized/03-8f36f4c5dba9-a73c5c36c84a-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 10546
+      },
+      {
+        "src": "/media-optimized/03-8f36f4c5dba9-a73c5c36c84a-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 21558
+      },
+      {
+        "src": "/media-optimized/03-8f36f4c5dba9-a73c5c36c84a-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 37474
+      },
+      {
+        "src": "/media-optimized/03-8f36f4c5dba9-a73c5c36c84a-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 55492
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/04-54c686a2fb33.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 329222,
+    "sha256": "eb51d5659bad46861d9da390a54413f868c8327fd1a5571e8973a386edb7eb32",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/04-54c686a2fb33-eb51d5659bad-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 4578
+      },
+      {
+        "src": "/media-optimized/04-54c686a2fb33-eb51d5659bad-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 11534
+      },
+      {
+        "src": "/media-optimized/04-54c686a2fb33-eb51d5659bad-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 23260
+      },
+      {
+        "src": "/media-optimized/04-54c686a2fb33-eb51d5659bad-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 41020
+      },
+      {
+        "src": "/media-optimized/04-54c686a2fb33-eb51d5659bad-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 61954
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/05-d74b08a46fa7.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 502192,
+    "sha256": "5e4cfa6f1457fced7ab3865f56edb331e3dccc1432951fb43763378d7369af1b",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/05-d74b08a46fa7-5e4cfa6f1457-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 6586
+      },
+      {
+        "src": "/media-optimized/05-d74b08a46fa7-5e4cfa6f1457-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 18244
+      },
+      {
+        "src": "/media-optimized/05-d74b08a46fa7-5e4cfa6f1457-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 39950
+      },
+      {
+        "src": "/media-optimized/05-d74b08a46fa7-5e4cfa6f1457-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 71270
+      },
+      {
+        "src": "/media-optimized/05-d74b08a46fa7-5e4cfa6f1457-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 107750
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/06-c328e481de65.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 406318,
+    "sha256": "68b547cf201fc973f24545b212a9379e545db7adc8f4615855c46c3c148566da",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/06-c328e481de65-68b547cf201f-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5322
+      },
+      {
+        "src": "/media-optimized/06-c328e481de65-68b547cf201f-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 14354
+      },
+      {
+        "src": "/media-optimized/06-c328e481de65-68b547cf201f-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 30866
+      },
+      {
+        "src": "/media-optimized/06-c328e481de65-68b547cf201f-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 57148
+      },
+      {
+        "src": "/media-optimized/06-c328e481de65-68b547cf201f-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 87926
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/pdp/07-0122ad0f6b82.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 346622,
+    "sha256": "751f502d1027f4a170e92af2b32b4e85a0ec1a7b2a80a9cf3d112b3e972ad75c",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/07-0122ad0f6b82-751f502d1027-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 4670
+      },
+      {
+        "src": "/media-optimized/07-0122ad0f6b82-751f502d1027-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 12006
+      },
+      {
+        "src": "/media-optimized/07-0122ad0f6b82-751f502d1027-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 24416
+      },
+      {
+        "src": "/media-optimized/07-0122ad0f6b82-751f502d1027-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 43588
+      },
+      {
+        "src": "/media-optimized/07-0122ad0f6b82-751f502d1027-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 65706
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/customer-validation-01-75c4950c87b3.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 235788,
+    "sha256": "37dead7630482aba2a6f46766d4210ab7504f9b1b0b8cb4c5407238afdc84852",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/customer-validation-01-75c4950c87b3-37dead763048-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 4526
+      },
+      {
+        "src": "/media-optimized/customer-validation-01-75c4950c87b3-37dead763048-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 13032
+      },
+      {
+        "src": "/media-optimized/customer-validation-01-75c4950c87b3-37dead763048-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 26806
+      },
+      {
+        "src": "/media-optimized/customer-validation-01-75c4950c87b3-37dead763048-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 50768
+      },
+      {
+        "src": "/media-optimized/customer-validation-01-75c4950c87b3-37dead763048-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 76066
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/customer-validation-02-99265b4f031d.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 297070,
+    "sha256": "8b6cc3eaeb1aaa86b6a03af51d6bad4ae0f72e2ea71311c72e41fb23e8a29bf4",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/customer-validation-02-99265b4f031d-8b6cc3eaeb1a-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5356
+      },
+      {
+        "src": "/media-optimized/customer-validation-02-99265b4f031d-8b6cc3eaeb1a-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 14150
+      },
+      {
+        "src": "/media-optimized/customer-validation-02-99265b4f031d-8b6cc3eaeb1a-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 30594
+      },
+      {
+        "src": "/media-optimized/customer-validation-02-99265b4f031d-8b6cc3eaeb1a-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 54918
+      },
+      {
+        "src": "/media-optimized/customer-validation-02-99265b4f031d-8b6cc3eaeb1a-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 80662
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/product-transparency-01-4528af70268d.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 364054,
+    "sha256": "912ab46ea2d361340f75bc0dcb7239b9093ee13fc350f721acd12ffe1a125570",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/product-transparency-01-4528af70268d-912ab46ea2d3-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5784
+      },
+      {
+        "src": "/media-optimized/product-transparency-01-4528af70268d-912ab46ea2d3-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 15120
+      },
+      {
+        "src": "/media-optimized/product-transparency-01-4528af70268d-912ab46ea2d3-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 30012
+      },
+      {
+        "src": "/media-optimized/product-transparency-01-4528af70268d-912ab46ea2d3-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 53750
+      },
+      {
+        "src": "/media-optimized/product-transparency-01-4528af70268d-912ab46ea2d3-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 78750
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/product-transparency-02-a2926036c987.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 338134,
+    "sha256": "711552255e0766c84b02c1499c6507030b2eb08aee10967393a8518c2cbaf4ff",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/product-transparency-02-a2926036c987-711552255e07-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 4790
+      },
+      {
+        "src": "/media-optimized/product-transparency-02-a2926036c987-711552255e07-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 12120
+      },
+      {
+        "src": "/media-optimized/product-transparency-02-a2926036c987-711552255e07-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 26164
+      },
+      {
+        "src": "/media-optimized/product-transparency-02-a2926036c987-711552255e07-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 46266
+      },
+      {
+        "src": "/media-optimized/product-transparency-02-a2926036c987-711552255e07-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 71138
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/product-transparency-03-2a5548005a9b.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 385274,
+    "sha256": "c4a055da98c1c9506f1b636ebfbac4fda58ec9eba9e3d713891abb7b3713ad1b",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/product-transparency-03-2a5548005a9b-c4a055da98c1-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5426
+      },
+      {
+        "src": "/media-optimized/product-transparency-03-2a5548005a9b-c4a055da98c1-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 12606
+      },
+      {
+        "src": "/media-optimized/product-transparency-03-2a5548005a9b-c4a055da98c1-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 25938
+      },
+      {
+        "src": "/media-optimized/product-transparency-03-2a5548005a9b-c4a055da98c1-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 47866
+      },
+      {
+        "src": "/media-optimized/product-transparency-03-2a5548005a9b-c4a055da98c1-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 71202
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/purchase-reassurance-01-451cf463a0c7.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 240754,
+    "sha256": "b6c6a3cf40e588454a073fc8d9f1c4308d3ce6f4efa0fb63491a1a7f57f1e701",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/purchase-reassurance-01-451cf463a0c7-b6c6a3cf40e5-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 5736
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-01-451cf463a0c7-b6c6a3cf40e5-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 14048
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-01-451cf463a0c7-b6c6a3cf40e5-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 26146
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-01-451cf463a0c7-b6c6a3cf40e5-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 42050
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-01-451cf463a0c7-b6c6a3cf40e5-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 58196
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/purchase-reassurance-02-eecab6238122.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 213950,
+    "sha256": "2c76171a8625966502340e9fcd7c6577fd292711b94af41ba594712fe5aa4533",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/purchase-reassurance-02-eecab6238122-2c76171a8625-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 4522
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-02-eecab6238122-2c76171a8625-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 10356
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-02-eecab6238122-2c76171a8625-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 19742
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-02-eecab6238122-2c76171a8625-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 30050
+      },
+      {
+        "src": "/media-optimized/purchase-reassurance-02-eecab6238122-2c76171a8625-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 46748
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/social-proof-01-757d93cdb792.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 596842,
+    "sha256": "022fa1513d041d717c5f59f01497313f37abdb56e59c1bb2482749141cb96daa",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/social-proof-01-757d93cdb792-022fa1513d04-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 8764
+      },
+      {
+        "src": "/media-optimized/social-proof-01-757d93cdb792-022fa1513d04-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 25598
+      },
+      {
+        "src": "/media-optimized/social-proof-01-757d93cdb792-022fa1513d04-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 55096
+      },
+      {
+        "src": "/media-optimized/social-proof-01-757d93cdb792-022fa1513d04-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 93742
+      },
+      {
+        "src": "/media-optimized/social-proof-01-757d93cdb792-022fa1513d04-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 140462
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/social-proof-02-56f9b8775c9d.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 777112,
+    "sha256": "fa157e88cc2691b5419a164e0d70f9f3ffcd8772d8c8137e60f0afa35887d714",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/social-proof-02-56f9b8775c9d-fa157e88cc26-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 10010
+      },
+      {
+        "src": "/media-optimized/social-proof-02-56f9b8775c9d-fa157e88cc26-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 31450
+      },
+      {
+        "src": "/media-optimized/social-proof-02-56f9b8775c9d-fa157e88cc26-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 74270
+      },
+      {
+        "src": "/media-optimized/social-proof-02-56f9b8775c9d-fa157e88cc26-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 129514
+      },
+      {
+        "src": "/media-optimized/social-proof-02-56f9b8775c9d-fa157e88cc26-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 187276
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust/social-proof-03-3d9529ace100.webp": {
+    "width": 1600,
+    "height": 958,
+    "originalBytes": 522108,
+    "sha256": "61b207bf1e80f1c192039bb3c20a2739ad0190b2c3c7ee22239c5a7e9af4c128",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/social-proof-03-3d9529ace100-61b207bf1e80-240-q94.webp",
+        "width": 240,
+        "height": 144,
+        "bytes": 6134
+      },
+      {
+        "src": "/media-optimized/social-proof-03-3d9529ace100-61b207bf1e80-480-q94.webp",
+        "width": 480,
+        "height": 287,
+        "bytes": 17174
+      },
+      {
+        "src": "/media-optimized/social-proof-03-3d9529ace100-61b207bf1e80-800-q94.webp",
+        "width": 800,
+        "height": 479,
+        "bytes": 39210
+      },
+      {
+        "src": "/media-optimized/social-proof-03-3d9529ace100-61b207bf1e80-1200-q94.webp",
+        "width": 1200,
+        "height": 718,
+        "bytes": 72350
+      },
+      {
+        "src": "/media-optimized/social-proof-03-3d9529ace100-61b207bf1e80-1600-q94.webp",
+        "width": 1600,
+        "height": 958,
+        "bytes": 111410
+      }
+    ]
+  },
+  "/projects/eleven-oasis/strategy/trust-signals.webp": {
+    "width": 480,
+    "height": 355,
+    "originalBytes": 105258,
+    "sha256": "25903a1ce119d8e7342d8f16256398bec2e9d45c775307d911e3bc7c74dfa5ab",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/trust-signals-25903a1ce119-240-q94.webp",
+        "width": 240,
+        "height": 178,
+        "bytes": 14548
+      },
+      {
+        "src": "/media-optimized/trust-signals-25903a1ce119-480-q94.webp",
+        "width": 480,
+        "height": 355,
+        "bytes": 38388
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/cover.png": {
+    "width": 1600,
+    "height": 1200,
+    "originalBytes": 2055304,
+    "sha256": "6c3a9b8186b0dceb7814f34c7d13f4c5b42c802bd4727a9bd04d9b4cbe97d0ea",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/cover-6c3a9b8186b0-240-q94.webp",
+        "width": 240,
+        "height": 180,
+        "bytes": 17104
+      },
+      {
+        "src": "/media-optimized/cover-6c3a9b8186b0-480-q94.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 47424
+      },
+      {
+        "src": "/media-optimized/cover-6c3a9b8186b0-800-q94.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 108928
+      },
+      {
+        "src": "/media-optimized/cover-6c3a9b8186b0-1200-q94.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 203482
+      },
+      {
+        "src": "/media-optimized/cover-6c3a9b8186b0-1600-q94.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 326672
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/event-crowd.png": {
+    "width": 498,
+    "height": 318,
+    "originalBytes": 284744,
+    "sha256": "3521326d9cea9faedb78e9a1817940462731c23afcce4a02f8bf77b01f658416",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/event-crowd-3521326d9cea-240-q94.webp",
+        "width": 240,
+        "height": 153,
+        "bytes": 18640
+      },
+      {
+        "src": "/media-optimized/event-crowd-3521326d9cea-480-q94.webp",
+        "width": 480,
+        "height": 307,
+        "bytes": 46004
+      },
+      {
+        "src": "/media-optimized/event-crowd-3521326d9cea-498-q94.webp",
+        "width": 498,
+        "height": 318,
+        "bytes": 48296
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/event-display.png": {
+    "width": 495,
+    "height": 334,
+    "originalBytes": 283332,
+    "sha256": "35289d65484a170009b18b59588e1b892ae9a33e2cbbd6bd3e701f994da02e08",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/event-display-35289d65484a-240-q94.webp",
+        "width": 240,
+        "height": 162,
+        "bytes": 14732
+      },
+      {
+        "src": "/media-optimized/event-display-35289d65484a-480-q94.webp",
+        "width": 480,
+        "height": 324,
+        "bytes": 37600
+      },
+      {
+        "src": "/media-optimized/event-display-35289d65484a-495-q94.webp",
+        "width": 495,
+        "height": 334,
+        "bytes": 39356
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/event-entrance.png": {
+    "width": 370,
+    "height": 453,
+    "originalBytes": 265642,
+    "sha256": "b9cf6456da70d6dd8d9967de3d03bc3921883f11c32c369e73f56c4aadb81642",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/event-entrance-b9cf6456da70-240-q94.webp",
+        "width": 240,
+        "height": 294,
+        "bytes": 21388
+      },
+      {
+        "src": "/media-optimized/event-entrance-b9cf6456da70-370-q94.webp",
+        "width": 370,
+        "height": 453,
+        "bytes": 39040
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/event-interior.png": {
+    "width": 597,
+    "height": 316,
+    "originalBytes": 392183,
+    "sha256": "d6ae7674d8452f8865cd9ec52be1bb467d40a8d89d431544f123108a27eb872b",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/event-interior-d6ae7674d845-240-q94.webp",
+        "width": 240,
+        "height": 127,
+        "bytes": 17398
+      },
+      {
+        "src": "/media-optimized/event-interior-d6ae7674d845-480-q94.webp",
+        "width": 480,
+        "height": 254,
+        "bytes": 50560
+      },
+      {
+        "src": "/media-optimized/event-interior-d6ae7674d845-597-q94.webp",
+        "width": 597,
+        "height": 316,
+        "bytes": 72994
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/event-merchandise.png": {
+    "width": 464,
+    "height": 367,
+    "originalBytes": 338673,
+    "sha256": "b4eeb6d91aa25c8f7596fb007ed6346f91ae55f68539958eb83df8fc208fdb17",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/event-merchandise-b4eeb6d91aa2-240-q94.webp",
+        "width": 240,
+        "height": 190,
+        "bytes": 21500
+      },
+      {
+        "src": "/media-optimized/event-merchandise-b4eeb6d91aa2-464-q94.webp",
+        "width": 464,
+        "height": 367,
+        "bytes": 60706
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/event-pumpkin.png": {
+    "width": 429,
+    "height": 407,
+    "originalBytes": 232369,
+    "sha256": "ccb62897a7679a3e6266e374a9a216df273511143b5dfa451ce9a3f6e80d3f80",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/event-pumpkin-ccb62897a767-240-q94.webp",
+        "width": 240,
+        "height": 228,
+        "bytes": 18748
+      },
+      {
+        "src": "/media-optimized/event-pumpkin-ccb62897a767-429-q94.webp",
+        "width": 429,
+        "height": 407,
+        "bytes": 39790
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/homepage-kv.png": {
+    "width": 1380,
+    "height": 650,
+    "originalBytes": 362982,
+    "sha256": "1e13b6466c803ff2f431d46ff78dd09b3dd699407016629ec7252409dd9316be",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/homepage-kv-1e13b6466c80-240-q94.webp",
+        "width": 240,
+        "height": 113,
+        "bytes": 6004
+      },
+      {
+        "src": "/media-optimized/homepage-kv-1e13b6466c80-480-q94.webp",
+        "width": 480,
+        "height": 226,
+        "bytes": 18170
+      },
+      {
+        "src": "/media-optimized/homepage-kv-1e13b6466c80-800-q94.webp",
+        "width": 800,
+        "height": 377,
+        "bytes": 39550
+      },
+      {
+        "src": "/media-optimized/homepage-kv-1e13b6466c80-1200-q94.webp",
+        "width": 1200,
+        "height": 565,
+        "bytes": 70230
+      },
+      {
+        "src": "/media-optimized/homepage-kv-1e13b6466c80-1380-q94.webp",
+        "width": 1380,
+        "height": 650,
+        "bytes": 87060
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/key-visual-castle.png": {
+    "width": 397,
+    "height": 497,
+    "originalBytes": 212293,
+    "sha256": "03cba25247e4b8ecd2903d4d407d95531e29c4064241c1b287fe2c93c6745f93",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/key-visual-castle-03cba25247e4-240-q94.webp",
+        "width": 240,
+        "height": 300,
+        "bytes": 19250
+      },
+      {
+        "src": "/media-optimized/key-visual-castle-03cba25247e4-397-q94.webp",
+        "width": 397,
+        "height": 497,
+        "bytes": 41332
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/key-visual-entrance.png": {
+    "width": 268,
+    "height": 335,
+    "originalBytes": 143708,
+    "sha256": "8049575c7045b2e7f0b3498999e48c7661cb87abb2399756d698fb4ff7c2ff39",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/key-visual-entrance-8049575c7045-240-q94.webp",
+        "width": 240,
+        "height": 300,
+        "bytes": 17670
+      },
+      {
+        "src": "/media-optimized/key-visual-entrance-8049575c7045-268-q94.webp",
+        "width": 268,
+        "height": 335,
+        "bytes": 21354
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/merchandise.png": {
+    "width": 1594,
+    "height": 561,
+    "originalBytes": 718964,
+    "sha256": "decd1af5e52fbeb9c98f5f701d4c975c3d08bc7a9605dc5495d7f7e4c5ba2a16",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/merchandise-decd1af5e52f-240-q94.webp",
+        "width": 240,
+        "height": 84,
+        "bytes": 7626
+      },
+      {
+        "src": "/media-optimized/merchandise-decd1af5e52f-480-q94.webp",
+        "width": 480,
+        "height": 169,
+        "bytes": 19240
+      },
+      {
+        "src": "/media-optimized/merchandise-decd1af5e52f-800-q94.webp",
+        "width": 800,
+        "height": 282,
+        "bytes": 40536
+      },
+      {
+        "src": "/media-optimized/merchandise-decd1af5e52f-1200-q94.webp",
+        "width": 1200,
+        "height": 422,
+        "bytes": 72620
+      },
+      {
+        "src": "/media-optimized/merchandise-decd1af5e52f-1594-q94.webp",
+        "width": 1594,
+        "height": 561,
+        "bytes": 109948
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/packaging.png": {
+    "width": 1410,
+    "height": 679,
+    "originalBytes": 218321,
+    "sha256": "c56488aae83aaec46006167d98afd47ba1349d79182ab66ddfa6fd638e7e7427",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/packaging-c56488aae83a-240-q94.webp",
+        "width": 240,
+        "height": 116,
+        "bytes": 7668
+      },
+      {
+        "src": "/media-optimized/packaging-c56488aae83a-480-q94.webp",
+        "width": 480,
+        "height": 231,
+        "bytes": 18142
+      },
+      {
+        "src": "/media-optimized/packaging-c56488aae83a-800-q94.webp",
+        "width": 800,
+        "height": 385,
+        "bytes": 36428
+      },
+      {
+        "src": "/media-optimized/packaging-c56488aae83a-1200-q94.webp",
+        "width": 1200,
+        "height": 578,
+        "bytes": 61766
+      },
+      {
+        "src": "/media-optimized/packaging-c56488aae83a-1410-q94.webp",
+        "width": 1410,
+        "height": 679,
+        "bytes": 77324
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/poster-vintage-01.png": {
+    "width": 298,
+    "height": 496,
+    "originalBytes": 218553,
+    "sha256": "e8dd5048b1b1c2b18fd5bffc7b462f556e453564c85e2c6ef79b2244f25231cb",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/poster-vintage-01-e8dd5048b1b1-240-q94.webp",
+        "width": 240,
+        "height": 399,
+        "bytes": 17886
+      },
+      {
+        "src": "/media-optimized/poster-vintage-01-e8dd5048b1b1-298-q94.webp",
+        "width": 298,
+        "height": 496,
+        "bytes": 25268
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/poster-vintage-02.png": {
+    "width": 298,
+    "height": 496,
+    "originalBytes": 222639,
+    "sha256": "e44a76f56757ccf62abb995b8de80cc0d399f09d904ba263a8de981f84e23854",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/poster-vintage-02-e44a76f56757-240-q94.webp",
+        "width": 240,
+        "height": 399,
+        "bytes": 18224
+      },
+      {
+        "src": "/media-optimized/poster-vintage-02-e44a76f56757-298-q94.webp",
+        "width": 298,
+        "height": 496,
+        "bytes": 25538
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/poster-vintage-03.png": {
+    "width": 298,
+    "height": 496,
+    "originalBytes": 236077,
+    "sha256": "03505420a1a77e60e1fa5bd3fa71dd08ab039b4273c0130ca697ad78025b854c",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/poster-vintage-03-03505420a1a7-240-q94.webp",
+        "width": 240,
+        "height": 399,
+        "bytes": 21186
+      },
+      {
+        "src": "/media-optimized/poster-vintage-03-03505420a1a7-298-q94.webp",
+        "width": 298,
+        "height": 496,
+        "bytes": 28344
+      }
+    ]
+  },
+  "/projects/team-wang-under-the-castle/poster-vintage-04.png": {
+    "width": 298,
+    "height": 496,
+    "originalBytes": 243431,
+    "sha256": "688518d99e1f04acc7fc7350cfb7aa883f1f0c62c31aaeea835d83ad3f518012",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/poster-vintage-04-688518d99e1f-240-q94.webp",
+        "width": 240,
+        "height": 399,
+        "bytes": 20548
+      },
+      {
+        "src": "/media-optimized/poster-vintage-04-688518d99e1f-298-q94.webp",
+        "width": 298,
+        "height": 496,
+        "bytes": 29472
+      }
+    ]
+  },
+  "/projects/visual-experiments/explorations.webp": {
+    "width": 1801,
+    "height": 707,
+    "originalBytes": 210340,
+    "sha256": "893e8c81f7f7e33bb256afb4bfd82736c1f1ba9f6b59efbf3e6652a01e121846",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/explorations-893e8c81f7f7-240-q94.webp",
+        "width": 240,
+        "height": 94,
+        "bytes": 8526
+      },
+      {
+        "src": "/media-optimized/explorations-893e8c81f7f7-480-q94.webp",
+        "width": 480,
+        "height": 188,
+        "bytes": 25598
+      },
+      {
+        "src": "/media-optimized/explorations-893e8c81f7f7-800-q94.webp",
+        "width": 800,
+        "height": 314,
+        "bytes": 58342
+      },
+      {
+        "src": "/media-optimized/explorations-893e8c81f7f7-1200-q94.webp",
+        "width": 1200,
+        "height": 471,
+        "bytes": 116314
+      },
+      {
+        "src": "/media-optimized/explorations-893e8c81f7f7-1600-q94.webp",
+        "width": 1600,
+        "height": 628,
+        "bytes": 187460
+      },
+      {
+        "src": "/projects/visual-experiments/explorations.webp",
+        "width": 1801,
+        "height": 707,
+        "bytes": 210340
+      }
+    ]
+  },
+  "/projects/visual-experiments/homepage-cover.webp": {
+    "width": 1606,
+    "height": 979,
+    "originalBytes": 134992,
+    "sha256": "efaf41a352e480a1d8bc03021bbec9f3c649375ce6d34b6e46953de90b110cdf",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/homepage-cover-efaf41a352e4-240-q94.webp",
+        "width": 240,
+        "height": 146,
+        "bytes": 9044
+      },
+      {
+        "src": "/media-optimized/homepage-cover-efaf41a352e4-480-q94.webp",
+        "width": 480,
+        "height": 293,
+        "bytes": 24768
+      },
+      {
+        "src": "/media-optimized/homepage-cover-efaf41a352e4-800-q94.webp",
+        "width": 800,
+        "height": 488,
+        "bytes": 51948
+      },
+      {
+        "src": "/media-optimized/homepage-cover-efaf41a352e4-1200-q94.webp",
+        "width": 1200,
+        "height": 732,
+        "bytes": 88608
+      },
+      {
+        "src": "/media-optimized/homepage-cover-efaf41a352e4-1600-q94.webp",
+        "width": 1600,
+        "height": 975,
+        "bytes": 128680
+      },
+      {
+        "src": "/media-optimized/homepage-cover-efaf41a352e4-1606-q94.webp",
+        "width": 1606,
+        "height": 979,
+        "bytes": 129688
+      }
+    ]
+  },
+  "/projects/visual-experiments/photography/ebc-01.webp": {
+    "width": 1278,
+    "height": 1707,
+    "originalBytes": 169988,
+    "sha256": "91d32471dd9947644775906f2d8c03e08e1173bb63834d3bccbf7fd97524368a",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/ebc-01-91d32471dd99-240-q94.webp",
+        "width": 240,
+        "height": 321,
+        "bytes": 18818
+      },
+      {
+        "src": "/media-optimized/ebc-01-91d32471dd99-480-q94.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 61384
+      },
+      {
+        "src": "/media-optimized/ebc-01-91d32471dd99-800-q94.webp",
+        "width": 800,
+        "height": 1069,
+        "bytes": 128052
+      },
+      {
+        "src": "/media-optimized/ebc-01-91d32471dd99-1200-q94.webp",
+        "width": 1200,
+        "height": 1603,
+        "bytes": 222114
+      },
+      {
+        "src": "/projects/visual-experiments/photography/ebc-01.webp",
+        "width": 1278,
+        "height": 1707,
+        "bytes": 169988
+      }
+    ]
+  },
+  "/projects/visual-experiments/photography/ebc-02.webp": {
+    "width": 1280,
+    "height": 1706,
+    "originalBytes": 157202,
+    "sha256": "7c818419ecf7d097910801da4c6d903b6b76a6433abfe71c1d1b51fbac72b72e",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/ebc-02-7c818419ecf7-240-q94.webp",
+        "width": 240,
+        "height": 320,
+        "bytes": 19184
+      },
+      {
+        "src": "/media-optimized/ebc-02-7c818419ecf7-480-q94.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 60030
+      },
+      {
+        "src": "/media-optimized/ebc-02-7c818419ecf7-800-q94.webp",
+        "width": 800,
+        "height": 1066,
+        "bytes": 125090
+      },
+      {
+        "src": "/media-optimized/ebc-02-7c818419ecf7-1200-q94.webp",
+        "width": 1200,
+        "height": 1599,
+        "bytes": 212264
+      },
+      {
+        "src": "/projects/visual-experiments/photography/ebc-02.webp",
+        "width": 1280,
+        "height": 1706,
+        "bytes": 157202
+      }
+    ]
+  },
+  "/projects/visual-experiments/photography/ebc-04.webp": {
+    "width": 1278,
+    "height": 1707,
+    "originalBytes": 165544,
+    "sha256": "da455ba751ed062b2d11bcc012b077829dba9350d76de9d6208a3e7b60872a5d",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/ebc-04-da455ba751ed-240-q94.webp",
+        "width": 240,
+        "height": 321,
+        "bytes": 20992
+      },
+      {
+        "src": "/media-optimized/ebc-04-da455ba751ed-480-q94.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 63268
+      },
+      {
+        "src": "/media-optimized/ebc-04-da455ba751ed-800-q94.webp",
+        "width": 800,
+        "height": 1069,
+        "bytes": 133124
+      },
+      {
+        "src": "/media-optimized/ebc-04-da455ba751ed-1200-q94.webp",
+        "width": 1200,
+        "height": 1603,
+        "bytes": 217708
+      },
+      {
+        "src": "/projects/visual-experiments/photography/ebc-04.webp",
+        "width": 1278,
+        "height": 1707,
+        "bytes": 165544
+      }
+    ]
+  },
+  "/projects/visual-experiments/photography/ebc-05.webp": {
+    "width": 1280,
+    "height": 1706,
+    "originalBytes": 285518,
+    "sha256": "f744605d0a5576667ecb6ac3e61593d5d733d54166f169e7624156b59a9a3e31",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/ebc-05-f744605d0a55-240-q94.webp",
+        "width": 240,
+        "height": 320,
+        "bytes": 29882
+      },
+      {
+        "src": "/media-optimized/ebc-05-f744605d0a55-480-q94.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 98924
+      },
+      {
+        "src": "/media-optimized/ebc-05-f744605d0a55-800-q94.webp",
+        "width": 800,
+        "height": 1066,
+        "bytes": 216200
+      },
+      {
+        "src": "/media-optimized/ebc-05-f744605d0a55-1200-q94.webp",
+        "width": 1200,
+        "height": 1599,
+        "bytes": 376750
+      },
+      {
+        "src": "/projects/visual-experiments/photography/ebc-05.webp",
+        "width": 1280,
+        "height": 1706,
+        "bytes": 285518
+      }
+    ]
+  },
+  "/projects/visual-experiments/photography/ebc-06.webp": {
+    "width": 1280,
+    "height": 1707,
+    "originalBytes": 222628,
+    "sha256": "3f8cda91610c20be9418d18415b8fe9560e202c8fb9d82600b2d7e8b8284d81f",
+    "lossless": false,
+    "variants": [
+      {
+        "src": "/media-optimized/ebc-06-3f8cda91610c-240-q94.webp",
+        "width": 240,
+        "height": 320,
+        "bytes": 26482
+      },
+      {
+        "src": "/media-optimized/ebc-06-3f8cda91610c-480-q94.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 83068
+      },
+      {
+        "src": "/media-optimized/ebc-06-3f8cda91610c-800-q94.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 178200
+      },
+      {
+        "src": "/media-optimized/ebc-06-3f8cda91610c-1200-q94.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 302234
+      },
+      {
+        "src": "/projects/visual-experiments/photography/ebc-06.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 222628
+      }
+    ]
+  }
+}

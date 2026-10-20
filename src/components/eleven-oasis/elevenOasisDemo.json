@@ -1,5 +1,5 @@
 {
-  "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+  "src": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f-web-3652ad5e1af1.mp4",
   "poster": "/projects/eleven-oasis/demo/poster-cc253649880f.webp",
   "source": "source-assets/eleven-oasis-homepage-demo.mp4",
   "sourceSha256": "a2d29c8295f47fffb71e8f140489558cb8c43dc5f32151535713f786c1a100c9",
@@ -17,5 +17,13 @@
   "presentationCrop": {
     "top": 0,
     "bottom": 15
+  },
+  "optimizedFrom": "/projects/eleven-oasis/demo/homepage-demo-cc253649880f.mp4",
+  "encoding": {
+    "codec": "H.264",
+    "crf": 23,
+    "pixelFormat": "yuv420p",
+    "fastStart": true,
+    "audio": false
   }
 }

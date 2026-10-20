@@ -18,7 +18,6 @@ export default function AboutPage() {
         <div className="about-editorial-grid">
           <section className="about-introduction" aria-labelledby="about-title">
             <picture className="about-illustration">
-              <source srcSet="/about/about-shan-illustration.webp" type="image/webp" />
               <Image src="/about/about-shan-illustration.png" alt="Hi, I'm SHAN MU — hand-drawn illustration of Shan at her laptop, with pink lettering, a pencil, and a yellow pen" width={1467} height={1072} loading="eager" sizes="(max-width: 700px) 80vw, 410px" />
             </picture>
             <div className="about-biography">

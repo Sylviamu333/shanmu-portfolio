@@ -128,6 +128,7 @@ export function ImageGallery({
             <div className="lightbox-scroll">
               <Image
                 src={active.src}
+                unoptimized
                 alt={active.alt}
                 width={active.width}
                 height={active.height}
