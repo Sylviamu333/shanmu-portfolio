@@ -11,7 +11,7 @@ export function Header() {
   const links = [
     { label: "Work", href: "/#work" },
     { label: "About", href: "/about/" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Resume", href: "/resume/SHANMU-%20CV%20-%20En.pdf" },
   ];
   return (
     <header className="site-header home-header">
@@ -57,7 +57,18 @@ export function Header() {
           }
         }}
       >
-        {links.map((link) => (
+        {links.map((link) => link.label === "Resume" ? (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            {link.label}
+            <span className="nav-dot" />
+          </a>
+        ) : (
           <Link
             key={link.label}
             href={link.href}

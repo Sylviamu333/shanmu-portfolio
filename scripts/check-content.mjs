@@ -25,6 +25,9 @@ for (const series of photographySeries) {
 }
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
+const resumePath = "resume/SHANMU- CV - En.pdf";
+const resumeSource = resolve(root, "source-assets/SHANMU- CV - En.pdf");
+assert.equal(hash(resolve(root, "public", resumePath)), hash(resumeSource), "Public resume must match the uploaded PDF exactly");
 const activationRoot = "public/projects/early-birds-club/activations";
 const activationManifest = JSON.parse(readFileSync(resolve(root, activationRoot, "manifest.json"), "utf8"));
 assert.equal(hash(resolve(root, activationManifest.source)), activationManifest.sourceSha256, "EBC activation source PDF changed; review its photographs and captions");
@@ -162,6 +165,7 @@ assert.equal(
 assert(Math.abs((2.1 / 1.2 - 1) * 100 - 75) < 1e-9);
 assert(Math.abs((25 / 5 - 1) * 100 - 400) < 1e-9);
 if (process.argv.includes("--build")) {
+  assert.equal(hash(resolve(root, "out", resumePath)), hash(resumeSource), "Static export must include the original resume PDF");
   const elevenPage = readFileSync(resolve(root, "out/work/eleven-oasis/index.html"), "utf8");
   const elevenAnchors = ["problem", "strategy", "decisions", "results"];
   let lastAnchor = -1;

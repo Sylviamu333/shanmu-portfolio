@@ -1,5 +1,5 @@
-.eleven-case-study { margin-top: 0; background: #fff; }
-.eleven-section-navigation { padding: 36px 4px 18px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; background: #fff; }
+.eleven-case-study { --eleven-nav-header-height: var(--portfolio-header-height); --eleven-nav-scroll-margin: max(0px, calc(var(--portfolio-header-height) + 114px - 100px)); margin-top: 0; background: #fff; }
+.eleven-section-navigation { position: sticky; top: var(--eleven-nav-header-height); z-index: 30; padding: 36px 4px 18px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; background: #fff; box-shadow: 0 1px 0 var(--folio-rule); }
 .eleven-section-navigation::-webkit-scrollbar { display: none; }
 .eleven-section-navigation ul { display: flex; align-items: center; gap: 44px; width: max-content; margin: 0 auto; padding: 0; list-style: none; }
 .eleven-section-navigation a { display: inline-flex; align-items: center; min-height: 44px; color: #555; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-synthesis: none; letter-spacing: normal; text-transform: uppercase; white-space: nowrap; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; text-decoration-thickness: 1px; transition: color 200ms ease, text-decoration-color 200ms ease; }
@@ -7,9 +7,8 @@
 .eleven-section-navigation a:hover,
 .eleven-section-navigation a:focus-visible { color: #000; text-decoration-color: currentColor; }
 .eleven-section-navigation a:focus-visible { outline: 2px solid #111; outline-offset: 4px; }
-/* Shared html scroll-padding clears the fixed header. Avoid adding the global
-   section margin a second time, including on direct hash entry and without JS. */
-.eleven-case-study .eleven-main-section { scroll-margin-top: 0; }
+/* Includes both sticky bars without counting html scroll-padding twice. */
+.eleven-case-study .eleven-main-section { scroll-margin-top: var(--eleven-nav-scroll-margin); }
 .eleven-problem { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(24px, 3vw, 48px); padding-top: 28px; }
 .eleven-case-study > .eleven-problem { margin-top: 0; }
 .eleven-problem .eleven-study-heading { padding: 0; }
@@ -66,6 +65,7 @@
 .eleven-case-pagination { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--folio-rule); display: flex; justify-content: space-between; gap: 20px; font-size: 12px; }
 .eleven-case-pagination a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (max-width: 700px) {
+  .eleven-case-study { --eleven-nav-scroll-margin: max(0px, calc(var(--portfolio-header-height) + 96px - 75px)); }
   .eleven-problem { padding-top: 22px; }
   .eleven-outcomes { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .eleven-decision-note { grid-template-columns: minmax(0, 1fr); gap: 12px; }
