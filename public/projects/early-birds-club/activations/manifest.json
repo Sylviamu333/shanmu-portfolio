@@ -1,0 +1,107 @@
+{
+  "source": "source-assets/EBC brand book- FINAL.pdf",
+  "sourceSha256": "87fe3da578449b8bcc70a260dc32d1b1cf3911c1ee4ecb4d77a8be5e26920ee8",
+  "extraction": "Original embedded photographs, full pixel dimensions; no cropping, compositing or upscaling. WebP quality 92. PDF page numbers are one-based.",
+  "photos": [
+    {
+      "file": "dongjiang-signage.webp",
+      "page": 20,
+      "pdfImageXref": 359,
+      "width": 721,
+      "height": 961,
+      "embeddedImageSha256": "6315fce1175b9d18875e288c7b2b47310d041378369efd1f16e845a16b92837e",
+      "webpSha256": "ef6d93b4a6cad4c88eb6812654c042861e225835e21201b8d0effb0f29c86674",
+      "bytes": 117556
+    },
+    {
+      "file": "dongjiang-merchandise.webp",
+      "page": 20,
+      "pdfImageXref": 360,
+      "width": 575,
+      "height": 970,
+      "embeddedImageSha256": "a7812c2b6e89c16eb01a7fd539b9169ccdf62feddaaa978bd0b0c6b9c9c64908",
+      "webpSha256": "6d10979b8e2daa1d1f5edb83f9518414d366ee55361fd3566790ed356ff3eabf",
+      "bytes": 144324
+    },
+    {
+      "file": "taikoo-hui-displays.webp",
+      "page": 21,
+      "pdfImageXref": 362,
+      "width": 506,
+      "height": 337,
+      "embeddedImageSha256": "20538d32798806f4fb04ae405db4fdcc89f7eab0ce9e78adf769c49f0c4996a5",
+      "webpSha256": "aa62efa81f84249b68ae2c0889825e1070f4c6fa9fc4970cc32134dc1a366a24",
+      "bytes": 40426
+    },
+    {
+      "file": "taikoo-hui-campaign.webp",
+      "page": 21,
+      "pdfImageXref": 367,
+      "width": 763,
+      "height": 509,
+      "embeddedImageSha256": "64b4f1b4f44930d44e2c8fd794ed793e9db8f53ecfca5c70f3a299d0c5db50c9",
+      "webpSha256": "a727a2c68381426b7fc3d13d869035d129a4a1610b01ac030b604d9eea9fefa9",
+      "bytes": 63468
+    },
+    {
+      "file": "young-star-flag.webp",
+      "page": 22,
+      "pdfImageXref": 386,
+      "width": 451,
+      "height": 601,
+      "embeddedImageSha256": "10ef2ca8340c05ed321e8a2e783c721292ef019c95f44a5f858440094989ff69",
+      "webpSha256": "b23194be9d6cc3c3697a23984cb060c604589d18b008bff1e0e4ab35ed2cfe14",
+      "bytes": 24816
+    },
+    {
+      "file": "young-star-community.webp",
+      "page": 22,
+      "pdfImageXref": 377,
+      "width": 426,
+      "height": 284,
+      "embeddedImageSha256": "8cff441ce18079dd629316c15fb84a1f327c174060175e8bfc9212d2413f48fc",
+      "webpSha256": "96d7a85de04caaabe043a8525a7bce7ec9c87020275e16be913df24bdd9353ea",
+      "bytes": 32376
+    },
+    {
+      "file": "beijing-golf-flag.webp",
+      "page": 23,
+      "pdfImageXref": 392,
+      "width": 546,
+      "height": 820,
+      "embeddedImageSha256": "008efd5fb63d34c3d329e7c715da44de8115897d4909724d3cc54447aa9304a3",
+      "webpSha256": "b3c4c9bf70799346baa29e4bf18bce013c61cf16a271e118751c4b34de25a5c5",
+      "bytes": 80604
+    },
+    {
+      "file": "beijing-golf-tournament.webp",
+      "page": 23,
+      "pdfImageXref": 393,
+      "width": 408,
+      "height": 237,
+      "embeddedImageSha256": "5fd9c7544069c5339dfdd2485bc581b72a3e0e0f693fdedba8d196d64978310f",
+      "webpSha256": "d5f7a13808254d585520027d8ca0a12b5a42fab5bba21a5823d903e87971ad0a",
+      "bytes": 34686
+    },
+    {
+      "file": "ypo-community.webp",
+      "page": 24,
+      "pdfImageXref": 404,
+      "width": 567,
+      "height": 378,
+      "embeddedImageSha256": "28b9d27e530e55729b4773ec5e8cf6471d668312f62c6b2699bc335fc920083f",
+      "webpSha256": "da370d6f8d6de39d22e41c837e2047c5660cc7f7eb177b56ce54dc593a185445",
+      "bytes": 95674
+    },
+    {
+      "file": "ypo-awards.webp",
+      "page": 24,
+      "pdfImageXref": 407,
+      "width": 385,
+      "height": 257,
+      "embeddedImageSha256": "406a342ae818669b236a4a9ca7cacc3080586e323e39b10f70163b66d7e861a5",
+      "webpSha256": "f746a16fb8e36e847f9b09c69a2940a6bcb9ca7e9ac1b35926f1cc91536311b8",
+      "bytes": 21362
+    }
+  ]
+}
