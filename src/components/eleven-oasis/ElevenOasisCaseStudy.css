@@ -37,6 +37,9 @@
   .eleven-problem { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .eleven-section-navigation ul { gap: 32px; }
 }
+@media (width < 768px) {
+  .eleven-problem > .eleven-project-preview { order: -1; }
+}
 @media (prefers-reduced-motion: reduce) {
   .eleven-section-navigation a { transition: none; }
 }
