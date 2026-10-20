@@ -39,6 +39,17 @@
 .ebc-story-copy { max-width: 850px; font: 400 15px/1.8 var(--sans); }
 .ebc-story-copy p + p { margin-top: 18px; }
 .ebc-chapter .image-gallery { margin-top: 24px; }
+.ebc-activation-intro,
+.ebc-activation-context { max-width: 720px; font: 400 15px/1.8 var(--sans); }
+.ebc-activations { margin-top: 40px; }
+.ebc-activation + .ebc-activation,
+.ebc-activation-concepts { margin-top: 52px; padding-top: 36px; border-top: 1px solid var(--folio-rule); }
+.ebc-activation-kind { margin-bottom: 16px; color: var(--muted); font: 400 10px/1.5 var(--sans); letter-spacing: .045em; text-transform: uppercase; }
+.ebc-activation-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 12px 28px; }
+.ebc-activation-heading h3,
+.ebc-activation-concepts h3 { margin: 0; font: 400 22px/1.3 var(--sans); letter-spacing: -.02em; }
+.ebc-activation-location { font: 400 11px/1.5 var(--sans); color: var(--muted); }
+.ebc-activation-context { margin-top: 12px; }
 @media (max-width: 1100px) and (min-width: 701px) {
   .ebc-case-study { grid-template-columns: 142px minmax(0, 1fr); gap: 24px; }
   .ebc-section-navigation { font-size: 10px; letter-spacing: .025em; }
@@ -51,6 +62,14 @@
   .ebc-chapter h2 { font-size: 24px; margin-bottom: 26px; }
   .ebc-subsection h3 { font-size: 20px; }
   .ebc-story-copy { font-size: 13px; }
+  .ebc-activation-intro,
+  .ebc-activation-context { font-size: 13px; }
+  .ebc-activations { margin-top: 30px; }
+  .ebc-activation + .ebc-activation,
+  .ebc-activation-concepts { margin-top: 36px; padding-top: 28px; }
+  .ebc-activation-heading { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .ebc-activation-heading h3,
+  .ebc-activation-concepts h3 { font-size: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ebc-section-navigation a { transition: none; }

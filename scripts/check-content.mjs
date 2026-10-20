@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { projects, orderedProjects } from "../src/data/projects.ts";
 import { earlyBirdsSections } from "../src/components/early-birds-club/sections.ts";
+import { earlyBirdsActivations } from "../src/components/early-birds-club/activations.ts";
 import { photographySeries } from "../src/components/photography/photography.ts";
 import { homepageUX } from "../src/data/eleven-oasis-case-study.ts";
 import { elevenStrategies, pdpUxSlides, trustSignalSlides } from "../src/data/eleven-oasis-strategy.ts";
@@ -24,6 +25,26 @@ for (const series of photographySeries) {
 }
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
+const activationRoot = "public/projects/early-birds-club/activations";
+const activationManifest = JSON.parse(readFileSync(resolve(root, activationRoot, "manifest.json"), "utf8"));
+assert.equal(hash(resolve(root, activationManifest.source)), activationManifest.sourceSha256, "EBC activation source PDF changed; review its photographs and captions");
+assert.equal(earlyBirdsActivations.length, 5, "EBC must include all five documented activations");
+assert.deepEqual(earlyBirdsActivations.map(activation => activation.sourcePage), [20, 21, 22, 23, 24]);
+assert.equal(new Set(earlyBirdsActivations.map(activation => activation.id)).size, 5);
+assert.equal(activationManifest.photos.length, earlyBirdsActivations.flatMap(activation => activation.photos).length);
+for (const activation of earlyBirdsActivations) {
+  assert(activation.title && activation.kind && activation.location && activation.context);
+  for (const photo of activation.photos) {
+    const source = activationManifest.photos.find(entry => entry.file === photo.src.split("/").at(-1));
+    assert(source, `Missing EBC activation provenance: ${photo.src}`);
+    assert.equal(source.page, activation.sourcePage);
+    assert.equal(photo.width, source.width);
+    assert.equal(photo.height, source.height);
+    assert(photo.alt && photo.caption, `Missing EBC activation description: ${photo.src}`);
+    assert.equal(hash(resolve(root, "public", photo.src.slice(1))), source.webpSha256);
+    if (process.argv.includes("--build")) assert.equal(hash(resolve(root, "out", photo.src.slice(1))), source.webpSha256);
+  }
+}
 assert.equal(journeyPhones.length, 11, "The mobile journey must retain all eleven screens");
 for (const [index, phone] of journeyPhones.entries()) {
   assert.equal(phone.id, index + 1, "Mobile screen order changed");
@@ -192,6 +213,11 @@ if (process.argv.includes("--build")) {
   assert(!earlyBirdsPage.includes('src="/projects/early-birds-club/cover.webp"'), "Keep both removed checkerboard occurrences off the EBC detail page");
   for (const photo of photographySeries[2].photos)
     assert(earlyBirdsPage.includes(`src="${photo.src}"`), `Missing EBC lookbook photography: ${photo.src}`);
+  for (const activation of earlyBirdsActivations) {
+    assert(earlyBirdsPage.includes(`id="activation-${activation.id}"`), `Missing EBC activation: ${activation.id}`);
+    for (const photo of activation.photos)
+      assert(earlyBirdsPage.includes(`src="${photo.src}"`), `Missing EBC activation photograph: ${photo.src}`);
+  }
   const photographyPage = readFileSync(resolve(root, "out/work/visual-experiments/index.html"), "utf8");
   for (const series of photographySeries) {
     assert(photographyPage.includes(`id="${series.id}"`), `Missing photography series: ${series.id}`);
